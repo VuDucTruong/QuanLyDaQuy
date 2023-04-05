@@ -100,7 +100,7 @@
             this.lb_sophieu.ForeColor = System.Drawing.Color.Black;
             this.lb_sophieu.Location = new System.Drawing.Point(3, 35);
             this.lb_sophieu.Name = "lb_sophieu";
-            this.lb_sophieu.Size = new System.Drawing.Size(127, 35);
+            this.lb_sophieu.Size = new System.Drawing.Size(126, 35);
             this.lb_sophieu.TabIndex = 1;
             this.lb_sophieu.Text = "Số phiếu:";
             this.lb_sophieu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -112,9 +112,9 @@
             this.tb_sophieu.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tab_lay_phieumuahang.SetColumnSpan(this.tb_sophieu, 2);
             this.tb_sophieu.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_sophieu.Location = new System.Drawing.Point(136, 43);
+            this.tb_sophieu.Location = new System.Drawing.Point(135, 43);
             this.tb_sophieu.Name = "tb_sophieu";
-            this.tb_sophieu.Size = new System.Drawing.Size(260, 18);
+            this.tb_sophieu.Size = new System.Drawing.Size(258, 18);
             this.tb_sophieu.TabIndex = 2;
             this.tb_sophieu.Text = "12313";
             // 
@@ -123,9 +123,9 @@
             this.kb_ngaylap.AutoSize = true;
             this.kb_ngaylap.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kb_ngaylap.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kb_ngaylap.Location = new System.Drawing.Point(402, 35);
+            this.kb_ngaylap.Location = new System.Drawing.Point(399, 35);
             this.kb_ngaylap.Name = "kb_ngaylap";
-            this.kb_ngaylap.Size = new System.Drawing.Size(127, 35);
+            this.kb_ngaylap.Size = new System.Drawing.Size(126, 35);
             this.kb_ngaylap.TabIndex = 3;
             this.kb_ngaylap.Text = "Ngày lập:";
             this.kb_ngaylap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -137,7 +137,7 @@
             this.tb_ngaylap.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tab_lay_phieumuahang.SetColumnSpan(this.tb_ngaylap, 2);
             this.tb_ngaylap.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_ngaylap.Location = new System.Drawing.Point(535, 43);
+            this.tb_ngaylap.Location = new System.Drawing.Point(531, 43);
             this.tb_ngaylap.Name = "tb_ngaylap";
             this.tb_ngaylap.Size = new System.Drawing.Size(260, 18);
             this.tb_ngaylap.TabIndex = 4;
@@ -150,7 +150,7 @@
             this.lb_nhacungcap.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_nhacungcap.Location = new System.Drawing.Point(3, 70);
             this.lb_nhacungcap.Name = "lb_nhacungcap";
-            this.lb_nhacungcap.Size = new System.Drawing.Size(127, 35);
+            this.lb_nhacungcap.Size = new System.Drawing.Size(126, 35);
             this.lb_nhacungcap.TabIndex = 5;
             this.lb_nhacungcap.Text = "Nhà cung cấp:";
             this.lb_nhacungcap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -161,9 +161,9 @@
             this.tb_nhacungcap.BackColor = System.Drawing.SystemColors.Control;
             this.tb_nhacungcap.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_nhacungcap.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_nhacungcap.Location = new System.Drawing.Point(136, 78);
+            this.tb_nhacungcap.Location = new System.Drawing.Point(135, 78);
             this.tb_nhacungcap.Name = "tb_nhacungcap";
-            this.tb_nhacungcap.Size = new System.Drawing.Size(127, 18);
+            this.tb_nhacungcap.Size = new System.Drawing.Size(126, 18);
             this.tb_nhacungcap.TabIndex = 6;
             this.tb_nhacungcap.Text = "123";
             // 
@@ -172,9 +172,9 @@
             this.lb_diachi.AutoSize = true;
             this.lb_diachi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lb_diachi.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_diachi.Location = new System.Drawing.Point(269, 70);
+            this.lb_diachi.Location = new System.Drawing.Point(267, 70);
             this.lb_diachi.Name = "lb_diachi";
-            this.lb_diachi.Size = new System.Drawing.Size(127, 35);
+            this.lb_diachi.Size = new System.Drawing.Size(126, 35);
             this.lb_diachi.TabIndex = 7;
             this.lb_diachi.Text = "Địa chỉ:";
             this.lb_diachi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -185,9 +185,9 @@
             this.tb_diachi.BackColor = System.Drawing.SystemColors.Control;
             this.tb_diachi.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_diachi.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_diachi.Location = new System.Drawing.Point(402, 78);
+            this.tb_diachi.Location = new System.Drawing.Point(399, 78);
             this.tb_diachi.Name = "tb_diachi";
-            this.tb_diachi.Size = new System.Drawing.Size(127, 18);
+            this.tb_diachi.Size = new System.Drawing.Size(126, 18);
             this.tb_diachi.TabIndex = 8;
             this.tb_diachi.Text = "123";
             // 
@@ -196,9 +196,9 @@
             this.lb_sodienthoai.AutoSize = true;
             this.lb_sodienthoai.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lb_sodienthoai.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_sodienthoai.Location = new System.Drawing.Point(535, 70);
+            this.lb_sodienthoai.Location = new System.Drawing.Point(531, 70);
             this.lb_sodienthoai.Name = "lb_sodienthoai";
-            this.lb_sodienthoai.Size = new System.Drawing.Size(127, 35);
+            this.lb_sodienthoai.Size = new System.Drawing.Size(126, 35);
             this.lb_sodienthoai.TabIndex = 9;
             this.lb_sodienthoai.Text = "Số điện thoại:";
             this.lb_sodienthoai.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -209,7 +209,7 @@
             this.tb_sodienthoai.BackColor = System.Drawing.SystemColors.Control;
             this.tb_sodienthoai.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tb_sodienthoai.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_sodienthoai.Location = new System.Drawing.Point(668, 78);
+            this.tb_sodienthoai.Location = new System.Drawing.Point(663, 78);
             this.tb_sodienthoai.Name = "tb_sodienthoai";
             this.tb_sodienthoai.Size = new System.Drawing.Size(100, 18);
             this.tb_sodienthoai.TabIndex = 10;
