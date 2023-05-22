@@ -17,7 +17,7 @@ namespace QuanLyDaQuy
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PhieuMuaHang());
+            Application.Run(new Form1());
         }
     }
 }

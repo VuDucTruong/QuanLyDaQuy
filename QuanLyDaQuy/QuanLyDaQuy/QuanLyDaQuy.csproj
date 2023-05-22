@@ -70,6 +70,12 @@
     <Compile Include="Phieu\PhieuBanHang.Designer.cs">
       <DependentUpon>PhieuBanHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Phieu\PhieuDichVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Phieu\PhieuDichVu.Designer.cs">
+      <DependentUpon>PhieuDichVu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Phieu\PhieuMuaHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,33 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\ThongTinDichVu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ThongTinDichVu.Designer.cs">
+      <DependentUpon>ThongTinDichVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ThongTinKhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ThongTinKhachHang.Designer.cs">
+      <DependentUpon>ThongTinKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ThongTinMatHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ThongTinMatHang.Designer.cs">
+      <DependentUpon>ThongTinMatHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ThongTinNCC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ThongTinNCC.Designer.cs">
+      <DependentUpon>ThongTinNCC.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Phieu\BaoCaoTonKho.resx">
       <DependentUpon>BaoCaoTonKho.cs</DependentUpon>
     </EmbeddedResource>
@@ -99,6 +132,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControls\ThongTinDichVu.resx">
+      <DependentUpon>ThongTinDichVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ThongTinKhachHang.resx">
+      <DependentUpon>ThongTinKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ThongTinMatHang.resx">
+      <DependentUpon>ThongTinMatHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ThongTinNCC.resx">
+      <DependentUpon>ThongTinNCC.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
