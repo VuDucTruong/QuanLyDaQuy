@@ -30,19 +30,19 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label_KhachHang = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_SoPhieu = new System.Windows.Forms.TextBox();
             this.label_SoPhieu = new System.Windows.Forms.Label();
+            this.label_CT_PhieuDV = new System.Windows.Forms.Label();
             this.label_NgayLap = new System.Windows.Forms.Label();
-            this.label_KhachHang = new System.Windows.Forms.Label();
+            this.textBox_NgayLap = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button_ThemDV = new System.Windows.Forms.Button();
             this.button_SuaDV = new System.Windows.Forms.Button();
             this.button_XoaDV = new System.Windows.Forms.Button();
             this.button_Huy = new System.Windows.Forms.Button();
             this.button_OK = new System.Windows.Forms.Button();
-            this.label_CT_PhieuDV = new System.Windows.Forms.Label();
-            this.textBox_NgayLap = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -98,6 +98,16 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(600, 332);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
+            // label_KhachHang
+            // 
+            this.label_KhachHang.AutoSize = true;
+            this.label_KhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_KhachHang.Location = new System.Drawing.Point(3, 95);
+            this.label_KhachHang.Name = "label_KhachHang";
+            this.label_KhachHang.Size = new System.Drawing.Size(86, 18);
+            this.label_KhachHang.TabIndex = 9;
+            this.label_KhachHang.Text = "Khách hàng";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -109,7 +119,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(596, 58);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Danh sách phiếu dịch vụ";
+            this.label1.Text = "Lập phiếu dịch vụ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBox_SoPhieu
@@ -130,6 +140,18 @@
             this.label_SoPhieu.TabIndex = 6;
             this.label_SoPhieu.Text = "Số phiếu";
             // 
+            // label_CT_PhieuDV
+            // 
+            this.label_CT_PhieuDV.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.label_CT_PhieuDV, 3);
+            this.label_CT_PhieuDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_CT_PhieuDV.Location = new System.Drawing.Point(3, 132);
+            this.label_CT_PhieuDV.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
+            this.label_CT_PhieuDV.Name = "label_CT_PhieuDV";
+            this.label_CT_PhieuDV.Size = new System.Drawing.Size(225, 20);
+            this.label_CT_PhieuDV.TabIndex = 14;
+            this.label_CT_PhieuDV.Text = "Danh sách dịch vụ sử dụng";
+            // 
             // label_NgayLap
             // 
             this.label_NgayLap.AutoSize = true;
@@ -140,15 +162,13 @@
             this.label_NgayLap.TabIndex = 7;
             this.label_NgayLap.Text = "Ngày lập";
             // 
-            // label_KhachHang
+            // textBox_NgayLap
             // 
-            this.label_KhachHang.AutoSize = true;
-            this.label_KhachHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_KhachHang.Location = new System.Drawing.Point(3, 95);
-            this.label_KhachHang.Name = "label_KhachHang";
-            this.label_KhachHang.Size = new System.Drawing.Size(86, 18);
-            this.label_KhachHang.TabIndex = 9;
-            this.label_KhachHang.Text = "Khách hàng";
+            this.tableLayoutPanel1.SetColumnSpan(this.textBox_NgayLap, 2);
+            this.textBox_NgayLap.Location = new System.Drawing.Point(403, 61);
+            this.textBox_NgayLap.Name = "textBox_NgayLap";
+            this.textBox_NgayLap.Size = new System.Drawing.Size(194, 20);
+            this.textBox_NgayLap.TabIndex = 8;
             // 
             // label2
             // 
@@ -209,26 +229,6 @@
             this.button_OK.TabIndex = 15;
             this.button_OK.Text = "OK";
             this.button_OK.UseVisualStyleBackColor = true;
-            // 
-            // label_CT_PhieuDV
-            // 
-            this.label_CT_PhieuDV.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.label_CT_PhieuDV, 3);
-            this.label_CT_PhieuDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_CT_PhieuDV.Location = new System.Drawing.Point(3, 132);
-            this.label_CT_PhieuDV.Margin = new System.Windows.Forms.Padding(3, 6, 3, 0);
-            this.label_CT_PhieuDV.Name = "label_CT_PhieuDV";
-            this.label_CT_PhieuDV.Size = new System.Drawing.Size(225, 20);
-            this.label_CT_PhieuDV.TabIndex = 14;
-            this.label_CT_PhieuDV.Text = "Danh sách dịch vụ sử dụng";
-            // 
-            // textBox_NgayLap
-            // 
-            this.tableLayoutPanel1.SetColumnSpan(this.textBox_NgayLap, 2);
-            this.textBox_NgayLap.Location = new System.Drawing.Point(403, 61);
-            this.textBox_NgayLap.Name = "textBox_NgayLap";
-            this.textBox_NgayLap.Size = new System.Drawing.Size(194, 20);
-            this.textBox_NgayLap.TabIndex = 8;
             // 
             // PhieuDichVu
             // 
