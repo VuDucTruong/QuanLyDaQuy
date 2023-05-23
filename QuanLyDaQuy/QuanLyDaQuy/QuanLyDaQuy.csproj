@@ -120,6 +120,9 @@
     <EmbeddedResource Include="Phieu\PhieuBanHang.resx">
       <DependentUpon>PhieuBanHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Phieu\PhieuDichVu.resx">
+      <DependentUpon>PhieuDichVu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Phieu\PhieuMuaHang.resx">
       <DependentUpon>PhieuMuaHang.cs</DependentUpon>
     </EmbeddedResource>
