@@ -7,7 +7,8 @@ create table SANPHAM
 	TenSP nvarchar(100),
 	MaLSP int ,
 	DonGiaBan float,
-	DonGiaMua float
+	DonGiaMua float,
+	SoLuongTon int
 )
 create table DONVITINH
 (
@@ -46,32 +47,29 @@ create table NHACUNGCAP
 
 create table TONKHO
 (
-	MaTonKho int identity(0,1) primary key,
-	Ngay smalldatetime,
-)
-create table CT_TONKHO
-(
-	MaTonKho int,
+	Thang smalldatetime,
 	MaSP int,
 	SLTonDau int,
 	SLTonCuoi int,
 	SLMuaVao int,
 	SLBanRa int
 
-	constraint PK_CTTK primary key ( MaTonKho , MaSP )
+	constraint PK_TONKHO primary key ( MaSP , Thang )
 )
 
 create table PHIEUMUAHANG
 (
 	MaPhieuMH int identity(0,1) primary key,
 	MaNCC int,
-	NgayLap smalldatetime
+	NgayLap smalldatetime,
+	TongTien float
 )
 create table CT_PHIEUMUAHANG
 (
 	MaPhieuMH int,
 	MaSP int,
 	SL int,
+	DonGia float,
 	ThanhTien float
 
 	constraint PK_CTPMH primary key (MaPhieuMH , MaSP )
@@ -80,13 +78,15 @@ create table PHIEUBANHANG
 (
 	MaPhieuBH int identity(0,1) primary key,
 	MaKH int,
-	NgayLap smalldatetime
+	NgayLap smalldatetime,
+	TongTien float
 )
 create table CT_PHIEUBANHANG
 (
 	MaPhieuBH int,
 	MaSP int,
 	SL int ,
+	DonGia float,
 	ThanhTien float
 
 	constraint PK_CTPBH primary key (MaPhieuBH , MaSP )
@@ -106,6 +106,7 @@ create table CT_PHIEUDICHVU
 (
 	MaPhieuDV int ,
 	MaDV int,
+	DonGia float,
 	DonGiaDuocTinh float,
 	SL int,
 	ThanhTien float,
@@ -125,8 +126,7 @@ create table THAMSO
 --------------Foreign Key-------------------
 alter table SanPham add constraint FK_SP_LSP foreign key (MaLSP) references LoaiSanPham ( MaLSP )
 alter table LoaiSanPham add constraint FK_LSP_DVT foreign key (MaDVT) references DonViTinh (MaDVT)
-alter table CT_TonKho add constraint FK_CTTK_TK foreign key (MaTonKho) references TonKho (MaTonKho)
-alter table CT_TonKho add constraint FK_CTTK_SP foreign key (MaSP) references SanPham (MaSP)
+alter table TonKho add constraint FK_TK_SP foreign key (MaSP) references SanPham (MaSP)
 alter table PhieuMuaHang add constraint FK_PhieuMH_NCC foreign key (MaNCC) references NhaCungCap (MaNCC)
 alter table CT_PhieuMuaHang add constraint FK_CTPMH_PMH foreign key (MaPhieuMH) references PhieuMuaHang (MaPhieuMH)
 alter table CT_PhieuMuaHang add constraint FK_CTPMH_SP foreign key (MaSP) references SanPham (MaSP)
