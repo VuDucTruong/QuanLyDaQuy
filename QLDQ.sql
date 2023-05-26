@@ -241,3 +241,26 @@ insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
 (N'Dây chuyền nam Vàng trắng Ý 18K 0000W061215' , 4 , 11590000, 0)
 insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
 (N'Dây chuyền Bạc 0000W000022' , 4 , 1295000, 0)
+
+--Kiềng--
+insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
+(N'Kiềng Vàng trắng Ý 18K PNJ 0000W060270' , 5 , 40490000 , 0)
+insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
+(N'Kiềng cưới vàng 24K PNJ 0000Y060011' , 5 , 29663000 , 0)
+insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
+(N'Kiềng Vàng Ý 18K PNJ kiểu đan bi tròn 0000Z060136', 5 , 54065000, 0)
+insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
+(N'Kiềng bạc đính đá STYLE by PNJ DNA XMXMH000001' , 5 , 987000 , 0)
+insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
+(N'Kiềng Bạc Ý PNJSilver 0000W060020' , 5 , 1295000 , 0)
+---Bông tai---
+insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
+(N'Bông tai Vàng 10K Style By PNJ DNA ZTMXY000093' , 6 , 3152000 , 0)
+insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
+(N'Bông tai Vàng trắng 10K đính đá ECZ STYLE by PNJ XMXMW002238' , 6 , 2218000 , 0)
+insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
+(N'Bông tai Kim Tiền Vàng trắng Ý 18K PNJ 0000W002163' , 6 , 6374000 , 0)
+insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
+(N'Bông tai nam Bạc đính đá PNJSilver XMXMW060142' , 6 , 325000 , 0)
+insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
+(N'Bông tai Kim cương Vàng trắng 14K PNJ DDDDW001753' , 6 , 37840000 , 0)
