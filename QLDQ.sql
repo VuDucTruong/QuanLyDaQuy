@@ -241,3 +241,27 @@ insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
 (N'Dây chuyền nam Vàng trắng Ý 18K 0000W061215' , 4 , 11590000, 0)
 insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
 (N'Dây chuyền Bạc 0000W000022' , 4 , 1295000, 0)
+
+--Nhẫn
+insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
+(N'Nhẫn trẻ em Bạc PNJSilver 0000W060019' , 7 , 495000 , 0)
+insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
+(N'Nhẫn bạc đính ngọc trai PNJSilver Euphoria PFXMH000002' , 7 , 875000 , 0)
+insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
+(N'Nhẫn bạc đính đá STYLE By PNJ XMXMY060016' , 7 , 575000 , 0)
+insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
+(N'NNhẫn Vàng 18K đính đá Citrine PNJ CTXMY000460' , 7 , 13477000 , 0)
+insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
+(N'Nhẫn Vàng trắng 10K đính đá ECZ PNJ XMXMW002392' , 7 , 9264000 , 0)
+
+--Mặt dây chuyền
+insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
+(N'Mặt dây chuyền Bạc đính đá PNJSilver XMXMW060056' , 8 , 1895000 , 0)
+insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
+(N'Mặt dây chuyền Bạc đính đá PNJSilver XMXMW060051' , 8 , 1595000 , 0)
+insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
+(N'Mặt dây chuyền Vàng 18K đính đá CZ PNJ XMXMY005462' , 8 , 8384000 , 0)
+insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
+(N'Mặt dây chuyền Kim cương Vàng 14K PNJ DDDDY060010' , 8 , 19900000 , 0)
+insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
+(N'Mặt dây chuyền Kim cương Kim tiền Vàng trắng 14K PNJ DDDDW060341' , 8 , 19900000 , 0)
