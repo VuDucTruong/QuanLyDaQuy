@@ -46,6 +46,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DTO\CT_PhieuBanHang.cs" />
+    <Compile Include="DTO\CT_PhieuDichVu.cs" />
+    <Compile Include="DTO\CT_PhieuMuaHang.cs" />
+    <Compile Include="DTO\DichVu.cs" />
+    <Compile Include="DTO\DonViTinh.cs" />
+    <Compile Include="DTO\KhachHang.cs" />
+    <Compile Include="DTO\LoaiSanPham.cs" />
+    <Compile Include="DTO\NhaCungCap.cs" />
+    <Compile Include="DTO\PhieuBanHang.cs" />
+    <Compile Include="DTO\PhieuDichVu.cs" />
+    <Compile Include="DTO\PhieuMuaHang.cs" />
+    <Compile Include="DTO\SanPham.cs" />
+    <Compile Include="DTO\ThamSo.cs" />
+    <Compile Include="DTO\TonKho.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
