@@ -290,3 +290,25 @@ insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
 insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
 (N'Bông tai Kim cương Vàng trắng 14K PNJ DDDDW001753' , 6 , 37840000 , 0)
 
+---Đồng hồ---
+insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
+(N'Đồng Hồ Tissot Nam T063.617.36.037.00 Dây Da 42mm' , 9 , 14700000 , 0)
+insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
+(N'Đồng Hồ Skagen Nữ SKW2340 Dây Thép Không Gỉ 30mm' , 9 , 4650000 , 0)
+insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
+(N'Đồng Hồ Tissot Unisex T109.410.33.021.00 Dây Thép Không Gỉ 38mm' , 9 , 9975000 , 0)
+insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
+(N'Đồng Hồ Fossil Nữ ES5286 Dây Cao Su 36 mm' , 9 , 3650000 , 0)
+insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
+(N'Đồng Hồ Fossil Nam FS4656 Dây Da 42 mm' , 9 , 4890000 , 0)
+---Đồng hồ cặp---
+insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
+(N'Đồng Hồ Cặp Jowissa J2.195.L Và J2.309.S 45 mm - 26 mm' ,  10 , 12980000 , 0)
+insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
+(N'Đồng Hồ Cặp Tissot T134.410.27.011.00 Và T134.210.27.011.00 41 mm - 34 mm' ,  10 , 24500000 , 0)
+insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
+(N'Đồng Hồ Cặp Tissot T109.410.33.031.00 Và T109.210.33.031.00 38 mm - 30 mm' ,  10 , 19425000 , 0)
+insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
+(N'Đồng Hồ Cặp Tissot T101.410.22.031.00 Và T101.210.22.031.00 39 mm - 33 mm' ,  10 , 22400000 , 0)
+insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
+(N'Đồng Hồ Cặp Longines L4.960.2.11.7 Và L4.360.2.11.7 38.5 mm - 25 mm' ,  10 , 78016000 , 0)
