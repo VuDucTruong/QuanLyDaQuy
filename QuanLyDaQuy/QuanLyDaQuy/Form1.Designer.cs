@@ -47,6 +47,7 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
+            this.toolStripTextBox7 = new System.Windows.Forms.ToolStripTextBox();
             this.thongTinMatHang1 = new QuanLyDaQuy.ThongTinMatHang();
             this.thongTinDichVu1 = new QuanLyDaQuy.ThongTinDichVu();
             this.thongTinNCC1 = new QuanLyDaQuy.UserControls.ThongTinNCC();
@@ -72,7 +73,8 @@
             this.lậpPhiếuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripTextBox1,
             this.toolStripTextBox2,
-            this.toolStripTextBox3});
+            this.toolStripTextBox3,
+            this.toolStripTextBox7});
             this.lậpPhiếuToolStripMenuItem.Name = "lậpPhiếuToolStripMenuItem";
             this.lậpPhiếuToolStripMenuItem.Size = new System.Drawing.Size(92, 25);
             this.lậpPhiếuToolStripMenuItem.Text = "Lập phiếu";
@@ -81,6 +83,7 @@
             // 
             this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9.6F);
             this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.ReadOnly = true;
             this.toolStripTextBox1.Size = new System.Drawing.Size(120, 29);
             this.toolStripTextBox1.Text = "Phiếu mua hàng";
             // 
@@ -88,13 +91,16 @@
             // 
             this.toolStripTextBox2.Font = new System.Drawing.Font("Segoe UI", 9.6F);
             this.toolStripTextBox2.Name = "toolStripTextBox2";
+            this.toolStripTextBox2.ReadOnly = true;
             this.toolStripTextBox2.Size = new System.Drawing.Size(120, 29);
             this.toolStripTextBox2.Text = "Phiếu bán hàng";
+            this.toolStripTextBox2.Click += new System.EventHandler(this.toolStripTextBox2_Click);
             // 
             // toolStripTextBox3
             // 
             this.toolStripTextBox3.Font = new System.Drawing.Font("Segoe UI", 9.6F);
             this.toolStripTextBox3.Name = "toolStripTextBox3";
+            this.toolStripTextBox3.ReadOnly = true;
             this.toolStripTextBox3.Size = new System.Drawing.Size(100, 29);
             this.toolStripTextBox3.Text = "Tồn kho";
             // 
@@ -175,6 +181,15 @@
             this.panel2.Size = new System.Drawing.Size(251, 621);
             this.panel2.TabIndex = 5;
             // 
+            // toolStripTextBox7
+            // 
+            this.toolStripTextBox7.Font = new System.Drawing.Font("Segoe UI", 9.6F);
+            this.toolStripTextBox7.Name = "toolStripTextBox7";
+            this.toolStripTextBox7.ReadOnly = true;
+            this.toolStripTextBox7.Size = new System.Drawing.Size(100, 29);
+            this.toolStripTextBox7.Text = "Phiếu dịch vụ";
+            this.toolStripTextBox7.Click += new System.EventHandler(this.toolStripTextBox7_Click);
+            // 
             // thongTinMatHang1
             // 
             this.thongTinMatHang1.Location = new System.Drawing.Point(266, 32);
@@ -245,6 +260,7 @@
         private ThongTinDichVu thongTinDichVu1;
         private UserControls.ThongTinKhachHang thongTinKhachHang1;
         private UserControls.ThongTinNCC thongTinNCC1;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox7;
     }
 }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyDaQuy.DTO
 {
-    internal class PhieuDichVu
+    internal class PhieuDichVuDTO
     {
         public int MaPhieuDV;
         public int MaKH;
@@ -16,7 +16,7 @@ namespace QuanLyDaQuy.DTO
         public float ConLai;
         public string TinhTrang;
 
-        public PhieuDichVu(int maPhieuDV, int maKH, DateTime ngayLap, float tongTien, float traTruoc, float conLai, string tinhTrang)
+        public PhieuDichVuDTO(int maPhieuDV, int maKH, DateTime ngayLap, float tongTien, float traTruoc, float conLai, string tinhTrang)
         {
             MaPhieuDV = maPhieuDV;
             MaKH = maKH;

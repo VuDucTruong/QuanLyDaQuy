@@ -55,9 +55,9 @@
     <Compile Include="DTO\KhachHang.cs" />
     <Compile Include="DTO\LoaiSanPham.cs" />
     <Compile Include="DTO\NhaCungCap.cs" />
-    <Compile Include="DTO\PhieuBanHang.cs" />
-    <Compile Include="DTO\PhieuDichVu.cs" />
-    <Compile Include="DTO\PhieuMuaHang.cs" />
+    <Compile Include="DTO\PhieuBanHangDTO.cs" />
+    <Compile Include="DTO\PhieuDichVuDTO.cs" />
+    <Compile Include="DTO\PhieuMuaHangDTO.cs" />
     <Compile Include="DTO\SanPham.cs" />
     <Compile Include="DTO\ThamSo.cs" />
     <Compile Include="DTO\TonKho.cs" />
