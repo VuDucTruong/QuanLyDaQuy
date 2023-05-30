@@ -123,6 +123,8 @@ create table THAMSO
 	TenThamSo varchar(100) ,
 	GiaTri float
 )
+
+set dateformat dmy
 --------------Foreign Key-------------------
 alter table SanPham add constraint FK_SP_LSP foreign key (MaLSP) references LoaiSanPham ( MaLSP )
 alter table LoaiSanPham add constraint FK_LSP_DVT foreign key (MaDVT) references DonViTinh (MaDVT)
@@ -312,3 +314,6 @@ insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
 (N'Đồng Hồ Cặp Tissot T101.410.22.031.00 Và T101.210.22.031.00 39 mm - 33 mm' ,  10 , 22400000 , 0)
 insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
 (N'Đồng Hồ Cặp Longines L4.960.2.11.7 Và L4.360.2.11.7 38.5 mm - 25 mm' ,  10 , 78016000 , 0)
+
+
+insert into THAMSO values ('SoTienTraTruoc' , 0.5)
