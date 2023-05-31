@@ -34,18 +34,20 @@ namespace QuanLyDaQuy.Phieu
             this.lb_khachhang = new System.Windows.Forms.Label();
             this.lb_ngaylap = new System.Windows.Forms.Label();
             this.dgv_phieumuahang = new System.Windows.Forms.DataGridView();
-            this.tb_sophieu = new System.Windows.Forms.TextBox();
-            this.tb_khachhang = new System.Windows.Forms.TextBox();
-            this.tb_ngaylap = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.stt_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sp_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sp_col = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.lsp_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sl_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dvt_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dg_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tt_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tb_sophieu = new System.Windows.Forms.TextBox();
+            this.tb_ngaylap = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.cb_khachhang = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_phieumuahang)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -92,7 +94,7 @@ namespace QuanLyDaQuy.Phieu
             // 
             this.lb_ngaylap.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_ngaylap.ForeColor = System.Drawing.Color.Black;
-            this.lb_ngaylap.Location = new System.Drawing.Point(532, 20);
+            this.lb_ngaylap.Location = new System.Drawing.Point(529, 20);
             this.lb_ngaylap.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.lb_ngaylap.Name = "lb_ngaylap";
             this.lb_ngaylap.Size = new System.Drawing.Size(84, 18);
@@ -120,6 +122,57 @@ namespace QuanLyDaQuy.Phieu
             this.dgv_phieumuahang.Size = new System.Drawing.Size(794, 260);
             this.dgv_phieumuahang.TabIndex = 12;
             // 
+            // stt_col
+            // 
+            this.stt_col.HeaderText = "STT";
+            this.stt_col.MinimumWidth = 6;
+            this.stt_col.Name = "stt_col";
+            this.stt_col.Width = 50;
+            // 
+            // sp_col
+            // 
+            this.sp_col.HeaderText = "Sản phẩm";
+            this.sp_col.MinimumWidth = 6;
+            this.sp_col.Name = "sp_col";
+            this.sp_col.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.sp_col.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.sp_col.Width = 125;
+            // 
+            // lsp_col
+            // 
+            this.lsp_col.HeaderText = "Loại sản phẩm";
+            this.lsp_col.MinimumWidth = 6;
+            this.lsp_col.Name = "lsp_col";
+            this.lsp_col.Width = 125;
+            // 
+            // sl_col
+            // 
+            this.sl_col.HeaderText = "Số lượng";
+            this.sl_col.MinimumWidth = 6;
+            this.sl_col.Name = "sl_col";
+            this.sl_col.Width = 75;
+            // 
+            // dvt_col
+            // 
+            this.dvt_col.HeaderText = "Đơn vị tính";
+            this.dvt_col.MinimumWidth = 6;
+            this.dvt_col.Name = "dvt_col";
+            this.dvt_col.Width = 125;
+            // 
+            // dg_col
+            // 
+            this.dg_col.HeaderText = "Đơn giá";
+            this.dg_col.MinimumWidth = 6;
+            this.dg_col.Name = "dg_col";
+            this.dg_col.Width = 125;
+            // 
+            // tt_col
+            // 
+            this.tt_col.HeaderText = "Thành tiền";
+            this.tt_col.MinimumWidth = 6;
+            this.tt_col.Name = "tt_col";
+            this.tt_col.Width = 125;
+            // 
             // tb_sophieu
             // 
             this.tb_sophieu.BackColor = System.Drawing.SystemColors.HighlightText;
@@ -129,31 +182,19 @@ namespace QuanLyDaQuy.Phieu
             this.tb_sophieu.Name = "tb_sophieu";
             this.tb_sophieu.Size = new System.Drawing.Size(220, 25);
             this.tb_sophieu.TabIndex = 13;
-            this.tb_sophieu.Text = "001";
-            // 
-            // tb_khachhang
-            // 
-            this.tb_khachhang.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.tb_khachhang.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tb_khachhang.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_khachhang.Location = new System.Drawing.Point(172, 84);
-            this.tb_khachhang.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
-            this.tb_khachhang.Name = "tb_khachhang";
-            this.tb_khachhang.Size = new System.Drawing.Size(300, 25);
-            this.tb_khachhang.TabIndex = 14;
-            this.tb_khachhang.Text = "TriPero";
+            this.tb_sophieu.Text = "000";
             // 
             // tb_ngaylap
             // 
             this.tb_ngaylap.BackColor = System.Drawing.SystemColors.HighlightText;
             this.tb_ngaylap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tb_ngaylap.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_ngaylap.Location = new System.Drawing.Point(631, 20);
+            this.tb_ngaylap.Location = new System.Drawing.Point(628, 20);
             this.tb_ngaylap.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
             this.tb_ngaylap.Name = "tb_ngaylap";
             this.tb_ngaylap.Size = new System.Drawing.Size(159, 25);
             this.tb_ngaylap.TabIndex = 15;
-            this.tb_ngaylap.Text = "2/3/2023";
+            this.tb_ngaylap.Text = "20/20/2000";
             // 
             // tableLayoutPanel1
             // 
@@ -179,13 +220,15 @@ namespace QuanLyDaQuy.Phieu
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.07547F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.92453F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 99F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 165F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168F));
             this.tableLayoutPanel2.Controls.Add(this.lb_sophieu, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tb_sophieu, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.tb_ngaylap, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.lb_khachhang, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.tb_khachhang, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.lb_ngaylap, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.cb_khachhang, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label1, 2, 1);
+            this.tableLayoutPanel2.Controls.Add(this.textBox1, 3, 1);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 48);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
@@ -194,53 +237,38 @@ namespace QuanLyDaQuy.Phieu
             this.tableLayoutPanel2.Size = new System.Drawing.Size(794, 133);
             this.tableLayoutPanel2.TabIndex = 17;
             // 
-            // stt_col
+            // cb_khachhang
             // 
-            this.stt_col.HeaderText = "STT";
-            this.stt_col.MinimumWidth = 6;
-            this.stt_col.Name = "stt_col";
-            this.stt_col.Width = 50;
+            this.cb_khachhang.FormattingEnabled = true;
+            this.cb_khachhang.Location = new System.Drawing.Point(172, 84);
+            this.cb_khachhang.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
+            this.cb_khachhang.Name = "cb_khachhang";
+            this.cb_khachhang.Size = new System.Drawing.Size(121, 24);
+            this.cb_khachhang.TabIndex = 16;
             // 
-            // sp_col
+            // label1
             // 
-            this.sp_col.HeaderText = "Sản phẩm";
-            this.sp_col.MinimumWidth = 6;
-            this.sp_col.Name = "sp_col";
-            this.sp_col.Width = 125;
+            this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(529, 84);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 18);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "SĐT:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // lsp_col
+            // textBox1
             // 
-            this.lsp_col.HeaderText = "Loại sản phẩm";
-            this.lsp_col.MinimumWidth = 6;
-            this.lsp_col.Name = "lsp_col";
-            this.lsp_col.Width = 125;
-            // 
-            // sl_col
-            // 
-            this.sl_col.HeaderText = "Số lượng";
-            this.sl_col.MinimumWidth = 6;
-            this.sl_col.Name = "sl_col";
-            this.sl_col.Width = 75;
-            // 
-            // dvt_col
-            // 
-            this.dvt_col.HeaderText = "Đơn vị tính";
-            this.dvt_col.MinimumWidth = 6;
-            this.dvt_col.Name = "dvt_col";
-            // 
-            // dg_col
-            // 
-            this.dg_col.HeaderText = "Đơn giá";
-            this.dg_col.MinimumWidth = 6;
-            this.dg_col.Name = "dg_col";
-            this.dg_col.Width = 125;
-            // 
-            // tt_col
-            // 
-            this.tt_col.HeaderText = "Thành tiền";
-            this.tt_col.MinimumWidth = 6;
-            this.tt_col.Name = "tt_col";
-            this.tt_col.Width = 125;
+            this.textBox1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(628, 84);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(159, 25);
+            this.textBox1.TabIndex = 18;
+            this.textBox1.Text = "0000";
             // 
             // PhieuBanHang
             // 
@@ -267,16 +295,18 @@ namespace QuanLyDaQuy.Phieu
         private System.Windows.Forms.Label lb_ngaylap;
         private System.Windows.Forms.DataGridView dgv_phieumuahang;
         private System.Windows.Forms.TextBox tb_sophieu;
-        private System.Windows.Forms.TextBox tb_khachhang;
         private System.Windows.Forms.TextBox tb_ngaylap;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.DataGridViewTextBoxColumn stt_col;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sp_col;
+        private System.Windows.Forms.DataGridViewComboBoxColumn sp_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn lsp_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn sl_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn dvt_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn dg_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn tt_col;
+        private System.Windows.Forms.ComboBox cb_khachhang;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
