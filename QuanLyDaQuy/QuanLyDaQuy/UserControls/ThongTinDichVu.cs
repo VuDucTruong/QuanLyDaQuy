@@ -16,5 +16,10 @@ namespace QuanLyDaQuy
         {
             InitializeComponent();
         }
+
+        private void ThongTinDichVu_Load(object sender, EventArgs e)
+        {
+            dICHVUTableAdapter.Fill(this.qLDQDataSet.DICHVU);
+        }
     }
 }

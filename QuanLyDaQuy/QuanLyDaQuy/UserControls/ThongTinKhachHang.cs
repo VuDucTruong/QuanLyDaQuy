@@ -16,5 +16,10 @@ namespace QuanLyDaQuy.UserControls
         {
             InitializeComponent();
         }
+
+        private void ThongTinKhachHang_Load(object sender, EventArgs e)
+        {
+            kHACHHANGTableAdapter.Fill(this.qLDQDataSet.KHACHHANG);
+        }
     }
 }
