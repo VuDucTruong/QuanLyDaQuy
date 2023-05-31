@@ -1,4 +1,5 @@
-﻿using QuanLyDaQuy.DTO;
+﻿using QuanLyDaQuy.DAO;
+using QuanLyDaQuy.DTO;
 using QuanLyDaQuy.Phieu;
 using System;
 using System.Collections.Generic;
@@ -46,7 +47,7 @@ namespace QuanLyDaQuy
 
         private void thongTinMatHang1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
 
