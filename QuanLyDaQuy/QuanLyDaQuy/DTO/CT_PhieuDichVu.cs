@@ -1,5 +1,7 @@
-﻿using System;
+﻿using QuanLyDaQuy.Phieu;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,12 +12,12 @@ namespace QuanLyDaQuy.DTO
     {
         public int MaPhieuDV;
         public int MaDV;
-        public float DonGia;
-        public float DonGiaDuocTinh;
+        public double DonGia;
+        public double DonGiaDuocTinh;
         public int SL;
-        public float ThanhTien;
-        public float TraTruoc;
-        public float ConLai;
+        public double ThanhTien;
+        public double TraTruoc;
+        public double ConLai;
         public DateTime NgayGiao;
         public string TinhTrang;
 
@@ -31,6 +33,20 @@ namespace QuanLyDaQuy.DTO
             ConLai = conLai;
             NgayGiao = ngayGiao;
             TinhTrang = tinhTrang;
+        }
+
+        public CT_PhieuDichVu(DataRow data)
+        {
+            MaPhieuDV = (int)data["MaPhieuDV"];
+            MaDV = (int)data["MaDV"];
+            DonGia = (double)data["DonGia"];
+            DonGiaDuocTinh = (double)data["DonGiaDuocTinh"];
+            SL = (int)data["SL"];
+            ThanhTien = (double)data["ThanhTien"];
+            TraTruoc = (double)data["TraTruoc"];
+            ConLai = (double)data["ConLai"];
+            NgayGiao = (DateTime)data["NgayGiao"];
+            TinhTrang = data["TinhTrang"].ToString();
         }
     }
 }

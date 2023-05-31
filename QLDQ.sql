@@ -316,4 +316,7 @@ insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
 (N'Đồng Hồ Cặp Longines L4.960.2.11.7 Và L4.360.2.11.7 38.5 mm - 25 mm' ,  10 , 78016000 , 0)
 
 
+---Dịch vụ---
+
+
 insert into THAMSO values ('SoTienTraTruoc' , 0.5)
