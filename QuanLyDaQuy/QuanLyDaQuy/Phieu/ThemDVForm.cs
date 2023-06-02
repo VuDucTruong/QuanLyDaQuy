@@ -48,7 +48,12 @@ namespace QuanLyDaQuy.Phieu
 
         private void ThemDVForm_Load(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(DataProvider.Instance.ExecuteScalar("select max(MaDV) from DICHVU")) + 1;
+            int id;
+            try
+            {
+                id = Convert.ToInt32(DataProvider.Instance.ExecuteScalar("select max(MaDV) from DICHVU")) + 1;
+            }
+            catch { id = 1; }
             MaDV_tb.Text = id.ToString();
         }
 
