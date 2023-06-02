@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyDaQuy.Phieu;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,12 @@ namespace QuanLyDaQuy.UserControls
         private void ThongTinKhachHang_Load(object sender, EventArgs e)
         {
             kHACHHANGTableAdapter.Fill(this.qLDQDataSet.KHACHHANG);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ThemKHForm themKHForm = new ThemKHForm();
+            themKHForm.ShowDialog();
         }
     }
 }

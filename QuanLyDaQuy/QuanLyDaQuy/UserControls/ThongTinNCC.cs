@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyDaQuy.Phieu;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace QuanLyDaQuy.UserControls
         public ThongTinNCC()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ThemNCCForm themNCCForm = new ThemNCCForm();
+            themNCCForm.ShowDialog();
         }
     }
 }

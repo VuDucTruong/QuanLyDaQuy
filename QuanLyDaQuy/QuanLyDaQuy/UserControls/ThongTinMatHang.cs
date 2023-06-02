@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyDaQuy.Phieu;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,13 @@ namespace QuanLyDaQuy
         private void ThongTinMatHang_Load(object sender, EventArgs e)
         {
             loadSanPhamFullTableAdapter.Fill(qLDQDataSet.loadSanPhamFull);
+            lOAISANPHAMTableAdapter.Fill(qLDQDataSet.LOAISANPHAM);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ThemSPForm themSPForm = new ThemSPForm();
+            themSPForm.ShowDialog();
         }
     }
 }
