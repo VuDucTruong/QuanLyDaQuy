@@ -38,15 +38,15 @@
             this.qLDQDataSet = new QuanLyDaQuy.QLDQDataSet();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.id_tb = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.insert_btn = new System.Windows.Forms.Button();
+            this.update_btn = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Phone_tb = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.KH_tb = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.kHACHHANGTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.KHACHHANGTableAdapter();
@@ -74,6 +74,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -142,27 +143,27 @@
             this.panel1.AutoSize = true;
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.id_tb);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.Phone_tb);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.KH_tb);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Location = new System.Drawing.Point(5, 93);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(872, 143);
             this.panel1.TabIndex = 14;
             // 
-            // textBox3
+            // id_tb
             // 
-            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kHACHHANGBindingSource, "MaKH", true));
-            this.textBox3.Location = new System.Drawing.Point(118, 45);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(211, 22);
-            this.textBox3.TabIndex = 11;
+            this.id_tb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kHACHHANGBindingSource, "MaKH", true));
+            this.id_tb.Location = new System.Drawing.Point(118, 45);
+            this.id_tb.Name = "id_tb";
+            this.id_tb.ReadOnly = true;
+            this.id_tb.Size = new System.Drawing.Size(211, 22);
+            this.id_tb.TabIndex = 11;
             // 
             // label1
             // 
@@ -177,31 +178,32 @@
             // 
             this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.button3);
+            this.flowLayoutPanel1.Controls.Add(this.insert_btn);
+            this.flowLayoutPanel1.Controls.Add(this.update_btn);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(705, 109);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(162, 29);
             this.flowLayoutPanel1.TabIndex = 9;
             // 
-            // button1
+            // insert_btn
             // 
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.insert_btn.Location = new System.Drawing.Point(3, 3);
+            this.insert_btn.Name = "insert_btn";
+            this.insert_btn.Size = new System.Drawing.Size(75, 23);
+            this.insert_btn.TabIndex = 6;
+            this.insert_btn.Text = "Thêm";
+            this.insert_btn.UseVisualStyleBackColor = true;
+            this.insert_btn.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button3
+            // update_btn
             // 
-            this.button3.Location = new System.Drawing.Point(84, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Sửa";
-            this.button3.UseVisualStyleBackColor = true;
+            this.update_btn.Location = new System.Drawing.Point(84, 3);
+            this.update_btn.Name = "update_btn";
+            this.update_btn.Size = new System.Drawing.Size(75, 23);
+            this.update_btn.TabIndex = 8;
+            this.update_btn.Text = "Sửa";
+            this.update_btn.UseVisualStyleBackColor = true;
+            this.update_btn.Click += new System.EventHandler(this.update_btn_Click);
             // 
             // label6
             // 
@@ -212,13 +214,15 @@
             this.label6.TabIndex = 1;
             this.label6.Text = "Số điện thoại : ";
             // 
-            // textBox2
+            // Phone_tb
             // 
-            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kHACHHANGBindingSource, "SDT", true));
-            this.textBox2.Location = new System.Drawing.Point(118, 116);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(211, 22);
-            this.textBox2.TabIndex = 4;
+            this.Phone_tb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kHACHHANGBindingSource, "SDT", true));
+            this.Phone_tb.Location = new System.Drawing.Point(118, 116);
+            this.Phone_tb.Name = "Phone_tb";
+            this.Phone_tb.ReadOnly = true;
+            this.Phone_tb.Size = new System.Drawing.Size(211, 22);
+            this.Phone_tb.TabIndex = 4;
+            this.Phone_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Phone_tb_KeyPress);
             // 
             // label3
             // 
@@ -229,13 +233,14 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Thông tin khách hàng: ";
             // 
-            // textBox1
+            // KH_tb
             // 
-            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kHACHHANGBindingSource, "TenKH", true));
-            this.textBox1.Location = new System.Drawing.Point(118, 79);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(317, 22);
-            this.textBox1.TabIndex = 3;
+            this.KH_tb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.kHACHHANGBindingSource, "TenKH", true));
+            this.KH_tb.Location = new System.Drawing.Point(118, 79);
+            this.KH_tb.Name = "KH_tb";
+            this.KH_tb.ReadOnly = true;
+            this.KH_tb.Size = new System.Drawing.Size(317, 22);
+            this.KH_tb.TabIndex = 3;
             // 
             // label5
             // 
@@ -292,11 +297,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button insert_btn;
+        private System.Windows.Forms.Button update_btn;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Phone_tb;
+        private System.Windows.Forms.TextBox KH_tb;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
@@ -306,7 +311,7 @@
         private System.Windows.Forms.BindingSource kHACHHANGBindingSource;
         private QLDQDataSet qLDQDataSet;
         private QLDQDataSetTableAdapters.KHACHHANGTableAdapter kHACHHANGTableAdapter;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox id_tb;
         private System.Windows.Forms.Label label1;
     }
 }

@@ -42,6 +42,11 @@
             this.qLDQDataSet = new QuanLyDaQuy.QLDQDataSet();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lOAISANPHAMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -58,20 +63,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.loadSanPhamFullTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadSanPhamFullTableAdapter();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.lOAISANPHAMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lOAISANPHAMTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.LOAISANPHAMTableAdapter();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.sANPHAMTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.SANPHAMTableAdapter();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loadSanPhamFullBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).BeginInit();
             this.panel1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lOAISANPHAMBindingSource)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -90,6 +90,7 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -121,7 +122,7 @@
             this.mãSảnPhẩmDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.mãSảnPhẩmDataGridViewTextBoxColumn.Name = "mãSảnPhẩmDataGridViewTextBoxColumn";
             this.mãSảnPhẩmDataGridViewTextBoxColumn.ReadOnly = true;
-            this.mãSảnPhẩmDataGridViewTextBoxColumn.Width = 113;
+            this.mãSảnPhẩmDataGridViewTextBoxColumn.Width = 104;
             // 
             // tênSảnPhẩmDataGridViewTextBoxColumn
             // 
@@ -130,7 +131,7 @@
             this.tênSảnPhẩmDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tênSảnPhẩmDataGridViewTextBoxColumn.Name = "tênSảnPhẩmDataGridViewTextBoxColumn";
             this.tênSảnPhẩmDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tênSảnPhẩmDataGridViewTextBoxColumn.Width = 118;
+            this.tênSảnPhẩmDataGridViewTextBoxColumn.Width = 109;
             // 
             // tênLoạiSảnPhẩmDataGridViewTextBoxColumn
             // 
@@ -139,7 +140,7 @@
             this.tênLoạiSảnPhẩmDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tênLoạiSảnPhẩmDataGridViewTextBoxColumn.Name = "tênLoạiSảnPhẩmDataGridViewTextBoxColumn";
             this.tênLoạiSảnPhẩmDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tênLoạiSảnPhẩmDataGridViewTextBoxColumn.Width = 143;
+            this.tênLoạiSảnPhẩmDataGridViewTextBoxColumn.Width = 104;
             // 
             // đơnGiáBánDataGridViewTextBoxColumn
             // 
@@ -148,7 +149,6 @@
             this.đơnGiáBánDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.đơnGiáBánDataGridViewTextBoxColumn.Name = "đơnGiáBánDataGridViewTextBoxColumn";
             this.đơnGiáBánDataGridViewTextBoxColumn.ReadOnly = true;
-            this.đơnGiáBánDataGridViewTextBoxColumn.Width = 108;
             // 
             // đơnGiáMuaDataGridViewTextBoxColumn
             // 
@@ -157,7 +157,7 @@
             this.đơnGiáMuaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.đơnGiáMuaDataGridViewTextBoxColumn.Name = "đơnGiáMuaDataGridViewTextBoxColumn";
             this.đơnGiáMuaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.đơnGiáMuaDataGridViewTextBoxColumn.Width = 111;
+            this.đơnGiáMuaDataGridViewTextBoxColumn.Width = 102;
             // 
             // sốLượngTồnDataGridViewTextBoxColumn
             // 
@@ -166,7 +166,7 @@
             this.sốLượngTồnDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.sốLượngTồnDataGridViewTextBoxColumn.Name = "sốLượngTồnDataGridViewTextBoxColumn";
             this.sốLượngTồnDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sốLượngTồnDataGridViewTextBoxColumn.Width = 110;
+            this.sốLượngTồnDataGridViewTextBoxColumn.Width = 101;
             // 
             // đơnVịTínhDataGridViewTextBoxColumn
             // 
@@ -175,7 +175,7 @@
             this.đơnVịTínhDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.đơnVịTínhDataGridViewTextBoxColumn.Name = "đơnVịTínhDataGridViewTextBoxColumn";
             this.đơnVịTínhDataGridViewTextBoxColumn.ReadOnly = true;
-            this.đơnVịTínhDataGridViewTextBoxColumn.Width = 96;
+            this.đơnVịTínhDataGridViewTextBoxColumn.Width = 71;
             // 
             // loadSanPhamFullBindingSource
             // 
@@ -221,6 +221,49 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(945, 142);
             this.panel1.TabIndex = 17;
+            // 
+            // textBox5
+            // 
+            this.textBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadSanPhamFullBindingSource, "Mã sản phẩm", true));
+            this.textBox5.Location = new System.Drawing.Point(102, 49);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
+            this.textBox5.Size = new System.Drawing.Size(177, 22);
+            this.textBox5.TabIndex = 21;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(5, 52);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(93, 16);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "Mã mặt hàng : ";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadSanPhamFullBindingSource, "Đơn vị tính", true));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(443, 110);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(177, 24);
+            this.comboBox2.TabIndex = 19;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadSanPhamFullBindingSource, "Tên loại sản phẩm", true));
+            this.comboBox1.DataSource = this.lOAISANPHAMBindingSource;
+            this.comboBox1.DisplayMember = "TenLSP";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(443, 77);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(177, 24);
+            this.comboBox1.TabIndex = 18;
+            // 
+            // lOAISANPHAMBindingSource
+            // 
+            this.lOAISANPHAMBindingSource.DataMember = "LOAISANPHAM";
+            this.lOAISANPHAMBindingSource.DataSource = this.qLDQDataSet;
             // 
             // textBox4
             // 
@@ -366,56 +409,13 @@
             // 
             this.loadSanPhamFullTableAdapter.ClearBeforeFill = true;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadSanPhamFullBindingSource, "Tên loại sản phẩm", true));
-            this.comboBox1.DataSource = this.lOAISANPHAMBindingSource;
-            this.comboBox1.DisplayMember = "TenLSP";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(443, 77);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(177, 24);
-            this.comboBox1.TabIndex = 18;
-            // 
-            // lOAISANPHAMBindingSource
-            // 
-            this.lOAISANPHAMBindingSource.DataMember = "LOAISANPHAM";
-            this.lOAISANPHAMBindingSource.DataSource = this.qLDQDataSet;
-            // 
             // lOAISANPHAMTableAdapter
             // 
             this.lOAISANPHAMTableAdapter.ClearBeforeFill = true;
             // 
-            // comboBox2
-            // 
-            this.comboBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadSanPhamFullBindingSource, "Đơn vị tính", true));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(443, 110);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(177, 24);
-            this.comboBox2.TabIndex = 19;
-            // 
             // sANPHAMTableAdapter
             // 
             this.sANPHAMTableAdapter.ClearBeforeFill = true;
-            // 
-            // textBox5
-            // 
-            this.textBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadSanPhamFullBindingSource, "Mã sản phẩm", true));
-            this.textBox5.Location = new System.Drawing.Point(102, 49);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(177, 22);
-            this.textBox5.TabIndex = 21;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(5, 52);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(93, 16);
-            this.label10.TabIndex = 20;
-            this.label10.Text = "Mã mặt hàng : ";
             // 
             // ThongTinMatHang
             // 
@@ -434,8 +434,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lOAISANPHAMBindingSource)).EndInit();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
