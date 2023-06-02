@@ -33,50 +33,29 @@ namespace QuanLyDaQuy
         {
             
             ThemDVForm themDVForm = new ThemDVForm();
+            themDVForm.ThongTinDichVu = this;
             themDVForm.ShowDialog();
-           /* int MaDV = Convert.ToInt32(textBox3.Text);
-      
-            int id = Convert.ToInt32(DataProvider.Instance.ExecuteScalar("select max(MaDV) from DICHVU")) + 1;
-            dataGridView1.Rows[id-1].Selected = true;
-            if (!string.IsNullOrEmpty(textBox3.Text))
-            {
-                if(MaDV != id)
-                {
-                    textBox3.Text = id.ToString();
-                    textBox1.Text = textBox2.Text = "";
-                    MessageBox.Show("Hãy điền thông tin sản phẩm mới !", "Thông báo");
-                }
-                else
-                {
-                    if(!string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrEmpty(textBox2.Text))
-                    {
-                        string query = string.Format("Insert into DICHVU values ( N'{0}' , {1} )", textBox1.Text, Convert.ToInt32(textBox2.Text));
-                        int data = DataProvider.Instance.ExecuteNonQuery(query);
-                        if (data > 0)
-                        {
-                            MessageBox.Show("Đã thêm thành công !", "Thành công");
-                            RefreshData();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Thêm thất bại !", "Thất bại");
-                        }
-                        MessageBox.Show("What!!!");
-                    }    
-                }
-            }*/
+         
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            int MaDV = Convert.ToInt32(textBox3.Text);
-            if (!string.IsNullOrEmpty(textBox1.Text) && !string.IsNullOrEmpty(textBox2.Text))
+            if(!isEditableTextbox())
             {
-                string query = string.Format("update DICHVU set TenDV = N'{0}' , DonGiaDV = {1} where MaDV = {2}", textBox1.Text, Convert.ToInt32(textBox2.Text) , MaDV);
+                update_btn.Text = "Cập nhật lại";
+                MessageBox.Show("Hãy cập nhật lại thông tin của dịch vụ !", "Thông báo");
+                return;
+            }
+
+            int MaDV = Convert.ToInt32(MaDV_tb.Text);
+            if (!string.IsNullOrEmpty(DV_tb.Text) && !string.IsNullOrEmpty(DonGia_tb.Text))
+            {
+                string query = string.Format("update DICHVU set TenDV = N'{0}' , DonGiaDV = {1} where MaDV = {2}", DV_tb.Text, Convert.ToInt32(DonGia_tb.Text) , MaDV);
                 int data = DataProvider.Instance.ExecuteNonQuery(query);
                 if (data > 0)
                 {
                     MessageBox.Show("Đã cập nhật thành công !", "Thành công");
+                    update_btn.Text = "Sửa";
                     RefreshData();
                 }
                 else
@@ -94,6 +73,15 @@ namespace QuanLyDaQuy
             {
                 e.Handled = true;
             }
+        }
+
+        public Boolean isEditableTextbox()
+        {
+            DV_tb.ReadOnly = !DV_tb.ReadOnly;
+            DonGia_tb.ReadOnly = !DonGia_tb.ReadOnly;
+
+            return DV_tb.ReadOnly && DonGia_tb.ReadOnly;
+
         }
     }
 }

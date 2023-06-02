@@ -32,11 +32,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.MaDV_tb = new System.Windows.Forms.TextBox();
+            this.DV_tb = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.DonGia_tb = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -51,6 +51,7 @@
             this.button2.TabIndex = 42;
             this.button2.Text = "Hủy bỏ";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -62,6 +63,7 @@
             this.button1.TabIndex = 41;
             this.button1.Text = "Thêm";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -75,11 +77,11 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.label10, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox5, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.MaDV_tb, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.DV_tb, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label6, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.DonGia_tb, 3, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(8, 83);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
@@ -98,14 +100,22 @@
             this.label10.TabIndex = 34;
             this.label10.Text = "Mã dịch vụ : ";
             // 
-            // textBox5
+            // MaDV_tb
             // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.Location = new System.Drawing.Point(93, 21);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(269, 22);
-            this.textBox5.TabIndex = 35;
+            this.MaDV_tb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.MaDV_tb.Location = new System.Drawing.Point(93, 21);
+            this.MaDV_tb.Name = "MaDV_tb";
+            this.MaDV_tb.ReadOnly = true;
+            this.MaDV_tb.Size = new System.Drawing.Size(269, 22);
+            this.MaDV_tb.TabIndex = 35;
+            // 
+            // DV_tb
+            // 
+            this.DV_tb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.DV_tb.Location = new System.Drawing.Point(93, 83);
+            this.DV_tb.Name = "DV_tb";
+            this.DV_tb.Size = new System.Drawing.Size(269, 22);
+            this.DV_tb.TabIndex = 24;
             // 
             // label5
             // 
@@ -117,14 +127,6 @@
             this.label5.TabIndex = 22;
             this.label5.Text = "Dịch vụ : ";
             // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(93, 83);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(269, 22);
-            this.textBox1.TabIndex = 24;
-            // 
             // label6
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -135,13 +137,14 @@
             this.label6.TabIndex = 23;
             this.label6.Text = "Đơn giá : ";
             // 
-            // textBox2
+            // DonGia_tb
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(440, 21);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(331, 22);
-            this.textBox2.TabIndex = 25;
+            this.DonGia_tb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.DonGia_tb.Location = new System.Drawing.Point(440, 21);
+            this.DonGia_tb.Name = "DonGia_tb";
+            this.DonGia_tb.Size = new System.Drawing.Size(331, 22);
+            this.DonGia_tb.TabIndex = 25;
+            this.DonGia_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DonGia_tb_KeyPress);
             // 
             // label1
             // 
@@ -166,6 +169,7 @@
             this.Controls.Add(this.label1);
             this.Name = "ThemDVForm";
             this.Text = "ThemDVForm";
+            this.Load += new System.EventHandler(this.ThemDVForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -179,11 +183,11 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox MaDV_tb;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox DV_tb;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox DonGia_tb;
         private System.Windows.Forms.Label label1;
     }
 }
