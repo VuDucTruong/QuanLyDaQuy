@@ -42,11 +42,10 @@
             this.qLDQDataSet = new QuanLyDaQuy.QLDQDataSet();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.LSP_tb = new System.Windows.Forms.TextBox();
             this.DVT_tb = new System.Windows.Forms.TextBox();
+            this.loadLoaiSanPhamBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.MaSP_tb = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.LSP_cb = new System.Windows.Forms.ComboBox();
             this.SLT_tb = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -61,17 +60,18 @@
             this.TenSP_tb = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.LSP_tb = new System.Windows.Forms.TextBox();
+            this.LSP_cb = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.loadSanPhamFullTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadSanPhamFullTableAdapter();
-            this.loadLoaiSanPhamBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.loadLoaiSanPhamTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadLoaiSanPhamTableAdapter();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loadSanPhamFullBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).BeginInit();
             this.panel1.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loadLoaiSanPhamBindingSource)).BeginInit();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -223,16 +223,6 @@
             this.panel1.Size = new System.Drawing.Size(920, 145);
             this.panel1.TabIndex = 17;
             // 
-            // LSP_tb
-            // 
-            this.LSP_tb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadSanPhamFullBindingSource, "Tên loại sản phẩm", true));
-            this.LSP_tb.Location = new System.Drawing.Point(443, 82);
-            this.LSP_tb.Multiline = true;
-            this.LSP_tb.Name = "LSP_tb";
-            this.LSP_tb.ReadOnly = true;
-            this.LSP_tb.Size = new System.Drawing.Size(177, 24);
-            this.LSP_tb.TabIndex = 23;
-            // 
             // DVT_tb
             // 
             this.DVT_tb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadLoaiSanPhamBindingSource, "DVT", true));
@@ -241,6 +231,11 @@
             this.DVT_tb.ReadOnly = true;
             this.DVT_tb.Size = new System.Drawing.Size(177, 22);
             this.DVT_tb.TabIndex = 22;
+            // 
+            // loadLoaiSanPhamBindingSource
+            // 
+            this.loadLoaiSanPhamBindingSource.DataMember = "loadLoaiSanPham";
+            this.loadLoaiSanPhamBindingSource.DataSource = this.qLDQDataSet;
             // 
             // MaSP_tb
             // 
@@ -259,18 +254,6 @@
             this.label10.Size = new System.Drawing.Size(93, 16);
             this.label10.TabIndex = 20;
             this.label10.Text = "Mã mặt hàng : ";
-            // 
-            // LSP_cb
-            // 
-            this.LSP_cb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadSanPhamFullBindingSource, "Tên loại sản phẩm", true));
-            this.LSP_cb.DataSource = this.loadLoaiSanPhamBindingSource;
-            this.LSP_cb.DisplayMember = "TenLSP";
-            this.LSP_cb.FormattingEnabled = true;
-            this.LSP_cb.ItemHeight = 16;
-            this.LSP_cb.Location = new System.Drawing.Point(443, 82);
-            this.LSP_cb.Name = "LSP_cb";
-            this.LSP_cb.Size = new System.Drawing.Size(177, 24);
-            this.LSP_cb.TabIndex = 18;
             // 
             // SLT_tb
             // 
@@ -409,26 +392,43 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "Mặt hàng : ";
             // 
+            // LSP_tb
+            // 
+            this.LSP_tb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadSanPhamFullBindingSource, "Tên loại sản phẩm", true));
+            this.LSP_tb.Location = new System.Drawing.Point(443, 82);
+            this.LSP_tb.Multiline = true;
+            this.LSP_tb.Name = "LSP_tb";
+            this.LSP_tb.ReadOnly = true;
+            this.LSP_tb.Size = new System.Drawing.Size(177, 24);
+            this.LSP_tb.TabIndex = 23;
+            // 
+            // LSP_cb
+            // 
+            this.LSP_cb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadSanPhamFullBindingSource, "Tên loại sản phẩm", true));
+            this.LSP_cb.DataSource = this.loadLoaiSanPhamBindingSource;
+            this.LSP_cb.DisplayMember = "TenLSP";
+            this.LSP_cb.FormattingEnabled = true;
+            this.LSP_cb.ItemHeight = 16;
+            this.LSP_cb.Location = new System.Drawing.Point(443, 82);
+            this.LSP_cb.Name = "LSP_cb";
+            this.LSP_cb.Size = new System.Drawing.Size(177, 24);
+            this.LSP_cb.TabIndex = 18;
+            // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(367, 9);
+            this.label2.Location = new System.Drawing.Point(305, 10);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(276, 32);
+            this.label2.Size = new System.Drawing.Size(338, 32);
             this.label2.TabIndex = 16;
-            this.label2.Text = "Thông tin mặt hàng";
+            this.label2.Text = "THÔNG TIN MẶT HÀNG";
             // 
             // loadSanPhamFullTableAdapter
             // 
             this.loadSanPhamFullTableAdapter.ClearBeforeFill = true;
-            // 
-            // loadLoaiSanPhamBindingSource
-            // 
-            this.loadLoaiSanPhamBindingSource.DataMember = "loadLoaiSanPham";
-            this.loadLoaiSanPhamBindingSource.DataSource = this.qLDQDataSet;
             // 
             // loadLoaiSanPhamTableAdapter
             // 
@@ -451,9 +451,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.loadLoaiSanPhamBindingSource)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.loadLoaiSanPhamBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
