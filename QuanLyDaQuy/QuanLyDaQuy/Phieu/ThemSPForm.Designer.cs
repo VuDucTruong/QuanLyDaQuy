@@ -28,25 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.MaSP_tb = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.LoaiSP_cb = new System.Windows.Forms.ComboBox();
+            this.SLT_tb = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Mua_tb = new System.Windows.Forms.TextBox();
+            this.TenSP_tb = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.DVT_tb = new System.Windows.Forms.TextBox();
+            this.insert_btn = new System.Windows.Forms.Button();
+            this.update_btn = new System.Windows.Forms.Button();
+            this.qLDQDataSet = new QuanLyDaQuy.QLDQDataSet();
+            this.loadLoaiSanPhamBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.loadLoaiSanPhamTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadLoaiSanPhamTableAdapter();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loadLoaiSanPhamBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -61,13 +65,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "THÊM MẶT HÀNG";
             // 
-            // textBox5
+            // MaSP_tb
             // 
-            this.textBox5.Location = new System.Drawing.Point(106, 5);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(177, 22);
-            this.textBox5.TabIndex = 35;
+            this.MaSP_tb.Location = new System.Drawing.Point(106, 5);
+            this.MaSP_tb.Name = "MaSP_tb";
+            this.MaSP_tb.ReadOnly = true;
+            this.MaSP_tb.Size = new System.Drawing.Size(177, 22);
+            this.MaSP_tb.TabIndex = 35;
             // 
             // label10
             // 
@@ -78,35 +82,29 @@
             this.label10.TabIndex = 34;
             this.label10.Text = "Mã mặt hàng : ";
             // 
-            // comboBox2
+            // LoaiSP_cb
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(491, 37);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(177, 24);
-            this.comboBox2.TabIndex = 33;
+            this.LoaiSP_cb.DataSource = this.loadLoaiSanPhamBindingSource;
+            this.LoaiSP_cb.DisplayMember = "TenLSP";
+            this.LoaiSP_cb.FormattingEnabled = true;
+            this.LoaiSP_cb.Location = new System.Drawing.Point(491, 5);
+            this.LoaiSP_cb.Name = "LoaiSP_cb";
+            this.LoaiSP_cb.Size = new System.Drawing.Size(177, 24);
+            this.LoaiSP_cb.TabIndex = 32;
             // 
-            // comboBox1
+            // SLT_tb
             // 
-            this.comboBox1.DisplayMember = "TenLSP";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(491, 5);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(177, 24);
-            this.comboBox1.TabIndex = 32;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(491, 69);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(177, 22);
-            this.textBox4.TabIndex = 31;
-            this.textBox4.Text = "\r\n";
+            this.SLT_tb.Location = new System.Drawing.Point(491, 67);
+            this.SLT_tb.Name = "SLT_tb";
+            this.SLT_tb.Size = new System.Drawing.Size(177, 22);
+            this.SLT_tb.TabIndex = 31;
+            this.SLT_tb.Text = "\r\n";
+            this.SLT_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SLT_tb_KeyPress);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(383, 66);
+            this.label7.Location = new System.Drawing.Point(383, 64);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(87, 16);
             this.label7.TabIndex = 30;
@@ -130,41 +128,25 @@
             this.label9.TabIndex = 28;
             this.label9.Text = "Loại mặt hàng : ";
             // 
-            // textBox3
+            // Mua_tb
             // 
-            this.textBox3.Location = new System.Drawing.Point(106, 99);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(177, 22);
-            this.textBox3.TabIndex = 27;
-            this.textBox3.Text = "\r\n";
+            this.Mua_tb.Location = new System.Drawing.Point(106, 67);
+            this.Mua_tb.Name = "Mua_tb";
+            this.Mua_tb.Size = new System.Drawing.Size(177, 22);
+            this.Mua_tb.TabIndex = 25;
+            this.Mua_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Mua_tb_KeyPress);
             // 
-            // label2
+            // TenSP_tb
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(5, 96);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(85, 16);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "Đơn giá bán :";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(106, 69);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(177, 22);
-            this.textBox2.TabIndex = 25;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(106, 37);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(177, 22);
-            this.textBox1.TabIndex = 24;
+            this.TenSP_tb.Location = new System.Drawing.Point(106, 37);
+            this.TenSP_tb.Name = "TenSP_tb";
+            this.TenSP_tb.Size = new System.Drawing.Size(177, 22);
+            this.TenSP_tb.TabIndex = 24;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(5, 66);
+            this.label6.Location = new System.Drawing.Point(5, 64);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(91, 16);
             this.label6.TabIndex = 23;
@@ -188,61 +170,86 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 275F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.Controls.Add(this.DVT_tb, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.label10, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox4, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox2, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.SLT_tb, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.label7, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.textBox5, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox1, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.MaSP_tb, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.LoaiSP_cb, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label8, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.TenSP_tb, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.Mua_tb, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label9, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.textBox3, 1, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 83);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(776, 128);
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(776, 126);
             this.tableLayoutPanel1.TabIndex = 36;
             // 
-            // button1
+            // DVT_tb
             // 
-            this.button1.Location = new System.Drawing.Point(605, 237);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 37;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.DVT_tb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadLoaiSanPhamBindingSource, "DVT", true));
+            this.DVT_tb.Location = new System.Drawing.Point(491, 37);
+            this.DVT_tb.Name = "DVT_tb";
+            this.DVT_tb.Size = new System.Drawing.Size(177, 22);
+            this.DVT_tb.TabIndex = 39;
+            this.DVT_tb.Text = "\r\n";
             // 
-            // button2
+            // insert_btn
             // 
-            this.button2.Location = new System.Drawing.Point(713, 237);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 38;
-            this.button2.Text = "Hủy bỏ";
-            this.button2.UseVisualStyleBackColor = true;
+            this.insert_btn.Location = new System.Drawing.Point(605, 237);
+            this.insert_btn.Name = "insert_btn";
+            this.insert_btn.Size = new System.Drawing.Size(75, 23);
+            this.insert_btn.TabIndex = 37;
+            this.insert_btn.Text = "Thêm";
+            this.insert_btn.UseVisualStyleBackColor = true;
+            this.insert_btn.Click += new System.EventHandler(this.insert_btn_Click);
+            // 
+            // update_btn
+            // 
+            this.update_btn.Location = new System.Drawing.Point(713, 237);
+            this.update_btn.Name = "update_btn";
+            this.update_btn.Size = new System.Drawing.Size(75, 23);
+            this.update_btn.TabIndex = 38;
+            this.update_btn.Text = "Hủy bỏ";
+            this.update_btn.UseVisualStyleBackColor = true;
+            this.update_btn.Click += new System.EventHandler(this.update_btn_Click);
+            // 
+            // qLDQDataSet
+            // 
+            this.qLDQDataSet.DataSetName = "QLDQDataSet";
+            this.qLDQDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // loadLoaiSanPhamBindingSource
+            // 
+            this.loadLoaiSanPhamBindingSource.DataMember = "loadLoaiSanPham";
+            this.loadLoaiSanPhamBindingSource.DataSource = this.qLDQDataSet;
+            // 
+            // loadLoaiSanPhamTableAdapter
+            // 
+            this.loadLoaiSanPhamTableAdapter.ClearBeforeFill = true;
             // 
             // ThemSPForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(801, 279);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.update_btn);
+            this.Controls.Add(this.insert_btn);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label1);
             this.Name = "ThemSPForm";
             this.Text = "ThemSPForm";
+            this.Load += new System.EventHandler(this.ThemSPForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loadLoaiSanPhamBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,22 +258,23 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox MaSP_tb;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.ComboBox LoaiSP_cb;
+        private System.Windows.Forms.TextBox SLT_tb;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Mua_tb;
+        private System.Windows.Forms.TextBox TenSP_tb;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button insert_btn;
+        private System.Windows.Forms.Button update_btn;
+        private System.Windows.Forms.TextBox DVT_tb;
+        private QLDQDataSet qLDQDataSet;
+        private System.Windows.Forms.BindingSource loadLoaiSanPhamBindingSource;
+        private QLDQDataSetTableAdapters.loadLoaiSanPhamTableAdapter loadLoaiSanPhamTableAdapter;
     }
 }

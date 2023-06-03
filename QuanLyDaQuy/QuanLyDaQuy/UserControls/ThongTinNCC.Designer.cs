@@ -163,8 +163,7 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Location = new System.Drawing.Point(5, 93);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(0, 0, 12, 0);
-            this.panel1.Size = new System.Drawing.Size(942, 145);
+            this.panel1.Size = new System.Drawing.Size(930, 145);
             this.panel1.TabIndex = 14;
             // 
             // MaNCC_tb

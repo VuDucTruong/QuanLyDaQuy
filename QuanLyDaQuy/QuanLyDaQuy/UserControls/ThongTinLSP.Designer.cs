@@ -191,8 +191,7 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Location = new System.Drawing.Point(3, 76);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            this.panel1.Size = new System.Drawing.Size(542, 164);
+            this.panel1.Size = new System.Drawing.Size(522, 164);
             this.panel1.TabIndex = 14;
             // 
             // MaDVT_tb_1
@@ -418,8 +417,8 @@
             this.panel3.Controls.Add(this.label11);
             this.panel3.Location = new System.Drawing.Point(554, 93);
             this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(0, 40, 10, 0);
-            this.panel3.Size = new System.Drawing.Size(397, 144);
+            this.panel3.Padding = new System.Windows.Forms.Padding(0, 40, 0, 0);
+            this.panel3.Size = new System.Drawing.Size(387, 144);
             this.panel3.TabIndex = 15;
             // 
             // flowLayoutPanel2

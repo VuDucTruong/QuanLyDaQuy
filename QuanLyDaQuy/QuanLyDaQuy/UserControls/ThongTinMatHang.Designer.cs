@@ -42,36 +42,36 @@
             this.qLDQDataSet = new QuanLyDaQuy.QLDQDataSet();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.LSP_tb = new System.Windows.Forms.TextBox();
+            this.DVT_tb = new System.Windows.Forms.TextBox();
+            this.MaSP_tb = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.lOAISANPHAMBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.LSP_cb = new System.Windows.Forms.ComboBox();
+            this.SLT_tb = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.Ban_tb = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.insert_btn = new System.Windows.Forms.Button();
+            this.update_btn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Mua_tb = new System.Windows.Forms.TextBox();
+            this.TenSP_tb = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.loadSanPhamFullTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadSanPhamFullTableAdapter();
-            this.lOAISANPHAMTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.LOAISANPHAMTableAdapter();
-            this.sANPHAMTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.SANPHAMTableAdapter();
+            this.loadLoaiSanPhamBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.loadLoaiSanPhamTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadLoaiSanPhamTableAdapter();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loadSanPhamFullBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lOAISANPHAMBindingSource)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.loadLoaiSanPhamBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -201,35 +201,55 @@
             this.panel1.AutoSize = true;
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.DVT_tb);
+            this.panel1.Controls.Add(this.MaSP_tb);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.comboBox2);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.SLT_tb);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.Ban_tb);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.Mua_tb);
+            this.panel1.Controls.Add(this.TenSP_tb);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.LSP_tb);
+            this.panel1.Controls.Add(this.LSP_cb);
             this.panel1.Location = new System.Drawing.Point(5, 93);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(945, 145);
+            this.panel1.Size = new System.Drawing.Size(920, 145);
             this.panel1.TabIndex = 17;
             // 
-            // textBox5
+            // LSP_tb
             // 
-            this.textBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadSanPhamFullBindingSource, "Mã sản phẩm", true));
-            this.textBox5.Location = new System.Drawing.Point(102, 49);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(177, 22);
-            this.textBox5.TabIndex = 21;
+            this.LSP_tb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadSanPhamFullBindingSource, "Tên loại sản phẩm", true));
+            this.LSP_tb.Location = new System.Drawing.Point(443, 82);
+            this.LSP_tb.Multiline = true;
+            this.LSP_tb.Name = "LSP_tb";
+            this.LSP_tb.ReadOnly = true;
+            this.LSP_tb.Size = new System.Drawing.Size(177, 24);
+            this.LSP_tb.TabIndex = 23;
+            // 
+            // DVT_tb
+            // 
+            this.DVT_tb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadLoaiSanPhamBindingSource, "DVT", true));
+            this.DVT_tb.Location = new System.Drawing.Point(443, 113);
+            this.DVT_tb.Name = "DVT_tb";
+            this.DVT_tb.ReadOnly = true;
+            this.DVT_tb.Size = new System.Drawing.Size(177, 22);
+            this.DVT_tb.TabIndex = 22;
+            // 
+            // MaSP_tb
+            // 
+            this.MaSP_tb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadSanPhamFullBindingSource, "Mã sản phẩm", true));
+            this.MaSP_tb.Location = new System.Drawing.Point(102, 49);
+            this.MaSP_tb.Name = "MaSP_tb";
+            this.MaSP_tb.ReadOnly = true;
+            this.MaSP_tb.Size = new System.Drawing.Size(177, 22);
+            this.MaSP_tb.TabIndex = 21;
             // 
             // label10
             // 
@@ -240,39 +260,28 @@
             this.label10.TabIndex = 20;
             this.label10.Text = "Mã mặt hàng : ";
             // 
-            // comboBox2
+            // LSP_cb
             // 
-            this.comboBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadSanPhamFullBindingSource, "Đơn vị tính", true));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(443, 110);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(177, 24);
-            this.comboBox2.TabIndex = 19;
+            this.LSP_cb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadSanPhamFullBindingSource, "Tên loại sản phẩm", true));
+            this.LSP_cb.DataSource = this.loadLoaiSanPhamBindingSource;
+            this.LSP_cb.DisplayMember = "TenLSP";
+            this.LSP_cb.FormattingEnabled = true;
+            this.LSP_cb.ItemHeight = 16;
+            this.LSP_cb.Location = new System.Drawing.Point(443, 82);
+            this.LSP_cb.Name = "LSP_cb";
+            this.LSP_cb.Size = new System.Drawing.Size(177, 24);
+            this.LSP_cb.TabIndex = 18;
             // 
-            // comboBox1
+            // SLT_tb
             // 
-            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadSanPhamFullBindingSource, "Tên loại sản phẩm", true));
-            this.comboBox1.DataSource = this.lOAISANPHAMBindingSource;
-            this.comboBox1.DisplayMember = "TenLSP";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(443, 77);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(177, 24);
-            this.comboBox1.TabIndex = 18;
-            // 
-            // lOAISANPHAMBindingSource
-            // 
-            this.lOAISANPHAMBindingSource.DataMember = "LOAISANPHAM";
-            this.lOAISANPHAMBindingSource.DataSource = this.qLDQDataSet;
-            // 
-            // textBox4
-            // 
-            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadSanPhamFullBindingSource, "Số lượng tồn", true));
-            this.textBox4.Location = new System.Drawing.Point(738, 49);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(177, 22);
-            this.textBox4.TabIndex = 17;
-            this.textBox4.Text = "\r\n";
+            this.SLT_tb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadSanPhamFullBindingSource, "Số lượng tồn", true));
+            this.SLT_tb.Location = new System.Drawing.Point(738, 49);
+            this.SLT_tb.Name = "SLT_tb";
+            this.SLT_tb.ReadOnly = true;
+            this.SLT_tb.Size = new System.Drawing.Size(177, 22);
+            this.SLT_tb.TabIndex = 17;
+            this.SLT_tb.Text = "\r\n";
+            this.SLT_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SLT_tb_KeyPress);
             // 
             // label7
             // 
@@ -295,21 +304,22 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadSanPhamFullBindingSource, "Tên loại sản phẩm", true));
             this.label9.Location = new System.Drawing.Point(337, 80);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(100, 16);
             this.label9.TabIndex = 12;
             this.label9.Text = "Loại mặt hàng : ";
             // 
-            // textBox3
+            // Ban_tb
             // 
-            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadSanPhamFullBindingSource, "Đơn giá bán", true));
-            this.textBox3.Location = new System.Drawing.Point(443, 46);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(177, 22);
-            this.textBox3.TabIndex = 11;
-            this.textBox3.Text = "\r\n";
+            this.Ban_tb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadSanPhamFullBindingSource, "Đơn giá bán", true));
+            this.Ban_tb.Location = new System.Drawing.Point(443, 46);
+            this.Ban_tb.Name = "Ban_tb";
+            this.Ban_tb.ReadOnly = true;
+            this.Ban_tb.Size = new System.Drawing.Size(177, 22);
+            this.Ban_tb.TabIndex = 11;
+            this.Ban_tb.Text = "\r\n";
+            this.Ban_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Mua_tb_KeyPress);
             // 
             // label1
             // 
@@ -324,33 +334,34 @@
             // 
             this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.button3);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(778, 108);
+            this.flowLayoutPanel1.Controls.Add(this.insert_btn);
+            this.flowLayoutPanel1.Controls.Add(this.update_btn);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(753, 108);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(162, 32);
             this.flowLayoutPanel1.TabIndex = 9;
             // 
-            // button1
+            // insert_btn
             // 
-            this.button1.AutoSize = true;
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 26);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.insert_btn.AutoSize = true;
+            this.insert_btn.Location = new System.Drawing.Point(3, 3);
+            this.insert_btn.Name = "insert_btn";
+            this.insert_btn.Size = new System.Drawing.Size(75, 26);
+            this.insert_btn.TabIndex = 6;
+            this.insert_btn.Text = "Thêm";
+            this.insert_btn.UseVisualStyleBackColor = true;
+            this.insert_btn.Click += new System.EventHandler(this.insert_btn_Click);
             // 
-            // button3
+            // update_btn
             // 
-            this.button3.AutoSize = true;
-            this.button3.Location = new System.Drawing.Point(84, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 26);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Sửa";
-            this.button3.UseVisualStyleBackColor = true;
+            this.update_btn.AutoSize = true;
+            this.update_btn.Location = new System.Drawing.Point(84, 3);
+            this.update_btn.Name = "update_btn";
+            this.update_btn.Size = new System.Drawing.Size(75, 26);
+            this.update_btn.TabIndex = 8;
+            this.update_btn.Text = "Sửa";
+            this.update_btn.UseVisualStyleBackColor = true;
+            this.update_btn.Click += new System.EventHandler(this.update_btn_Click);
             // 
             // label3
             // 
@@ -361,21 +372,24 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Thông tin mặt hàng : ";
             // 
-            // textBox2
+            // Mua_tb
             // 
-            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadSanPhamFullBindingSource, "Đơn giá mua", true));
-            this.textBox2.Location = new System.Drawing.Point(102, 113);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(177, 22);
-            this.textBox2.TabIndex = 4;
+            this.Mua_tb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadSanPhamFullBindingSource, "Đơn giá mua", true));
+            this.Mua_tb.Location = new System.Drawing.Point(102, 113);
+            this.Mua_tb.Name = "Mua_tb";
+            this.Mua_tb.ReadOnly = true;
+            this.Mua_tb.Size = new System.Drawing.Size(177, 22);
+            this.Mua_tb.TabIndex = 4;
+            this.Mua_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Mua_tb_KeyPress);
             // 
-            // textBox1
+            // TenSP_tb
             // 
-            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadSanPhamFullBindingSource, "Tên sản phẩm", true));
-            this.textBox1.Location = new System.Drawing.Point(102, 82);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(177, 22);
-            this.textBox1.TabIndex = 3;
+            this.TenSP_tb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadSanPhamFullBindingSource, "Tên sản phẩm", true));
+            this.TenSP_tb.Location = new System.Drawing.Point(102, 82);
+            this.TenSP_tb.Name = "TenSP_tb";
+            this.TenSP_tb.ReadOnly = true;
+            this.TenSP_tb.Size = new System.Drawing.Size(177, 22);
+            this.TenSP_tb.TabIndex = 3;
             // 
             // label6
             // 
@@ -411,13 +425,14 @@
             // 
             this.loadSanPhamFullTableAdapter.ClearBeforeFill = true;
             // 
-            // lOAISANPHAMTableAdapter
+            // loadLoaiSanPhamBindingSource
             // 
-            this.lOAISANPHAMTableAdapter.ClearBeforeFill = true;
+            this.loadLoaiSanPhamBindingSource.DataMember = "loadLoaiSanPham";
+            this.loadLoaiSanPhamBindingSource.DataSource = this.qLDQDataSet;
             // 
-            // sANPHAMTableAdapter
+            // loadLoaiSanPhamTableAdapter
             // 
-            this.sANPHAMTableAdapter.ClearBeforeFill = true;
+            this.loadLoaiSanPhamTableAdapter.ClearBeforeFill = true;
             // 
             // ThongTinMatHang
             // 
@@ -436,9 +451,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lOAISANPHAMBindingSource)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.loadLoaiSanPhamBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -449,14 +464,14 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox Ban_tb;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button insert_btn;
+        private System.Windows.Forms.Button update_btn;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Mua_tb;
+        private System.Windows.Forms.TextBox TenSP_tb;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
@@ -464,7 +479,7 @@
         private System.Windows.Forms.BindingSource loadSanPhamFullBindingSource;
         private QLDQDataSet qLDQDataSet;
         private QLDQDataSetTableAdapters.loadSanPhamFullTableAdapter loadSanPhamFullTableAdapter;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox SLT_tb;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -475,12 +490,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn đơnGiáMuaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sốLượngTồnDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn đơnVịTínhDataGridViewTextBoxColumn;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.BindingSource lOAISANPHAMBindingSource;
-        private QLDQDataSetTableAdapters.LOAISANPHAMTableAdapter lOAISANPHAMTableAdapter;
-        private QLDQDataSetTableAdapters.SANPHAMTableAdapter sANPHAMTableAdapter;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.ComboBox LSP_cb;
+        private System.Windows.Forms.TextBox MaSP_tb;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox LSP_tb;
+        private System.Windows.Forms.TextBox DVT_tb;
+        private System.Windows.Forms.BindingSource loadLoaiSanPhamBindingSource;
+        private QLDQDataSetTableAdapters.loadLoaiSanPhamTableAdapter loadLoaiSanPhamTableAdapter;
     }
 }
