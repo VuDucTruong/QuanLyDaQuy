@@ -32,9 +32,9 @@ namespace QuanLyDaQuy
 
         private void insert_btn_Click(object sender, EventArgs e)
         {
-            ThemSPForm themSPForm = new ThemSPForm();
+            /*ThemSPForm themSPForm = new ThemSPForm();
             themSPForm.thongTinMatHang = this;
-            themSPForm.ShowDialog();
+            themSPForm.ShowDialog();*/
         }
 
         private void update_btn_Click(object sender, EventArgs e)
@@ -110,13 +110,13 @@ namespace QuanLyDaQuy
 
         private void Mua_tb_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
             {
                 e.Handled = true;
             }
 
             // If you want, you can allow decimal (float) numbers
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
             {
                 e.Handled = true;
             }
@@ -124,10 +124,11 @@ namespace QuanLyDaQuy
 
         private void SLT_tb_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
             {
                 e.Handled = true;
             }
         }
+
     }
 }
