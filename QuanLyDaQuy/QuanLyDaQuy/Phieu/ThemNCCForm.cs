@@ -1,4 +1,7 @@
-﻿using System;
+﻿using QuanLyDaQuy.DAO;
+using QuanLyDaQuy.QLDQDataSetTableAdapters;
+using QuanLyDaQuy.UserControls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +18,60 @@ namespace QuanLyDaQuy.Phieu
         public ThemNCCForm()
         {
             InitializeComponent();
+        }
+        public ThongTinNCC thongTinNCC { get; set; }
+        private void ThemNCCForm_Load(object sender, EventArgs e)
+        {
+            int id;
+            try
+            {
+                id = Convert.ToInt32(DataProvider.Instance.ExecuteScalar("select max(MaNCC) from NHACUNGCAP")) + 1;
+            }
+            catch
+            {
+                id = 1;
+            }
+            MaNCC_tb.Text = id.ToString();
+        }
+
+        private void insert_btn_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(NCC_tb.Text) && !string.IsNullOrEmpty(Phone_tb.Text) && !string.IsNullOrEmpty(Address_tb.Text))
+            {
+                try
+                {
+                    string query = string.Format("insert into NHACUNGCAP values ( N'{0}' , N'{1}' , '{2}')", NCC_tb.Text, Address_tb.Text, Phone_tb.Text);
+                    int data = DataProvider.Instance.ExecuteNonQuery(query);
+                    if (data > 0)
+                    {
+                        MessageBox.Show("Đã thêm nhà cung cấp thành công!", "Thành công");
+                        if (thongTinNCC != null)
+                        {
+                            thongTinNCC.RefreshData();
+                        }
+                    }
+                    else MessageBox.Show("Thêm thất bại !", "Thất bại");
+                    this.Close();
+                }
+                catch
+                {
+                    MessageBox.Show("Thông tin đã điền bị sai !", "Thông báo");
+                }
+            }
+            else MessageBox.Show("Thông tin điền vào bị thiếu!", "Thông báo");
+        }
+
+        private void canncel_btn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Phone_tb_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

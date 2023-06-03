@@ -79,7 +79,7 @@ namespace QuanLyDaQuy
         {
             DV_tb.ReadOnly = !DV_tb.ReadOnly;
             DonGia_tb.ReadOnly = !DonGia_tb.ReadOnly;
-
+            dataGridView1.Enabled = !dataGridView1.Enabled;
             return DV_tb.ReadOnly && DonGia_tb.ReadOnly;
 
         }

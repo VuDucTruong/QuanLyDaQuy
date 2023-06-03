@@ -28,42 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.canncel_btn = new System.Windows.Forms.Button();
+            this.insert_btn = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.MaNCC_tb = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.NCC_tb = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.Address_tb = new System.Windows.Forms.TextBox();
+            this.Phone_tb = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button2
+            // canncel_btn
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.canncel_btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(708, 236);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 46;
-            this.button2.Text = "Hủy bỏ";
-            this.button2.UseVisualStyleBackColor = true;
+            this.canncel_btn.Location = new System.Drawing.Point(708, 236);
+            this.canncel_btn.Name = "canncel_btn";
+            this.canncel_btn.Size = new System.Drawing.Size(75, 23);
+            this.canncel_btn.TabIndex = 46;
+            this.canncel_btn.Text = "Hủy bỏ";
+            this.canncel_btn.UseVisualStyleBackColor = true;
+            this.canncel_btn.Click += new System.EventHandler(this.canncel_btn_Click);
             // 
-            // button1
+            // insert_btn
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.insert_btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(605, 236);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 45;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
+            this.insert_btn.Location = new System.Drawing.Point(605, 236);
+            this.insert_btn.Name = "insert_btn";
+            this.insert_btn.Size = new System.Drawing.Size(75, 23);
+            this.insert_btn.TabIndex = 45;
+            this.insert_btn.Text = "Thêm";
+            this.insert_btn.UseVisualStyleBackColor = true;
+            this.insert_btn.Click += new System.EventHandler(this.insert_btn_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -76,13 +78,13 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.textBox4, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.MaNCC_tb, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label10, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.NCC_tb, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label6, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox3, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.Address_tb, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.Phone_tb, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 2, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 82);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -91,6 +93,15 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(776, 126);
             this.tableLayoutPanel1.TabIndex = 44;
+            // 
+            // MaNCC_tb
+            // 
+            this.MaNCC_tb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.MaNCC_tb.Location = new System.Drawing.Point(131, 21);
+            this.MaNCC_tb.Name = "MaNCC_tb";
+            this.MaNCC_tb.ReadOnly = true;
+            this.MaNCC_tb.Size = new System.Drawing.Size(208, 22);
+            this.MaNCC_tb.TabIndex = 47;
             // 
             // label10
             // 
@@ -102,13 +113,13 @@
             this.label10.TabIndex = 34;
             this.label10.Text = "Mã nhà cung cấp : ";
             // 
-            // textBox1
+            // NCC_tb
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(131, 83);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(208, 22);
-            this.textBox1.TabIndex = 24;
+            this.NCC_tb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.NCC_tb.Location = new System.Drawing.Point(131, 83);
+            this.NCC_tb.Name = "NCC_tb";
+            this.NCC_tb.Size = new System.Drawing.Size(208, 22);
+            this.NCC_tb.TabIndex = 24;
             // 
             // label5
             // 
@@ -130,13 +141,34 @@
             this.label6.TabIndex = 23;
             this.label6.Text = "Số điện thoại : ";
             // 
-            // textBox2
+            // Address_tb
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(449, 21);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(200, 22);
-            this.textBox2.TabIndex = 25;
+            this.Address_tb.AcceptsReturn = true;
+            this.Address_tb.Location = new System.Drawing.Point(449, 67);
+            this.Address_tb.Multiline = true;
+            this.Address_tb.Name = "Address_tb";
+            this.Address_tb.Size = new System.Drawing.Size(322, 54);
+            this.Address_tb.TabIndex = 37;
+            // 
+            // Phone_tb
+            // 
+            this.Phone_tb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.Phone_tb.Location = new System.Drawing.Point(449, 21);
+            this.Phone_tb.Name = "Phone_tb";
+            this.Phone_tb.Size = new System.Drawing.Size(322, 22);
+            this.Phone_tb.TabIndex = 25;
+            this.Phone_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Phone_tb_KeyPress);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(347, 86);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(94, 16);
+            this.label2.TabIndex = 47;
+            this.label2.Text = "Địa chỉ : ";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
             // 
@@ -148,45 +180,18 @@
             this.label1.Text = "THÊM NHÀ CUNG CẤP";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // textBox3
-            // 
-            this.textBox3.AcceptsReturn = true;
-            this.textBox3.Location = new System.Drawing.Point(449, 67);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(322, 54);
-            this.textBox3.TabIndex = 37;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Location = new System.Drawing.Point(131, 23);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(208, 22);
-            this.textBox4.TabIndex = 47;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(344, 91);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 16);
-            this.label2.TabIndex = 47;
-            this.label2.Text = "Địa chỉ : ";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // ThemNCCForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 277);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.canncel_btn);
+            this.Controls.Add(this.insert_btn);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label1);
             this.Name = "ThemNCCForm";
             this.Text = "ThemNCCForm";
+            this.Load += new System.EventHandler(this.ThemNCCForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -196,17 +201,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button canncel_btn;
+        private System.Windows.Forms.Button insert_btn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox NCC_tb;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox Phone_tb;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox Address_tb;
+        private System.Windows.Forms.TextBox MaNCC_tb;
         private System.Windows.Forms.Label label2;
     }
 }

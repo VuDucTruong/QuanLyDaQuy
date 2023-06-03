@@ -39,16 +39,16 @@
             this.qLDQDataSet = new QuanLyDaQuy.QLDQDataSet();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.MaNCC_tb = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.Phone_tb = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.insert_btn = new System.Windows.Forms.Button();
+            this.update_btn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Address_tb = new System.Windows.Forms.TextBox();
+            this.NCC_tb = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -151,29 +151,30 @@
             this.panel1.AutoSize = true;
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.MaNCC_tb);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.Phone_tb);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.flowLayoutPanel1);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.Address_tb);
+            this.panel1.Controls.Add(this.NCC_tb);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Location = new System.Drawing.Point(5, 93);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(945, 142);
+            this.panel1.Padding = new System.Windows.Forms.Padding(0, 0, 12, 0);
+            this.panel1.Size = new System.Drawing.Size(942, 145);
             this.panel1.TabIndex = 14;
             // 
-            // textBox4
+            // MaNCC_tb
             // 
-            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nHACUNGCAPBindingSource, "MaNCC", true));
-            this.textBox4.Location = new System.Drawing.Point(110, 49);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(177, 22);
-            this.textBox4.TabIndex = 13;
+            this.MaNCC_tb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nHACUNGCAPBindingSource, "MaNCC", true));
+            this.MaNCC_tb.Location = new System.Drawing.Point(110, 49);
+            this.MaNCC_tb.Name = "MaNCC_tb";
+            this.MaNCC_tb.ReadOnly = true;
+            this.MaNCC_tb.Size = new System.Drawing.Size(177, 22);
+            this.MaNCC_tb.TabIndex = 13;
             // 
             // label7
             // 
@@ -184,14 +185,16 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Mã NCC : ";
             // 
-            // textBox3
+            // Phone_tb
             // 
-            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nHACUNGCAPBindingSource, "SDT", true));
-            this.textBox3.Location = new System.Drawing.Point(110, 108);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(177, 22);
-            this.textBox3.TabIndex = 11;
-            this.textBox3.Text = "\r\n";
+            this.Phone_tb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nHACUNGCAPBindingSource, "SDT", true));
+            this.Phone_tb.Location = new System.Drawing.Point(110, 108);
+            this.Phone_tb.Name = "Phone_tb";
+            this.Phone_tb.ReadOnly = true;
+            this.Phone_tb.Size = new System.Drawing.Size(177, 22);
+            this.Phone_tb.TabIndex = 11;
+            this.Phone_tb.Text = "\r\n";
+            this.Phone_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Phone_tb_KeyPress);
             // 
             // label1
             // 
@@ -206,31 +209,34 @@
             // 
             this.flowLayoutPanel1.AutoSize = true;
             this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel1.Controls.Add(this.button1);
-            this.flowLayoutPanel1.Controls.Add(this.button3);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(778, 108);
+            this.flowLayoutPanel1.Controls.Add(this.insert_btn);
+            this.flowLayoutPanel1.Controls.Add(this.update_btn);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(763, 108);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(162, 29);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(162, 32);
             this.flowLayoutPanel1.TabIndex = 9;
             // 
-            // button1
+            // insert_btn
             // 
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.insert_btn.AutoSize = true;
+            this.insert_btn.Location = new System.Drawing.Point(3, 3);
+            this.insert_btn.Name = "insert_btn";
+            this.insert_btn.Size = new System.Drawing.Size(75, 26);
+            this.insert_btn.TabIndex = 6;
+            this.insert_btn.Text = "Thêm";
+            this.insert_btn.UseVisualStyleBackColor = true;
+            this.insert_btn.Click += new System.EventHandler(this.insert_btn_Click);
             // 
-            // button3
+            // update_btn
             // 
-            this.button3.Location = new System.Drawing.Point(84, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Sửa";
-            this.button3.UseVisualStyleBackColor = true;
+            this.update_btn.AutoSize = true;
+            this.update_btn.Location = new System.Drawing.Point(84, 3);
+            this.update_btn.Name = "update_btn";
+            this.update_btn.Size = new System.Drawing.Size(75, 26);
+            this.update_btn.TabIndex = 8;
+            this.update_btn.Text = "Sửa";
+            this.update_btn.UseVisualStyleBackColor = true;
+            this.update_btn.Click += new System.EventHandler(this.update_btn_Click);
             // 
             // label3
             // 
@@ -241,22 +247,24 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Thông tin nhà cung cấp : ";
             // 
-            // textBox2
+            // Address_tb
             // 
-            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nHACUNGCAPBindingSource, "DiaChi", true));
-            this.textBox2.Location = new System.Drawing.Point(405, 49);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(333, 79);
-            this.textBox2.TabIndex = 4;
+            this.Address_tb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nHACUNGCAPBindingSource, "DiaChi", true));
+            this.Address_tb.Location = new System.Drawing.Point(405, 49);
+            this.Address_tb.Multiline = true;
+            this.Address_tb.Name = "Address_tb";
+            this.Address_tb.ReadOnly = true;
+            this.Address_tb.Size = new System.Drawing.Size(333, 79);
+            this.Address_tb.TabIndex = 4;
             // 
-            // textBox1
+            // NCC_tb
             // 
-            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nHACUNGCAPBindingSource, "TenNCC", true));
-            this.textBox1.Location = new System.Drawing.Point(110, 80);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(177, 22);
-            this.textBox1.TabIndex = 3;
+            this.NCC_tb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.nHACUNGCAPBindingSource, "TenNCC", true));
+            this.NCC_tb.Location = new System.Drawing.Point(110, 80);
+            this.NCC_tb.Name = "NCC_tb";
+            this.NCC_tb.ReadOnly = true;
+            this.NCC_tb.Size = new System.Drawing.Size(177, 22);
+            this.NCC_tb.TabIndex = 3;
             // 
             // label6
             // 
@@ -301,6 +309,7 @@
             this.Controls.Add(this.label2);
             this.Name = "ThongTinNCC";
             this.Size = new System.Drawing.Size(954, 618);
+            this.Load += new System.EventHandler(this.ThongTinNCC_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -309,6 +318,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -320,14 +330,14 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox Phone_tb;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button insert_btn;
+        private System.Windows.Forms.Button update_btn;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox Address_tb;
+        private System.Windows.Forms.TextBox NCC_tb;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
@@ -338,7 +348,7 @@
         private System.Windows.Forms.BindingSource nHACUNGCAPBindingSource;
         private QLDQDataSet qLDQDataSet;
         private QLDQDataSetTableAdapters.NHACUNGCAPTableAdapter nHACUNGCAPTableAdapter;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox MaNCC_tb;
         private System.Windows.Forms.Label label7;
     }
 }

@@ -153,7 +153,7 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Location = new System.Drawing.Point(5, 93);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(872, 143);
+            this.panel1.Size = new System.Drawing.Size(872, 146);
             this.panel1.TabIndex = 14;
             // 
             // id_tb
@@ -182,14 +182,15 @@
             this.flowLayoutPanel1.Controls.Add(this.update_btn);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(705, 109);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(162, 29);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(162, 32);
             this.flowLayoutPanel1.TabIndex = 9;
             // 
             // insert_btn
             // 
+            this.insert_btn.AutoSize = true;
             this.insert_btn.Location = new System.Drawing.Point(3, 3);
             this.insert_btn.Name = "insert_btn";
-            this.insert_btn.Size = new System.Drawing.Size(75, 23);
+            this.insert_btn.Size = new System.Drawing.Size(75, 26);
             this.insert_btn.TabIndex = 6;
             this.insert_btn.Text = "Thêm";
             this.insert_btn.UseVisualStyleBackColor = true;
@@ -197,9 +198,10 @@
             // 
             // update_btn
             // 
+            this.update_btn.AutoSize = true;
             this.update_btn.Location = new System.Drawing.Point(84, 3);
             this.update_btn.Name = "update_btn";
-            this.update_btn.Size = new System.Drawing.Size(75, 23);
+            this.update_btn.Size = new System.Drawing.Size(75, 26);
             this.update_btn.TabIndex = 8;
             this.update_btn.Text = "Sửa";
             this.update_btn.UseVisualStyleBackColor = true;
@@ -285,6 +287,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

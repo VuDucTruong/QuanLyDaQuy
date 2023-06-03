@@ -77,8 +77,8 @@ namespace QuanLyDaQuy.UserControls
         public Boolean isEditableTextbox()
         {
             KH_tb.ReadOnly = !KH_tb.ReadOnly;
-            Phone_tb.ReadOnly = !Phone_tb.ReadOnly; 
-
+            Phone_tb.ReadOnly = !Phone_tb.ReadOnly;
+            dataGridView1.Enabled = !dataGridView1.Enabled;
             return KH_tb.ReadOnly && Phone_tb.ReadOnly;
         }
 

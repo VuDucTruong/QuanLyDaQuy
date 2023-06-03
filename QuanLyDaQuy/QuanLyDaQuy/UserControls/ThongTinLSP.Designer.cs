@@ -39,7 +39,9 @@
             this.qLDQDataSet = new QuanLyDaQuy.QLDQDataSet();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.MaDVT_tb_1 = new System.Windows.Forms.TextBox();
             this.MaDVT_cb = new System.Windows.Forms.ComboBox();
+            this.dONVITINHBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.MaLSP_tb = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,10 +55,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.maDVTDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dVTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dONVITINHBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label7 = new System.Windows.Forms.Label();
             this.lOAISANPHAMTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.LOAISANPHAMTableAdapter();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -69,16 +70,15 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.dONVITINHTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.DONVITINHTableAdapter();
-            this.MaDVT_tb_1 = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOAISANPHAMBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dONVITINHBindingSource)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dONVITINHBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel3.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -191,8 +191,18 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Location = new System.Drawing.Point(3, 76);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(549, 161);
+            this.panel1.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.panel1.Size = new System.Drawing.Size(542, 164);
             this.panel1.TabIndex = 14;
+            // 
+            // MaDVT_tb_1
+            // 
+            this.MaDVT_tb_1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lOAISANPHAMBindingSource, "MaDVT", true));
+            this.MaDVT_tb_1.Location = new System.Drawing.Point(142, 131);
+            this.MaDVT_tb_1.Name = "MaDVT_tb_1";
+            this.MaDVT_tb_1.ReadOnly = true;
+            this.MaDVT_tb_1.Size = new System.Drawing.Size(177, 22);
+            this.MaDVT_tb_1.TabIndex = 18;
             // 
             // MaDVT_cb
             // 
@@ -206,6 +216,11 @@
             this.MaDVT_cb.Size = new System.Drawing.Size(177, 24);
             this.MaDVT_cb.TabIndex = 18;
             this.MaDVT_cb.Visible = false;
+            // 
+            // dONVITINHBindingSource
+            // 
+            this.dONVITINHBindingSource.DataMember = "DONVITINH";
+            this.dONVITINHBindingSource.DataSource = this.qLDQDataSet;
             // 
             // MaLSP_tb
             // 
@@ -240,16 +255,17 @@
             this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel1.Controls.Add(this.insertLSP_btn);
             this.flowLayoutPanel1.Controls.Add(this.updateLSP_btn);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(382, 127);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(355, 127);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(162, 29);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(162, 32);
             this.flowLayoutPanel1.TabIndex = 9;
             // 
             // insertLSP_btn
             // 
+            this.insertLSP_btn.AutoSize = true;
             this.insertLSP_btn.Location = new System.Drawing.Point(3, 3);
             this.insertLSP_btn.Name = "insertLSP_btn";
-            this.insertLSP_btn.Size = new System.Drawing.Size(75, 23);
+            this.insertLSP_btn.Size = new System.Drawing.Size(75, 26);
             this.insertLSP_btn.TabIndex = 6;
             this.insertLSP_btn.Text = "Thêm";
             this.insertLSP_btn.UseVisualStyleBackColor = true;
@@ -257,9 +273,10 @@
             // 
             // updateLSP_btn
             // 
+            this.updateLSP_btn.AutoSize = true;
             this.updateLSP_btn.Location = new System.Drawing.Point(84, 3);
             this.updateLSP_btn.Name = "updateLSP_btn";
-            this.updateLSP_btn.Size = new System.Drawing.Size(75, 23);
+            this.updateLSP_btn.Size = new System.Drawing.Size(75, 26);
             this.updateLSP_btn.TabIndex = 8;
             this.updateLSP_btn.Text = "Sửa";
             this.updateLSP_btn.UseVisualStyleBackColor = true;
@@ -282,6 +299,7 @@
             this.LoiNhuan_tb.ReadOnly = true;
             this.LoiNhuan_tb.Size = new System.Drawing.Size(177, 22);
             this.LoiNhuan_tb.TabIndex = 4;
+            this.LoiNhuan_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LoiNhuan_tb_KeyPress);
             // 
             // TenLSP_tb
             // 
@@ -329,34 +347,34 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.dataGridView3);
+            this.panel4.Controls.Add(this.dataGridView2);
             this.panel4.Controls.Add(this.label7);
             this.panel4.Location = new System.Drawing.Point(554, 252);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(397, 357);
             this.panel4.TabIndex = 17;
             // 
-            // dataGridView3
+            // dataGridView2
             // 
-            this.dataGridView3.AllowUserToAddRows = false;
-            this.dataGridView3.AllowUserToResizeRows = false;
-            this.dataGridView3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToResizeRows = false;
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView3.AutoGenerateColumns = false;
-            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maDVTDataGridViewTextBoxColumn1,
             this.dVTDataGridViewTextBoxColumn});
-            this.dataGridView3.DataSource = this.dONVITINHBindingSource;
-            this.dataGridView3.Location = new System.Drawing.Point(3, 28);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.RowHeadersWidth = 51;
-            this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView3.Size = new System.Drawing.Size(389, 324);
-            this.dataGridView3.TabIndex = 8;
+            this.dataGridView2.DataSource = this.dONVITINHBindingSource;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 28);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(389, 324);
+            this.dataGridView2.TabIndex = 8;
             // 
             // maDVTDataGridViewTextBoxColumn1
             // 
@@ -373,11 +391,6 @@
             this.dVTDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dVTDataGridViewTextBoxColumn.Name = "dVTDataGridViewTextBoxColumn";
             this.dVTDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dONVITINHBindingSource
-            // 
-            this.dONVITINHBindingSource.DataMember = "DONVITINH";
-            this.dONVITINHBindingSource.DataSource = this.qLDQDataSet;
             // 
             // label7
             // 
@@ -403,9 +416,10 @@
             this.panel3.Controls.Add(this.MaDVT_tb);
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.label11);
-            this.panel3.Location = new System.Drawing.Point(554, 133);
+            this.panel3.Location = new System.Drawing.Point(554, 93);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(395, 104);
+            this.panel3.Padding = new System.Windows.Forms.Padding(0, 40, 10, 0);
+            this.panel3.Size = new System.Drawing.Size(397, 144);
             this.panel3.TabIndex = 15;
             // 
             // flowLayoutPanel2
@@ -414,16 +428,17 @@
             this.flowLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.flowLayoutPanel2.Controls.Add(this.insertDVT_btn);
             this.flowLayoutPanel2.Controls.Add(this.updateDVT_btn);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(228, 70);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(220, 107);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(162, 29);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(162, 32);
             this.flowLayoutPanel2.TabIndex = 9;
             // 
             // insertDVT_btn
             // 
+            this.insertDVT_btn.AutoSize = true;
             this.insertDVT_btn.Location = new System.Drawing.Point(3, 3);
             this.insertDVT_btn.Name = "insertDVT_btn";
-            this.insertDVT_btn.Size = new System.Drawing.Size(75, 23);
+            this.insertDVT_btn.Size = new System.Drawing.Size(75, 26);
             this.insertDVT_btn.TabIndex = 6;
             this.insertDVT_btn.Text = "Thêm";
             this.insertDVT_btn.UseVisualStyleBackColor = true;
@@ -431,9 +446,10 @@
             // 
             // updateDVT_btn
             // 
+            this.updateDVT_btn.AutoSize = true;
             this.updateDVT_btn.Location = new System.Drawing.Point(84, 3);
             this.updateDVT_btn.Name = "updateDVT_btn";
-            this.updateDVT_btn.Size = new System.Drawing.Size(75, 23);
+            this.updateDVT_btn.Size = new System.Drawing.Size(75, 26);
             this.updateDVT_btn.TabIndex = 8;
             this.updateDVT_btn.Text = "Sửa";
             this.updateDVT_btn.UseVisualStyleBackColor = true;
@@ -442,7 +458,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(5, 11);
+            this.label9.Location = new System.Drawing.Point(3, 8);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(133, 16);
             this.label9.TabIndex = 6;
@@ -451,7 +467,7 @@
             // DVT_tb
             // 
             this.DVT_tb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dONVITINHBindingSource, "DVT", true));
-            this.DVT_tb.Location = new System.Drawing.Point(108, 77);
+            this.DVT_tb.Location = new System.Drawing.Point(122, 68);
             this.DVT_tb.Name = "DVT_tb";
             this.DVT_tb.ReadOnly = true;
             this.DVT_tb.Size = new System.Drawing.Size(111, 22);
@@ -460,7 +476,7 @@
             // MaDVT_tb
             // 
             this.MaDVT_tb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dONVITINHBindingSource, "MaDVT", true));
-            this.MaDVT_tb.Location = new System.Drawing.Point(108, 49);
+            this.MaDVT_tb.Location = new System.Drawing.Point(122, 37);
             this.MaDVT_tb.Name = "MaDVT_tb";
             this.MaDVT_tb.ReadOnly = true;
             this.MaDVT_tb.Size = new System.Drawing.Size(111, 22);
@@ -469,7 +485,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(5, 80);
+            this.label10.Location = new System.Drawing.Point(6, 71);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(76, 16);
             this.label10.TabIndex = 1;
@@ -478,7 +494,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(5, 52);
+            this.label11.Location = new System.Drawing.Point(6, 43);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(97, 16);
             this.label11.TabIndex = 0;
@@ -487,15 +503,6 @@
             // dONVITINHTableAdapter
             // 
             this.dONVITINHTableAdapter.ClearBeforeFill = true;
-            // 
-            // MaDVT_tb_1
-            // 
-            this.MaDVT_tb_1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.lOAISANPHAMBindingSource, "MaDVT", true));
-            this.MaDVT_tb_1.Location = new System.Drawing.Point(142, 131);
-            this.MaDVT_tb_1.Name = "MaDVT_tb_1";
-            this.MaDVT_tb_1.ReadOnly = true;
-            this.MaDVT_tb_1.Size = new System.Drawing.Size(177, 22);
-            this.MaDVT_tb_1.TabIndex = 18;
             // 
             // ThongTinLSP
             // 
@@ -516,14 +523,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dONVITINHBindingSource)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dONVITINHBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -545,7 +554,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridViewTextBoxColumn maLSPDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenLSPDataGridViewTextBoxColumn;

@@ -131,12 +131,28 @@ namespace QuanLyDaQuy.UserControls
             LoiNhuan_tb.ReadOnly = !LoiNhuan_tb.ReadOnly;
             MaDVT_tb_1.Visible = !MaDVT_tb_1.Visible;
             MaDVT_cb.Visible = !MaDVT_cb.Visible;
+            dataGridView1.Enabled = !dataGridView1.Enabled;
             return TenLSP_tb.ReadOnly;
         }
         private Boolean isEditableDVT()
         {
             DVT_tb.ReadOnly = !DVT_tb.ReadOnly;
+            dataGridView2.Enabled = !dataGridView2.Enabled;
             return DVT_tb.ReadOnly;
+        }
+
+        private void LoiNhuan_tb_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // If you want, you can allow decimal (float) numbers
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
