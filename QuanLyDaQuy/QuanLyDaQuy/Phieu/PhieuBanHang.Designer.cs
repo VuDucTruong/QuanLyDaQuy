@@ -29,12 +29,12 @@ namespace QuanLyDaQuy.Phieu
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lb_title = new System.Windows.Forms.Label();
             this.lb_sophieu = new System.Windows.Forms.Label();
             this.lb_khachhang = new System.Windows.Forms.Label();
             this.lb_ngaylap = new System.Windows.Forms.Label();
-            this.dgv_phieumuahang = new System.Windows.Forms.DataGridView();
-            this.stt_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_phieubanhang = new System.Windows.Forms.DataGridView();
             this.sp_col = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.lsp_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sl_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,8 +47,8 @@ namespace QuanLyDaQuy.Phieu
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.cb_khachhang = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_phieumuahang)).BeginInit();
+            this.cb_sdt = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_phieubanhang)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -73,7 +73,7 @@ namespace QuanLyDaQuy.Phieu
             this.lb_sophieu.Location = new System.Drawing.Point(40, 20);
             this.lb_sophieu.Margin = new System.Windows.Forms.Padding(40, 20, 3, 0);
             this.lb_sophieu.Name = "lb_sophieu";
-            this.lb_sophieu.Size = new System.Drawing.Size(126, 24);
+            this.lb_sophieu.Size = new System.Drawing.Size(124, 24);
             this.lb_sophieu.TabIndex = 2;
             this.lb_sophieu.Text = "Số phiếu:";
             this.lb_sophieu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -85,7 +85,7 @@ namespace QuanLyDaQuy.Phieu
             this.lb_khachhang.Location = new System.Drawing.Point(40, 84);
             this.lb_khachhang.Margin = new System.Windows.Forms.Padding(40, 20, 3, 0);
             this.lb_khachhang.Name = "lb_khachhang";
-            this.lb_khachhang.Size = new System.Drawing.Size(126, 18);
+            this.lb_khachhang.Size = new System.Drawing.Size(124, 18);
             this.lb_khachhang.TabIndex = 3;
             this.lb_khachhang.Text = "Khách hàng:";
             this.lb_khachhang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -94,7 +94,7 @@ namespace QuanLyDaQuy.Phieu
             // 
             this.lb_ngaylap.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_ngaylap.ForeColor = System.Drawing.Color.Black;
-            this.lb_ngaylap.Location = new System.Drawing.Point(529, 20);
+            this.lb_ngaylap.Location = new System.Drawing.Point(525, 20);
             this.lb_ngaylap.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.lb_ngaylap.Name = "lb_ngaylap";
             this.lb_ngaylap.Size = new System.Drawing.Size(84, 18);
@@ -102,85 +102,96 @@ namespace QuanLyDaQuy.Phieu
             this.lb_ngaylap.Text = "Ngày lập:";
             this.lb_ngaylap.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // dgv_phieumuahang
+            // dgv_phieubanhang
             // 
-            this.dgv_phieumuahang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_phieumuahang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.stt_col,
+            this.dgv_phieubanhang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dgv_phieubanhang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_phieubanhang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.sp_col,
             this.lsp_col,
             this.sl_col,
             this.dvt_col,
             this.dg_col,
             this.tt_col});
-            this.dgv_phieumuahang.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_phieumuahang.GridColor = System.Drawing.Color.Silver;
-            this.dgv_phieumuahang.Location = new System.Drawing.Point(3, 187);
-            this.dgv_phieumuahang.Name = "dgv_phieumuahang";
-            this.dgv_phieumuahang.RowHeadersWidth = 51;
-            this.dgv_phieumuahang.RowTemplate.Height = 24;
-            this.dgv_phieumuahang.Size = new System.Drawing.Size(794, 260);
-            this.dgv_phieumuahang.TabIndex = 12;
-            // 
-            // stt_col
-            // 
-            this.stt_col.HeaderText = "STT";
-            this.stt_col.MinimumWidth = 6;
-            this.stt_col.Name = "stt_col";
-            this.stt_col.Width = 50;
+            this.dgv_phieubanhang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_phieubanhang.GridColor = System.Drawing.Color.Silver;
+            this.dgv_phieubanhang.Location = new System.Drawing.Point(3, 187);
+            this.dgv_phieubanhang.Name = "dgv_phieubanhang";
+            this.dgv_phieubanhang.RowHeadersWidth = 51;
+            this.dgv_phieubanhang.RowTemplate.Height = 24;
+            this.dgv_phieubanhang.Size = new System.Drawing.Size(794, 260);
+            this.dgv_phieubanhang.TabIndex = 12;
+            this.dgv_phieubanhang.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_phieubanhang_CellValueChanged);
+            this.dgv_phieubanhang.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgv_phieubanhang_EditingControlShowing);
+            this.dgv_phieubanhang.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgv_phieubanhang_RowPostPaint);
             // 
             // sp_col
             // 
+            this.sp_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.sp_col.DataPropertyName = "TenSP";
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.sp_col.DefaultCellStyle = dataGridViewCellStyle1;
+            this.sp_col.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.sp_col.DropDownWidth = 2;
             this.sp_col.HeaderText = "Sản phẩm";
             this.sp_col.MinimumWidth = 6;
             this.sp_col.Name = "sp_col";
             this.sp_col.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.sp_col.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.sp_col.Width = 125;
+            this.sp_col.Width = 101;
             // 
             // lsp_col
             // 
+            this.lsp_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.lsp_col.DataPropertyName = "TenLSP";
             this.lsp_col.HeaderText = "Loại sản phẩm";
             this.lsp_col.MinimumWidth = 6;
             this.lsp_col.Name = "lsp_col";
-            this.lsp_col.Width = 125;
+            this.lsp_col.Width = 130;
             // 
             // sl_col
             // 
+            this.sl_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.sl_col.DataPropertyName = "SoLuongTon";
             this.sl_col.HeaderText = "Số lượng";
             this.sl_col.MinimumWidth = 6;
             this.sl_col.Name = "sl_col";
-            this.sl_col.Width = 75;
+            this.sl_col.Width = 93;
             // 
             // dvt_col
             // 
+            this.dvt_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dvt_col.DataPropertyName = "DVT";
             this.dvt_col.HeaderText = "Đơn vị tính";
             this.dvt_col.MinimumWidth = 6;
             this.dvt_col.Name = "dvt_col";
-            this.dvt_col.Width = 125;
+            this.dvt_col.Width = 104;
             // 
             // dg_col
             // 
+            this.dg_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dg_col.DataPropertyName = "DonGiaBan";
             this.dg_col.HeaderText = "Đơn giá";
             this.dg_col.MinimumWidth = 6;
             this.dg_col.Name = "dg_col";
-            this.dg_col.Width = 125;
+            this.dg_col.Width = 86;
             // 
             // tt_col
             // 
+            this.tt_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.tt_col.HeaderText = "Thành tiền";
             this.tt_col.MinimumWidth = 6;
             this.tt_col.Name = "tt_col";
-            this.tt_col.Width = 125;
+            this.tt_col.Width = 105;
             // 
             // tb_sophieu
             // 
             this.tb_sophieu.BackColor = System.Drawing.SystemColors.HighlightText;
             this.tb_sophieu.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_sophieu.Location = new System.Drawing.Point(172, 20);
+            this.tb_sophieu.Location = new System.Drawing.Point(170, 20);
             this.tb_sophieu.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
             this.tb_sophieu.Name = "tb_sophieu";
-            this.tb_sophieu.Size = new System.Drawing.Size(220, 25);
+            this.tb_sophieu.Size = new System.Drawing.Size(100, 25);
             this.tb_sophieu.TabIndex = 13;
             this.tb_sophieu.Text = "000";
             // 
@@ -189,10 +200,10 @@ namespace QuanLyDaQuy.Phieu
             this.tb_ngaylap.BackColor = System.Drawing.SystemColors.HighlightText;
             this.tb_ngaylap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tb_ngaylap.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_ngaylap.Location = new System.Drawing.Point(628, 20);
+            this.tb_ngaylap.Location = new System.Drawing.Point(624, 20);
             this.tb_ngaylap.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
             this.tb_ngaylap.Name = "tb_ngaylap";
-            this.tb_ngaylap.Size = new System.Drawing.Size(159, 25);
+            this.tb_ngaylap.Size = new System.Drawing.Size(100, 25);
             this.tb_ngaylap.TabIndex = 15;
             this.tb_ngaylap.Text = "20/20/2000";
             // 
@@ -202,7 +213,7 @@ namespace QuanLyDaQuy.Phieu
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.dgv_phieumuahang, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.dgv_phieubanhang, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.lb_title, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -220,15 +231,15 @@ namespace QuanLyDaQuy.Phieu
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.07547F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.92453F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 99F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 172F));
+            this.tableLayoutPanel2.Controls.Add(this.cb_khachhang, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.lb_sophieu, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tb_sophieu, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.tb_ngaylap, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.lb_khachhang, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.lb_ngaylap, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.cb_khachhang, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.label1, 2, 1);
-            this.tableLayoutPanel2.Controls.Add(this.textBox1, 3, 1);
+            this.tableLayoutPanel2.Controls.Add(this.cb_sdt, 3, 1);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 48);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
@@ -240,17 +251,18 @@ namespace QuanLyDaQuy.Phieu
             // cb_khachhang
             // 
             this.cb_khachhang.FormattingEnabled = true;
-            this.cb_khachhang.Location = new System.Drawing.Point(172, 84);
+            this.cb_khachhang.Location = new System.Drawing.Point(170, 84);
             this.cb_khachhang.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
             this.cb_khachhang.Name = "cb_khachhang";
-            this.cb_khachhang.Size = new System.Drawing.Size(121, 24);
-            this.cb_khachhang.TabIndex = 16;
+            this.cb_khachhang.Size = new System.Drawing.Size(180, 24);
+            this.cb_khachhang.TabIndex = 18;
+            this.cb_khachhang.SelectedIndexChanged += new System.EventHandler(this.cb_khachhang_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(529, 84);
+            this.label1.Location = new System.Drawing.Point(525, 84);
             this.label1.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 18);
@@ -258,17 +270,14 @@ namespace QuanLyDaQuy.Phieu
             this.label1.Text = "SĐT:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox1
+            // cb_sdt
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(628, 84);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(159, 25);
-            this.textBox1.TabIndex = 18;
-            this.textBox1.Text = "0000";
+            this.cb_sdt.FormattingEnabled = true;
+            this.cb_sdt.Location = new System.Drawing.Point(624, 84);
+            this.cb_sdt.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
+            this.cb_sdt.Name = "cb_sdt";
+            this.cb_sdt.Size = new System.Drawing.Size(150, 24);
+            this.cb_sdt.TabIndex = 16;
             // 
             // PhieuBanHang
             // 
@@ -278,7 +287,7 @@ namespace QuanLyDaQuy.Phieu
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "PhieuBanHang";
             this.Text = "PhieuBanHang";
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_phieumuahang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_phieubanhang)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -293,20 +302,19 @@ namespace QuanLyDaQuy.Phieu
         private System.Windows.Forms.Label lb_sophieu;
         private System.Windows.Forms.Label lb_khachhang;
         private System.Windows.Forms.Label lb_ngaylap;
-        private System.Windows.Forms.DataGridView dgv_phieumuahang;
+        private System.Windows.Forms.DataGridView dgv_phieubanhang;
         private System.Windows.Forms.TextBox tb_sophieu;
         private System.Windows.Forms.TextBox tb_ngaylap;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stt_col;
+        private System.Windows.Forms.ComboBox cb_sdt;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cb_khachhang;
         private System.Windows.Forms.DataGridViewComboBoxColumn sp_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn lsp_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn sl_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn dvt_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn dg_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn tt_col;
-        private System.Windows.Forms.ComboBox cb_khachhang;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }
