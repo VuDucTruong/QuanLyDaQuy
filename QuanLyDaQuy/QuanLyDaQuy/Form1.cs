@@ -39,6 +39,8 @@ namespace QuanLyDaQuy
                             thongTinKhachHang1.BringToFront(); break;
                         case 3:
                             thongTinNCC1.BringToFront(); break;
+                        case 4:
+                            thongTinLSP1.BringToFront(); break;
 
                     }
                 }
