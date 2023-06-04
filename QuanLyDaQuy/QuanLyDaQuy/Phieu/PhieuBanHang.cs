@@ -16,9 +16,7 @@ namespace QuanLyDaQuy.Phieu
     {
         DataTable KHACHHANG = new DataTable();
         DataTable SANPHAM = new DataTable();
-        DataTable DONVITINH = new DataTable();
-        DataTable LOAISANPHAM = new DataTable();
-        DataTable TONKHO = new DataTable();
+        long tongTien = 0;
 
         public PhieuBanHang()
         {
@@ -234,21 +232,36 @@ namespace QuanLyDaQuy.Phieu
                     // Kiểm tra xem có thay đổi trong cột "Số lượng" hay không
                     if (e.ColumnIndex == dgv_phieubanhang.Columns["sl_col"].Index)
                     {
-                        int rowIndex = e.RowIndex;
-                        DataGridViewRow row = dgv_phieubanhang.Rows[rowIndex];
+                        // Lấy giá trị số lượng và đơn giá từ các ô tương ứng và tính toán thành tiền
+                        foreach (DataGridViewRow row in dgv_phieubanhang.Rows)
+                        {
+                            if (!row.IsNewRow)
+                            {
+                                int soLuong = Convert.ToInt32(row.Cells["sl_col"].Value);
+                                float donGia = Convert.ToSingle(row.Cells["dg_col"].Value);
 
-                        // Lấy giá trị số lượng và đơn giá từ các ô tương ứng
-                        int soLuong = Convert.ToInt32(row.Cells["sl_col"].Value);
-                        float donGia = Convert.ToSingle(row.Cells["dg_col"].Value);
+                                // Tính toán giá trị thành tiền
+                                float thanhTien = soLuong * donGia;
 
-                        // Tính toán giá trị thành tiền
-                        float thanhTien = soLuong * donGia;
+                                // Làm tròn giá trị thành tiền đến 2 chữ số thập phân
+                                thanhTien = (float)Math.Round(thanhTien, 2);
 
-                        // Làm tròn giá trị thành tiền đến 2 chữ số thập phân
-                        thanhTien = (float)Math.Round(thanhTien, 2);
+                                // Gán giá trị thành tiền vào ô tương ứng
+                                row.Cells["tt_col"].Value = (long)thanhTien;
+                            }
+                        }
 
-                        // Gán giá trị thành tiền vào ô tương ứng
-                        row.Cells["tt_col"].Value = thanhTien;
+                        // Tính tổng các dòng thành tiền và gán vào ô TextBox tổng tiền
+                        foreach (DataGridViewRow row in dgv_phieubanhang.Rows)
+                        {
+                            if (!row.IsNewRow && row.Cells["tt_col"].Value != null)
+                            {
+                                float thanhTien = Convert.ToSingle(row.Cells["tt_col"].Value);
+                                tongTien += (long)thanhTien;
+                            }
+                        }
+
+                        tb_tongtien.Text = FormatNumberWithCommas(tongTien);
                     }
 
                 }
@@ -260,6 +273,42 @@ namespace QuanLyDaQuy.Phieu
             }
         }
 
+        // Định dạng số thành chuỗi với dấu phân cách ","
+        string FormatNumberWithCommas(float number)
+        {
+            return string.Format("{0:#,0}", number);
+        }
 
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            // Kiểm tra xem có hàng nào đang được chọn hay không
+            if (dgv_phieubanhang.SelectedRows.Count > 0)
+            {
+                // Lặp qua các hàng đang được chọn và xóa chúng
+                foreach (DataGridViewRow row in dgv_phieubanhang.SelectedRows)
+                {
+                    // Kiểm tra nếu hàng đang được chọn không phải là hàng mới
+                    if (!row.IsNewRow)
+                    {
+                        dgv_phieubanhang.Rows.Remove(row);
+                    }
+                }
+            }
+        }
+
+        private void dgv_phieubanhang_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            tongTien = 0;
+            foreach (DataGridViewRow row in dgv_phieubanhang.Rows)
+            {
+                if (!row.IsNewRow && row.Cells["tt_col"].Value != null)
+                {
+                    long thanhTien = Convert.ToInt64(row.Cells["tt_col"].Value);
+                    tongTien += thanhTien;
+                }
+            }
+
+            tb_tongtien.Text = FormatNumberWithCommas(tongTien);
+        }
     }
 }
