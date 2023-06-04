@@ -19,7 +19,7 @@ namespace QuanLyDaQuy
 
         private void ThongTinMatHang_Load(object sender, EventArgs e)
         {
-            loadSanPhamFullTableAdapter.Fill(qLDQDataSet.loadSanPhamFull);
+            //loadSanPhamFullTableAdapter.Fill(qLDQDataSet.loadSanPhamFull);
         }
     }
 }

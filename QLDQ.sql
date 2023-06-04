@@ -1,5 +1,8 @@
 ﻿create database QLDQ
+go
 use QLDQ
+go
+
 
 create table SANPHAM
 (

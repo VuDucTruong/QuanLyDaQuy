@@ -64,7 +64,7 @@
             this.traCứuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1235, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(1235, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -76,7 +76,7 @@
             this.toolStripTextBox3,
             this.toolStripTextBox7});
             this.lậpPhiếuToolStripMenuItem.Name = "lậpPhiếuToolStripMenuItem";
-            this.lậpPhiếuToolStripMenuItem.Size = new System.Drawing.Size(92, 25);
+            this.lậpPhiếuToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
             this.lậpPhiếuToolStripMenuItem.Text = "Lập phiếu";
             // 
             // toolStripTextBox1
@@ -86,6 +86,7 @@
             this.toolStripTextBox1.ReadOnly = true;
             this.toolStripTextBox1.Size = new System.Drawing.Size(120, 29);
             this.toolStripTextBox1.Text = "Phiếu mua hàng";
+            this.toolStripTextBox1.Click += new System.EventHandler(this.toolStripTextBox1_Click);
             // 
             // toolStripTextBox2
             // 
@@ -120,7 +121,7 @@
             this.toolStripTextBox5,
             this.toolStripTextBox6});
             this.traCứuToolStripMenuItem.Name = "traCứuToolStripMenuItem";
-            this.traCứuToolStripMenuItem.Size = new System.Drawing.Size(74, 25);
+            this.traCứuToolStripMenuItem.Size = new System.Drawing.Size(71, 24);
             this.traCứuToolStripMenuItem.Text = "Tra cứu";
             // 
             // toolStripTextBox4

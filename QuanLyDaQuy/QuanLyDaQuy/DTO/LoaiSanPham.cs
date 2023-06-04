@@ -26,7 +26,7 @@ namespace QuanLyDaQuy.DTO
         {
             MaLSP =(int) data["MaLSP"];
             TenLSP = data["TenLSP"].ToString();
-            LoiNhuan = (float)data["LoiNhuan"];
+            LoiNhuan = Convert.ToSingle(data["LoiNhuan"]);
             MaDVT = (int)data["MaDVT"];
         }
     }
