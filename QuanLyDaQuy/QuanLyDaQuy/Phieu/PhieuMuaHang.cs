@@ -233,5 +233,10 @@ namespace QuanLyDaQuy.Phieu
                 }
             }
         }
+
+        private void btn_xoaDong_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
