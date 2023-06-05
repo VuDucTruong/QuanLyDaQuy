@@ -17,16 +17,37 @@ namespace QuanLyDaQuy.Phieu
     {
         DataTable KHACHHANG = new DataTable();
         DataTable SANPHAM = new DataTable();
-        long tongTien = 0;
 
         public PhieuBanHang()
         {
             InitializeComponent();
+
+
             AutoFillMaPBH();
             AutoFillNgayLap();
+            AutoFillInfo();
+
             LoadRelatedTables();
             LoadKhachHang();
             LoadSanPham();
+
+        }
+
+        private void AutoFillInfo()
+        {
+            // STT dòng đầu dgv
+            dgv_phieubanhang.Rows[0].Cells[0].Value = 1;
+
+            // Textbox số phiếu
+            if (!int.TryParse(DataProvider.Instance.ExecuteScalar("select max(MaPhieuBH) from PHIEUBANHANG").ToString(),
+                out int soPhieu))
+            {
+                soPhieu = 1;
+            }
+            tb_sophieu.Text = soPhieu.ToString();
+
+            // Textbox ngày lập
+            tb_ngaylap.Text = DateTime.Now.ToString("dd/MM/yyyy");
 
         }
 
@@ -80,7 +101,6 @@ namespace QuanLyDaQuy.Phieu
 
         private void AutoFillNgayLap()
         {
-            tb_ngaylap.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
         private void AutoFillMaPBH()
@@ -89,6 +109,7 @@ namespace QuanLyDaQuy.Phieu
             try
             {
                 soPhieu = (int)DataProvider.Instance.ExecuteScalar("select max(MaPhieuBH) from PHIEUBANHANG");
+
             }
             catch
             {
@@ -126,29 +147,29 @@ namespace QuanLyDaQuy.Phieu
 
         private void dgv_phieubanhang_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
-            try
-            {
-                var dataGridView = sender as DataGridView;
-                var rowNumber = (e.RowIndex + 1).ToString();
+            //try
+            //{
+            //    var dataGridView = sender as DataGridView;
+            //    var rowNumber = (e.RowIndex + 1).ToString();
 
-                // Lấy kích thước của số thứ tự
-                var size = TextRenderer.MeasureText(rowNumber, dataGridView.RowHeadersDefaultCellStyle.Font);
+            //    // Lấy kích thước của số thứ tự
+            //    var size = TextRenderer.MeasureText(rowNumber, dataGridView.RowHeadersDefaultCellStyle.Font);
 
-                // Vẽ số thứ tự vào cột tiêu đề của dòng
-                if (dataGridView.RowHeadersWidth < (size.Width + 20))
-                {
-                    dataGridView.RowHeadersWidth = size.Width + 20;
-                }
+            //    // Vẽ số thứ tự vào cột tiêu đề của dòng
+            //    if (dataGridView.RowHeadersWidth < (size.Width + 20))
+            //    {
+            //        dataGridView.RowHeadersWidth = size.Width + 20;
+            //    }
 
-                var center = (dataGridView.RowHeadersWidth - size.Width) / 2;
-                e.Graphics.DrawString(rowNumber, dataGridView.RowHeadersDefaultCellStyle.Font, SystemBrushes.ControlText, e.RowBounds.Left + center, e.RowBounds.Top + 4);
+            //    var center = (dataGridView.RowHeadersWidth - size.Width) / 2;
+            //    e.Graphics.DrawString(rowNumber, dataGridView.RowHeadersDefaultCellStyle.Font, SystemBrushes.ControlText, e.RowBounds.Left + center, e.RowBounds.Top + 4);
 
-            }
-            catch
-            {
-                MessageBox.Show("Lỗi hàm dgv_phieubanhang_RowPostPaint");
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("Lỗi hàm dgv_phieubanhang_RowPostPaint");
 
-            }
+            //}
         }
 
         // đăng ký sự kiện SelectedIndexChanged cho ComboBox mỗi lần chọn sản phẩm
@@ -214,6 +235,10 @@ namespace QuanLyDaQuy.Phieu
                     }
                 }
 
+                // Gán số lượng & thành tiền mặc định bằng 0
+                currentRow.Cells["sl_col"].Value = 0;
+                currentRow.Cells["tt_col"].Value = 0;
+
             }
             catch
             {
@@ -246,10 +271,6 @@ namespace QuanLyDaQuy.Phieu
                                     || !int.TryParse(slValue.ToString(), out soLuong)
                                     || soLuong < 0)
                                 {
-
-                                    // Giá trị số lượng không hợp lệ, xử lý tương ứng
-                                    MessageBox.Show("Số lượng không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
                                     row.Cells["sl_col"].Value = 0;
                                 }
 
@@ -267,13 +288,14 @@ namespace QuanLyDaQuy.Phieu
                             }
                         }
 
+                        float tongTien = 0;
                         // Tính tổng các dòng thành tiền và gán vào ô TextBox tổng tiền
                         foreach (DataGridViewRow row in dgv_phieubanhang.Rows)
                         {
                             if (!row.IsNewRow && row.Cells["tt_col"].Value != null)
                             {
                                 float thanhTien = Convert.ToSingle(row.Cells["tt_col"].Value);
-                                tongTien += (long)thanhTien;
+                                tongTien += thanhTien;
                             }
                         }
 
@@ -297,24 +319,36 @@ namespace QuanLyDaQuy.Phieu
 
         private void btn_delete_Click(object sender, EventArgs e)
         {
-            // Kiểm tra xem có hàng nào đang được chọn hay không
-            if (dgv_phieubanhang.SelectedRows.Count > 0)
+            // Kiểm tra xem có cell nào đang được chọn hay không
+            if (dgv_phieubanhang.SelectedCells.Count > 0)
             {
-                // Lặp qua các hàng đang được chọn và xóa chúng
-                foreach (DataGridViewRow row in dgv_phieubanhang.SelectedRows)
+                // Lấy cell đầu tiên được chọn
+                DataGridViewCell selectedCell = dgv_phieubanhang.SelectedCells[0];
+
+                // Lấy hàng chứa cell đó
+                DataGridViewRow selectedRow = selectedCell.OwningRow;
+
+                // Kiểm tra nếu hàng không phải là hàng mới
+                if (!selectedRow.IsNewRow)
                 {
-                    // Kiểm tra nếu hàng đang được chọn không phải là hàng mới
-                    if (!row.IsNewRow)
-                    {
-                        dgv_phieubanhang.Rows.Remove(row);
-                    }
+                    // Xóa hàng
+                    dgv_phieubanhang.Rows.Remove(selectedRow);
                 }
             }
+
         }
 
         private void dgv_phieubanhang_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
-            tongTien = 0;
+            float tongTien = 0;
+
+            // Cập nhật lại giá trị của cột STT cho tất cả các hàng
+            for (int i = 0; i < dgv_phieubanhang.Rows.Count; i++)
+            {
+                dgv_phieubanhang.Rows[i].Cells[0].Value = i + 1;
+            }
+
+            // Tính tổng tiền từ các hàng còn lại
             foreach (DataGridViewRow row in dgv_phieubanhang.Rows)
             {
                 if (!row.IsNewRow && row.Cells["tt_col"].Value != null)
@@ -367,5 +401,127 @@ namespace QuanLyDaQuy.Phieu
                 MessageBox.Show("Số điện thoại không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btn_ok_Click(object sender, EventArgs e)
+        {
+            string tenKhachHang = cb_khachhang.Text;
+            string sdt = cb_sdt.Text;
+            string ngayLap = tb_ngaylap.Text;
+
+            if(!float.TryParse(tb_tongtien.Text, out float tongtien))
+                return;
+
+            if (!int.TryParse(tb_sophieu.Text, out int maPhieuBH))
+                return;
+
+            InsertKhachHang(tenKhachHang, sdt);
+
+            // Duyệt qua từng dòng trong DataGridView
+            List<DataGridViewRow> rows = dgv_phieubanhang.Rows.Cast<DataGridViewRow>().ToList();
+            foreach (DataGridViewRow row in rows)
+            {
+                if (row.IsNewRow)
+                    return;
+
+                    // Lấy thông tin sản phẩm từ dòng hiện tại
+                    string tenSP = row.Cells["sp_col"].Value.ToString();
+                int soLuong = Convert.ToInt32(row.Cells["sl_col"].Value);
+                float donGia = Convert.ToSingle(row.Cells["dg_col"].Value);
+                float thanhTien = Convert.ToSingle(row.Cells["tt_col"].Value);
+
+                // Cập nhật thuộc tính SoLuongTon trong bảng Sản phẩm
+                // Thực hiện truy vấn SQL hoặc gọi hàm để cập nhật giá trị SoLuongTon
+
+                // Thêm chi tiết phiếu bán hàng vào bảng CT_PHIEUBANHANG
+                // Thực hiện truy vấn SQL hoặc gọi hàm để thêm chi tiết phiếu bán hàng
+            }
+
+            UpdateSLT();
+            //AddPhieuMuaHang();
+            ReloadForm();
+
+        }
+
+        private void AddPhieuMuaHang()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void UpdateSLT()
+        {
+            string updateSoLuongTonQuery = "UPDATE SANPHAM SET SoLuongTon = SoLuongTon - @SoLuong WHERE MaSP = @MaSP";
+
+            //// Lấy thông tin sản phẩm từ DataGridView
+            //int maSP = // Lấy mã sản phẩm từ dòng hiện tại
+            //int soLuong = // Lấy số lượng từ cột số lượng hoặc điểm cần lấy
+
+            //object[] updateSoLuongTonParams = new object[] { soLuong, maSP };
+
+            //int rowCount = ExecuteNonQuery(updateSoLuongTonQuery, updateSoLuongTonParams);
+        }
+
+        private void InsertKhachHang(string tenKH, string sdt)
+        {
+
+            string query = "SELECT COUNT(*) FROM KHACHHANG WHERE TenKH = @TenKhachHang AND SDT = @SoDienThoai";
+            object[] parameters = new object[] { tenKH, sdt };
+            string[] parameterNames = new string[] { "@TenKhachHang", "@SoDienThoai" };
+
+            int rowCount;
+            if (int.TryParse(DataProvider.Instance.ExecuteScalar(query, parameters).ToString(), out rowCount))
+            {
+                // Kiểm tra giá trị rowCount để xác định xem khách hàng đã tồn tại hay chưa
+                if (rowCount == 0)
+                {
+                    // Thêm thông tin khách hàng vào cơ sở dữ liệu
+                    string insertQuery = "INSERT INTO KHACHHANG (TenKH, SDT) VALUES (@TenKhachHang, @SoDienThoai)";
+
+                    // Thay thế các tham số trong câu truy vấn bằng giá trị tương ứng
+                    for (int i = 0; i < parameters.Length; i++)
+                    {
+                        insertQuery = insertQuery.Replace(parameterNames[i], "'" + parameters[i].ToString() + "'");
+                    }
+
+                    int affectedRows = DataProvider.Instance.ExecuteNonQuery(insertQuery);
+                    MessageBox.Show($"{affectedRows} khách hàng mới đã được thêm");
+                }
+            }
+            else
+            {
+                // Xử lý khi không thể chuyển đổi giá trị rowCount thành kiểu int
+                MessageBox.Show("Lỗi ép kiểu dữ liệu trả về sau khi truy vấn CSDL");
+
+            }
+        }
+
+        private void ReloadForm()
+        {
+            AutoFillMaPBH();
+            AutoFillNgayLap();
+            LoadRelatedTables();
+            LoadKhachHang();
+            LoadSanPham();
+
+            tb_tongtien.Text = "0";
+            dgv_phieubanhang.Rows.Clear();
+            this.Refresh();
+        }
+
+        private void dgv_phieubanhang_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            dgv_phieubanhang.Rows[e.RowIndex].Cells[0].Value = e.RowIndex + 1;
+        }
+
+        private void cb_khachhang_Leave(object sender, EventArgs e)
+        {
+            string ten = cb_khachhang.Text;
+
+            if (string.IsNullOrEmpty(ten))
+            {
+                MessageBox.Show("Tên khách hàng không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
     }
 }
