@@ -292,6 +292,7 @@ namespace QuanLyDaQuy.Phieu
             this.cb_sdt.Name = "cb_sdt";
             this.cb_sdt.Size = new System.Drawing.Size(150, 24);
             this.cb_sdt.TabIndex = 16;
+            this.cb_sdt.Leave += new System.EventHandler(this.cb_sdt_Leave);
             // 
             // label2
             // 

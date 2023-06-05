@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyDaQuy.DTO;
 using QuanLyDaQuy.DAO;
+using System.Text.RegularExpressions;
 
 namespace QuanLyDaQuy.Phieu
 {
@@ -237,7 +238,22 @@ namespace QuanLyDaQuy.Phieu
                         {
                             if (!row.IsNewRow)
                             {
-                                int soLuong = Convert.ToInt32(row.Cells["sl_col"].Value);
+                                int soLuong = 0;
+
+                                // Lấy giá trị số lượng
+                                object slValue = row.Cells["sl_col"].Value;
+                                if (slValue == null 
+                                    || !int.TryParse(slValue.ToString(), out soLuong)
+                                    || soLuong < 0)
+                                {
+
+                                    // Giá trị số lượng không hợp lệ, xử lý tương ứng
+                                    MessageBox.Show("Số lượng không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                                    row.Cells["sl_col"].Value = 0;
+                                }
+
+                                // Lấy giá trị đơn giá
                                 float donGia = Convert.ToSingle(row.Cells["dg_col"].Value);
 
                                 // Tính toán giá trị thành tiền
@@ -309,6 +325,47 @@ namespace QuanLyDaQuy.Phieu
             }
 
             tb_tongtien.Text = FormatNumberWithCommas(tongTien);
+        }
+
+        private bool IsValidPhoneNumber(string phoneNumber)
+        {
+            // Kiểm tra độ dài số điện thoại (ví dụ: 10 chữ số)
+            if (phoneNumber.Length != 10)
+            {
+                return false;
+            }
+
+            // Kiểm tra các ký tự trong số điện thoại (chỉ chấp nhận số từ 0 đến 9)
+            foreach (char c in phoneNumber)
+            {
+                if (!Char.IsDigit(c))
+                {
+                    return false;
+                }
+            }
+
+            // Kiểm tra định dạng số điện thoại (ví dụ: theo một mẫu nhất định)
+            string pattern = @"^(0\d{9})$"; // Mẫu kiểm tra: số bắt đầu bằng 0, sau đó là 9 chữ số (tổng cộng 10 chữ số)
+            if (!Regex.IsMatch(phoneNumber, pattern))
+            {
+                return false;
+            }
+
+            // Số điện thoại hợp lệ
+            return true;
+        }
+
+        private void cb_sdt_Leave(object sender, EventArgs e)
+        {
+            // Kiểm tra hợp lệ của số điện thoại nhập vào
+            string phoneNumber = cb_sdt.Text;
+
+            // Thực hiện kiểm tra và xử lý tùy theo yêu cầu
+
+            if (!IsValidPhoneNumber(phoneNumber))
+            {
+                MessageBox.Show("Số điện thoại không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
