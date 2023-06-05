@@ -17,7 +17,7 @@ namespace QuanLyDaQuy.DTO
         public double ConLai;
         public string TinhTrang;
 
-        public PhieuDichVuDTO(int maPhieuDV, int maKH, DateTime ngayLap, float tongTien, float traTruoc, float conLai, string tinhTrang)
+        public PhieuDichVuDTO(int maPhieuDV, int maKH, DateTime ngayLap, double tongTien, double traTruoc, double conLai, string tinhTrang)
         {
             MaPhieuDV = maPhieuDV;
             MaKH = maKH;
@@ -37,6 +37,13 @@ namespace QuanLyDaQuy.DTO
             TraTruoc = (double)data["TraTruoc"];
             ConLai = (double)data["ConLai"];
             TinhTrang = data["TinhTrang"].ToString();
+        }
+
+        public void Perform_Insert()
+        {
+            DAO.DataProvider.Instance.ExecuteQuery("insert into PhieuDichVu (MaKH , NgayLap, TongTien, TraTruoc, ConLai, TinhTrang) values" +
+                                                    "(" + MaKH + "," + NgayLap + "," + TongTien + "," + TraTruoc + ","
+                                                    + ConLai + ", N'" + TinhTrang + "')");
         }
     }
 }
