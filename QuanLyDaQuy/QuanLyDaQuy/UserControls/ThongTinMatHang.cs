@@ -32,9 +32,9 @@ namespace QuanLyDaQuy
 
         private void insert_btn_Click(object sender, EventArgs e)
         {
-            /*ThemSPForm themSPForm = new ThemSPForm();
+            ThemSPForm themSPForm = new ThemSPForm();
             themSPForm.thongTinMatHang = this;
-            themSPForm.ShowDialog();*/
+            themSPForm.ShowDialog();
         }
 
         private void update_btn_Click(object sender, EventArgs e)
