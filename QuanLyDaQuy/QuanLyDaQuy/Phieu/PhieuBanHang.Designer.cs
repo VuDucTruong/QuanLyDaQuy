@@ -366,7 +366,7 @@ namespace QuanLyDaQuy.Phieu
             this.btn_ok.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btn_ok.Location = new System.Drawing.Point(768, 508);
             this.btn_ok.Name = "btn_ok";
-            this.btn_ok.Size = new System.Drawing.Size(100, 37);
+            this.btn_ok.Size = new System.Drawing.Size(100, 38);
             this.btn_ok.TabIndex = 18;
             this.btn_ok.Text = "Lập phiếu";
             this.btn_ok.UseVisualStyleBackColor = false;
