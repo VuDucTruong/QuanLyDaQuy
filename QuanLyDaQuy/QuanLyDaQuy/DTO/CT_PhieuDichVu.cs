@@ -32,5 +32,22 @@ namespace QuanLyDaQuy.DTO
             NgayGiao = ngayGiao;
             TinhTrang = tinhTrang;
         }
+<<<<<<< HEAD
+=======
+
+        public CT_PhieuDichVu(DataRow data)
+        {
+            MaPhieuDV = (int)data["MaPhieuDV"];
+            MaDV = (int)data["MaDV"];
+            DonGia = (double)data["DonGia"];
+            DonGiaDuocTinh = (double)data["DonGiaDuocTinh"];
+            SL = (int)data["SL"];
+            ThanhTien = (double)data["ThanhTien"];
+            TraTruoc = (double)data["TraTruoc"];
+            ConLai = (double)data["ConLai"];
+            NgayGiao = (DateTime)data["NgayGiao"];
+            TinhTrang = data["TinhTrang"].ToString();
+        }
+>>>>>>> parent of 1f2a574 (Update validating PhieuDichVu)
     }
 }

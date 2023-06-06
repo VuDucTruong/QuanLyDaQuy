@@ -26,5 +26,19 @@ namespace QuanLyDaQuy.DTO
             ConLai = conLai;
             TinhTrang = tinhTrang;
         }
+<<<<<<< HEAD
+=======
+
+        public PhieuDichVuDTO(DataRow data)
+        {
+            MaPhieuDV = (int)data["MaPhieuDV"];
+            MaKH = (int)data["MaKH"];
+            NgayLap = (DateTime)data["NgayLap"];
+            TongTien = (double)data["TongTien"];
+            TraTruoc = (double)data["TraTruoc"];
+            ConLai = (double)data["ConLai"];
+            TinhTrang = data["TinhTrang"].ToString();
+        }
+>>>>>>> parent of 1f2a574 (Update validating PhieuDichVu)
     }
 }
