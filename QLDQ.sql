@@ -342,3 +342,12 @@ AS
 	SELECT TenLSP , DVT
 	from LOAISANPHAM , DONVITINH where LOAISANPHAM.MaDVT = DONVITINH.MaDVT
 RETURN 0
+
+
+-----------Tri--------------
+
+
+----------Hung------------
+
+
+---------------Quang------------
