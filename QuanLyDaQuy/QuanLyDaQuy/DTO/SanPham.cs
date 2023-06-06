@@ -32,8 +32,8 @@ namespace QuanLyDaQuy.DTO
             MaSP = (int)data["MaSP"];
             TenSP = data["TenSP"].ToString();
             MaLSP = (int)data["MaLSP"];
-            DonGiaBan =(float) data["DonGiaBan"];
-            DonGiaMua =(float) data["DonGiaMua"];
+            DonGiaBan =Convert.ToSingle(data["DonGiaBan"]);
+            DonGiaMua = Convert.ToSingle(data["DonGiaMua"]);
             SoLuongTon =(int) data["SoLuongTon"];
         }
     }

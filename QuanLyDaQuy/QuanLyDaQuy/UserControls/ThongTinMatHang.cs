@@ -21,7 +21,7 @@ namespace QuanLyDaQuy
 
         public void RefreshData()
         {
-            loadSanPhamFullTableAdapter.Fill(qLDQDataSet.loadSanPhamFull);
+            //loadSanPhamFullTableAdapter.Fill(qLDQDataSet.loadSanPhamFull);
         }
 
         private void ThongTinMatHang_Load(object sender, EventArgs e)

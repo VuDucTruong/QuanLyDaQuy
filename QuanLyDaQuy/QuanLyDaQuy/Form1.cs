@@ -66,5 +66,11 @@ namespace QuanLyDaQuy
             PhieuDichVu phieuDichVu = new PhieuDichVu();
             phieuDichVu.Show();
         }
+
+        private void toolStripTextBox1_Click(object sender, EventArgs e)
+        {
+            PhieuMuaHang phieuMuaHang = new PhieuMuaHang();
+            phieuMuaHang.Show();
+        }
     }
 }
