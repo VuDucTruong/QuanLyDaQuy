@@ -29,15 +29,22 @@ namespace QuanLyDaQuy.Phieu
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+=======
+>>>>>>> parent of 533b904 (loading related data after choosing SanPham)
             this.lb_title = new System.Windows.Forms.Label();
             this.lb_sophieu = new System.Windows.Forms.Label();
             this.lb_khachhang = new System.Windows.Forms.Label();
             this.lb_ngaylap = new System.Windows.Forms.Label();
+<<<<<<< HEAD
             this.dgv_phieubanhang = new System.Windows.Forms.DataGridView();
+=======
+            this.dgv_phieumuahang = new System.Windows.Forms.DataGridView();
+>>>>>>> parent of 533b904 (loading related data after choosing SanPham)
             this.stt_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sp_col = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.lsp_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +57,7 @@ namespace QuanLyDaQuy.Phieu
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
+<<<<<<< HEAD
             this.cb_sdt = new System.Windows.Forms.ComboBox();
             this.tb_tongtien = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -58,6 +66,10 @@ namespace QuanLyDaQuy.Phieu
             this.btn_delete = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_phieubanhang)).BeginInit();
+=======
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_phieumuahang)).BeginInit();
+>>>>>>> parent of 533b904 (loading related data after choosing SanPham)
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -82,7 +94,11 @@ namespace QuanLyDaQuy.Phieu
             this.lb_sophieu.Location = new System.Drawing.Point(40, 20);
             this.lb_sophieu.Margin = new System.Windows.Forms.Padding(40, 20, 3, 0);
             this.lb_sophieu.Name = "lb_sophieu";
+<<<<<<< HEAD
             this.lb_sophieu.Size = new System.Drawing.Size(115, 24);
+=======
+            this.lb_sophieu.Size = new System.Drawing.Size(126, 24);
+>>>>>>> parent of 533b904 (loading related data after choosing SanPham)
             this.lb_sophieu.TabIndex = 2;
             this.lb_sophieu.Text = "Số phiếu:";
             this.lb_sophieu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -94,7 +110,11 @@ namespace QuanLyDaQuy.Phieu
             this.lb_khachhang.Location = new System.Drawing.Point(490, 20);
             this.lb_khachhang.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.lb_khachhang.Name = "lb_khachhang";
+<<<<<<< HEAD
             this.lb_khachhang.Size = new System.Drawing.Size(115, 18);
+=======
+            this.lb_khachhang.Size = new System.Drawing.Size(126, 18);
+>>>>>>> parent of 533b904 (loading related data after choosing SanPham)
             this.lb_khachhang.TabIndex = 3;
             this.lb_khachhang.Text = "Khách hàng:";
             this.lb_khachhang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -103,16 +123,22 @@ namespace QuanLyDaQuy.Phieu
             // 
             this.lb_ngaylap.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_ngaylap.ForeColor = System.Drawing.Color.Black;
+<<<<<<< HEAD
             this.lb_ngaylap.Location = new System.Drawing.Point(40, 84);
             this.lb_ngaylap.Margin = new System.Windows.Forms.Padding(40, 20, 3, 0);
+=======
+            this.lb_ngaylap.Location = new System.Drawing.Point(529, 20);
+            this.lb_ngaylap.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
+>>>>>>> parent of 533b904 (loading related data after choosing SanPham)
             this.lb_ngaylap.Name = "lb_ngaylap";
             this.lb_ngaylap.Size = new System.Drawing.Size(84, 18);
             this.lb_ngaylap.TabIndex = 4;
             this.lb_ngaylap.Text = "Ngày lập:";
             this.lb_ngaylap.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // dgv_phieubanhang
+            // dgv_phieumuahang
             // 
+<<<<<<< HEAD
             this.dgv_phieubanhang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -124,6 +150,10 @@ namespace QuanLyDaQuy.Phieu
             this.dgv_phieubanhang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_phieubanhang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_phieubanhang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+=======
+            this.dgv_phieumuahang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_phieumuahang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+>>>>>>> parent of 533b904 (loading related data after choosing SanPham)
             this.stt_col,
             this.sp_col,
             this.lsp_col,
@@ -131,6 +161,7 @@ namespace QuanLyDaQuy.Phieu
             this.dvt_col,
             this.dg_col,
             this.tt_col});
+<<<<<<< HEAD
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -161,12 +192,23 @@ namespace QuanLyDaQuy.Phieu
             this.dgv_phieubanhang.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgv_phieubanhang_RowPostPaint);
             this.dgv_phieubanhang.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgv_phieubanhang_RowsAdded);
             this.dgv_phieubanhang.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgv_phieubanhang_RowsRemoved);
+=======
+            this.dgv_phieumuahang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_phieumuahang.GridColor = System.Drawing.Color.Silver;
+            this.dgv_phieumuahang.Location = new System.Drawing.Point(3, 187);
+            this.dgv_phieumuahang.Name = "dgv_phieumuahang";
+            this.dgv_phieumuahang.RowHeadersWidth = 51;
+            this.dgv_phieumuahang.RowTemplate.Height = 24;
+            this.dgv_phieumuahang.Size = new System.Drawing.Size(794, 260);
+            this.dgv_phieumuahang.TabIndex = 12;
+>>>>>>> parent of 533b904 (loading related data after choosing SanPham)
             // 
             // stt_col
             // 
             this.stt_col.HeaderText = "STT";
             this.stt_col.MinimumWidth = 6;
             this.stt_col.Name = "stt_col";
+<<<<<<< HEAD
             this.stt_col.Width = 64;
             // 
             // sp_col
@@ -177,71 +219,91 @@ namespace QuanLyDaQuy.Phieu
             this.sp_col.DefaultCellStyle = dataGridViewCellStyle2;
             this.sp_col.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.sp_col.DropDownWidth = 2;
+=======
+            this.stt_col.Width = 50;
+            // 
+            // sp_col
+            // 
+>>>>>>> parent of 533b904 (loading related data after choosing SanPham)
             this.sp_col.HeaderText = "Sản phẩm";
             this.sp_col.MinimumWidth = 6;
             this.sp_col.Name = "sp_col";
             this.sp_col.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.sp_col.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.sp_col.Width = 101;
+            this.sp_col.Width = 125;
             // 
             // lsp_col
             // 
-            this.lsp_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.lsp_col.DataPropertyName = "TenLSP";
             this.lsp_col.HeaderText = "Loại sản phẩm";
             this.lsp_col.MinimumWidth = 6;
             this.lsp_col.Name = "lsp_col";
+<<<<<<< HEAD
             this.lsp_col.ReadOnly = true;
             this.lsp_col.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.lsp_col.Width = 130;
+=======
+            this.lsp_col.Width = 125;
+>>>>>>> parent of 533b904 (loading related data after choosing SanPham)
             // 
             // sl_col
             // 
-            this.sl_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.sl_col.DataPropertyName = "SoLuongTon";
             this.sl_col.HeaderText = "Số lượng";
             this.sl_col.MinimumWidth = 6;
             this.sl_col.Name = "sl_col";
-            this.sl_col.Width = 93;
+            this.sl_col.Width = 75;
             // 
             // dvt_col
             // 
-            this.dvt_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dvt_col.DataPropertyName = "DVT";
             this.dvt_col.HeaderText = "Đơn vị tính";
             this.dvt_col.MinimumWidth = 6;
             this.dvt_col.Name = "dvt_col";
+<<<<<<< HEAD
             this.dvt_col.ReadOnly = true;
             this.dvt_col.Width = 104;
+=======
+            this.dvt_col.Width = 125;
+>>>>>>> parent of 533b904 (loading related data after choosing SanPham)
             // 
             // dg_col
             // 
-            this.dg_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dg_col.DataPropertyName = "DonGiaBan";
             this.dg_col.HeaderText = "Đơn giá";
             this.dg_col.MinimumWidth = 6;
             this.dg_col.Name = "dg_col";
+<<<<<<< HEAD
             this.dg_col.ReadOnly = true;
             this.dg_col.Width = 86;
+=======
+            this.dg_col.Width = 125;
+>>>>>>> parent of 533b904 (loading related data after choosing SanPham)
             // 
             // tt_col
             // 
-            this.tt_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.tt_col.HeaderText = "Thành tiền";
             this.tt_col.MinimumWidth = 6;
             this.tt_col.Name = "tt_col";
+<<<<<<< HEAD
             this.tt_col.ReadOnly = true;
             this.tt_col.Width = 105;
+=======
+            this.tt_col.Width = 125;
+>>>>>>> parent of 533b904 (loading related data after choosing SanPham)
             // 
             // tb_sophieu
             // 
             this.tb_sophieu.BackColor = System.Drawing.SystemColors.HighlightText;
             this.tb_sophieu.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.tb_sophieu.Location = new System.Drawing.Point(198, 20);
             this.tb_sophieu.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
             this.tb_sophieu.Name = "tb_sophieu";
             this.tb_sophieu.ReadOnly = true;
             this.tb_sophieu.Size = new System.Drawing.Size(100, 25);
+=======
+            this.tb_sophieu.Location = new System.Drawing.Point(172, 20);
+            this.tb_sophieu.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
+            this.tb_sophieu.Name = "tb_sophieu";
+            this.tb_sophieu.Size = new System.Drawing.Size(220, 25);
+>>>>>>> parent of 533b904 (loading related data after choosing SanPham)
             this.tb_sophieu.TabIndex = 13;
             this.tb_sophieu.Text = "000";
             // 
@@ -250,11 +312,18 @@ namespace QuanLyDaQuy.Phieu
             this.tb_ngaylap.BackColor = System.Drawing.SystemColors.HighlightText;
             this.tb_ngaylap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tb_ngaylap.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+<<<<<<< HEAD
             this.tb_ngaylap.Location = new System.Drawing.Point(198, 84);
             this.tb_ngaylap.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
             this.tb_ngaylap.Name = "tb_ngaylap";
             this.tb_ngaylap.ReadOnly = true;
             this.tb_ngaylap.Size = new System.Drawing.Size(100, 25);
+=======
+            this.tb_ngaylap.Location = new System.Drawing.Point(628, 20);
+            this.tb_ngaylap.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
+            this.tb_ngaylap.Name = "tb_ngaylap";
+            this.tb_ngaylap.Size = new System.Drawing.Size(159, 25);
+>>>>>>> parent of 533b904 (loading related data after choosing SanPham)
             this.tb_ngaylap.TabIndex = 15;
             this.tb_ngaylap.Text = "20/20/2000";
             // 
@@ -263,6 +332,10 @@ namespace QuanLyDaQuy.Phieu
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 1);
+<<<<<<< HEAD
+=======
+            this.tableLayoutPanel1.Controls.Add(this.dgv_phieumuahang, 0, 2);
+>>>>>>> parent of 533b904 (loading related data after choosing SanPham)
             this.tableLayoutPanel1.Controls.Add(this.lb_title, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.dgv_phieubanhang, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -279,6 +352,7 @@ namespace QuanLyDaQuy.Phieu
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 4;
+<<<<<<< HEAD
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
@@ -295,6 +369,21 @@ namespace QuanLyDaQuy.Phieu
             this.tableLayoutPanel2.Controls.Add(this.cb_khachhang, 3, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 53);
+=======
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.07547F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.92453F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 99F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168F));
+            this.tableLayoutPanel2.Controls.Add(this.lb_sophieu, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tb_sophieu, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tb_ngaylap, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.lb_khachhang, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.lb_ngaylap, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.cb_khachhang, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label1, 2, 1);
+            this.tableLayoutPanel2.Controls.Add(this.textBox1, 3, 1);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 48);
+>>>>>>> parent of 533b904 (loading related data after choosing SanPham)
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -303,11 +392,27 @@ namespace QuanLyDaQuy.Phieu
             this.tableLayoutPanel2.Size = new System.Drawing.Size(976, 194);
             this.tableLayoutPanel2.TabIndex = 17;
             // 
+<<<<<<< HEAD
+=======
+            // cb_khachhang
+            // 
+            this.cb_khachhang.FormattingEnabled = true;
+            this.cb_khachhang.Location = new System.Drawing.Point(172, 84);
+            this.cb_khachhang.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
+            this.cb_khachhang.Name = "cb_khachhang";
+            this.cb_khachhang.Size = new System.Drawing.Size(121, 24);
+            this.cb_khachhang.TabIndex = 16;
+            // 
+>>>>>>> parent of 533b904 (loading related data after choosing SanPham)
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
+<<<<<<< HEAD
             this.label1.Location = new System.Drawing.Point(490, 84);
+=======
+            this.label1.Location = new System.Drawing.Point(529, 84);
+>>>>>>> parent of 533b904 (loading related data after choosing SanPham)
             this.label1.Margin = new System.Windows.Forms.Padding(3, 20, 3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 18);
@@ -315,8 +420,9 @@ namespace QuanLyDaQuy.Phieu
             this.label1.Text = "SĐT:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // cb_sdt
+            // textBox1
             // 
+<<<<<<< HEAD
             this.cb_sdt.FormattingEnabled = true;
             this.cb_sdt.Location = new System.Drawing.Point(685, 84);
             this.cb_sdt.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
@@ -390,6 +496,17 @@ namespace QuanLyDaQuy.Phieu
             this.button1.TabIndex = 21;
             this.button1.Text = "Hủy phiếu";
             this.button1.UseVisualStyleBackColor = true;
+=======
+            this.textBox1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(628, 84);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(159, 25);
+            this.textBox1.TabIndex = 18;
+            this.textBox1.Text = "0000";
+>>>>>>> parent of 533b904 (loading related data after choosing SanPham)
             // 
             // PhieuBanHang
             // 
@@ -403,7 +520,7 @@ namespace QuanLyDaQuy.Phieu
             this.Name = "PhieuBanHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "PhieuBanHang";
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_phieubanhang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_phieumuahang)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -418,11 +535,12 @@ namespace QuanLyDaQuy.Phieu
         private System.Windows.Forms.Label lb_sophieu;
         private System.Windows.Forms.Label lb_khachhang;
         private System.Windows.Forms.Label lb_ngaylap;
-        private System.Windows.Forms.DataGridView dgv_phieubanhang;
+        private System.Windows.Forms.DataGridView dgv_phieumuahang;
         private System.Windows.Forms.TextBox tb_sophieu;
         private System.Windows.Forms.TextBox tb_ngaylap;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+<<<<<<< HEAD
         private System.Windows.Forms.ComboBox cb_sdt;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cb_khachhang;
@@ -431,6 +549,8 @@ namespace QuanLyDaQuy.Phieu
         private System.Windows.Forms.Button btn_ok;
         private System.Windows.Forms.Button btn_delete;
         private System.Windows.Forms.Button button1;
+=======
+>>>>>>> parent of 533b904 (loading related data after choosing SanPham)
         private System.Windows.Forms.DataGridViewTextBoxColumn stt_col;
         private System.Windows.Forms.DataGridViewComboBoxColumn sp_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn lsp_col;
@@ -438,5 +558,8 @@ namespace QuanLyDaQuy.Phieu
         private System.Windows.Forms.DataGridViewTextBoxColumn dvt_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn dg_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn tt_col;
+        private System.Windows.Forms.ComboBox cb_khachhang;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

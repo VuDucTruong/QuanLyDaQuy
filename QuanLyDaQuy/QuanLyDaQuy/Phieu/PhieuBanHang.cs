@@ -15,8 +15,11 @@ namespace QuanLyDaQuy.Phieu
 {
     public partial class PhieuBanHang : Form
     {
+<<<<<<< HEAD
         DataTable KHACHHANG = new DataTable();
         DataTable SANPHAM = new DataTable();
+=======
+>>>>>>> parent of 533b904 (loading related data after choosing SanPham)
 
         public PhieuBanHang()
         {
@@ -25,6 +28,7 @@ namespace QuanLyDaQuy.Phieu
 
             AutoFillMaPBH();
             AutoFillNgayLap();
+<<<<<<< HEAD
             AutoFillInfo();
 
             LoadRelatedTables();
@@ -56,47 +60,30 @@ namespace QuanLyDaQuy.Phieu
             SANPHAM = DataProvider.Instance.ExecuteQuery("select * from SANPHAM");
             KHACHHANG = DataProvider.Instance.ExecuteQuery("select *  from KHACHHANG");
 
+=======
+            LoadKhachHang();
+            LoadSanPham();
+>>>>>>> parent of 533b904 (loading related data after choosing SanPham)
         }
 
         private void LoadSanPham()
         {
-            try
-            {
-                // Tạo một DataGridViewComboBoxColumn trong DataGridView
-                var comboBoxColumn = (DataGridViewComboBoxColumn)dgv_phieubanhang.Columns["sp_col"];
 
-                comboBoxColumn.DropDownWidth = 500; // Thiết lập kích thước dropdown list là 300px (hoặc một giá trị phù hợp khác)
-
-                // Gán nguồn dữ liệu cho ComboBox
-                comboBoxColumn.DataSource = SANPHAM;
-                comboBoxColumn.DisplayMember = "TenSP"; // tên cột hiển thị trong SANPHAM
-                comboBoxColumn.ValueMember = "MaSP"; // tên cột giá trị trong SANPHAM
-            }
-            catch
-            {
-
-            }
         }
 
         private void LoadKhachHang()
         {
+            // load data from KHACHHANG
             try
             {
-                // Lấy cột TenKH từ biến DataTable
-                DataColumn column = KHACHHANG.Columns["TenKH"]; 
 
-                // Lặp qua các hàng trong DataTable và thêm dữ liệu vào ComboBox
-                foreach (DataRow row in KHACHHANG.Rows)
-                {
-                    string value = row[column].ToString(); 
-                    cb_khachhang.Items.Add(value); 
-                }
             }
             catch
             {
-                cb_khachhang.Text = "Lỗi load dữ liệu";
+
             }
 
+            cb_khachhang.Text = "TriPero";
         }
 
         private void AutoFillNgayLap()
@@ -121,6 +108,7 @@ namespace QuanLyDaQuy.Phieu
             }
 
         }
+<<<<<<< HEAD
 
         private void cb_khachhang_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -523,5 +511,7 @@ namespace QuanLyDaQuy.Phieu
 
         }
 
+=======
+>>>>>>> parent of 533b904 (loading related data after choosing SanPham)
     }
 }
