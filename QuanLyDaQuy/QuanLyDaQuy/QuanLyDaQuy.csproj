@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{98F5A303-BDBE-4AED-8A01-6976E3F3758F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QuanLyDaQuy</RootNamespace>
+    <AssemblyName>QuanLyDaQuy</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DTO\CT_PhieuBanHang.cs" />
+    <Compile Include="DTO\CT_PhieuDichVu.cs" />
+    <Compile Include="DTO\CT_PhieuMuaHang.cs" />
+    <Compile Include="DTO\DichVu.cs" />
+    <Compile Include="DTO\DonViTinh.cs" />
+    <Compile Include="DTO\KhachHang.cs" />
+    <Compile Include="DTO\LoaiSanPham.cs" />
+    <Compile Include="DTO\NhaCungCap.cs" />
+    <Compile Include="DTO\PhieuBanHangDTO.cs" />
+    <Compile Include="DTO\PhieuDichVuDTO.cs" />
+    <Compile Include="DTO\PhieuMuaHangDTO.cs" />
+    <Compile Include="DTO\SanPham.cs" />
+    <Compile Include="DTO\ThamSo.cs" />
+    <Compile Include="DTO\TonKho.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Phieu\BaoCaoTonKho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Phieu\BaoCaoTonKho.Designer.cs">
+      <DependentUpon>BaoCaoTonKho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Phieu\DSPhieuDV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Phieu\DSPhieuDV.Designer.cs">
+      <DependentUpon>DSPhieuDV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Phieu\PhieuBanHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Phieu\PhieuBanHang.Designer.cs">
+      <DependentUpon>PhieuBanHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Phieu\PhieuDichVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Phieu\PhieuDichVu.Designer.cs">
+      <DependentUpon>PhieuDichVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Phieu\PhieuMuaHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Phieu\PhieuMuaHang.Designer.cs">
+      <DependentUpon>PhieuMuaHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Phieu\ThemDVForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Phieu\ThemDVForm.Designer.cs">
+      <DependentUpon>ThemDVForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Phieu\ThemDVTForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Phieu\ThemDVTForm.Designer.cs">
+      <DependentUpon>ThemDVTForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Phieu\ThemKHForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Phieu\ThemKHForm.Designer.cs">
+      <DependentUpon>ThemKHForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Phieu\ThemLSPForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Phieu\ThemLSPForm.Designer.cs">
+      <DependentUpon>ThemLSPForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Phieu\ThemNCCForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Phieu\ThemNCCForm.Designer.cs">
+      <DependentUpon>ThemNCCForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Phieu\ThemSPForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Phieu\ThemSPForm.Designer.cs">
+      <DependentUpon>ThemSPForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLDQDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLDQDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ThongTinDichVu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ThongTinDichVu.Designer.cs">
+      <DependentUpon>ThongTinDichVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ThongTinKhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ThongTinKhachHang.Designer.cs">
+      <DependentUpon>ThongTinKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ThongTinLSP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ThongTinLSP.Designer.cs">
+      <DependentUpon>ThongTinLSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ThongTinMatHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ThongTinMatHang.Designer.cs">
+      <DependentUpon>ThongTinMatHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ThongTinNCC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ThongTinNCC.Designer.cs">
+      <DependentUpon>ThongTinNCC.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phieu\BaoCaoTonKho.resx">
+      <DependentUpon>BaoCaoTonKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phieu\DSPhieuDV.resx">
+      <DependentUpon>DSPhieuDV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phieu\PhieuBanHang.resx">
+      <DependentUpon>PhieuBanHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phieu\PhieuDichVu.resx">
+      <DependentUpon>PhieuDichVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phieu\PhieuMuaHang.resx">
+      <DependentUpon>PhieuMuaHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phieu\ThemDVForm.resx">
+      <DependentUpon>ThemDVForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phieu\ThemDVTForm.resx">
+      <DependentUpon>ThemDVTForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phieu\ThemKHForm.resx">
+      <DependentUpon>ThemKHForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phieu\ThemLSPForm.resx">
+      <DependentUpon>ThemLSPForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phieu\ThemNCCForm.resx">
+      <DependentUpon>ThemNCCForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phieu\ThemSPForm.resx">
+      <DependentUpon>ThemSPForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UserControls\ThongTinDichVu.resx">
+      <DependentUpon>ThongTinDichVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ThongTinKhachHang.resx">
+      <DependentUpon>ThongTinKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ThongTinLSP.resx">
+      <DependentUpon>ThongTinLSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ThongTinMatHang.resx">
+      <DependentUpon>ThongTinMatHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ThongTinNCC.resx">
+      <DependentUpon>ThongTinNCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="QLDQDataSet.xsc">
+      <DependentUpon>QLDQDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLDQDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLDQDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLDQDataSet.xss">
+      <DependentUpon>QLDQDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
