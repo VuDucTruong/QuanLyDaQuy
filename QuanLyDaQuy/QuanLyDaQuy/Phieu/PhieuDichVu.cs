@@ -535,5 +535,10 @@ namespace QuanLyDaQuy.Phieu
             return 0;
         }
         #endregion
+
+        private void button_XoaDong_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

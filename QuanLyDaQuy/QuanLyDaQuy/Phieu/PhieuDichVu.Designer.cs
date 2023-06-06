@@ -59,6 +59,7 @@
             this.button_OK = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.button_XoaDong = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -399,13 +400,15 @@
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 4;
+            this.tableLayoutPanel2.ColumnCount = 5;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 121F));
-            this.tableLayoutPanel2.Controls.Add(this.button_Huy, 3, 0);
-            this.tableLayoutPanel2.Controls.Add(this.button_OK, 2, 0);
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tableLayoutPanel2.Controls.Add(this.button_Huy, 4, 0);
+            this.tableLayoutPanel2.Controls.Add(this.button_OK, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.button_XoaDong, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 415);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -428,6 +431,17 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(989, 450);
             this.tableLayoutPanel3.TabIndex = 16;
+            // 
+            // button_XoaDong
+            // 
+            this.button_XoaDong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_XoaDong.Location = new System.Drawing.Point(3, 3);
+            this.button_XoaDong.Name = "button_XoaDong";
+            this.button_XoaDong.Size = new System.Drawing.Size(114, 26);
+            this.button_XoaDong.TabIndex = 16;
+            this.button_XoaDong.Text = "Xóa dòng";
+            this.button_XoaDong.UseVisualStyleBackColor = true;
+            this.button_XoaDong.Click += new System.EventHandler(this.button_XoaDong_Click);
             // 
             // PhieuDichVu
             // 
@@ -482,5 +496,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ConLai;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayGiao;
         private System.Windows.Forms.DataGridViewComboBoxColumn TinhTrang;
+        private System.Windows.Forms.Button button_XoaDong;
     }
 }
