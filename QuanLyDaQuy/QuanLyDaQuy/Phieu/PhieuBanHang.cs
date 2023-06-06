@@ -23,8 +23,6 @@ namespace QuanLyDaQuy.Phieu
             InitializeComponent();
 
 
-            AutoFillMaPBH();
-            AutoFillNgayLap();
             AutoFillInfo();
 
             LoadRelatedTables();
@@ -99,28 +97,6 @@ namespace QuanLyDaQuy.Phieu
 
         }
 
-        private void AutoFillNgayLap()
-        {
-        }
-
-        private void AutoFillMaPBH()
-        {
-            int soPhieu = 0;
-            try
-            {
-                soPhieu = (int)DataProvider.Instance.ExecuteScalar("select max(MaPhieuBH) from PHIEUBANHANG");
-
-            }
-            catch
-            {
-                soPhieu = 1;
-            }
-            finally
-            {
-                tb_sophieu.Text = soPhieu.ToString();
-            }
-
-        }
 
         private void cb_khachhang_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -496,8 +472,7 @@ namespace QuanLyDaQuy.Phieu
 
         private void ReloadForm()
         {
-            AutoFillMaPBH();
-            AutoFillNgayLap();
+            AutoFillInfo();
             LoadRelatedTables();
             LoadKhachHang();
             LoadSanPham();
