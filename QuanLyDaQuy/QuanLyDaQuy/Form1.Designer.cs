@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Mặt hàng", 0);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Dịch vụ", 1);
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Khách hàng", 2);
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Nhà cung cấp", 3);
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("Loại sản phẩm/Đơn vị tính", 4);
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("Mặt hàng", 0);
+            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("Dịch vụ", 1);
+            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("Khách hàng", 2);
+            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("Nhà cung cấp", 3);
+            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem("Loại sản phẩm/Đơn vị tính", 4);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.lậpPhiếuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,7 +66,7 @@
             this.traCứuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1235, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1235, 29);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -78,8 +78,9 @@
             this.toolStripTextBox3,
             this.toolStripTextBox7});
             this.lậpPhiếuToolStripMenuItem.Name = "lậpPhiếuToolStripMenuItem";
-            this.lậpPhiếuToolStripMenuItem.Size = new System.Drawing.Size(92, 26);
+            this.lậpPhiếuToolStripMenuItem.Size = new System.Drawing.Size(92, 25);
             this.lậpPhiếuToolStripMenuItem.Text = "Lập phiếu";
+            this.lậpPhiếuToolStripMenuItem.MouseMove += new System.Windows.Forms.MouseEventHandler(this.lậpPhiếuToolStripMenuItem_MouseMove);
             // 
             // toolStripTextBox1
             // 
@@ -105,6 +106,7 @@
             this.toolStripTextBox3.ReadOnly = true;
             this.toolStripTextBox3.Size = new System.Drawing.Size(100, 29);
             this.toolStripTextBox3.Text = "Tồn kho";
+            this.toolStripTextBox3.Click += new System.EventHandler(this.toolStripTextBox3_Click);
             // 
             // toolStripTextBox7
             // 
@@ -122,7 +124,7 @@
             this.toolStripTextBox5,
             this.toolStripTextBox6});
             this.traCứuToolStripMenuItem.Name = "traCứuToolStripMenuItem";
-            this.traCứuToolStripMenuItem.Size = new System.Drawing.Size(74, 26);
+            this.traCứuToolStripMenuItem.Size = new System.Drawing.Size(74, 25);
             this.traCứuToolStripMenuItem.Text = "Tra cứu";
             // 
             // toolStripTextBox4
@@ -161,11 +163,11 @@
             this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2,
-            listViewItem3,
-            listViewItem4,
-            listViewItem5});
+            listViewItem6,
+            listViewItem7,
+            listViewItem8,
+            listViewItem9,
+            listViewItem10});
             this.listView1.LargeImageList = this.imageList1;
             this.listView1.Location = new System.Drawing.Point(3, 51);
             this.listView1.Name = "listView1";
@@ -200,7 +202,6 @@
             this.thongTinMatHang1.Name = "thongTinMatHang1";
             this.thongTinMatHang1.Size = new System.Drawing.Size(954, 618);
             this.thongTinMatHang1.TabIndex = 6;
-            this.thongTinMatHang1.Load += new System.EventHandler(this.thongTinMatHang1_Load);
             // 
             // thongTinDichVu1
             // 

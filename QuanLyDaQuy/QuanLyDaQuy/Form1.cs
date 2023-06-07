@@ -47,10 +47,7 @@ namespace QuanLyDaQuy
             }
         }
 
-        private void thongTinMatHang1_Load(object sender, EventArgs e)
-        {
-            
-        }
+ 
 
 
         private void toolStripTextBox2_Click(object sender, EventArgs e)
@@ -65,6 +62,17 @@ namespace QuanLyDaQuy
         {
             PhieuDichVu phieuDichVu = new PhieuDichVu();
             phieuDichVu.Show();
+        }
+
+        private void lậpPhiếuToolStripMenuItem_MouseMove(object sender, MouseEventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void toolStripTextBox3_Click(object sender, EventArgs e)
+        {
+            BaoCaoTonKho baoCaoTonKho = new BaoCaoTonKho();
+            baoCaoTonKho.Show();
         }
     }
 }
