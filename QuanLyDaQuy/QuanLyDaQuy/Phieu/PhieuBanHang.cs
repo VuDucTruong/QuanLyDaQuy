@@ -77,6 +77,8 @@ namespace QuanLyDaQuy.Phieu
         {
             try
             {
+                cb_khachhang.Items.Clear();
+
                 // Lấy cột TenKH từ biến DataTable
                 DataColumn column = KHACHHANG.Columns["TenKH"]; 
 
@@ -113,6 +115,7 @@ namespace QuanLyDaQuy.Phieu
                 {
                     string value = row[columnSDT].ToString();
                     cb_sdt.Items.Add(value);
+                    cb_sdt.Text = value;
                 }
             }
 
@@ -149,6 +152,15 @@ namespace QuanLyDaQuy.Phieu
                 var selectedValue = comboBox.SelectedValue;
                 if (selectedValue == null || !int.TryParse(selectedValue.ToString(), out int maSP))
                     return;
+
+                string tenSP = comboBox.Text;
+
+                if (IsDuplicateProductSelected(tenSP))
+                {
+                    MessageBox.Show("Sản phẩm đã được chọn trước đó!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    comboBox.SelectedIndex = -1; // Xóa chọn sản phẩm trong ComboBox
+                    return;
+                }
 
                 string query = @"SELECT LSP.TenLSP, DVT.DVT,  SP.DonGiaBan
                 FROM SANPHAM SP
@@ -201,7 +213,7 @@ namespace QuanLyDaQuy.Phieu
             {
                 if (!row.IsNewRow)
                 {
-                    var cellValue = row.Cells["sp_col"].Value;
+                    var cellValue = row.Cells["sp_col"].FormattedValue;
                     if (cellValue != null && cellValue.ToString() == tenSP)
                     {
                         return true; // Tồn tại sản phẩm trùng
@@ -383,6 +395,7 @@ namespace QuanLyDaQuy.Phieu
 
         private void btn_ok_Click(object sender, EventArgs e)
         {
+            // Lấy tất cả thông tin
             string tenKhachHang = cb_khachhang.Text;
             string sdt = cb_sdt.Text;
             string ngayLap = tb_ngaylap.Text;
@@ -394,19 +407,24 @@ namespace QuanLyDaQuy.Phieu
                 return;
 
             InsertKhachHang(tenKhachHang, sdt);
+            //AddPhieuBanHang();
 
             // Duyệt qua từng dòng trong DataGridView
             List<DataGridViewRow> rows = dgv_phieubanhang.Rows.Cast<DataGridViewRow>().ToList();
             foreach (DataGridViewRow row in rows)
             {
                 if (row.IsNewRow)
+                {
+                    ReloadForm();
                     return;
+                }
 
-                    // Lấy thông tin sản phẩm từ dòng hiện tại
-                    string tenSP = row.Cells["sp_col"].Value.ToString();
-                int soLuong = Convert.ToInt32(row.Cells["sl_col"].Value);
-                float donGia = Convert.ToSingle(row.Cells["dg_col"].Value);
-                float thanhTien = Convert.ToSingle(row.Cells["tt_col"].Value);
+
+                // Lấy thông tin sản phẩm từ dòng hiện tại
+                string tenSP = row.Cells["sp_col"].Value.ToString();
+                    int soLuong = Convert.ToInt32(row.Cells["sl_col"].Value);
+                    float donGia = Convert.ToSingle(row.Cells["dg_col"].Value);
+                    float thanhTien = Convert.ToSingle(row.Cells["tt_col"].Value);
 
                 // Cập nhật thuộc tính SoLuongTon trong bảng Sản phẩm
                 // Thực hiện truy vấn SQL hoặc gọi hàm để cập nhật giá trị SoLuongTon
@@ -415,10 +433,8 @@ namespace QuanLyDaQuy.Phieu
                 // Thực hiện truy vấn SQL hoặc gọi hàm để thêm chi tiết phiếu bán hàng
             }
 
-            UpdateSLT();
-            AddPhieuBanHang();
-            AddCTPhieuBanHang();
-            ReloadForm();
+            //UpdateSLT();
+            //AddCTPhieuBanHang();
 
         }
 
