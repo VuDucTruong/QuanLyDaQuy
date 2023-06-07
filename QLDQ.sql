@@ -1,5 +1,8 @@
 ﻿create database QLDQ
+go
 use QLDQ
+go
+
 
 create table SANPHAM
 (
@@ -317,3 +320,34 @@ insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
 
 
 insert into THAMSO values ('SoTienTraTruoc' , 0.5)
+
+GO
+CREATE PROCEDURE [dbo].[loadSanPhamFull]
+	
+AS
+	SELECT MaSP as "Mã sản phẩm" , 
+		TenSP as "Tên sản phẩm" ,
+		TenLSP as "Tên loại sản phẩm",
+		DonGiaBan as "Đơn giá bán",
+		DonGiaMua as "Đơn giá mua",
+		SoLuongTon as "Số lượng tồn",
+		DVT as "Đơn vị tính"
+	from SANPHAM , LOAISANPHAM , DONVITINH where SANPHAM.MaLSP = LOAISANPHAM.MaLSP and LOAISANPHAM.MaDVT = DONVITINH.MaDVT
+RETURN 0
+
+GO
+CREATE PROCEDURE [dbo].[loadLoaiSanPham]
+	
+AS
+	SELECT TenLSP , DVT
+	from LOAISANPHAM , DONVITINH where LOAISANPHAM.MaDVT = DONVITINH.MaDVT
+RETURN 0
+
+
+-----------Tri--------------
+
+
+----------Hung------------
+
+
+---------------Quang------------

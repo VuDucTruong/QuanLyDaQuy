@@ -1,4 +1,5 @@
-﻿using QuanLyDaQuy.DTO;
+﻿using QuanLyDaQuy.DAO;
+using QuanLyDaQuy.DTO;
 using QuanLyDaQuy.Phieu;
 using System;
 using System.Collections.Generic;
@@ -38,6 +39,8 @@ namespace QuanLyDaQuy
                             thongTinKhachHang1.BringToFront(); break;
                         case 3:
                             thongTinNCC1.BringToFront(); break;
+                        case 4:
+                            thongTinLSP1.BringToFront(); break;
 
                     }
                 }
@@ -46,7 +49,7 @@ namespace QuanLyDaQuy
 
         private void thongTinMatHang1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
 

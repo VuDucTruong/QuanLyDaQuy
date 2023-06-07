@@ -33,12 +33,14 @@
             System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Dịch vụ", 1);
             System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Khách hàng", 2);
             System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Nhà cung cấp", 3);
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("Loại sản phẩm/Đơn vị tính", 4);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.lậpPhiếuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripTextBox3 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox7 = new System.Windows.Forms.ToolStripTextBox();
             this.traCứuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox4 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripTextBox5 = new System.Windows.Forms.ToolStripTextBox();
@@ -47,11 +49,11 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
-            this.toolStripTextBox7 = new System.Windows.Forms.ToolStripTextBox();
             this.thongTinMatHang1 = new QuanLyDaQuy.ThongTinMatHang();
             this.thongTinDichVu1 = new QuanLyDaQuy.ThongTinDichVu();
             this.thongTinNCC1 = new QuanLyDaQuy.UserControls.ThongTinNCC();
             this.thongTinKhachHang1 = new QuanLyDaQuy.UserControls.ThongTinKhachHang();
+            this.thongTinLSP1 = new QuanLyDaQuy.UserControls.ThongTinLSP();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -64,7 +66,7 @@
             this.traCứuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1235, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(1235, 30);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -76,7 +78,7 @@
             this.toolStripTextBox3,
             this.toolStripTextBox7});
             this.lậpPhiếuToolStripMenuItem.Name = "lậpPhiếuToolStripMenuItem";
-            this.lậpPhiếuToolStripMenuItem.Size = new System.Drawing.Size(92, 25);
+            this.lậpPhiếuToolStripMenuItem.Size = new System.Drawing.Size(92, 26);
             this.lậpPhiếuToolStripMenuItem.Text = "Lập phiếu";
             // 
             // toolStripTextBox1
@@ -104,6 +106,15 @@
             this.toolStripTextBox3.Size = new System.Drawing.Size(100, 29);
             this.toolStripTextBox3.Text = "Tồn kho";
             // 
+            // toolStripTextBox7
+            // 
+            this.toolStripTextBox7.Font = new System.Drawing.Font("Segoe UI", 9.6F);
+            this.toolStripTextBox7.Name = "toolStripTextBox7";
+            this.toolStripTextBox7.ReadOnly = true;
+            this.toolStripTextBox7.Size = new System.Drawing.Size(100, 29);
+            this.toolStripTextBox7.Text = "Phiếu dịch vụ";
+            this.toolStripTextBox7.Click += new System.EventHandler(this.toolStripTextBox7_Click);
+            // 
             // traCứuToolStripMenuItem
             // 
             this.traCứuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -111,7 +122,7 @@
             this.toolStripTextBox5,
             this.toolStripTextBox6});
             this.traCứuToolStripMenuItem.Name = "traCứuToolStripMenuItem";
-            this.traCứuToolStripMenuItem.Size = new System.Drawing.Size(74, 25);
+            this.traCứuToolStripMenuItem.Size = new System.Drawing.Size(74, 26);
             this.traCứuToolStripMenuItem.Text = "Tra cứu";
             // 
             // toolStripTextBox4
@@ -153,7 +164,8 @@
             listViewItem1,
             listViewItem2,
             listViewItem3,
-            listViewItem4});
+            listViewItem4,
+            listViewItem5});
             this.listView1.LargeImageList = this.imageList1;
             this.listView1.Location = new System.Drawing.Point(3, 51);
             this.listView1.Name = "listView1";
@@ -171,6 +183,7 @@
             this.imageList1.Images.SetKeyName(1, "service.png");
             this.imageList1.Images.SetKeyName(2, "customer.png");
             this.imageList1.Images.SetKeyName(3, "supplier.png");
+            this.imageList1.Images.SetKeyName(4, "category_icon.png");
             // 
             // panel2
             // 
@@ -181,21 +194,13 @@
             this.panel2.Size = new System.Drawing.Size(251, 621);
             this.panel2.TabIndex = 5;
             // 
-            // toolStripTextBox7
-            // 
-            this.toolStripTextBox7.Font = new System.Drawing.Font("Segoe UI", 9.6F);
-            this.toolStripTextBox7.Name = "toolStripTextBox7";
-            this.toolStripTextBox7.ReadOnly = true;
-            this.toolStripTextBox7.Size = new System.Drawing.Size(100, 29);
-            this.toolStripTextBox7.Text = "Phiếu dịch vụ";
-            this.toolStripTextBox7.Click += new System.EventHandler(this.toolStripTextBox7_Click);
-            // 
             // thongTinMatHang1
             // 
             this.thongTinMatHang1.Location = new System.Drawing.Point(266, 32);
             this.thongTinMatHang1.Name = "thongTinMatHang1";
             this.thongTinMatHang1.Size = new System.Drawing.Size(954, 618);
             this.thongTinMatHang1.TabIndex = 6;
+            this.thongTinMatHang1.Load += new System.EventHandler(this.thongTinMatHang1_Load);
             // 
             // thongTinDichVu1
             // 
@@ -218,6 +223,13 @@
             this.thongTinKhachHang1.Size = new System.Drawing.Size(954, 618);
             this.thongTinKhachHang1.TabIndex = 8;
             // 
+            // thongTinLSP1
+            // 
+            this.thongTinLSP1.Location = new System.Drawing.Point(269, 32);
+            this.thongTinLSP1.Name = "thongTinLSP1";
+            this.thongTinLSP1.Size = new System.Drawing.Size(954, 618);
+            this.thongTinLSP1.TabIndex = 10;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -229,6 +241,7 @@
             this.Controls.Add(this.thongTinDichVu1);
             this.Controls.Add(this.thongTinNCC1);
             this.Controls.Add(this.thongTinKhachHang1);
+            this.Controls.Add(this.thongTinLSP1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
@@ -261,6 +274,7 @@
         private UserControls.ThongTinKhachHang thongTinKhachHang1;
         private UserControls.ThongTinNCC thongTinNCC1;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox7;
+        private UserControls.ThongTinLSP thongTinLSP1;
     }
 }
 

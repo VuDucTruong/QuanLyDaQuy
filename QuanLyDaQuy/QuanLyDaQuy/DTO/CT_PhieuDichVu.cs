@@ -1,5 +1,7 @@
-﻿using System;
+﻿using QuanLyDaQuy.Phieu;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,16 +12,16 @@ namespace QuanLyDaQuy.DTO
     {
         public int MaPhieuDV;
         public int MaDV;
-        public float DonGia;
-        public float DonGiaDuocTinh;
+        public double DonGia;
+        public double DonGiaDuocTinh;
         public int SL;
-        public float ThanhTien;
-        public float TraTruoc;
-        public float ConLai;
+        public double ThanhTien;
+        public double TraTruoc;
+        public double ConLai;
         public DateTime NgayGiao;
         public string TinhTrang;
 
-        public CT_PhieuDichVu(int maPhieuDV, int maDV, float donGia, float donGiaDuocTinh, int sL, float thanhTien, float traTruoc, float conLai, DateTime ngayGiao, string tinhTrang)
+        public CT_PhieuDichVu(int maPhieuDV, int maDV, double donGia, double donGiaDuocTinh, int sL, double thanhTien, double traTruoc, double conLai, DateTime ngayGiao, string tinhTrang)
         {
             MaPhieuDV = maPhieuDV;
             MaDV = maDV;
@@ -31,6 +33,27 @@ namespace QuanLyDaQuy.DTO
             ConLai = conLai;
             NgayGiao = ngayGiao;
             TinhTrang = tinhTrang;
+        }
+
+        public CT_PhieuDichVu(DataRow data)
+        {
+            MaPhieuDV = (int)data["MaPhieuDV"];
+            MaDV = (int)data["MaDV"];
+            DonGia = (double)data["DonGia"];
+            DonGiaDuocTinh = (double)data["DonGiaDuocTinh"];
+            SL = (int)data["SL"];
+            ThanhTien = (double)data["ThanhTien"];
+            TraTruoc = (double)data["TraTruoc"];
+            ConLai = (double)data["ConLai"];
+            NgayGiao = (DateTime)data["NgayGiao"];
+            TinhTrang = data["TinhTrang"].ToString();
+        }
+        public void Perform_Insert()
+        {
+            DAO.DataProvider.Instance.ExecuteQuery("insert into CT_PhieuDichVu (MaDV , DonGia, DonGiaDuocTinh, SL, ThanhTien," +
+                                        " TraTruoc, ConLai, NgayGiao, TinhTrang) values" +
+                                        "(" + DonGia + "," + DonGiaDuocTinh + "," + SL + "," + ThanhTien + ","
+                                        + TraTruoc + "," + ConLai + "," + NgayGiao + ", N'" + TinhTrang + "')");
         }
     }
 }

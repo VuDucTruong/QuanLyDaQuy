@@ -97,8 +97,49 @@
     <Compile Include="Phieu\PhieuMuaHang.Designer.cs">
       <DependentUpon>PhieuMuaHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Phieu\ThemDVForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Phieu\ThemDVForm.Designer.cs">
+      <DependentUpon>ThemDVForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Phieu\ThemDVTForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Phieu\ThemDVTForm.Designer.cs">
+      <DependentUpon>ThemDVTForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Phieu\ThemKHForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Phieu\ThemKHForm.Designer.cs">
+      <DependentUpon>ThemKHForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Phieu\ThemLSPForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Phieu\ThemLSPForm.Designer.cs">
+      <DependentUpon>ThemLSPForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Phieu\ThemNCCForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Phieu\ThemNCCForm.Designer.cs">
+      <DependentUpon>ThemNCCForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Phieu\ThemSPForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Phieu\ThemSPForm.Designer.cs">
+      <DependentUpon>ThemSPForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLDQDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLDQDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ThongTinDichVu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -110,6 +151,12 @@
     </Compile>
     <Compile Include="UserControls\ThongTinKhachHang.Designer.cs">
       <DependentUpon>ThongTinKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ThongTinLSP.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ThongTinLSP.Designer.cs">
+      <DependentUpon>ThongTinLSP.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ThongTinMatHang.cs">
       <SubType>UserControl</SubType>
@@ -141,6 +188,24 @@
     <EmbeddedResource Include="Phieu\PhieuMuaHang.resx">
       <DependentUpon>PhieuMuaHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Phieu\ThemDVForm.resx">
+      <DependentUpon>ThemDVForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phieu\ThemDVTForm.resx">
+      <DependentUpon>ThemDVTForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phieu\ThemKHForm.resx">
+      <DependentUpon>ThemKHForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phieu\ThemLSPForm.resx">
+      <DependentUpon>ThemLSPForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phieu\ThemNCCForm.resx">
+      <DependentUpon>ThemNCCForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phieu\ThemSPForm.resx">
+      <DependentUpon>ThemSPForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -155,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ThongTinKhachHang.resx">
       <DependentUpon>ThongTinKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ThongTinLSP.resx">
+      <DependentUpon>ThongTinLSP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ThongTinMatHang.resx">
       <DependentUpon>ThongTinMatHang.cs</DependentUpon>
@@ -171,6 +239,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="QLDQDataSet.xsc">
+      <DependentUpon>QLDQDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLDQDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLDQDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLDQDataSet.xss">
+      <DependentUpon>QLDQDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

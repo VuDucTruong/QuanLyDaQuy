@@ -12,10 +12,10 @@ namespace QuanLyDaQuy.DTO
     {
         public int MaLSP;
         public string TenLSP;
-        public float LoiNhuan;
+        public double LoiNhuan;
         public int MaDVT;
 
-        public LoaiSanPham(int maLSP, string tenLSP, float loiNhuan, int maDVT)
+        public LoaiSanPham(int maLSP, string tenLSP, double loiNhuan, int maDVT)
         {
             MaLSP = maLSP;
             TenLSP = tenLSP;
@@ -26,7 +26,7 @@ namespace QuanLyDaQuy.DTO
         {
             MaLSP =(int) data["MaLSP"];
             TenLSP = data["TenLSP"].ToString();
-            LoiNhuan = (float)data["LoiNhuan"];
+            LoiNhuan = Convert.ToDouble(data["LoiNhuan"]);
             MaDVT = (int)data["MaDVT"];
         }
     }
