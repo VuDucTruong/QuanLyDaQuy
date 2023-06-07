@@ -158,7 +158,6 @@ namespace QuanLyDaQuy.Phieu
             this.dgv_phieubanhang.TabIndex = 3;
             this.dgv_phieubanhang.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_phieubanhang_CellValueChanged);
             this.dgv_phieubanhang.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgv_phieubanhang_EditingControlShowing);
-            this.dgv_phieubanhang.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgv_phieubanhang_RowPostPaint);
             this.dgv_phieubanhang.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgv_phieubanhang_RowsAdded);
             this.dgv_phieubanhang.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgv_phieubanhang_RowsRemoved);
             // 

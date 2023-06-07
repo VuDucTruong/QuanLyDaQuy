@@ -21,10 +21,7 @@ namespace QuanLyDaQuy.Phieu
         public PhieuBanHang()
         {
             InitializeComponent();
-
-
             AutoFillInfo();
-
             LoadRelatedTables();
             LoadKhachHang();
             LoadSanPham();
@@ -121,33 +118,6 @@ namespace QuanLyDaQuy.Phieu
 
         }
 
-        private void dgv_phieubanhang_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
-        {
-            //try
-            //{
-            //    var dataGridView = sender as DataGridView;
-            //    var rowNumber = (e.RowIndex + 1).ToString();
-
-            //    // Lấy kích thước của số thứ tự
-            //    var size = TextRenderer.MeasureText(rowNumber, dataGridView.RowHeadersDefaultCellStyle.Font);
-
-            //    // Vẽ số thứ tự vào cột tiêu đề của dòng
-            //    if (dataGridView.RowHeadersWidth < (size.Width + 20))
-            //    {
-            //        dataGridView.RowHeadersWidth = size.Width + 20;
-            //    }
-
-            //    var center = (dataGridView.RowHeadersWidth - size.Width) / 2;
-            //    e.Graphics.DrawString(rowNumber, dataGridView.RowHeadersDefaultCellStyle.Font, SystemBrushes.ControlText, e.RowBounds.Left + center, e.RowBounds.Top + 4);
-
-            //}
-            //catch
-            //{
-            //    MessageBox.Show("Lỗi hàm dgv_phieubanhang_RowPostPaint");
-
-            //}
-        }
-
         // đăng ký sự kiện SelectedIndexChanged cho ComboBox mỗi lần chọn sản phẩm
         private void dgv_phieubanhang_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
@@ -225,6 +195,23 @@ namespace QuanLyDaQuy.Phieu
             }
         }
 
+        private bool IsDuplicateProductSelected(string tenSP)
+        {
+            foreach (DataGridViewRow row in dgv_phieubanhang.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    var cellValue = row.Cells["sp_col"].Value;
+                    if (cellValue != null && cellValue.ToString() == tenSP)
+                    {
+                        return true; // Tồn tại sản phẩm trùng
+                    }
+                }
+            }
+            return false; // Không có sản phẩm trùng
+        }
+
+
         private void dgv_phieubanhang_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -234,48 +221,51 @@ namespace QuanLyDaQuy.Phieu
                     // Kiểm tra xem có thay đổi trong cột "Số lượng" hay không
                     if (e.ColumnIndex == dgv_phieubanhang.Columns["sl_col"].Index)
                     {
-                        // Lấy giá trị số lượng và đơn giá từ các ô tương ứng và tính toán thành tiền
-                        foreach (DataGridViewRow row in dgv_phieubanhang.Rows)
+                        // Lấy dòng hiện tại từ DataGridView
+                        DataGridViewRow currentRow = dgv_phieubanhang.Rows[e.RowIndex];
+                        if (!currentRow.IsNewRow)
                         {
-                            if (!row.IsNewRow)
+                            int soLuong = 0;
+                            object slValue = currentRow.Cells["sl_col"].Value;
+                            if (slValue == null || !int.TryParse(slValue.ToString(), out soLuong) || soLuong < 0)
                             {
-                                int soLuong = 0;
+                                currentRow.Cells["sl_col"].Value = 0;
+                            }
+                            else
+                            {
+                                // Lấy "Tên sản phẩm"
+                                string tenSP = currentRow.Cells["sp_col"].FormattedValue.ToString();
 
-                                // Lấy giá trị số lượng
-                                object slValue = row.Cells["sl_col"].Value;
-                                if (slValue == null 
-                                    || !int.TryParse(slValue.ToString(), out soLuong)
-                                    || soLuong < 0)
+                                // Kiểm tra số lượng tồn trong cơ sở dữ liệu
+                                int soLuongTon = GetSoLuongTonFromDatabase(tenSP);
+
+                                if (soLuong > soLuongTon)
                                 {
-                                    row.Cells["sl_col"].Value = 0;
+                                    // Số lượng nhập vào vượt quá số lượng tồn
+                                    MessageBox.Show("Số lượng tồn không đủ!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    currentRow.Cells["sl_col"].Value = soLuongTon;
+                                    soLuong = soLuongTon;
                                 }
 
-                                // Lấy giá trị đơn giá
-                                float donGia = Convert.ToSingle(row.Cells["dg_col"].Value);
-
-                                // Tính toán giá trị thành tiền
+                                float donGia = Convert.ToSingle(currentRow.Cells["dg_col"].Value);
                                 float thanhTien = soLuong * donGia;
-
-                                // Làm tròn giá trị thành tiền đến 2 chữ số thập phân
                                 thanhTien = (float)Math.Round(thanhTien, 2);
-
-                                // Gán giá trị thành tiền vào ô tương ứng
-                                row.Cells["tt_col"].Value = (long)thanhTien;
+                                currentRow.Cells["tt_col"].Value = (long)thanhTien;
                             }
                         }
 
-                        float tongTien = 0;
+                        long tongTien = 0;
                         // Tính tổng các dòng thành tiền và gán vào ô TextBox tổng tiền
                         foreach (DataGridViewRow row in dgv_phieubanhang.Rows)
                         {
                             if (!row.IsNewRow && row.Cells["tt_col"].Value != null)
                             {
                                 float thanhTien = Convert.ToSingle(row.Cells["tt_col"].Value);
-                                tongTien += thanhTien;
+                                tongTien += (long)thanhTien;
                             }
                         }
 
-                        tb_tongtien.Text = FormatNumberWithCommas(tongTien);
+                        tb_tongtien.Text = tongTien.ToString();
                     }
 
                 }
@@ -283,9 +273,22 @@ namespace QuanLyDaQuy.Phieu
             catch
             {
                 MessageBox.Show("Lỗi hàm dgv_phieubanhang_CellValueChanged");
-
             }
         }
+
+        private int GetSoLuongTonFromDatabase(string tenSP)
+        {
+            int soLuongTon = 0;
+            string query = "SELECT SoLuongTon FROM SANPHAM WHERE TenSP = @tenSP";
+            object[] parameters = { tenSP };
+
+            var slt = DataProvider.Instance.ExecuteScalar(query, parameters);
+            if (slt == null || !int.TryParse(slt.ToString(), out soLuongTon))
+                MessageBox.Show("Lỗi lấy số lượng tồn");
+
+            return soLuongTon;
+        }
+
 
         // Định dạng số thành chuỗi với dấu phân cách ","
         string FormatNumberWithCommas(float number)
@@ -316,7 +319,7 @@ namespace QuanLyDaQuy.Phieu
 
         private void dgv_phieubanhang_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
-            float tongTien = 0;
+            long tongTien = 0;
 
             // Cập nhật lại giá trị của cột STT cho tất cả các hàng
             for (int i = 0; i < dgv_phieubanhang.Rows.Count; i++)
@@ -334,7 +337,7 @@ namespace QuanLyDaQuy.Phieu
                 }
             }
 
-            tb_tongtien.Text = FormatNumberWithCommas(tongTien);
+            tb_tongtien.Text = tongTien.ToString();
         }
 
         private bool IsValidPhoneNumber(string phoneNumber)
@@ -413,12 +416,18 @@ namespace QuanLyDaQuy.Phieu
             }
 
             UpdateSLT();
-            //AddPhieuMuaHang();
+            AddPhieuBanHang();
+            AddCTPhieuBanHang();
             ReloadForm();
 
         }
 
-        private void AddPhieuMuaHang()
+        private void AddCTPhieuBanHang()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void AddPhieuBanHang()
         {
             throw new NotImplementedException();
         }
