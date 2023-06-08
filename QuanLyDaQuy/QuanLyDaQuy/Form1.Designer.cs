@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem("Mặt hàng", 0);
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem("Dịch vụ", 1);
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem("Khách hàng", 2);
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem("Nhà cung cấp", 3);
-            System.Windows.Forms.ListViewItem listViewItem10 = new System.Windows.Forms.ListViewItem("Loại sản phẩm/Đơn vị tính", 4);
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Mặt hàng", 0);
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Dịch vụ", 1);
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Khách hàng", 2);
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Nhà cung cấp", 3);
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem("Loại sản phẩm/Đơn vị tính", 4);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
@@ -84,11 +84,11 @@
             this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listView1.HideSelection = false;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem6,
-            listViewItem7,
-            listViewItem8,
-            listViewItem9,
-            listViewItem10});
+            listViewItem1,
+            listViewItem2,
+            listViewItem3,
+            listViewItem4,
+            listViewItem5});
             this.listView1.LargeImageList = this.imageList1;
             this.listView1.Location = new System.Drawing.Point(3, 51);
             this.listView1.Name = "listView1";
@@ -163,7 +163,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lậpPhiếuToolStripMenuItem,
             this.traCứuToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 29);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 28);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1235, 24);
             this.menuStrip1.TabIndex = 11;
@@ -217,7 +217,7 @@
             this.traCứuToolStripMenuItem1});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(1235, 29);
+            this.menuStrip2.Size = new System.Drawing.Size(1235, 28);
             this.menuStrip2.TabIndex = 12;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -228,27 +228,27 @@
             this.phiếuBánHàngToolStripMenuItem2,
             this.phiếuDịchVụToolStripMenuItem2});
             this.lậpPhiếuToolStripMenuItem1.Name = "lậpPhiếuToolStripMenuItem1";
-            this.lậpPhiếuToolStripMenuItem1.Size = new System.Drawing.Size(92, 25);
+            this.lậpPhiếuToolStripMenuItem1.Size = new System.Drawing.Size(88, 24);
             this.lậpPhiếuToolStripMenuItem1.Text = "Lập phiếu";
             // 
             // phiếuMuaHàngToolStripMenuItem2
             // 
             this.phiếuMuaHàngToolStripMenuItem2.Name = "phiếuMuaHàngToolStripMenuItem2";
-            this.phiếuMuaHàngToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.phiếuMuaHàngToolStripMenuItem2.Size = new System.Drawing.Size(198, 26);
             this.phiếuMuaHàngToolStripMenuItem2.Text = "Phiếu mua hàng";
             this.phiếuMuaHàngToolStripMenuItem2.Click += new System.EventHandler(this.phiếuMuaHàngToolStripMenuItem2_Click);
             // 
             // phiếuBánHàngToolStripMenuItem2
             // 
             this.phiếuBánHàngToolStripMenuItem2.Name = "phiếuBánHàngToolStripMenuItem2";
-            this.phiếuBánHàngToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.phiếuBánHàngToolStripMenuItem2.Size = new System.Drawing.Size(198, 26);
             this.phiếuBánHàngToolStripMenuItem2.Text = "Phiếu bán hàng";
             this.phiếuBánHàngToolStripMenuItem2.Click += new System.EventHandler(this.phiếuBánHàngToolStripMenuItem2_Click);
             // 
             // phiếuDịchVụToolStripMenuItem2
             // 
             this.phiếuDịchVụToolStripMenuItem2.Name = "phiếuDịchVụToolStripMenuItem2";
-            this.phiếuDịchVụToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.phiếuDịchVụToolStripMenuItem2.Size = new System.Drawing.Size(198, 26);
             this.phiếuDịchVụToolStripMenuItem2.Text = "Phiếu dịch vụ";
             this.phiếuDịchVụToolStripMenuItem2.Click += new System.EventHandler(this.phiếuDịchVụToolStripMenuItem2_Click);
             // 
@@ -260,7 +260,7 @@
             this.phiếuDịchVụToolStripMenuItem3,
             this.báoCáoTồnKhoToolStripMenuItem1});
             this.traCứuToolStripMenuItem1.Name = "traCứuToolStripMenuItem1";
-            this.traCứuToolStripMenuItem1.Size = new System.Drawing.Size(74, 25);
+            this.traCứuToolStripMenuItem1.Size = new System.Drawing.Size(71, 24);
             this.traCứuToolStripMenuItem1.Text = "Tra cứu";
             // 
             // phiếuMuaHàngToolStripMenuItem3
@@ -280,6 +280,7 @@
             this.phiếuDịchVụToolStripMenuItem3.Name = "phiếuDịchVụToolStripMenuItem3";
             this.phiếuDịchVụToolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
             this.phiếuDịchVụToolStripMenuItem3.Text = "Phiếu dịch vụ";
+            this.phiếuDịchVụToolStripMenuItem3.Click += new System.EventHandler(this.phieuDichVuToolStripMenuItem_Click);
             // 
             // báoCáoTồnKhoToolStripMenuItem1
             // 

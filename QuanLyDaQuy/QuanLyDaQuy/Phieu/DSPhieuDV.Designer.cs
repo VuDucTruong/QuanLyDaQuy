@@ -37,23 +37,32 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox_Search = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.loadPhieuDVFullBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLDQDataSet = new QuanLyDaQuy.QLDQDataSet();
             this.mãPhiếuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tênKháchHàngDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qLDQDataSet = new QuanLyDaQuy.QLDQDataSet();
-            this.loadPhieuDVFullBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.loadPhieuDV_FullTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadPhieuDV_FullTableAdapter();
-            this.mãPhiếuDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tênKháchHàngDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sDTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loadPhieuDVbyTenKHBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.loadPhieuDV_byTenKHTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadPhieuDV_byTenKHTableAdapter();
+            this.loadPhieuDVbySDTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.loadPhieuDV_bySDTTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadPhieuDV_bySDTTableAdapter();
+            this.loadPhieuDVbyNgayLapBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.loadPhieuDV_byNgayLapTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadPhieuDV_byNgayLapTableAdapter();
+            this.loadPhieuDVbyHoanThanhBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.loadPhieuDV_byHoanThanhTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadPhieuDV_byHoanThanhTableAdapter();
+            this.loadPhieuDVbyChuaHoanThanhBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.loadPhieuDV_byChuaHoanThanhTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadPhieuDV_byChuaHoanThanhTableAdapter();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loadPhieuDVFullBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loadPhieuDVbyTenKHBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loadPhieuDVbySDTBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loadPhieuDVbyNgayLapBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loadPhieuDVbyHoanThanhBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loadPhieuDVbyChuaHoanThanhBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -109,19 +118,8 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.mãPhiếuDataGridViewTextBoxColumn2,
-            this.tênKháchHàngDataGridViewTextBoxColumn2,
-            this.sDTDataGridViewTextBoxColumn,
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5});
             this.tableLayoutPanel1.SetColumnSpan(this.dataGridView1, 5);
-            this.dataGridView1.DataSource = this.loadPhieuDVFullBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 98);
             this.dataGridView1.Name = "dataGridView1";
@@ -131,6 +129,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(834, 349);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             // 
             // comboBox_SearchMode
             // 
@@ -181,6 +180,16 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // loadPhieuDVFullBindingSource
+            // 
+            this.loadPhieuDVFullBindingSource.DataMember = "loadPhieuDV_Full";
+            this.loadPhieuDVFullBindingSource.DataSource = this.qLDQDataSet;
+            // 
+            // qLDQDataSet
+            // 
+            this.qLDQDataSet.DataSetName = "QLDQDataSet";
+            this.qLDQDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // mãPhiếuDataGridViewTextBoxColumn
             // 
             this.mãPhiếuDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -199,91 +208,72 @@
             this.tênKháchHàngDataGridViewTextBoxColumn.Name = "tênKháchHàngDataGridViewTextBoxColumn";
             this.tênKháchHàngDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // qLDQDataSet
-            // 
-            this.qLDQDataSet.DataSetName = "QLDQDataSet";
-            this.qLDQDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // loadPhieuDVFullBindingSource
-            // 
-            this.loadPhieuDVFullBindingSource.DataMember = "loadPhieuDV_Full";
-            this.loadPhieuDVFullBindingSource.DataSource = this.qLDQDataSet;
-            // 
             // loadPhieuDV_FullTableAdapter
             // 
             this.loadPhieuDV_FullTableAdapter.ClearBeforeFill = true;
             // 
-            // mãPhiếuDataGridViewTextBoxColumn2
+            // loadPhieuDVbyTenKHBindingSource
             // 
-            this.mãPhiếuDataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.mãPhiếuDataGridViewTextBoxColumn2.DataPropertyName = "Mã phiếu";
-            this.mãPhiếuDataGridViewTextBoxColumn2.HeaderText = "Mã phiếu";
-            this.mãPhiếuDataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.mãPhiếuDataGridViewTextBoxColumn2.Name = "mãPhiếuDataGridViewTextBoxColumn2";
-            this.mãPhiếuDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.loadPhieuDVbyTenKHBindingSource.DataMember = "loadPhieuDV_byTenKH";
+            this.loadPhieuDVbyTenKHBindingSource.DataSource = this.qLDQDataSet;
             // 
-            // tênKháchHàngDataGridViewTextBoxColumn2
+            // loadPhieuDV_byTenKHTableAdapter
             // 
-            this.tênKháchHàngDataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tênKháchHàngDataGridViewTextBoxColumn2.DataPropertyName = "Tên khách hàng";
-            this.tênKháchHàngDataGridViewTextBoxColumn2.HeaderText = "Tên khách hàng";
-            this.tênKháchHàngDataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.tênKháchHàngDataGridViewTextBoxColumn2.Name = "tênKháchHàngDataGridViewTextBoxColumn2";
-            this.tênKháchHàngDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.loadPhieuDV_byTenKHTableAdapter.ClearBeforeFill = true;
             // 
-            // sDTDataGridViewTextBoxColumn
+            // loadPhieuDVbySDTBindingSource
             // 
-            this.sDTDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.sDTDataGridViewTextBoxColumn.DataPropertyName = "SDT";
-            this.sDTDataGridViewTextBoxColumn.HeaderText = "SDT";
-            this.sDTDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.sDTDataGridViewTextBoxColumn.Name = "sDTDataGridViewTextBoxColumn";
-            this.sDTDataGridViewTextBoxColumn.ReadOnly = true;
+            this.loadPhieuDVbySDTBindingSource.DataMember = "loadPhieuDV_bySDT";
+            this.loadPhieuDVbySDTBindingSource.DataSource = this.qLDQDataSet;
             // 
-            // dataGridViewTextBoxColumn1
+            // loadPhieuDV_bySDTTableAdapter
             // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Ngày lập";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Ngày lập";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.loadPhieuDV_bySDTTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridViewTextBoxColumn2
+            // loadPhieuDVbyNgayLapBindingSource
             // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Tổng tiền";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Tổng tiền";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.loadPhieuDVbyNgayLapBindingSource.DataMember = "loadPhieuDV_byNgayLap";
+            this.loadPhieuDVbyNgayLapBindingSource.DataSource = this.qLDQDataSet;
             // 
-            // dataGridViewTextBoxColumn3
+            // loadPhieuDV_byNgayLapTableAdapter
             // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Trả trước";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Trả trước";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.loadPhieuDV_byNgayLapTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridViewTextBoxColumn4
+            // loadPhieuDVbyHoanThanhBindingSource
             // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Còn lại";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Còn lại";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.loadPhieuDVbyHoanThanhBindingSource.DataMember = "loadPhieuDV_byHoanThanh";
+            this.loadPhieuDVbyHoanThanhBindingSource.DataSource = this.qLDQDataSet;
             // 
-            // dataGridViewTextBoxColumn5
+            // loadPhieuDV_byHoanThanhTableAdapter
             // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Tình trạng";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Tình trạng";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.loadPhieuDV_byHoanThanhTableAdapter.ClearBeforeFill = true;
+            // 
+            // loadPhieuDVbyChuaHoanThanhBindingSource
+            // 
+            this.loadPhieuDVbyChuaHoanThanhBindingSource.DataMember = "loadPhieuDV_byChuaHoanThanh";
+            this.loadPhieuDVbyChuaHoanThanhBindingSource.DataSource = this.qLDQDataSet;
+            // 
+            // loadPhieuDV_byChuaHoanThanhTableAdapter
+            // 
+            this.loadPhieuDV_byChuaHoanThanhTableAdapter.ClearBeforeFill = true;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "Mã phiếu";
+            this.Column1.HeaderText = "Column1";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 125;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Mã phiếu";
+            this.Column2.HeaderText = "Column2";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 125;
             // 
             // DSPhieuDV
             // 
@@ -298,8 +288,13 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loadPhieuDVFullBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loadPhieuDVbyTenKHBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loadPhieuDVbySDTBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loadPhieuDVbyNgayLapBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loadPhieuDVbyHoanThanhBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loadPhieuDVbyChuaHoanThanhBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -333,13 +328,17 @@
         private QLDQDataSet qLDQDataSet;
         private System.Windows.Forms.BindingSource loadPhieuDVFullBindingSource;
         private QLDQDataSetTableAdapters.loadPhieuDV_FullTableAdapter loadPhieuDV_FullTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mãPhiếuDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tênKháchHàngDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sDTDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.BindingSource loadPhieuDVbyNgayLapBindingSource;
+        private System.Windows.Forms.BindingSource loadPhieuDVbyTenKHBindingSource;
+        private QLDQDataSetTableAdapters.loadPhieuDV_byTenKHTableAdapter loadPhieuDV_byTenKHTableAdapter;
+        private System.Windows.Forms.BindingSource loadPhieuDVbySDTBindingSource;
+        private QLDQDataSetTableAdapters.loadPhieuDV_bySDTTableAdapter loadPhieuDV_bySDTTableAdapter;
+        private QLDQDataSetTableAdapters.loadPhieuDV_byNgayLapTableAdapter loadPhieuDV_byNgayLapTableAdapter;
+        private System.Windows.Forms.BindingSource loadPhieuDVbyHoanThanhBindingSource;
+        private QLDQDataSetTableAdapters.loadPhieuDV_byHoanThanhTableAdapter loadPhieuDV_byHoanThanhTableAdapter;
+        private System.Windows.Forms.BindingSource loadPhieuDVbyChuaHoanThanhBindingSource;
+        private QLDQDataSetTableAdapters.loadPhieuDV_byChuaHoanThanhTableAdapter loadPhieuDV_byChuaHoanThanhTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
     }
 }

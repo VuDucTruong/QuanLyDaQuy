@@ -70,6 +70,12 @@ namespace QuanLyDaQuy
             BaoCaoTonKho baoCaoTonKho = new BaoCaoTonKho();
             baoCaoTonKho.Show();
         }
+
+        private void phieuDichVuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DSPhieuDV dSPhieuDV = new DSPhieuDV();
+            dSPhieuDV.Show();
+        }
     }
 
 }
