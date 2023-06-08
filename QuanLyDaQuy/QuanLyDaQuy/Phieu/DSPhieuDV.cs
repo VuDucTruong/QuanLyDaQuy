@@ -22,15 +22,11 @@ namespace QuanLyDaQuy.Phieu
         private void DSPhieuDV_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'qLDQDataSet.loadPhieuDV_Full' table. You can move, or remove it, as needed.
+            dataGridView1.DataSource = this.qLDQDataSet.loadPhieuDV_Full;
             this.loadPhieuDV_FullTableAdapter.Fill(this.qLDQDataSet.loadPhieuDV_Full);
-            // TODO: This line of code loads data into the 'qLDQDataSet.loadPhieuDV_Full' table. You can move, or remove it, as needed.
-            this.loadPhieuDV_FullTableAdapter.Fill(this.qLDQDataSet.loadPhieuDV_Full);
-            // TODO: This line of code loads data into the 'qLDQDataSet.loadPhieuDV_Full' table. You can move, or remove it, as needed.
-            this.loadPhieuDV_FullTableAdapter.Fill(this.qLDQDataSet.loadPhieuDV_Full);
-            // TODO: This line of code loads data into the 'qLDQDataSet.PHIEUDICHVU' table. You can move, or remove it, as needed.
             comboBox_SearchMode.SelectedIndex = 0;
-
         }
+
 
         private void comboBox_SearchMode_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -80,58 +76,68 @@ namespace QuanLyDaQuy.Phieu
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox_Search.Text == "")
-            {
-                this.loadPhieuDV_FullTableAdapter.Fill(this.qLDQDataSet.loadPhieuDV_Full);
-                return;
-            }    
-
+            bool allowSearch = false;
             switch (comboBox_SearchMode.SelectedIndex)
             {
                 // all
                 case 0:
                     {
+                        dataGridView1.DataSource = this.qLDQDataSet.loadPhieuDV_Full;
                         this.loadPhieuDV_FullTableAdapter.Fill(this.qLDQDataSet.loadPhieuDV_Full);
                         break;
                     }
                 // TenKH
                 case 1:
                     {
-                        this.loadPhieuDV_FullTableAdapter.FillBy_TenKH(this.qLDQDataSet.loadPhieuDV_Full, textBox_Search.Text);
+                        dataGridView1.DataSource = this.qLDQDataSet.loadPhieuDV_byTenKH;
+                        this.loadPhieuDV_byTenKHTableAdapter.Fill(this.qLDQDataSet.loadPhieuDV_byTenKH, textBox_Search.Text);
+                        allowSearch = true;
                         break;
                     }
                 // SDT
                 case 2:
                     {
-                        this.loadPhieuDV_FullTableAdapter.FillBy_SDT(this.qLDQDataSet.loadPhieuDV_Full, textBox_Search.Text);
+                        dataGridView1.DataSource = this.qLDQDataSet.loadPhieuDV_bySDT;
+                        this.loadPhieuDV_bySDTTableAdapter.Fill(this.qLDQDataSet.loadPhieuDV_bySDT, textBox_Search.Text);
+                        allowSearch= true;
                         break;
                     }
                 // NgayLap
                 case 3:
                     {
-
                         if (Validating_DateTimeBy_MonthYear(textBox_Search.Text))
                         {
                             string[] datetime = textBox_Search.Text.Split('/');
                             int month = Convert.ToInt32(datetime[0]);
                             int year = Convert.ToInt32(datetime[1]);
-                            this.loadPhieuDV_FullTableAdapter.FillBy_NgayLap(this.qLDQDataSet.loadPhieuDV_Full, month, year);
+                            dataGridView1.DataSource = this.qLDQDataSet.loadPhieuDV_byNgayLap;
+                            this.loadPhieuDV_byNgayLapTableAdapter.Fill(this.qLDQDataSet.loadPhieuDV_byNgayLap, month, year);
+                            allowSearch = true;
                         }    
                         break;
                     }
                 // Hoan thanh
                 case 4:
                     {
-                        this.loadPhieuDV_FullTableAdapter.FillBy_HoanThanh(this.qLDQDataSet.loadPhieuDV_Full);
+                        dataGridView1.DataSource = this.qLDQDataSet.loadPhieuDV_byHoanThanh;
+                        this.loadPhieuDV_byHoanThanhTableAdapter.Fill(this.qLDQDataSet.loadPhieuDV_byHoanThanh);
                         break;
                     }
                 // Chua hoan thanh
                 case 5:
                     {
-                        this.loadPhieuDV_FullTableAdapter.FillBy_ChuaHoanThanh(this.qLDQDataSet.loadPhieuDV_Full);
+                        dataGridView1.DataSource = this.qLDQDataSet.loadPhieuDV_byChuaHoanThanh;
+                        this.loadPhieuDV_byChuaHoanThanhTableAdapter.Fill(this.qLDQDataSet.loadPhieuDV_byChuaHoanThanh);
                         break;
                     }
             }
+
+            if (allowSearch && textBox_Search.Text == "")
+            {
+                dataGridView1.DataSource = this.qLDQDataSet.loadPhieuDV_Full;
+                this.loadPhieuDV_FullTableAdapter.Fill(this.qLDQDataSet.loadPhieuDV_Full);
+                return;
+            }  
         }
 
         private bool Validating_DateTimeBy_MonthYear(string date)
@@ -143,6 +149,14 @@ namespace QuanLyDaQuy.Phieu
                 MessageBox.Show("Bạn phải nhập tháng năm theo format MM/yyyy vào ô này!", "Cảnh báo");
             }
             return testDate;
+        }
+
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            foreach (DataGridViewColumn col in dataGridView1.Columns)
+            {
+                col.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }    
         }
     }
 }
