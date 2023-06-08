@@ -47,21 +47,20 @@ namespace QuanLyDaQuy
             }
         }
 
-        private void thongTinMatHang1_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-
-        private void toolStripTextBox2_Click(object sender, EventArgs e)
+        private void phiếuBánHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PhieuBanHang phieuBanHang = new PhieuBanHang();
             phieuBanHang.Show();
-
-
         }
 
-        private void toolStripTextBox7_Click(object sender, EventArgs e)
+
+        private void phiếuMuaHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PhieuMuaHang phieuMuaHang = new PhieuMuaHang();
+            phieuMuaHang.Show();
+        }
+
+        private void phiếuDịchVụToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PhieuDichVu phieuDichVu = new PhieuDichVu();
             phieuDichVu.Show();
@@ -71,6 +70,10 @@ namespace QuanLyDaQuy
         {
             DSPhieuDV dSPhieuDV = new DSPhieuDV();
             dSPhieuDV.Show();
+        private void báoCáoTồnKhoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BaoCaoTonKho baoCaoTonKho = new BaoCaoTonKho();
+            baoCaoTonKho.Show();
         }
     }
 }
