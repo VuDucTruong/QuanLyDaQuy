@@ -160,6 +160,114 @@ as begin
 	set DonGiaBan = DonGiaMua * ( 100 + @LOINHUAN ) /100
 	where MaSP = @MaSP
 end
+-----PHIEUMUAHANG cap nhat TONKHO
+go
+create trigger trg_insert_PHIEUMUAHANG
+on PHIEUMUAHANG
+for insert
+as begin
+	declare @Thang int , @Nam int , @Row int
+	select @Thang = MONTH(NgayLap) , @Nam = YEAR(NgayLap) from inserted
+	select @Row = count(*) from TONKHO where @Thang = MONTH(Thang) and @Nam = YEAR(Thang)
+	if(@Row = 0)
+	begin
+		insert into TONKHO ( Thang , MaSP , SLTonDau , SLMuaVao , SLBanRa , SLTonCuoi )
+		select NgayLap , MASP , SoLuongTon , 0 , 0 , SoLuongTon
+		from inserted , SANPHAM
+	end
+end
+go 
+create trigger trg_insert_CT_PHIEUMUAHANG
+on CT_PHIEUMUAHANG
+for insert 
+as begin
+	declare @Thang int , @Nam int
+	declare @SoLuong int
+	select @Thang = MONTH(NgayLap) , @Nam = YEAR(NgayLap) from inserted , PHIEUMUAHANG where inserted.MaPhieuMH = PHIEUMUAHANG.MaPhieuMH
+
+	update TONKHO
+	set SLMuaVao += SL , SLTonCuoi += SL
+	from inserted
+	where TONKHO.MaSP = inserted.MaSP
+
+	update SANPHAM
+	set SoLuongTon += SL
+	from inserted
+	where SANPHAM.MaSP = inserted.MaSP
+end
+go 
+create trigger trg_update_CT_PHIEUMUAHANG
+on CT_PHIEUMUAHANG
+for update 
+as begin
+	declare @Thang int , @Nam int
+	declare @SoLuong int
+	select @Thang = MONTH(NgayLap) , @Nam = YEAR(NgayLap) from inserted , PHIEUMUAHANG where inserted.MaPhieuMH = PHIEUMUAHANG.MaPhieuMH
+
+	update TONKHO
+	set SLMuaVao += inserted.SL - deleted.SL , SLTonCuoi += inserted.SL - deleted.SL
+	from inserted ,deleted
+	where TONKHO.MaSP = inserted.MaSP and inserted.MaSP = deleted.MaSP
+
+	update SANPHAM
+	set SoLuongTon += inserted.SL - deleted.SL
+	from inserted , deleted
+	where SANPHAM.MaSP = inserted.MaSP and inserted.MaSP = deleted.MaSP
+end
+-------PHIEUBANHANG cap nhat TONKHO-------
+go
+create trigger trg_insert_PHIEUBANHANG
+on PHIEUBANHANG
+for insert
+as begin
+	declare @Thang int , @Nam int , @Row int
+	select @Thang = MONTH(NgayLap) , @Nam = YEAR(NgayLap) from inserted
+	select @Row = count(*) from TONKHO where @Thang = MONTH(Thang) and @Nam = YEAR(Thang)
+	if(@Row = 0)
+	begin
+		insert into TONKHO ( Thang , MaSP , SLTonDau , SLMuaVao , SLBanRa , SLTonCuoi )
+		select NgayLap , MASP , SoLuongTon , 0 , 0 , SoLuongTon
+		from inserted , SANPHAM
+	end
+end
+go 
+create trigger trg_insert_CT_PHIEUBANHANG
+on CT_PHIEUBANHANG
+for insert 
+as begin
+	declare @Thang int , @Nam int
+	declare @SoLuong int
+	select @Thang = MONTH(NgayLap) , @Nam = YEAR(NgayLap) from inserted , PHIEUBANHANG where inserted.MaPhieuBH = PHIEUBANHANG.MaPhieuBH
+
+	update TONKHO
+	set SLBanRa += SL , SLTonCuoi -= SL
+	from inserted
+	where TONKHO.MaSP = inserted.MaSP
+
+	update SANPHAM
+	set SoLuongTon -= SL
+	from inserted
+	where SANPHAM.MaSP = inserted.MaSP
+end
+go 
+create trigger trg_update_CT_PHIEUBANHANG
+on CT_PHIEUBANHANG
+for update 
+as begin
+	declare @Thang int , @Nam int
+	declare @SoLuong int
+	select @Thang = MONTH(NgayLap) , @Nam = YEAR(NgayLap) from inserted , PHIEUBANHANG where inserted.MaPhieuBH = PHIEUBANHANG.MaPhieuBH
+
+	update TONKHO
+	set SLBanRa += inserted.SL - deleted.SL , SLTonCuoi -= inserted.SL - deleted.SL
+	from inserted ,deleted
+	where TONKHO.MaSP = inserted.MaSP and inserted.MaSP = deleted.MaSP
+
+	update SANPHAM
+	set SoLuongTon -= inserted.SL - deleted.SL
+	from inserted , deleted
+	where SANPHAM.MaSP = inserted.MaSP and inserted.MaSP = deleted.MaSP
+end
 --select *
 select * from DONVITINH
 select * from LOAISANPHAM
