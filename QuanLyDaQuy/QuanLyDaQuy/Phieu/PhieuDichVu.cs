@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,6 +18,8 @@ namespace QuanLyDaQuy.Phieu
         private List<double>DonGiaDVs = new List<double>();
         private List<string> SDT = new List<string>();
         private List<int> MKH = new List<int>();
+        private List<int> MaDVs = new List<int>();
+        private List<int> SavedMaDVs = new List<int>();
         double PhanTramTraTruocToiThieu = 0; 
 
         public PhieuDichVu()
@@ -42,10 +45,10 @@ namespace QuanLyDaQuy.Phieu
             foreach (DataRow row in data_kh.Rows)
             {
                 MKH.Add(Convert.ToInt32(row["MaKH"]));
-                khachHangs.Items.Add(row["TenKH"]);
+                khachHangs.Items.Add(row["TenKH"].ToString());
                 SDT.Add(row["SDT"].ToString());
             }
-            comboBox_KhachHang.DataSource = khachHangs.DataSource;
+            comboBox_KhachHang.DataSource = khachHangs.Items;
 
             // NgayLap
             textBox_NgayLap.Text = DateTime.UtcNow.ToString("dd/MM/yyyy");
@@ -57,6 +60,7 @@ namespace QuanLyDaQuy.Phieu
             {
                 dichVus.Items.Add(row["TenDV"]);
                 DonGiaDVs.Add((double)row["DonGiaDV"]);
+                MaDVs.Add((int)row["MaDV"]);
             }           
             ((DataGridViewComboBoxColumn)dataGridView1.Columns["TenDV"]).DataSource = dichVus.Items;
 
@@ -100,6 +104,7 @@ namespace QuanLyDaQuy.Phieu
             int columnIndex = dataGridView1.CurrentCell.ColumnIndex;
             if (rowIndex < 0 || columnIndex != 1)
                 return;
+                
             DataGridViewCell DonGia = dataGridView1.Rows[rowIndex].Cells[2];
             DataGridViewCell DonGiaDuocTinh = dataGridView1.Rows[rowIndex].Cells[3];
             // Modified value
@@ -109,6 +114,15 @@ namespace QuanLyDaQuy.Phieu
             }
             else
             {
+                if (rowIndex > SavedMaDVs.Count - 1)
+                {
+                    SavedMaDVs.Add(MaDVs[comboBox.SelectedIndex]);
+                }
+                else
+                {
+                    SavedMaDVs[rowIndex] = MaDVs[comboBox.SelectedIndex];
+                } 
+                    
                 DonGia.Value = DonGiaDVs[comboBox.SelectedIndex];
                 DonGiaDuocTinh.Value = DonGiaDVs[comboBox.SelectedIndex];
             }
@@ -146,11 +160,12 @@ namespace QuanLyDaQuy.Phieu
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             Cell_Validating(sender, e);
-
             // Update new value
             if (e.RowIndex < 0)
                 return;
             DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+            if (row.IsNewRow || row.Cells[0].Value == null)
+                return;
             switch (e.ColumnIndex)
             {
                 // DonGiaDuocTinh changed
@@ -222,6 +237,8 @@ namespace QuanLyDaQuy.Phieu
             
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
+                if (row.IsNewRow || row.Cells[0].Value == null)
+                    continue;
                 bool testEmpty = false;
                 // Dich vu
                 if (row.Cells[1].Value == null || row.Cells[1].Value.ToString() == "")
@@ -250,46 +267,58 @@ namespace QuanLyDaQuy.Phieu
                     int maPhieuDV = Convert.ToInt32(textBox_SoPhieu.Text);
                     int maKH = MKH[comboBox_KhachHang.SelectedIndex];
                     DateTime ngayLap;
-                    double tongTien = Convert.ToDouble(textBox_TongTien);
-                    double traTruoc = Convert.ToDouble(textBox_TongTienTraTruoc);
-                    double conLai = Convert.ToDouble(textBox_TongTienConLai);
+                    double tongTien = Convert.ToDouble(textBox_TongTien.Text);
+                    double traTruoc = Convert.ToDouble(textBox_TongTienTraTruoc.Text);
+                    double conLai = Convert.ToDouble(textBox_TongTienConLai.Text);
                     string tinhTrang = "Hoàn thành";
                     DateTime.TryParseExact(textBox_NgayLap.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out ngayLap);
 
                     // check Tinh Trang
                     foreach (DataGridViewRow row in dataGridView1.Rows)
                     {
+                        if (row.IsNewRow || row.Cells[0].Value == null)
+                            continue;
                         if (row.Cells[9].Value.ToString() != "Hoàn thành")
                         {
                             tinhTrang = "Chưa hoàn thành";
                             break;
-                        }    
+                        }
                     }
 
                     PhieuDichVuDTO ph = new PhieuDichVuDTO(maPhieuDV, maKH, ngayLap, tongTien, traTruoc, conLai, tinhTrang);
                     List<CT_PhieuDichVu> listCT = new List<CT_PhieuDichVu>();
 
-                    DataTable table = dataGridView1.DataSource as DataTable;
-                    foreach(DataRow row in table.Rows)
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
                     {
-                        listCT.Add(new CT_PhieuDichVu(row));
+                        if (row.IsNewRow || row.Cells[0].Value == null)
+                            continue;
+                        int MaPhieuDV = Convert.ToInt32(textBox_SoPhieu.Text);
+                        int MaDV = SavedMaDVs[row.Index];
+                        double DonGia = Convert.ToDouble(row.Cells[2].Value);
+                        double DonGiaDuocTinh = Convert.ToDouble(row.Cells[3].Value);
+                        int SL = Convert.ToInt32(row.Cells[4].Value);
+                        double ThanhTien = Convert.ToDouble(row.Cells[5].Value);
+                        double TraTruoc = Convert.ToDouble(row.Cells[6].Value);
+                        double ConLai = Convert.ToDouble(row.Cells[7].Value);
+                        DateTime NgayGiao;
+                        DateTime.TryParseExact(row.Cells[8].Value.ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out NgayGiao);
+                        string TinhTrang = row.Cells[9].Value.ToString();
+                        listCT.Add(new CT_PhieuDichVu(MaPhieuDV, MaDV, DonGia, DonGiaDuocTinh, SL, ThanhTien, TraTruoc, ConLai, NgayGiao, TinhTrang));
                     }
 
                     ph.Perform_Insert();
                     foreach (CT_PhieuDichVu ct in listCT)
                     {
                         ct.Perform_Insert();
-                    }    
+                    }
+
+                    MessageBox.Show("Lập phiếu thành công!", "Thông báo");
+                    Close();
                 }
                 catch (Exception error)
                 {
                     MessageBox.Show("Lập phiếu thất bại." +
                                     " Lỗi: \n" + error.Message,"Thông báo");
-                }
-                finally
-                {
-                    MessageBox.Show("Lập phiếu thành công!", "Thông báo");
-                    Close();
                 }
             }    
         }
@@ -538,6 +567,35 @@ namespace QuanLyDaQuy.Phieu
 
         private void button_XoaDong_Click(object sender, EventArgs e)
         {
+            dataGridView1.Rows.Remove(dataGridView1.SelectedRows[0]);
+            // Rearrange STT
+            int stt = 1;
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    row.Cells[0].Value = stt;
+                    stt++;
+                }
+            }
+                
+        }
+
+        private void dataGridView1_FocusLeave(object sender, EventArgs e)
+        {
+            //button_XoaDong.Enabled = false;
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0 && dataGridView1.SelectedRows[0].Cells[0].Value != null)
+            {
+                button_XoaDong.Enabled = true;
+            }
+            else
+            {
+                button_XoaDong.Enabled = false;
+            }
 
         }
     }

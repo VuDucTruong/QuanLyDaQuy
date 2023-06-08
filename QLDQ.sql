@@ -351,3 +351,116 @@ RETURN 0
 
 
 ---------------Quang------------
+
+GO
+CREATE PROCEDURE [dbo].[loadPhieuDV_Full]	
+AS
+	SELECT
+		MaPhieuDV,
+		TenKH,
+		SDT,
+		NgayLap,
+		TongTien,
+		TraTruoc,
+		ConLai,
+		TinhTrang
+	from PHIEUDICHVU, KHACHHANG
+	where PHIEUDICHVU.MaKH = KHACHHANG.MaKH
+RETURN 0
+
+GO
+CREATE PROCEDURE [dbo].[loadPhieuDV_byTenKH] @TenKH nvarchar(100)
+AS
+	SELECT
+		MaPhieuDV,
+		TenKH,
+		SDT,
+		NgayLap,
+		TongTien,
+		TraTruoc,
+		ConLai,
+		TinhTrang
+	from PHIEUDICHVU, KHACHHANG
+	where PHIEUDICHVU.MaKH = KHACHHANG.MaKH and TenKH like (@TenKH + '%')
+RETURN 0
+
+GO
+CREATE PROCEDURE [dbo].[loadPhieuDV_bySDT] @SDT varchar(20)
+AS
+	SELECT
+		MaPhieuDV,
+		TenKH,
+		SDT,
+		NgayLap,
+		TongTien,
+		TraTruoc,
+		ConLai,
+		TinhTrang
+	from PHIEUDICHVU, KHACHHANG
+	where PHIEUDICHVU.MaKH = KHACHHANG.MaKH and SDT like (@SDT + '%')
+RETURN 0
+
+GO
+CREATE PROCEDURE [dbo].[loadPhieuDV_byNgayLap] @Month int, @Year int
+AS
+	SELECT
+		MaPhieuDV,
+		TenKH,
+		SDT,
+		NgayLap,
+		TongTien,
+		TraTruoc,
+		ConLai,
+		TinhTrang
+	from PHIEUDICHVU, KHACHHANG
+	where PHIEUDICHVU.MaKH = KHACHHANG.MaKH and MONTH(NgayLap) = @Month and YEAR(NgayLap) = @Year
+RETURN 0
+
+GO
+CREATE PROCEDURE [dbo].[loadPhieuDV_byHoanThanh]
+AS
+	SELECT
+		MaPhieuDV,
+		TenKH,
+		SDT,
+		NgayLap,
+		TongTien,
+		TraTruoc,
+		ConLai,
+		TinhTrang
+	from PHIEUDICHVU, KHACHHANG
+	where PHIEUDICHVU.MaKH = KHACHHANG.MaKH and TinhTrang = N'Hoàn thành'
+RETURN 0
+
+GO
+CREATE PROCEDURE [dbo].[loadPhieuDV_byChuaHoanThanh]
+AS
+	SELECT
+		MaPhieuDV,
+		TenKH,
+		SDT,
+		NgayLap,
+		TongTien,
+		TraTruoc,
+		ConLai,
+		TinhTrang
+	from PHIEUDICHVU, KHACHHANG
+	where PHIEUDICHVU.MaKH = KHACHHANG.MaKH and TinhTrang = N'Chưa hoàn thành'
+RETURN 0
+
+GO
+CREATE PROCEDURE [dbo].[loadCTPhieuDV_byMaPhieuDV] @MaPhieuDV int
+AS
+	SELECT
+		TenDV,
+		CT_PHIEUDICHVU.DonGia as DonGia,
+		DonGiaDuocTinh,
+		SL,
+		ThanhTien,
+		TraTruoc,
+		ConLai,
+		NgayGiao,
+		TinhTrang
+	from CT_PHIEUDICHVU, DICHVU
+	where CT_PHIEUDICHVU.MaDV = DICHVU.MaDV and MaPhieuDV = @MaPhieuDV
+RETURN 0

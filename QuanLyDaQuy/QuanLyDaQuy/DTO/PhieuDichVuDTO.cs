@@ -41,8 +41,8 @@ namespace QuanLyDaQuy.DTO
 
         public void Perform_Insert()
         {
-            DAO.DataProvider.Instance.ExecuteQuery("insert into PhieuDichVu (MaKH , NgayLap, TongTien, TraTruoc, ConLai, TinhTrang) values" +
-                                                    "(" + MaKH + "," + NgayLap + "," + TongTien + "," + TraTruoc + ","
+            DAO.DataProvider.Instance.ExecuteQuery("insert into PhieuDichVu (MaKH, NgayLap, TongTien, TraTruoc, ConLai, TinhTrang) values" +
+                                                    "(" + MaKH + ",'" + NgayLap.ToString("dd/MM/yyyy") + "'," + TongTien + "," + TraTruoc + ","
                                                     + ConLai + ", N'" + TinhTrang + "')");
         }
     }

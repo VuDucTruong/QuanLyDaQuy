@@ -50,10 +50,10 @@ namespace QuanLyDaQuy.DTO
         }
         public void Perform_Insert()
         {
-            DAO.DataProvider.Instance.ExecuteQuery("insert into CT_PhieuDichVu (MaDV , DonGia, DonGiaDuocTinh, SL, ThanhTien," +
+            DAO.DataProvider.Instance.ExecuteQuery("insert into CT_PhieuDichVu (MaPhieuDV, MaDV , DonGia, DonGiaDuocTinh, SL, ThanhTien," +
                                         " TraTruoc, ConLai, NgayGiao, TinhTrang) values" +
-                                        "(" + DonGia + "," + DonGiaDuocTinh + "," + SL + "," + ThanhTien + ","
-                                        + TraTruoc + "," + ConLai + "," + NgayGiao + ", N'" + TinhTrang + "')");
+                                        "(" + MaPhieuDV + ',' + MaDV + ',' + DonGia + "," + DonGiaDuocTinh + "," + SL + "," + ThanhTien + ","
+                                        + TraTruoc + "," + ConLai + ",'" + NgayGiao.ToString("dd/MM/yyyy") + "', N'" + TinhTrang + "')");
         }
     }
 }
