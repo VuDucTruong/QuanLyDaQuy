@@ -97,7 +97,7 @@ namespace QuanLyDaQuy.Phieu
                 // TenKH
                 case 1:
                     {
-                        this.loadPhieuDV_FullTableAdapter.FillBy_TenKH(this.qLDQDataSet.loadPhieuDV_Full, textBox_Search.Text);
+                        this.loadPhieuDV_FullTableAdapter.Fill(this.qLDQDataSet.loadPhieuDV_Full, textBox_Search.Text);
                         break;
                     }
                 // SDT

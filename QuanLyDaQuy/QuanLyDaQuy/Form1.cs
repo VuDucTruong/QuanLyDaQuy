@@ -47,33 +47,29 @@ namespace QuanLyDaQuy
             }
         }
 
-        private void phiếuBánHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        private void phiếuMuaHàngToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            PhieuBanHang phieuBanHang = new PhieuBanHang();
-            phieuBanHang.Show();
+            PhieuMuaHang phieu = new PhieuMuaHang();   
+            phieu.Show();
         }
 
-
-        private void phiếuMuaHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        private void phiếuBánHàngToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            PhieuMuaHang phieuMuaHang = new PhieuMuaHang();
-            phieuMuaHang.Show();
+            PhieuBanHang phieu = new PhieuBanHang();
+            phieu.Show();
         }
 
-        private void phiếuDịchVụToolStripMenuItem_Click(object sender, EventArgs e)
+        private void phiếuDịchVụToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            PhieuDichVu phieuDichVu = new PhieuDichVu();
-            phieuDichVu.Show();
+            PhieuDichVu phieu = new PhieuDichVu();
+            phieu.Show();
         }
 
-        private void phieuDichVuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            DSPhieuDV dSPhieuDV = new DSPhieuDV();
-            dSPhieuDV.Show();
-        private void báoCáoTồnKhoToolStripMenuItem_Click(object sender, EventArgs e)
+        private void báoCáoTồnKhoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             BaoCaoTonKho baoCaoTonKho = new BaoCaoTonKho();
             baoCaoTonKho.Show();
         }
     }
+
 }
