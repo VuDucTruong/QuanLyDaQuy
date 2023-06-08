@@ -66,5 +66,11 @@ namespace QuanLyDaQuy
             PhieuDichVu phieuDichVu = new PhieuDichVu();
             phieuDichVu.Show();
         }
+
+        private void phieuDichVuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DSPhieuDV dSPhieuDV = new DSPhieuDV();
+            dSPhieuDV.Show();
+        }
     }
 }

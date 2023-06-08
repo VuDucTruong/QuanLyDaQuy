@@ -58,8 +58,8 @@
             this.button_Huy = new System.Windows.Forms.Button();
             this.button_OK = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.button_XoaDong = new System.Windows.Forms.Button();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -84,6 +84,7 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 182);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.tableLayoutPanel1.SetRowSpan(this.dataGridView1, 4);
@@ -93,6 +94,8 @@
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
             this.dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_RowsAdded);
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
+            this.dataGridView1.Leave += new System.EventHandler(this.dataGridView1_FocusLeave);
             // 
             // STT
             // 
@@ -405,7 +408,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 121F));
             this.tableLayoutPanel2.Controls.Add(this.button_Huy, 4, 0);
             this.tableLayoutPanel2.Controls.Add(this.button_OK, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.button_XoaDong, 0, 0);
@@ -416,6 +419,17 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(983, 32);
             this.tableLayoutPanel2.TabIndex = 16;
+            // 
+            // button_XoaDong
+            // 
+            this.button_XoaDong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_XoaDong.Location = new System.Drawing.Point(3, 3);
+            this.button_XoaDong.Name = "button_XoaDong";
+            this.button_XoaDong.Size = new System.Drawing.Size(114, 26);
+            this.button_XoaDong.TabIndex = 16;
+            this.button_XoaDong.Text = "Xóa dòng";
+            this.button_XoaDong.UseVisualStyleBackColor = true;
+            this.button_XoaDong.Click += new System.EventHandler(this.button_XoaDong_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -431,17 +445,6 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(989, 450);
             this.tableLayoutPanel3.TabIndex = 16;
-            // 
-            // button_XoaDong
-            // 
-            this.button_XoaDong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_XoaDong.Location = new System.Drawing.Point(3, 3);
-            this.button_XoaDong.Name = "button_XoaDong";
-            this.button_XoaDong.Size = new System.Drawing.Size(114, 26);
-            this.button_XoaDong.TabIndex = 16;
-            this.button_XoaDong.Text = "Xóa dòng";
-            this.button_XoaDong.UseVisualStyleBackColor = true;
-            this.button_XoaDong.Click += new System.EventHandler(this.button_XoaDong_Click);
             // 
             // PhieuDichVu
             // 
