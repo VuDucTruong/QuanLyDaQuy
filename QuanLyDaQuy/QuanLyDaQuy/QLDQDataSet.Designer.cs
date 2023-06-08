@@ -5981,10 +5981,6 @@ namespace QuanLyDaQuy {
             
             private global::System.Data.DataColumn columnDVT;
             
-            private global::System.Data.DataColumn columnTHANG;
-            
-            private global::System.Data.DataColumn columnNAM;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public loadTonKhoDataTable() {
@@ -6068,22 +6064,6 @@ namespace QuanLyDaQuy {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn THANGColumn {
-                get {
-                    return this.columnTHANG;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn NAMColumn {
-                get {
-                    return this.columnNAM;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -6119,7 +6099,7 @@ namespace QuanLyDaQuy {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public loadTonKhoRow AddloadTonKhoRow(string TenSP, int SLTonDau, int SLBanRa, int SLMuaVao, int SLTonCuoi, string DVT, int THANG, int NAM) {
+            public loadTonKhoRow AddloadTonKhoRow(string TenSP, int SLTonDau, int SLBanRa, int SLMuaVao, int SLTonCuoi, string DVT) {
                 loadTonKhoRow rowloadTonKhoRow = ((loadTonKhoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         TenSP,
@@ -6127,9 +6107,7 @@ namespace QuanLyDaQuy {
                         SLBanRa,
                         SLMuaVao,
                         SLTonCuoi,
-                        DVT,
-                        THANG,
-                        NAM};
+                        DVT};
                 rowloadTonKhoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowloadTonKhoRow);
                 return rowloadTonKhoRow;
@@ -6158,8 +6136,6 @@ namespace QuanLyDaQuy {
                 this.columnSLMuaVao = base.Columns["SLMuaVao"];
                 this.columnSLTonCuoi = base.Columns["SLTonCuoi"];
                 this.columnDVT = base.Columns["DVT"];
-                this.columnTHANG = base.Columns["THANG"];
-                this.columnNAM = base.Columns["NAM"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6177,14 +6153,8 @@ namespace QuanLyDaQuy {
                 base.Columns.Add(this.columnSLTonCuoi);
                 this.columnDVT = new global::System.Data.DataColumn("DVT", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDVT);
-                this.columnTHANG = new global::System.Data.DataColumn("THANG", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTHANG);
-                this.columnNAM = new global::System.Data.DataColumn("NAM", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNAM);
                 this.columnTenSP.MaxLength = 100;
                 this.columnDVT.MaxLength = 100;
-                this.columnTHANG.ReadOnly = true;
-                this.columnNAM.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8704,38 +8674,6 @@ namespace QuanLyDaQuy {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int THANG {
-                get {
-                    try {
-                        return ((int)(this[this.tableloadTonKho.THANGColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'THANG\' in table \'loadTonKho\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableloadTonKho.THANGColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int NAM {
-                get {
-                    try {
-                        return ((int)(this[this.tableloadTonKho.NAMColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'NAM\' in table \'loadTonKho\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableloadTonKho.NAMColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsTenSPNull() {
                 return this.IsNull(this.tableloadTonKho.TenSPColumn);
             }
@@ -8804,30 +8742,6 @@ namespace QuanLyDaQuy {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetDVTNull() {
                 this[this.tableloadTonKho.DVTColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsTHANGNull() {
-                return this.IsNull(this.tableloadTonKho.THANGColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetTHANGNull() {
-                this[this.tableloadTonKho.THANGColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsNAMNull() {
-                return this.IsNull(this.tableloadTonKho.NAMColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetNAMNull() {
-                this[this.tableloadTonKho.NAMColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -15681,8 +15595,6 @@ SELECT MaThamSo, TenThamSo, GiaTri FROM THAMSO WHERE (MaThamSo = @MaThamSo)";
             tableMapping.ColumnMappings.Add("SLMuaVao", "SLMuaVao");
             tableMapping.ColumnMappings.Add("SLTonCuoi", "SLTonCuoi");
             tableMapping.ColumnMappings.Add("DVT", "DVT");
-            tableMapping.ColumnMappings.Add("THANG", "THANG");
-            tableMapping.ColumnMappings.Add("NAM", "NAM");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -15702,14 +15614,28 @@ SELECT MaThamSo, TenThamSo, GiaTri FROM THAMSO WHERE (MaThamSo = @MaThamSo)";
             this._commandCollection[0].CommandText = "dbo.loadTonKho";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Thang", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nam", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(QLDQDataSet.loadTonKhoDataTable dataTable) {
+        public virtual int Fill(QLDQDataSet.loadTonKhoDataTable dataTable, global::System.Nullable<int> Thang, global::System.Nullable<int> Nam) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((Thang.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(Thang.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Nam.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(Nam.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -15721,8 +15647,20 @@ SELECT MaThamSo, TenThamSo, GiaTri FROM THAMSO WHERE (MaThamSo = @MaThamSo)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual QLDQDataSet.loadTonKhoDataTable GetData() {
+        public virtual QLDQDataSet.loadTonKhoDataTable GetData(global::System.Nullable<int> Thang, global::System.Nullable<int> Nam) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((Thang.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(Thang.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Nam.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(Nam.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
             QLDQDataSet.loadTonKhoDataTable dataTable = new QLDQDataSet.loadTonKhoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

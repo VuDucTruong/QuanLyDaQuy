@@ -345,13 +345,23 @@ RETURN 0
 
 GO
 CREATE PROCEDURE [dbo].[loadTonKho]
-	
+	@Thang int,
+	@Nam int
 AS
-	SELECT TenSP , SLTonDau , SLBanRa , SLMuaVao , SLTonCuoi , DVT , Thang
+	SELECT TenSP , SLTonDau , SLBanRa , SLMuaVao , SLTonCuoi , DVT
 	from TONKHO , SANPHAM , LOAISANPHAM , DONVITINH
-	where TONKHO.MaSP = SANPHAM.MaSP and SANPHAM.MaLSP = LOAISANPHAM.MaLSP and LOAISANPHAM.MaDVT = DONVITINH.MaDVT
+	where TONKHO.MaSP = SANPHAM.MaSP and SANPHAM.MaLSP = LOAISANPHAM.MaLSP and LOAISANPHAM.MaDVT = DONVITINH.MaDVT and MONTH(Thang) = @Thang and YEAR(Thang) = @Nam
 RETURN 0
 
+
+--insert into TONKHO ( Thang,MaSP ,SLTonDau ,SLTonCuoi ,SLMuaVao ,SLBanRa ) values ( '1/1/2003' , 1 , 0 , 0 , 0 , 0 )
+--insert into TONKHO ( Thang,MaSP ,SLTonDau ,SLTonCuoi ,SLMuaVao ,SLBanRa ) values ( '1/2/2004' , 2 , 0 , 0 , 0 , 0 )
+--insert into TONKHO ( Thang,MaSP ,SLTonDau ,SLTonCuoi ,SLMuaVao ,SLBanRa ) values ( '1/3/2010' , 3 , 0 , 0 , 0 , 0 )
+
+--delete from TONKHO
+
+--select distinct YEAR(Thang)
+--from TONKHO
 -----------Tri--------------
 
 

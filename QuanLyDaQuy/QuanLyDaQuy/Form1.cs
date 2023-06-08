@@ -47,29 +47,25 @@ namespace QuanLyDaQuy
             }
         }
 
- 
-
-
-        private void toolStripTextBox2_Click(object sender, EventArgs e)
+        private void phiếuBánHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PhieuBanHang phieuBanHang = new PhieuBanHang();
             phieuBanHang.Show();
-
-
         }
 
-        private void toolStripTextBox7_Click(object sender, EventArgs e)
+        private void phiếuMuaHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PhieuMuaHang phieuMuaHang = new PhieuMuaHang();
+            phieuMuaHang.Show();
+        }
+
+        private void phiếuDịchVụToolStripMenuItem_Click(object sender, EventArgs e)
         {
             PhieuDichVu phieuDichVu = new PhieuDichVu();
             phieuDichVu.Show();
         }
 
-        private void lậpPhiếuToolStripMenuItem_MouseMove(object sender, MouseEventArgs e)
-        {
-            this.Cursor = Cursors.Hand;
-        }
-
-        private void toolStripTextBox3_Click(object sender, EventArgs e)
+        private void báoCáoTồnKhoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             BaoCaoTonKho baoCaoTonKho = new BaoCaoTonKho();
             baoCaoTonKho.Show();
