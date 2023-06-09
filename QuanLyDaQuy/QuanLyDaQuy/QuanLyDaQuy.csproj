@@ -79,6 +79,12 @@
     <Compile Include="Phieu\DSPhieuDV.Designer.cs">
       <DependentUpon>DSPhieuDV.cs</DependentUpon>
     </Compile>
+    <Compile Include="Phieu\DSPhieuMH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Phieu\DSPhieuMH.Designer.cs">
+      <DependentUpon>DSPhieuMH.cs</DependentUpon>
+    </Compile>
     <Compile Include="Phieu\PhieuBanHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Phieu\DSPhieuDV.resx">
       <DependentUpon>DSPhieuDV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phieu\DSPhieuMH.resx">
+      <DependentUpon>DSPhieuMH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Phieu\PhieuBanHang.resx">
       <DependentUpon>PhieuBanHang.cs</DependentUpon>
