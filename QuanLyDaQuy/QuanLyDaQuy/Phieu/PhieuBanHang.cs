@@ -37,9 +37,9 @@ namespace QuanLyDaQuy.Phieu
             if (!int.TryParse(DataProvider.Instance.ExecuteScalar("select max(MaPhieuBH) from PHIEUBANHANG").ToString(),
                 out int soPhieu))
             {
-                soPhieu = 1;
+                soPhieu = 0;
             }
-            tb_sophieu.Text = soPhieu.ToString();
+            tb_sophieu.Text = (soPhieu + 1).ToString();
 
             // Textbox ngày lập
             tb_ngaylap.Text = DateTime.Now.ToString("dd/MM/yyyy");
@@ -167,7 +167,6 @@ namespace QuanLyDaQuy.Phieu
                 INNER JOIN LOAISANPHAM LSP ON SP.MaLSP = LSP.MaLSP
                 INNER JOIN DONVITINH DVT ON LSP.MaDVT = DVT.MaDVT
                 WHERE SP.MaSP = @MaSP";
-
 
                 object[] parameters = new object[] { maSP };
 
@@ -395,103 +394,190 @@ namespace QuanLyDaQuy.Phieu
 
         private void btn_ok_Click(object sender, EventArgs e)
         {
-            // Lấy tất cả thông tin
-            string tenKhachHang = cb_khachhang.Text;
-            string sdt = cb_sdt.Text;
-            string ngayLap = tb_ngaylap.Text;
-
-            if(!float.TryParse(tb_tongtien.Text, out float tongtien))
-                return;
-
-            if (!int.TryParse(tb_sophieu.Text, out int maPhieuBH))
-                return;
-
-            InsertKhachHang(tenKhachHang, sdt);
-            //AddPhieuBanHang();
-
-            // Duyệt qua từng dòng trong DataGridView
-            List<DataGridViewRow> rows = dgv_phieubanhang.Rows.Cast<DataGridViewRow>().ToList();
-            foreach (DataGridViewRow row in rows)
+            try
             {
-                if (row.IsNewRow)
+                // Lấy tất cả thông tin
+                string tenKH = cb_khachhang.Text;
+                if (string.IsNullOrEmpty(tenKH))
                 {
-                    ReloadForm();
+                    MessageBox.Show("Tên khách hàng không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
+                string sdt = cb_sdt.Text;
+                if (!IsValidPhoneNumber(sdt))
+                {
+                    MessageBox.Show("Số điện thoại không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
-                // Lấy thông tin sản phẩm từ dòng hiện tại
-                string tenSP = row.Cells["sp_col"].Value.ToString();
+                string ngayLap = tb_ngaylap.Text;
+
+                if (!float.TryParse(tb_tongtien.Text, out float tongTien))
+                    return;
+
+                if (!int.TryParse(tb_sophieu.Text, out int maPhieuBH))
+                    return;
+
+                int maKH = FindMaKhachHang(tenKH, sdt);
+
+                // Thêm khách hàng nếu chưa tồn tại trong csdl
+                if (maKH == -1)
+                {
+                    maKH = InsertKhachHang(tenKH, sdt);
+                    if (maKH == -1)
+                    {
+                        MessageBox.Show("Lỗi thêm khách hàng!");
+                        return;
+                    }
+
+                }
+
+                // Thêm phiếu bán hàng
+                if (IsDataGridViewEmpty(dgv_phieubanhang))
+                {
+                    MessageBox.Show("Dữ liệu trống, xin hãy chọn sản phẩm!");
+                    return;
+                }
+                else
+                    AddPhieuBanHang(maKH, ngayLap, tongTien);
+
+                // Duyệt qua từng dòng trong DataGridView
+                List<DataGridViewRow> rows = dgv_phieubanhang.Rows.Cast<DataGridViewRow>().ToList();
+                foreach (DataGridViewRow row in rows)
+                {
+                    // Nếu đã duyệt hết các hàng của bảng thì reload lại thành form mới
+                    if (row.IsNewRow)
+                    {
+                        ReloadForm();
+                        return;
+                    }
+
+                    // Lấy thông tin sản phẩm từ dòng hiện tại
+                    int maSP = Convert.ToInt32(row.Cells["sp_col"].Value);
                     int soLuong = Convert.ToInt32(row.Cells["sl_col"].Value);
                     float donGia = Convert.ToSingle(row.Cells["dg_col"].Value);
                     float thanhTien = Convert.ToSingle(row.Cells["tt_col"].Value);
 
-                // Cập nhật thuộc tính SoLuongTon trong bảng Sản phẩm
-                // Thực hiện truy vấn SQL hoặc gọi hàm để cập nhật giá trị SoLuongTon
+                    // Cập nhật thuộc tính SoLuongTon trong bảng Sản phẩm
+                    UpdateSLT(maSP, soLuong);
 
-                // Thêm chi tiết phiếu bán hàng vào bảng CT_PHIEUBANHANG
-                // Thực hiện truy vấn SQL hoặc gọi hàm để thêm chi tiết phiếu bán hàng
-            }
+                    // Thêm chi tiết phiếu bán hàng vào bảng CT_PHIEUBANHANG
+                    AddCTPhieuBanHang(maPhieuBH, maSP, soLuong, donGia, thanhTien);
 
-            //UpdateSLT();
-            //AddCTPhieuBanHang();
-
-        }
-
-        private void AddCTPhieuBanHang()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void AddPhieuBanHang()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void UpdateSLT()
-        {
-            string updateSoLuongTonQuery = "UPDATE SANPHAM SET SoLuongTon = SoLuongTon - @SoLuong WHERE MaSP = @MaSP";
-
-            //// Lấy thông tin sản phẩm từ DataGridView
-            //int maSP = // Lấy mã sản phẩm từ dòng hiện tại
-            //int soLuong = // Lấy số lượng từ cột số lượng hoặc điểm cần lấy
-
-            //object[] updateSoLuongTonParams = new object[] { soLuong, maSP };
-
-            //int rowCount = ExecuteNonQuery(updateSoLuongTonQuery, updateSoLuongTonParams);
-        }
-
-        private void InsertKhachHang(string tenKH, string sdt)
-        {
-
-            string query = "SELECT COUNT(*) FROM KHACHHANG WHERE TenKH = @TenKhachHang AND SDT = @SoDienThoai";
-            object[] parameters = new object[] { tenKH, sdt };
-            string[] parameterNames = new string[] { "@TenKhachHang", "@SoDienThoai" };
-
-            int rowCount;
-            if (int.TryParse(DataProvider.Instance.ExecuteScalar(query, parameters).ToString(), out rowCount))
-            {
-                // Kiểm tra giá trị rowCount để xác định xem khách hàng đã tồn tại hay chưa
-                if (rowCount == 0)
-                {
-                    // Thêm thông tin khách hàng vào cơ sở dữ liệu
-                    string insertQuery = "INSERT INTO KHACHHANG (TenKH, SDT) VALUES (@TenKhachHang, @SoDienThoai)";
-
-                    // Thay thế các tham số trong câu truy vấn bằng giá trị tương ứng
-                    for (int i = 0; i < parameters.Length; i++)
-                    {
-                        insertQuery = insertQuery.Replace(parameterNames[i], "'" + parameters[i].ToString() + "'");
-                    }
-
-                    int affectedRows = DataProvider.Instance.ExecuteNonQuery(insertQuery);
-                    MessageBox.Show($"{affectedRows} khách hàng mới đã được thêm");
                 }
-            }
-            else
-            {
-                // Xử lý khi không thể chuyển đổi giá trị rowCount thành kiểu int
-                MessageBox.Show("Lỗi ép kiểu dữ liệu trả về sau khi truy vấn CSDL");
 
+            }
+            catch
+            {
+                MessageBox.Show("Có lỗi xảy ra!");
+            }
+        }
+
+        bool IsDataGridViewEmpty(DataGridView dataGridView)
+        {
+            if (dataGridView.Rows.Count == 0)
+                return true;
+
+            foreach (DataGridViewRow row in dataGridView.Rows)
+            {
+                if (!row.IsNewRow)
+                    return false;
+            }
+
+            return true;
+        }
+
+        private int FindMaKhachHang(string tenKH, string sdt)
+        {
+            int maKH = -1;
+
+            string query = "SELECT MaKH FROM KHACHHANG WHERE TenKH = @tenKH AND SDT = @soDT";
+            object[] parameters = { tenKH, sdt };
+
+            var result = DataProvider.Instance.ExecuteScalar(query, parameters);
+            if (result != null && int.TryParse(result.ToString(), out maKH))
+            {
+                return maKH;
+            }
+
+            return -1;
+        }
+
+        private void AddCTPhieuBanHang(int maPhieuBH, int maSP, int soLuong, float donGia, float thanhTien)
+        {
+            try
+            {
+                // Thêm chi tiết phiếu bán hàng vào cơ sở dữ liệu
+                string insertQuery = $"INSERT INTO CT_PHIEUBANHANG (MaPhieuBH, MaSP, SL, DonGia, ThanhTien) VALUES ( {maPhieuBH}, {maSP}, {soLuong}, {donGia}, {thanhTien} )";
+
+                object[] parameters = { maPhieuBH, maSP, soLuong, donGia, thanhTien };
+
+                int affectedRows = DataProvider.Instance.ExecuteNonQuery(insertQuery);
+
+                if (affectedRows <= 0)
+                    MessageBox.Show($"Lỗi thêm chi tiết phiếu bán hàng ở sản phẩm có mã {maSP}!");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show($"Lỗi thêm chi tiết phiếu bán hàng: {ex.Message}");
+            }
+        }
+
+        private void AddPhieuBanHang(int maKH, string ngayLap, float tongTien)
+        {
+            try
+            {
+                string query = "insert into PHIEUBANHANG " +
+                "( MaKH , NgayLap , TongTien ) values" +
+                $"({maKH},'{ngayLap}',{tongTien})";
+
+                int affectedRows = DataProvider.Instance.ExecuteNonQuery(query);
+                MessageBox.Show($"Thêm thành công {affectedRows} phiếu bán hàng");
+
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi thêm PBH");
+            }
+        }
+
+        private void UpdateSLT(int maSP, int soLuong)
+        {
+            string updateQuery = $"UPDATE SANPHAM SET SoLuongTon = SoLuongTon - {soLuong} WHERE MaSP = {maSP}";
+
+            int affectedRows = DataProvider.Instance.ExecuteNonQuery(updateQuery);
+
+            if (affectedRows <= 0)
+                MessageBox.Show($"Lỗi cập nhật số lượng tồn sản phẩm có mã {maSP}");
+
+        }
+
+        private int InsertKhachHang(string tenKH, string sdt)
+        {
+            try
+            {
+                object[] parameters = { tenKH, sdt };
+
+                // Thêm thông tin khách hàng vào cơ sở dữ liệu
+                string insertQuery = "INSERT INTO KHACHHANG (TenKH, SDT) VALUES (@TenKhachHang, @SoDienThoai); SELECT SCOPE_IDENTITY();";
+
+                object result = DataProvider.Instance.ExecuteScalar(insertQuery, parameters);
+
+                if (result != null)
+                {
+                    int maKH = Convert.ToInt32(result);
+                    MessageBox.Show($"Thêm khách hàng thành công, mã khách hàng: {maKH}");
+                    return maKH;
+                }
+
+                MessageBox.Show($"Không thể lấy mã khách hàng");
+                return -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi thêm khách hàng: {ex.Message}");
+                return -1;
             }
         }
 
