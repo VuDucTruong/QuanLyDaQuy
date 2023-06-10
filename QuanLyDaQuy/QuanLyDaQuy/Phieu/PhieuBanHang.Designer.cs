@@ -29,10 +29,10 @@ namespace QuanLyDaQuy.Phieu
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lb_title = new System.Windows.Forms.Label();
             this.lb_sophieu = new System.Windows.Forms.Label();
             this.lb_khachhang = new System.Windows.Forms.Label();
@@ -56,7 +56,7 @@ namespace QuanLyDaQuy.Phieu
             this.cb_khachhang = new System.Windows.Forms.ComboBox();
             this.btn_ok = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_huy = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_phieubanhang)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -114,14 +114,14 @@ namespace QuanLyDaQuy.Phieu
             // dgv_phieubanhang
             // 
             this.dgv_phieubanhang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_phieubanhang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_phieubanhang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_phieubanhang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_phieubanhang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.stt_col,
@@ -131,26 +131,26 @@ namespace QuanLyDaQuy.Phieu
             this.dvt_col,
             this.dg_col,
             this.tt_col});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_phieubanhang.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_phieubanhang.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_phieubanhang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_phieubanhang.GridColor = System.Drawing.Color.Silver;
             this.dgv_phieubanhang.Location = new System.Drawing.Point(3, 253);
             this.dgv_phieubanhang.Name = "dgv_phieubanhang";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_phieubanhang.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_phieubanhang.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_phieubanhang.RowHeadersVisible = false;
             this.dgv_phieubanhang.RowHeadersWidth = 51;
             this.dgv_phieubanhang.RowTemplate.Height = 24;
@@ -172,8 +172,8 @@ namespace QuanLyDaQuy.Phieu
             // 
             this.sp_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.sp_col.DataPropertyName = "TenSP";
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.sp_col.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.sp_col.DefaultCellStyle = dataGridViewCellStyle6;
             this.sp_col.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.sp_col.DropDownWidth = 2;
             this.sp_col.HeaderText = "Sản phẩm";
@@ -381,27 +381,29 @@ namespace QuanLyDaQuy.Phieu
             this.btn_delete.UseVisualStyleBackColor = true;
             this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
-            // button1
+            // btn_huy
             // 
-            this.button1.Location = new System.Drawing.Point(874, 508);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 37);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Hủy phiếu";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_huy.Location = new System.Drawing.Point(874, 508);
+            this.btn_huy.Name = "btn_huy";
+            this.btn_huy.Size = new System.Drawing.Size(96, 37);
+            this.btn_huy.TabIndex = 21;
+            this.btn_huy.Text = "Hủy phiếu";
+            this.btn_huy.UseVisualStyleBackColor = true;
+            this.btn_huy.Click += new System.EventHandler(this.btn_huy_Click);
             // 
             // PhieuBanHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(982, 553);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_huy);
             this.Controls.Add(this.btn_delete);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.btn_ok);
             this.Name = "PhieuBanHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "PhieuBanHang";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PhieuBanHang_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_phieubanhang)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -429,7 +431,7 @@ namespace QuanLyDaQuy.Phieu
         private System.Windows.Forms.TextBox tb_tongtien;
         private System.Windows.Forms.Button btn_ok;
         private System.Windows.Forms.Button btn_delete;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_huy;
         private System.Windows.Forms.DataGridViewTextBoxColumn stt_col;
         private System.Windows.Forms.DataGridViewComboBoxColumn sp_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn lsp_col;

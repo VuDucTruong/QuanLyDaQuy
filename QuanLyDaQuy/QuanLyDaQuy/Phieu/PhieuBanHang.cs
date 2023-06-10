@@ -227,59 +227,58 @@ namespace QuanLyDaQuy.Phieu
         {
             try
             {
-                if (dgv_phieubanhang.Columns.Contains("sl_col") && dgv_phieubanhang.Rows.Count > 0)
+                if (!dgv_phieubanhang.Columns.Contains("sl_col") || dgv_phieubanhang.Rows.Count == 0)
+                    return;
+
+                // Kiểm tra xem có thay đổi trong cột "Số lượng" hay không
+                if (e.ColumnIndex != dgv_phieubanhang.Columns["sl_col"].Index)
+                    return;
+
+                // Lấy dòng hiện tại từ DataGridView
+                DataGridViewRow currentRow = dgv_phieubanhang.Rows[e.RowIndex];
+                if (currentRow.IsNewRow)
+                    return;
+
+                int soLuong = 0;
+                object slValue = currentRow.Cells["sl_col"].Value;
+                if (slValue == null || !int.TryParse(slValue.ToString(), out soLuong) || soLuong < 0)
                 {
-                    // Kiểm tra xem có thay đổi trong cột "Số lượng" hay không
-                    if (e.ColumnIndex == dgv_phieubanhang.Columns["sl_col"].Index)
+                    currentRow.Cells["sl_col"].Value = 0;
+                }
+                else
+                {
+                    // Lấy "Tên sản phẩm"
+                    string tenSP = currentRow.Cells["sp_col"].FormattedValue.ToString();
+
+                    // Kiểm tra số lượng tồn trong cơ sở dữ liệu
+                    int soLuongTon = GetSoLuongTonFromDatabase(tenSP);
+
+                    if (soLuong > soLuongTon)
                     {
-                        // Lấy dòng hiện tại từ DataGridView
-                        DataGridViewRow currentRow = dgv_phieubanhang.Rows[e.RowIndex];
-                        if (!currentRow.IsNewRow)
-                        {
-                            int soLuong = 0;
-                            object slValue = currentRow.Cells["sl_col"].Value;
-                            if (slValue == null || !int.TryParse(slValue.ToString(), out soLuong) || soLuong < 0)
-                            {
-                                currentRow.Cells["sl_col"].Value = 0;
-                            }
-                            else
-                            {
-                                // Lấy "Tên sản phẩm"
-                                string tenSP = currentRow.Cells["sp_col"].FormattedValue.ToString();
-
-                                // Kiểm tra số lượng tồn trong cơ sở dữ liệu
-                                int soLuongTon = GetSoLuongTonFromDatabase(tenSP);
-
-                                if (soLuong > soLuongTon)
-                                {
-                                    // Số lượng nhập vào vượt quá số lượng tồn
-                                    MessageBox.Show("Số lượng tồn không đủ!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                    currentRow.Cells["sl_col"].Value = soLuongTon;
-                                    soLuong = soLuongTon;
-                                }
-
-                                float donGia = Convert.ToSingle(currentRow.Cells["dg_col"].Value);
-                                float thanhTien = soLuong * donGia;
-                                thanhTien = (float)Math.Round(thanhTien, 2);
-                                currentRow.Cells["tt_col"].Value = (long)thanhTien;
-                            }
-                        }
-
-                        long tongTien = 0;
-                        // Tính tổng các dòng thành tiền và gán vào ô TextBox tổng tiền
-                        foreach (DataGridViewRow row in dgv_phieubanhang.Rows)
-                        {
-                            if (!row.IsNewRow && row.Cells["tt_col"].Value != null)
-                            {
-                                float thanhTien = Convert.ToSingle(row.Cells["tt_col"].Value);
-                                tongTien += (long)thanhTien;
-                            }
-                        }
-
-                        tb_tongtien.Text = tongTien.ToString();
+                        // Số lượng nhập vào vượt quá số lượng tồn
+                        MessageBox.Show("Số lượng tồn không đủ!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        currentRow.Cells["sl_col"].Value = soLuongTon;
+                        soLuong = soLuongTon;
                     }
 
+                    float donGia = Convert.ToSingle(currentRow.Cells["dg_col"].Value);
+                    float thanhTien = soLuong * donGia;
+                    thanhTien = (float)Math.Round(thanhTien, 2);
+                    currentRow.Cells["tt_col"].Value = (long)thanhTien;
                 }
+
+                long tongTien = 0;
+                // Tính tổng các dòng thành tiền và gán vào ô TextBox tổng tiền
+                foreach (DataGridViewRow row in dgv_phieubanhang.Rows)
+                {
+                    if (!row.IsNewRow && row.Cells["tt_col"].Value != null)
+                    {
+                        float thanhTien = Convert.ToSingle(row.Cells["tt_col"].Value);
+                        tongTien += (long)thanhTien;
+                    }
+                }
+
+                tb_tongtien.Text = tongTien.ToString();
             }
             catch
             {
@@ -609,5 +608,19 @@ namespace QuanLyDaQuy.Phieu
 
         }
 
+        private void btn_huy_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void PhieuBanHang_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc muốn đóng form?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true; // Hủy sự kiện đóng form nếu người dùng chọn "No"
+            }
+
+        }
     }
 }
