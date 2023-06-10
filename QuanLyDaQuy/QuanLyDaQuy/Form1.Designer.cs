@@ -275,6 +275,7 @@
             this.phiếuBánHàngToolStripMenuItem3.Name = "phiếuBánHàngToolStripMenuItem3";
             this.phiếuBánHàngToolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
             this.phiếuBánHàngToolStripMenuItem3.Text = "Phiếu bán hàng";
+            this.phiếuBánHàngToolStripMenuItem3.Click += new System.EventHandler(this.phiếuBánHàngToolStripMenuItem3_Click);
             // 
             // phiếuDịchVụToolStripMenuItem3
             // 
