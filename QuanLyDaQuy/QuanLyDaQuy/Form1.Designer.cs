@@ -39,6 +39,7 @@
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripTextBox3 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripTextBox7 = new System.Windows.Forms.ToolStripTextBox();
             this.traCứuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox4 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripTextBox5 = new System.Windows.Forms.ToolStripTextBox();
@@ -47,7 +48,6 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
-            this.toolStripTextBox7 = new System.Windows.Forms.ToolStripTextBox();
             this.thongTinMatHang1 = new QuanLyDaQuy.ThongTinMatHang();
             this.thongTinDichVu1 = new QuanLyDaQuy.ThongTinDichVu();
             this.thongTinNCC1 = new QuanLyDaQuy.UserControls.ThongTinNCC();
@@ -64,7 +64,7 @@
             this.traCứuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1235, 29);
+            this.menuStrip1.Size = new System.Drawing.Size(1235, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -76,7 +76,7 @@
             this.toolStripTextBox3,
             this.toolStripTextBox7});
             this.lậpPhiếuToolStripMenuItem.Name = "lậpPhiếuToolStripMenuItem";
-            this.lậpPhiếuToolStripMenuItem.Size = new System.Drawing.Size(92, 25);
+            this.lậpPhiếuToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
             this.lậpPhiếuToolStripMenuItem.Text = "Lập phiếu";
             // 
             // toolStripTextBox1
@@ -104,6 +104,15 @@
             this.toolStripTextBox3.Size = new System.Drawing.Size(100, 29);
             this.toolStripTextBox3.Text = "Tồn kho";
             // 
+            // toolStripTextBox7
+            // 
+            this.toolStripTextBox7.Font = new System.Drawing.Font("Segoe UI", 9.6F);
+            this.toolStripTextBox7.Name = "toolStripTextBox7";
+            this.toolStripTextBox7.ReadOnly = true;
+            this.toolStripTextBox7.Size = new System.Drawing.Size(100, 29);
+            this.toolStripTextBox7.Text = "Phiếu dịch vụ";
+            this.toolStripTextBox7.Click += new System.EventHandler(this.toolStripTextBox7_Click);
+            // 
             // traCứuToolStripMenuItem
             // 
             this.traCứuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -111,7 +120,7 @@
             this.toolStripTextBox5,
             this.toolStripTextBox6});
             this.traCứuToolStripMenuItem.Name = "traCứuToolStripMenuItem";
-            this.traCứuToolStripMenuItem.Size = new System.Drawing.Size(74, 25);
+            this.traCứuToolStripMenuItem.Size = new System.Drawing.Size(71, 24);
             this.traCứuToolStripMenuItem.Text = "Tra cứu";
             // 
             // toolStripTextBox4
@@ -127,6 +136,7 @@
             this.toolStripTextBox5.Name = "toolStripTextBox5";
             this.toolStripTextBox5.Size = new System.Drawing.Size(120, 29);
             this.toolStripTextBox5.Text = "Phiếu bán hàng";
+            this.toolStripTextBox5.Click += new System.EventHandler(this.toolStripTextBox5_Click);
             // 
             // toolStripTextBox6
             // 
@@ -180,15 +190,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(251, 621);
             this.panel2.TabIndex = 5;
-            // 
-            // toolStripTextBox7
-            // 
-            this.toolStripTextBox7.Font = new System.Drawing.Font("Segoe UI", 9.6F);
-            this.toolStripTextBox7.Name = "toolStripTextBox7";
-            this.toolStripTextBox7.ReadOnly = true;
-            this.toolStripTextBox7.Size = new System.Drawing.Size(100, 29);
-            this.toolStripTextBox7.Text = "Phiếu dịch vụ";
-            this.toolStripTextBox7.Click += new System.EventHandler(this.toolStripTextBox7_Click);
             // 
             // thongTinMatHang1
             // 
