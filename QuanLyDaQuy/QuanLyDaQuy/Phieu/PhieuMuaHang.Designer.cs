@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tab_lay_phieumuahang = new System.Windows.Forms.TableLayoutPanel();
             this.lb_title = new System.Windows.Forms.Label();
             this.lb_sophieu = new System.Windows.Forms.Label();
@@ -35,7 +36,6 @@
             this.kb_ngaylap = new System.Windows.Forms.Label();
             this.tb_ngaylap = new System.Windows.Forms.TextBox();
             this.lb_nhacungcap = new System.Windows.Forms.Label();
-            this.tb_nhacungcap = new System.Windows.Forms.TextBox();
             this.lb_diachi = new System.Windows.Forms.Label();
             this.tb_diachi = new System.Windows.Forms.TextBox();
             this.lb_sodienthoai = new System.Windows.Forms.Label();
@@ -50,11 +50,16 @@
             this.phieuMuaHang_column_thanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lb_thanhTien = new System.Windows.Forms.Label();
             this.tb_thanhTien = new System.Windows.Forms.TextBox();
-            this.btn_lapPhieu = new System.Windows.Forms.Button();
-            this.btn_huy = new System.Windows.Forms.Button();
             this.btn_xoaDong = new System.Windows.Forms.Button();
+            this.btn_huy = new System.Windows.Forms.Button();
+            this.btn_lapPhieu = new System.Windows.Forms.Button();
+            this.btn_add_ncc = new System.Windows.Forms.Button();
+            this.cb_nhaCungCap = new System.Windows.Forms.ComboBox();
+            this.qLDQDataSet = new QuanLyDaQuy.QLDQDataSet();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.tab_lay_phieumuahang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dt_grid_phieumuahang)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // tab_lay_phieumuahang
@@ -73,7 +78,6 @@
             this.tab_lay_phieumuahang.Controls.Add(this.kb_ngaylap, 0, 2);
             this.tab_lay_phieumuahang.Controls.Add(this.tb_ngaylap, 1, 2);
             this.tab_lay_phieumuahang.Controls.Add(this.lb_nhacungcap, 2, 1);
-            this.tab_lay_phieumuahang.Controls.Add(this.tb_nhacungcap, 3, 1);
             this.tab_lay_phieumuahang.Controls.Add(this.lb_diachi, 2, 2);
             this.tab_lay_phieumuahang.Controls.Add(this.tb_diachi, 3, 2);
             this.tab_lay_phieumuahang.Controls.Add(this.lb_sodienthoai, 2, 3);
@@ -81,9 +85,11 @@
             this.tab_lay_phieumuahang.Controls.Add(this.dt_grid_phieumuahang, 0, 4);
             this.tab_lay_phieumuahang.Controls.Add(this.lb_thanhTien, 4, 5);
             this.tab_lay_phieumuahang.Controls.Add(this.tb_thanhTien, 5, 5);
-            this.tab_lay_phieumuahang.Controls.Add(this.btn_lapPhieu, 2, 6);
-            this.tab_lay_phieumuahang.Controls.Add(this.btn_huy, 3, 6);
             this.tab_lay_phieumuahang.Controls.Add(this.btn_xoaDong, 0, 5);
+            this.tab_lay_phieumuahang.Controls.Add(this.btn_huy, 5, 6);
+            this.tab_lay_phieumuahang.Controls.Add(this.btn_lapPhieu, 4, 6);
+            this.tab_lay_phieumuahang.Controls.Add(this.btn_add_ncc, 5, 1);
+            this.tab_lay_phieumuahang.Controls.Add(this.cb_nhaCungCap, 3, 1);
             this.tab_lay_phieumuahang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tab_lay_phieumuahang.Location = new System.Drawing.Point(0, 0);
             this.tab_lay_phieumuahang.Name = "tab_lay_phieumuahang";
@@ -130,9 +136,11 @@
             this.tb_sophieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_sophieu.BackColor = System.Drawing.SystemColors.Window;
             this.tb_sophieu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tb_sophieu.Enabled = false;
             this.tb_sophieu.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_sophieu.Location = new System.Drawing.Point(138, 40);
             this.tb_sophieu.Name = "tb_sophieu";
+            this.tb_sophieu.ReadOnly = true;
             this.tb_sophieu.Size = new System.Drawing.Size(129, 25);
             this.tb_sophieu.TabIndex = 2;
             // 
@@ -158,6 +166,7 @@
             this.tb_ngaylap.Name = "tb_ngaylap";
             this.tb_ngaylap.Size = new System.Drawing.Size(129, 25);
             this.tb_ngaylap.TabIndex = 4;
+            this.tb_ngaylap.Leave += new System.EventHandler(this.tb_ngaylap_Leave);
             // 
             // lb_nhacungcap
             // 
@@ -170,18 +179,6 @@
             this.lb_nhacungcap.TabIndex = 5;
             this.lb_nhacungcap.Text = "Nhà cung cấp:";
             this.lb_nhacungcap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // tb_nhacungcap
-            // 
-            this.tb_nhacungcap.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tb_nhacungcap.BackColor = System.Drawing.SystemColors.Window;
-            this.tb_nhacungcap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tab_lay_phieumuahang.SetColumnSpan(this.tb_nhacungcap, 2);
-            this.tb_nhacungcap.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_nhacungcap.Location = new System.Drawing.Point(408, 40);
-            this.tb_nhacungcap.Name = "tb_nhacungcap";
-            this.tb_nhacungcap.Size = new System.Drawing.Size(264, 25);
-            this.tb_nhacungcap.TabIndex = 6;
             // 
             // lb_diachi
             // 
@@ -201,6 +198,7 @@
             this.tb_diachi.BackColor = System.Drawing.SystemColors.Window;
             this.tb_diachi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tab_lay_phieumuahang.SetColumnSpan(this.tb_diachi, 3);
+            this.tb_diachi.Enabled = false;
             this.tb_diachi.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_diachi.Location = new System.Drawing.Point(408, 75);
             this.tb_diachi.Name = "tb_diachi";
@@ -226,6 +224,7 @@
             this.tb_sodienthoai.BackColor = System.Drawing.SystemColors.Window;
             this.tb_sodienthoai.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tab_lay_phieumuahang.SetColumnSpan(this.tb_sodienthoai, 2);
+            this.tb_sodienthoai.Enabled = false;
             this.tb_sodienthoai.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_sodienthoai.Location = new System.Drawing.Point(408, 110);
             this.tb_sodienthoai.Name = "tb_sodienthoai";
@@ -249,7 +248,6 @@
             this.dt_grid_phieumuahang.GridColor = System.Drawing.SystemColors.Control;
             this.dt_grid_phieumuahang.Location = new System.Drawing.Point(3, 143);
             this.dt_grid_phieumuahang.Name = "dt_grid_phieumuahang";
-            this.dt_grid_phieumuahang.RowHeadersVisible = false;
             this.dt_grid_phieumuahang.RowHeadersWidth = 51;
             this.dt_grid_phieumuahang.RowTemplate.Height = 24;
             this.dt_grid_phieumuahang.Size = new System.Drawing.Size(804, 337);
@@ -259,6 +257,7 @@
             this.dt_grid_phieumuahang.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dt_grid_phieumuahang_DataError);
             this.dt_grid_phieumuahang.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dt_grid_phieumuahang_EditingControlShowing);
             this.dt_grid_phieumuahang.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dt_grid_phieumuahang_RowsAdded);
+            this.dt_grid_phieumuahang.SelectionChanged += new System.EventHandler(this.dt_grid_phieumuahang_SelectionChanged);
             // 
             // phieuMuaHang_column_STT
             // 
@@ -326,35 +325,13 @@
             // 
             // tb_thanhTien
             // 
+            this.tb_thanhTien.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_thanhTien.Enabled = false;
             this.tb_thanhTien.Location = new System.Drawing.Point(678, 486);
             this.tb_thanhTien.Name = "tb_thanhTien";
             this.tb_thanhTien.ReadOnly = true;
             this.tb_thanhTien.Size = new System.Drawing.Size(100, 22);
             this.tb_thanhTien.TabIndex = 13;
-            // 
-            // btn_lapPhieu
-            // 
-            this.btn_lapPhieu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_lapPhieu.Location = new System.Drawing.Point(273, 516);
-            this.btn_lapPhieu.Name = "btn_lapPhieu";
-            this.btn_lapPhieu.Size = new System.Drawing.Size(75, 34);
-            this.btn_lapPhieu.TabIndex = 14;
-            this.btn_lapPhieu.Text = "Lập phiếu";
-            this.btn_lapPhieu.UseVisualStyleBackColor = true;
-            this.btn_lapPhieu.Click += new System.EventHandler(this.btn_lapPhieu_Click);
-            // 
-            // btn_huy
-            // 
-            this.btn_huy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_huy.Location = new System.Drawing.Point(462, 516);
-            this.btn_huy.Name = "btn_huy";
-            this.btn_huy.Size = new System.Drawing.Size(75, 34);
-            this.btn_huy.TabIndex = 15;
-            this.btn_huy.Text = "Hủy phiếu";
-            this.btn_huy.UseVisualStyleBackColor = true;
-            this.btn_huy.Click += new System.EventHandler(this.btn_huy_Click);
             // 
             // btn_xoaDong
             // 
@@ -368,6 +345,59 @@
             this.btn_xoaDong.UseVisualStyleBackColor = true;
             this.btn_xoaDong.Click += new System.EventHandler(this.btn_xoaDong_Click);
             // 
+            // btn_huy
+            // 
+            this.btn_huy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_huy.Location = new System.Drawing.Point(732, 516);
+            this.btn_huy.Name = "btn_huy";
+            this.btn_huy.Size = new System.Drawing.Size(75, 34);
+            this.btn_huy.TabIndex = 15;
+            this.btn_huy.Text = "Hủy phiếu";
+            this.btn_huy.UseVisualStyleBackColor = true;
+            this.btn_huy.Click += new System.EventHandler(this.btn_huy_Click);
+            // 
+            // btn_lapPhieu
+            // 
+            this.btn_lapPhieu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_lapPhieu.Location = new System.Drawing.Point(597, 516);
+            this.btn_lapPhieu.Name = "btn_lapPhieu";
+            this.btn_lapPhieu.Size = new System.Drawing.Size(75, 34);
+            this.btn_lapPhieu.TabIndex = 14;
+            this.btn_lapPhieu.Text = "Lập phiếu";
+            this.btn_lapPhieu.UseVisualStyleBackColor = true;
+            this.btn_lapPhieu.Click += new System.EventHandler(this.btn_lapPhieu_Click);
+            // 
+            // btn_add_ncc
+            // 
+            this.btn_add_ncc.Location = new System.Drawing.Point(678, 38);
+            this.btn_add_ncc.Name = "btn_add_ncc";
+            this.btn_add_ncc.Size = new System.Drawing.Size(75, 23);
+            this.btn_add_ncc.TabIndex = 17;
+            this.btn_add_ncc.Text = "Thêm";
+            this.toolTip.SetToolTip(this.btn_add_ncc, "Thêm nhà cung cấp\r\n");
+            this.btn_add_ncc.UseVisualStyleBackColor = true;
+            this.btn_add_ncc.Click += new System.EventHandler(this.btn_add_ncc_Click);
+            // 
+            // cb_nhaCungCap
+            // 
+            this.cb_nhaCungCap.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cb_nhaCungCap.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.tab_lay_phieumuahang.SetColumnSpan(this.cb_nhaCungCap, 2);
+            this.cb_nhaCungCap.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cb_nhaCungCap.FormattingEnabled = true;
+            this.cb_nhaCungCap.Location = new System.Drawing.Point(408, 38);
+            this.cb_nhaCungCap.Name = "cb_nhaCungCap";
+            this.cb_nhaCungCap.Size = new System.Drawing.Size(264, 24);
+            this.cb_nhaCungCap.TabIndex = 18;
+            this.cb_nhaCungCap.SelectedIndexChanged += new System.EventHandler(this.cb_nhaCungCap_SelectedIndexChanged);
+            // 
+            // qLDQDataSet
+            // 
+            this.qLDQDataSet.DataSetName = "QLDQDataSet";
+            this.qLDQDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // PhieuMuaHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -379,6 +409,7 @@
             this.tab_lay_phieumuahang.ResumeLayout(false);
             this.tab_lay_phieumuahang.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dt_grid_phieumuahang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -393,7 +424,6 @@
         private System.Windows.Forms.Label kb_ngaylap;
         private System.Windows.Forms.TextBox tb_ngaylap;
         private System.Windows.Forms.Label lb_nhacungcap;
-        private System.Windows.Forms.TextBox tb_nhacungcap;
         private System.Windows.Forms.Label lb_diachi;
         private System.Windows.Forms.TextBox tb_diachi;
         private System.Windows.Forms.Label lb_sodienthoai;
@@ -403,6 +433,10 @@
         private System.Windows.Forms.TextBox tb_thanhTien;
         private System.Windows.Forms.Button btn_lapPhieu;
         private System.Windows.Forms.Button btn_huy;
+        private System.Windows.Forms.Button btn_xoaDong;
+        private System.Windows.Forms.Button btn_add_ncc;
+        private System.Windows.Forms.ToolTip toolTip;
+        private QLDQDataSet qLDQDataSet;
         private System.Windows.Forms.DataGridViewTextBoxColumn phieuMuaHang_column_STT;
         private System.Windows.Forms.DataGridViewComboBoxColumn phieuMuaHang_column_sanPham;
         private System.Windows.Forms.DataGridViewComboBoxColumn phieuMuaHang_column_loaiSanPham;
@@ -410,6 +444,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn phieuMuaHang_column_donViTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn phieuMuaHang_column_donGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn phieuMuaHang_column_thanhTien;
-        private System.Windows.Forms.Button btn_xoaDong;
+        private System.Windows.Forms.ComboBox cb_nhaCungCap;
     }
 }
