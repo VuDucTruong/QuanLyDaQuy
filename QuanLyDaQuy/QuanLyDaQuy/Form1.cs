@@ -54,14 +54,19 @@ namespace QuanLyDaQuy
         {
             PhieuBanHang phieuBanHang = new PhieuBanHang();
             phieuBanHang.Show();
-
-
         }
 
         private void toolStripTextBox7_Click(object sender, EventArgs e)
         {
             PhieuDichVu phieuDichVu = new PhieuDichVu();
             phieuDichVu.Show();
+        }
+
+        private void toolStripTextBox5_Click(object sender, EventArgs e)
+        {
+            DsPhieuBH dsPhieuBH = new DsPhieuBH();
+            dsPhieuBH.Show();
+
         }
     }
 }
