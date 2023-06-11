@@ -46,12 +46,12 @@ namespace QuanLyDaQuy.Phieu
                     continue;
                 bool testEmpty = false;
                 // San Pham
-                if (String.IsNullOrEmpty(row.Cells[1].Value.ToString()))
+                if (row.Cells[1].Value == null || row.Cells[1].Value.ToString() == "")
                 {
                     testEmpty = true;
                 }
                 // So luong
-                else if (String.IsNullOrEmpty(row.Cells[3].Value.ToString()))
+                else if (row.Cells[3].Value == null || row.Cells[3].Value.ToString() == "")
                 {
                     testEmpty = true;
                 }
@@ -143,10 +143,10 @@ namespace QuanLyDaQuy.Phieu
             }
             tb_sophieu.Text = soPhieu.ToString();
 
-            foreach (DataGridViewColumn col in dt_grid_phieumuahang.Columns)
-            {
-                col.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            }
+            //foreach (DataGridViewColumn col in dt_grid_phieumuahang.Columns)
+            //{
+            //    col.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            //}
         }
 
         private void loadDataFromServer()
@@ -203,7 +203,9 @@ namespace QuanLyDaQuy.Phieu
 
         private void dt_grid_phieumuahang_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
-            MessageBox.Show("Giá trị không hợp lệ!");
+            MessageBox.Show("Error happened " + e.Context.ToString());
+            dt_grid_phieumuahang.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = null;
+            e.Cancel = true;
         }
 
         private void dt_grid_phieumuahang_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
@@ -216,18 +218,18 @@ namespace QuanLyDaQuy.Phieu
                     string tenLSP = dt_grid_phieumuahang.Rows[e.RowIndex].Cells[2].Value.ToString();
                     LoaiSanPham loaiSanPham = loaiSanPhams.FirstOrDefault(x => x.TenLSP == tenLSP);
                     List<SanPham> sanPhamByTenLSP = sanPhams.Where<SanPham>(x => x.MaLSP == loaiSanPham.MaLSP).ToList();
-                    phieuMuaHang_column_sanPham.Items.Clear();
+                    (dt_grid_phieumuahang.Rows[e.RowIndex].Cells[1] as DataGridViewComboBoxCell).Items.Clear();
                     foreach (SanPham sanPham in sanPhamByTenLSP)
                     {
-                        phieuMuaHang_column_sanPham.Items.Add(sanPham.TenSP);
+                        (dt_grid_phieumuahang.Rows[e.RowIndex].Cells[1] as DataGridViewComboBoxCell).Items.Add(sanPham.TenSP);
                     }
                 }
                 else
                 {
-                    phieuMuaHang_column_sanPham.Items.Clear();
+                    (dt_grid_phieumuahang.Rows[e.RowIndex].Cells[1] as DataGridViewComboBoxCell).Items.Clear();
                     foreach (SanPham sanPham in sanPhams)
                     {
-                        phieuMuaHang_column_sanPham.Items.Add(sanPham.TenSP);
+                        (dt_grid_phieumuahang.Rows[e.RowIndex].Cells[1] as DataGridViewComboBoxCell).Items.Add(sanPham.TenSP);
                     }
                 }
             }
@@ -270,6 +272,8 @@ namespace QuanLyDaQuy.Phieu
                 updateDonViTinh(tenLSP, e.RowIndex);
                 //Xoa san pham
                 dt_grid_phieumuahang.Rows[e.RowIndex].Cells[1].Value = null;
+                //Xoa don gia
+                dt_grid_phieumuahang.Rows[e.RowIndex].Cells[5].Value = null;
             }
             //So luong inputed
             if (dt_grid_phieumuahang.Rows[e.RowIndex].Cells[3].Value != null)
