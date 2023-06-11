@@ -281,6 +281,8 @@ namespace QuanLyDaQuy.Phieu
                 dt_grid_phieumuahang.Rows[e.RowIndex].Cells[1].Value = null;
                 //Xoa don gia
                 dt_grid_phieumuahang.Rows[e.RowIndex].Cells[5].Value = null;
+                //Xoa thanh tien
+                dt_grid_phieumuahang.Rows[e.RowIndex].Cells[6].Value = null;
             }
             //So luong inputed
             if (dt_grid_phieumuahang.Rows[e.RowIndex].Cells[3].Value != null)
@@ -297,14 +299,19 @@ namespace QuanLyDaQuy.Phieu
                     dt_grid_phieumuahang.Rows[e.RowIndex].Cells[6].Value =
                         Convert.ToInt32(dt_grid_phieumuahang.Rows[e.RowIndex].Cells[3].Value)
                         * Convert.ToInt32(dt_grid_phieumuahang.Rows[e.RowIndex].Cells[5].Value);
-                    int sum = 0;
-                    for (int i = 0; i < dt_grid_phieumuahang.Rows.Count; ++i)
-                    {
-                        sum += Convert.ToInt32(dt_grid_phieumuahang.Rows[i].Cells[6].Value);
-                    }
-                    tb_thanhTien.Text = sum.ToString();
+                    //update tong tien
+                    updateTongTien();
                 }
             }
+        }
+        private void updateTongTien()
+        {
+            int sum = 0;
+            for (int i = 0; i < dt_grid_phieumuahang.Rows.Count; ++i)
+            {
+                sum += Convert.ToInt32(dt_grid_phieumuahang.Rows[i].Cells[6].Value);
+            }
+            tb_thanhTien.Text = sum.ToString();
         }
         private bool IsDuplicateProductSelected(string tenSP)
         {
@@ -350,11 +357,13 @@ namespace QuanLyDaQuy.Phieu
                     }
                 }
             }
-
+            //update STT
             foreach (DataGridViewRow dataRow in dt_grid_phieumuahang.Rows)
             {
                 dataRow.Cells[0].Value = dataRow.Index + 1;
             }
+            //update tong tien
+            updateTongTien();
         }
 
         private void btn_add_ncc_Click(object sender, EventArgs e)
