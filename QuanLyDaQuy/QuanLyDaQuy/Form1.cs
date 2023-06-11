@@ -76,6 +76,12 @@ namespace QuanLyDaQuy
             DSPhieuDV dSPhieuDV = new DSPhieuDV();
             dSPhieuDV.Show();
         }
+
+        private void phiếuMuaHàngToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            DSPhieuMH dSPhieuMH = new DSPhieuMH();
+            dSPhieuMH.Show();
+        }
     }
 
 }

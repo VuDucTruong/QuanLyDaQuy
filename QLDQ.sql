@@ -474,6 +474,65 @@ RETURN 0
 
 
 ----------Hung------------
+GO
+CREATE PROCEDURE [dbo].[loadPhieuMH_Full]	
+AS
+	SELECT
+		MaPhieuMH,
+		TenNCC,
+		NgayLap,
+		TongTien
+	from PHIEUMUAHANG, NHACUNGCAP
+	where PHIEUMUAHANG.MaNCC = NHACUNGCAP.MaNCC
+RETURN 0
+
+GO
+CREATE PROCEDURE [dbo].[loadPhieuMH_byMaPhieuMH] @MaPhieuMH int
+AS
+	SELECT
+		MaPhieuMH,
+		TenNCC,
+		NgayLap,
+		TongTien
+	from PHIEUMUAHANG, NHACUNGCAP
+	where PHIEUMUAHANG.MaNCC = NHACUNGCAP.MaNCC and MaPhieuMH = @MaPhieuMH
+RETURN 0
+
+GO
+CREATE PROCEDURE [dbo].[loadPhieuMH_byTenNCC] @TenNCC nvarchar(100)
+AS
+	SELECT
+		MaPhieuMH,
+		TenNCC,
+		NgayLap,
+		TongTien
+	from PHIEUMUAHANG, NHACUNGCAP
+	where PHIEUMUAHANG.MaNCC = NHACUNGCAP.MaNCC and TenNCC like (@TenNCC + '%')
+RETURN 0
+
+GO
+CREATE PROCEDURE [dbo].[loadPhieuMH_byNgayLap] @Month int, @Year int
+AS
+	SELECT
+		MaPhieuMH,
+		TenNCC,
+		NgayLap,
+		TongTien
+	from PHIEUMUAHANG, NHACUNGCAP
+	where PHIEUMUAHANG.MaNCC = NHACUNGCAP.MaNCC and MONTH(NgayLap) = @Month and YEAR(NgayLap) = @Year
+RETURN 0
+
+GO
+CREATE PROCEDURE [dbo].[loadPhieuMH_byTongTien] @TongTien int
+AS
+	SELECT
+		MaPhieuMH,
+		TenNCC,
+		NgayLap,
+		TongTien
+	from PHIEUMUAHANG, NHACUNGCAP
+	where PHIEUMUAHANG.MaNCC = NHACUNGCAP.MaNCC and TongTien = @TongTien
+RETURN 0
 
 
 ---------------Quang------------
