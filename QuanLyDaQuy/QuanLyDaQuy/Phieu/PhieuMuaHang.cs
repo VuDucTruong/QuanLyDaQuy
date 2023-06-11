@@ -250,6 +250,13 @@ namespace QuanLyDaQuy.Phieu
                     return;
                 }
                 string tenSP = dt_grid_phieumuahang.Rows[e.RowIndex].Cells[1].Value.ToString();
+                //Check san pham trung
+                if (IsDuplicateProductSelected(tenSP))
+                {
+                    MessageBox.Show("Sản phẩm đã được chọn trước đó!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    dt_grid_phieumuahang.Rows[e.RowIndex].Cells[1].Value = null;
+                    return;
+                }
                 SanPham sanPham = sanPhams.FirstOrDefault(x => x.TenSP == tenSP);
                 //Update don gia mua
                 dt_grid_phieumuahang.Rows[e.RowIndex].Cells[5].Value = sanPham.DonGiaMua;
@@ -274,6 +281,8 @@ namespace QuanLyDaQuy.Phieu
                 dt_grid_phieumuahang.Rows[e.RowIndex].Cells[1].Value = null;
                 //Xoa don gia
                 dt_grid_phieumuahang.Rows[e.RowIndex].Cells[5].Value = null;
+                //Xoa thanh tien
+                dt_grid_phieumuahang.Rows[e.RowIndex].Cells[6].Value = null;
             }
             //So luong inputed
             if (dt_grid_phieumuahang.Rows[e.RowIndex].Cells[3].Value != null)
@@ -290,14 +299,39 @@ namespace QuanLyDaQuy.Phieu
                     dt_grid_phieumuahang.Rows[e.RowIndex].Cells[6].Value =
                         Convert.ToInt32(dt_grid_phieumuahang.Rows[e.RowIndex].Cells[3].Value)
                         * Convert.ToInt32(dt_grid_phieumuahang.Rows[e.RowIndex].Cells[5].Value);
-                    int sum = 0;
-                    for (int i = 0; i < dt_grid_phieumuahang.Rows.Count; ++i)
-                    {
-                        sum += Convert.ToInt32(dt_grid_phieumuahang.Rows[i].Cells[6].Value);
-                    }
-                    tb_thanhTien.Text = sum.ToString();
+                    //update tong tien
+                    updateTongTien();
                 }
             }
+        }
+        private void updateTongTien()
+        {
+            int sum = 0;
+            for (int i = 0; i < dt_grid_phieumuahang.Rows.Count; ++i)
+            {
+                sum += Convert.ToInt32(dt_grid_phieumuahang.Rows[i].Cells[6].Value);
+            }
+            tb_thanhTien.Text = sum.ToString();
+        }
+        private bool IsDuplicateProductSelected(string tenSP)
+        {
+            int duplicateProduct = 0;
+            foreach (DataGridViewRow row in dt_grid_phieumuahang.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    var cellValue = row.Cells[1].FormattedValue;
+                    if (cellValue != null && cellValue.ToString() == tenSP)
+                    {
+                        duplicateProduct++;
+                    }
+                }
+            }
+            if (duplicateProduct >= 2)
+            {
+                return true;
+            }
+            return false;
         }
 
         private void updateDonViTinh(string tenLSP, int RowIndex)
@@ -323,11 +357,13 @@ namespace QuanLyDaQuy.Phieu
                     }
                 }
             }
-
+            //update STT
             foreach (DataGridViewRow dataRow in dt_grid_phieumuahang.Rows)
             {
                 dataRow.Cells[0].Value = dataRow.Index + 1;
             }
+            //update tong tien
+            updateTongTien();
         }
 
         private void btn_add_ncc_Click(object sender, EventArgs e)
