@@ -82,6 +82,19 @@ namespace QuanLyDaQuy
             DSPhieuMH dSPhieuMH = new DSPhieuMH();
             dSPhieuMH.Show();
         }
+
+        private void toolStripTextBox5_Click(object sender, EventArgs e)
+        {
+            DsPhieuBH dsPhieuBH = new DsPhieuBH();
+            dsPhieuBH.Show();
+
+        }
+
+        private void phiếuBánHàngToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            DsPhieuBH dsPhieuBH = new DsPhieuBH();
+            dsPhieuBH.Show();
+        }
     }
 
 }
