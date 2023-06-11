@@ -250,6 +250,13 @@ namespace QuanLyDaQuy.Phieu
                     return;
                 }
                 string tenSP = dt_grid_phieumuahang.Rows[e.RowIndex].Cells[1].Value.ToString();
+                //Check san pham trung
+                if (IsDuplicateProductSelected(tenSP))
+                {
+                    MessageBox.Show("Sản phẩm đã được chọn trước đó!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    dt_grid_phieumuahang.Rows[e.RowIndex].Cells[1].Value = null;
+                    return;
+                }
                 SanPham sanPham = sanPhams.FirstOrDefault(x => x.TenSP == tenSP);
                 //Update don gia mua
                 dt_grid_phieumuahang.Rows[e.RowIndex].Cells[5].Value = sanPham.DonGiaMua;
@@ -298,6 +305,26 @@ namespace QuanLyDaQuy.Phieu
                     tb_thanhTien.Text = sum.ToString();
                 }
             }
+        }
+        private bool IsDuplicateProductSelected(string tenSP)
+        {
+            int duplicateProduct = 0;
+            foreach (DataGridViewRow row in dt_grid_phieumuahang.Rows)
+            {
+                if (!row.IsNewRow)
+                {
+                    var cellValue = row.Cells[1].FormattedValue;
+                    if (cellValue != null && cellValue.ToString() == tenSP)
+                    {
+                        duplicateProduct++;
+                    }
+                }
+            }
+            if (duplicateProduct >= 2)
+            {
+                return true;
+            }
+            return false;
         }
 
         private void updateDonViTinh(string tenLSP, int RowIndex)
