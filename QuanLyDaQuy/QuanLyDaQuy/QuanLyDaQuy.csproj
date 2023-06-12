@@ -91,6 +91,12 @@
     <Compile Include="Phieu\DSPhieuMH.Designer.cs">
       <DependentUpon>DSPhieuMH.cs</DependentUpon>
     </Compile>
+    <Compile Include="Phieu\DSPhieuMH_CT_PhieuMuaHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Phieu\DSPhieuMH_CT_PhieuMuaHang.Designer.cs">
+      <DependentUpon>DSPhieuMH_CT_PhieuMuaHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Phieu\PhieuBanHang.cs">
       <SubType>Form</SubType>
     </Compile>

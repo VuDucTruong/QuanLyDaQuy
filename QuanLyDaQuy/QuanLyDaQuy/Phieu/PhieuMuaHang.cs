@@ -66,8 +66,8 @@ namespace QuanLyDaQuy.Phieu
                                                        "\nBạn có chắc muốn lập phiếu này không?", "Thông báo", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
-                try
-                {
+                //try
+                //{
                     //Phieu mua hang
                     int maPhieuMH = Convert.ToInt32(tb_sophieu.Text);
                     int maNCC = NhaCungCaps.FirstOrDefault(x => x.TenNCC == cb_nhaCungCap.Text).MaNCC;
@@ -104,12 +104,12 @@ namespace QuanLyDaQuy.Phieu
 
                     MessageBox.Show("Lập phiếu thành công!", "Thông báo");
                     Close();
-                }
-                catch (Exception error)
-                {
-                    MessageBox.Show("Lập phiếu thất bại." +
-                                                        " Lỗi: \n" + error.Message, "Thông báo");
-                }
+                //}
+                //catch (Exception error)
+                //{
+                //    MessageBox.Show("Lập phiếu thất bại." +
+                //                                        " Lỗi: \n" + error.Message, "Thông báo");
+                //}
             }
         }
         private void UpdateSLT(int maSP, int soLuong)

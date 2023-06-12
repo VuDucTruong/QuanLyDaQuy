@@ -475,7 +475,7 @@ RETURN 0
 
 ----------Hung------------
 GO
-CREATE PROCEDURE [dbo].[loadPhieuMH_Full]	
+CREATE PROCEDURE [dbo].[loadPhieuMH_Full]	@Day int, @Month int, @Year int
 AS
 	SELECT
 		MaPhieuMH,
@@ -484,10 +484,13 @@ AS
 		TongTien
 	from PHIEUMUAHANG, NHACUNGCAP
 	where PHIEUMUAHANG.MaNCC = NHACUNGCAP.MaNCC
+			AND (@Day = 0 OR (@Day > 0 AND @Day = DAY(NgayLap)))
+			AND (@Month = 0 OR (@Month > 0 AND @Month = Month(NgayLap)))
+			AND (@Year = 0 OR (@Year > 0 AND @Year = Year(NgayLap)))
 RETURN 0
 
 GO
-CREATE PROCEDURE [dbo].[loadPhieuMH_byMaPhieuMH] @MaPhieuMH int
+CREATE PROCEDURE [dbo].[loadPhieuMH_byMaPhieuMH] @MaPhieuMH int, @Day int, @Month int, @Year int
 AS
 	SELECT
 		MaPhieuMH,
@@ -496,10 +499,13 @@ AS
 		TongTien
 	from PHIEUMUAHANG, NHACUNGCAP
 	where PHIEUMUAHANG.MaNCC = NHACUNGCAP.MaNCC and MaPhieuMH = @MaPhieuMH
+			AND (@Day = 0 OR (@Day > 0 AND @Day = DAY(NgayLap)))
+			AND (@Month = 0 OR (@Month > 0 AND @Month = Month(NgayLap)))
+			AND (@Year = 0 OR (@Year > 0 AND @Year = Year(NgayLap)))
 RETURN 0
 
 GO
-CREATE PROCEDURE [dbo].[loadPhieuMH_byTenNCC] @TenNCC nvarchar(100)
+CREATE PROCEDURE [dbo].[loadPhieuMH_byTenNCC] @TenNCC nvarchar(100), @Day int, @Month int, @Year int
 AS
 	SELECT
 		MaPhieuMH,
@@ -508,22 +514,13 @@ AS
 		TongTien
 	from PHIEUMUAHANG, NHACUNGCAP
 	where PHIEUMUAHANG.MaNCC = NHACUNGCAP.MaNCC and TenNCC like (@TenNCC + '%')
+			AND (@Day = 0 OR (@Day > 0 AND @Day = DAY(NgayLap)))
+			AND (@Month = 0 OR (@Month > 0 AND @Month = Month(NgayLap)))
+			AND (@Year = 0 OR (@Year > 0 AND @Year = Year(NgayLap)))
 RETURN 0
 
 GO
-CREATE PROCEDURE [dbo].[loadPhieuMH_byNgayLap] @Month int, @Year int
-AS
-	SELECT
-		MaPhieuMH,
-		TenNCC,
-		NgayLap,
-		TongTien
-	from PHIEUMUAHANG, NHACUNGCAP
-	where PHIEUMUAHANG.MaNCC = NHACUNGCAP.MaNCC and MONTH(NgayLap) = @Month and YEAR(NgayLap) = @Year
-RETURN 0
-
-GO
-CREATE PROCEDURE [dbo].[loadPhieuMH_byTongTien] @TongTien int
+CREATE PROCEDURE [dbo].[loadPhieuMH_byTongTien] @TongTien int, @Day int, @Month int, @Year int
 AS
 	SELECT
 		MaPhieuMH,
@@ -532,6 +529,41 @@ AS
 		TongTien
 	from PHIEUMUAHANG, NHACUNGCAP
 	where PHIEUMUAHANG.MaNCC = NHACUNGCAP.MaNCC and TongTien = @TongTien
+			AND (@Day = 0 OR (@Day > 0 AND @Day = DAY(NgayLap)))
+			AND (@Month = 0 OR (@Month > 0 AND @Month = Month(NgayLap)))
+			AND (@Year = 0 OR (@Year > 0 AND @Year = Year(NgayLap)))
+RETURN 0
+
+GO
+CREATE PROCEDURE [dbo].[loadPhieuMH_byMaPhieuMH_For_CT_PhieuMuaHang] @MaPhieuMH int
+AS
+	SELECT
+		MaPhieuMH,
+		TenNCC,
+		NgayLap,
+		DiaChi,
+		SDT,
+		TongTien
+	from PHIEUMUAHANG, NHACUNGCAP
+	where PHIEUMUAHANG.MaNCC = NHACUNGCAP.MaNCC and MaPhieuMH = @MaPhieuMH
+RETURN 0
+
+GO
+CREATE PROCEDURE [dbo].[loadCTPhieuMH_byMaPhieuMH] @MaPhieuMH int
+AS
+	SELECT
+		ROW_NUMBER() OVER (ORDER BY TenSP) AS STT,
+		TenSP,
+		TenLSP,
+		SL,
+		DVT,
+		DonGia,
+		ThanhTien
+	from PHIEUMUAHANG, CT_PHIEUMUAHANG, SANPHAM, LOAISANPHAM, DONVITINH
+	where PHIEUMUAHANG.MaPhieuMH = CT_PHIEUMUAHANG.MaPhieuMH and PHIEUMUAHANG.MaPhieuMH = @MaPhieuMH
+	and CT_PHIEUMUAHANG.MaSP = SANPHAM.MaSP 
+	and SANPHAM.MaLSP = LOAISANPHAM.MaLSP
+	and LOAISANPHAM.MaDVT = DONVITINH.MaDVT
 RETURN 0
 
 
