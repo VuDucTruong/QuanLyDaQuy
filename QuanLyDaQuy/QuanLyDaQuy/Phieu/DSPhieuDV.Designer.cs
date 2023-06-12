@@ -47,7 +47,6 @@
             this.loadPhieuDVbySDTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.loadPhieuDV_bySDTTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadPhieuDV_bySDTTableAdapter();
             this.loadPhieuDVbyNgayLapBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.loadPhieuDV_byNgayLapTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadPhieuDV_byNgayLapTableAdapter();
             this.loadPhieuDVbyHoanThanhBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.loadPhieuDV_byHoanThanhTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadPhieuDV_byHoanThanhTableAdapter();
             this.loadPhieuDVbyChuaHoanThanhBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -333,7 +332,6 @@
         private QLDQDataSetTableAdapters.loadPhieuDV_byTenKHTableAdapter loadPhieuDV_byTenKHTableAdapter;
         private System.Windows.Forms.BindingSource loadPhieuDVbySDTBindingSource;
         private QLDQDataSetTableAdapters.loadPhieuDV_bySDTTableAdapter loadPhieuDV_bySDTTableAdapter;
-        private QLDQDataSetTableAdapters.loadPhieuDV_byNgayLapTableAdapter loadPhieuDV_byNgayLapTableAdapter;
         private System.Windows.Forms.BindingSource loadPhieuDVbyHoanThanhBindingSource;
         private QLDQDataSetTableAdapters.loadPhieuDV_byHoanThanhTableAdapter loadPhieuDV_byHoanThanhTableAdapter;
         private System.Windows.Forms.BindingSource loadPhieuDVbyChuaHoanThanhBindingSource;
