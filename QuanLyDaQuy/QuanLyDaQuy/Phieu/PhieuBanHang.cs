@@ -421,7 +421,7 @@ namespace QuanLyDaQuy.Phieu
 
             if (!IsValidPhoneNumber(phoneNumber))
             {
-                MessageBox.Show("Số điện thoại không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Số điện thoại không hợp lệ! Cần nhập đủ 10 ký tự và bắt đầu bằng 0", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -433,14 +433,14 @@ namespace QuanLyDaQuy.Phieu
                 string tenKH = cb_khachhang.Text;
                 if (string.IsNullOrEmpty(tenKH))
                 {
-                    MessageBox.Show("Tên khách hàng không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Tên khách hàng không được để trống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
                 string sdt = cb_sdt.Text;
                 if (!IsValidPhoneNumber(sdt))
                 {
-                    MessageBox.Show("Số điện thoại không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Số điện thoại cần đủ 10 ký tự và bắt đầu bằng 0", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -590,12 +590,10 @@ namespace QuanLyDaQuy.Phieu
         {
             try
             {
-                object[] parameters = { tenKH, sdt };
-
                 // Thêm thông tin khách hàng vào cơ sở dữ liệu
-                string insertQuery = "INSERT INTO KHACHHANG (TenKH, SDT) VALUES (@TenKhachHang, @SoDienThoai); SELECT SCOPE_IDENTITY();";
+                string insertQuery = $"INSERT INTO KHACHHANG (TenKH, SDT) VALUES ( '{tenKH}', '{sdt}' ); SELECT SCOPE_IDENTITY();";
 
-                object result = DataProvider.Instance.ExecuteScalar(insertQuery, parameters);
+                object result = DataProvider.Instance.ExecuteScalar(insertQuery);
 
                 if (result != null)
                 {
@@ -637,7 +635,7 @@ namespace QuanLyDaQuy.Phieu
 
             if (string.IsNullOrEmpty(ten))
             {
-                MessageBox.Show("Tên khách hàng không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Tên khách hàng không được để trống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         }
