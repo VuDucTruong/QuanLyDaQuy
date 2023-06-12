@@ -38,13 +38,6 @@ namespace QuanLyDaQuy.Phieu
             this.lb_khachhang = new System.Windows.Forms.Label();
             this.lb_ngaylap = new System.Windows.Forms.Label();
             this.dgv_phieubanhang = new System.Windows.Forms.DataGridView();
-            this.stt_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sp_col = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.lsp_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sl_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dvt_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dg_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tt_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tb_sophieu = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -59,6 +52,13 @@ namespace QuanLyDaQuy.Phieu
             this.btn_huy = new System.Windows.Forms.Button();
             this.btn_ok = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.stt_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sp_col = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.lsp_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sl_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dvt_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dg_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tt_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_phieubanhang)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -117,7 +117,7 @@ namespace QuanLyDaQuy.Phieu
             // 
             // dgv_phieubanhang
             // 
-            this.dgv_phieubanhang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgv_phieubanhang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -165,77 +165,6 @@ namespace QuanLyDaQuy.Phieu
             this.dgv_phieubanhang.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgv_phieubanhang_EditingControlShowing);
             this.dgv_phieubanhang.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgv_phieubanhang_RowsAdded);
             this.dgv_phieubanhang.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgv_phieubanhang_RowsRemoved);
-            // 
-            // stt_col
-            // 
-            this.stt_col.HeaderText = "STT";
-            this.stt_col.MinimumWidth = 6;
-            this.stt_col.Name = "stt_col";
-            this.stt_col.Width = 64;
-            // 
-            // sp_col
-            // 
-            this.sp_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.sp_col.DataPropertyName = "TenSP";
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.sp_col.DefaultCellStyle = dataGridViewCellStyle2;
-            this.sp_col.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.sp_col.DropDownWidth = 2;
-            this.sp_col.HeaderText = "Sản phẩm";
-            this.sp_col.MinimumWidth = 6;
-            this.sp_col.Name = "sp_col";
-            this.sp_col.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.sp_col.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.sp_col.Width = 101;
-            // 
-            // lsp_col
-            // 
-            this.lsp_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.lsp_col.DataPropertyName = "TenLSP";
-            this.lsp_col.HeaderText = "Loại sản phẩm";
-            this.lsp_col.MinimumWidth = 6;
-            this.lsp_col.Name = "lsp_col";
-            this.lsp_col.ReadOnly = true;
-            this.lsp_col.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.lsp_col.Width = 130;
-            // 
-            // sl_col
-            // 
-            this.sl_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.sl_col.DataPropertyName = "SoLuongTon";
-            this.sl_col.HeaderText = "Số lượng";
-            this.sl_col.MinimumWidth = 6;
-            this.sl_col.Name = "sl_col";
-            this.sl_col.Width = 93;
-            // 
-            // dvt_col
-            // 
-            this.dvt_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dvt_col.DataPropertyName = "DVT";
-            this.dvt_col.HeaderText = "Đơn vị tính";
-            this.dvt_col.MinimumWidth = 6;
-            this.dvt_col.Name = "dvt_col";
-            this.dvt_col.ReadOnly = true;
-            this.dvt_col.Width = 104;
-            // 
-            // dg_col
-            // 
-            this.dg_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dg_col.DataPropertyName = "DonGiaBan";
-            this.dg_col.HeaderText = "Đơn giá";
-            this.dg_col.MinimumWidth = 6;
-            this.dg_col.Name = "dg_col";
-            this.dg_col.ReadOnly = true;
-            this.dg_col.Width = 86;
-            // 
-            // tt_col
-            // 
-            this.tt_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.tt_col.HeaderText = "Thành tiền";
-            this.tt_col.MinimumWidth = 6;
-            this.tt_col.Name = "tt_col";
-            this.tt_col.ReadOnly = true;
-            this.tt_col.Width = 105;
             // 
             // tb_sophieu
             // 
@@ -437,6 +366,77 @@ namespace QuanLyDaQuy.Phieu
             this.label2.TabIndex = 19;
             this.label2.Text = "Tổng tiền:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // stt_col
+            // 
+            this.stt_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.stt_col.HeaderText = "STT";
+            this.stt_col.MinimumWidth = 6;
+            this.stt_col.Name = "stt_col";
+            this.stt_col.Width = 64;
+            // 
+            // sp_col
+            // 
+            this.sp_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.sp_col.DataPropertyName = "TenSP";
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.sp_col.DefaultCellStyle = dataGridViewCellStyle2;
+            this.sp_col.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.sp_col.DropDownWidth = 2;
+            this.sp_col.HeaderText = "Sản phẩm";
+            this.sp_col.MinimumWidth = 6;
+            this.sp_col.Name = "sp_col";
+            this.sp_col.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.sp_col.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // lsp_col
+            // 
+            this.lsp_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.lsp_col.DataPropertyName = "TenLSP";
+            this.lsp_col.HeaderText = "Loại sản phẩm";
+            this.lsp_col.MinimumWidth = 6;
+            this.lsp_col.Name = "lsp_col";
+            this.lsp_col.ReadOnly = true;
+            this.lsp_col.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.lsp_col.Width = 130;
+            // 
+            // sl_col
+            // 
+            this.sl_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.sl_col.DataPropertyName = "SoLuongTon";
+            this.sl_col.HeaderText = "Số lượng";
+            this.sl_col.MinimumWidth = 6;
+            this.sl_col.Name = "sl_col";
+            this.sl_col.Width = 93;
+            // 
+            // dvt_col
+            // 
+            this.dvt_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dvt_col.DataPropertyName = "DVT";
+            this.dvt_col.HeaderText = "Đơn vị tính";
+            this.dvt_col.MinimumWidth = 6;
+            this.dvt_col.Name = "dvt_col";
+            this.dvt_col.ReadOnly = true;
+            this.dvt_col.Width = 104;
+            // 
+            // dg_col
+            // 
+            this.dg_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dg_col.DataPropertyName = "DonGiaBan";
+            this.dg_col.HeaderText = "Đơn giá";
+            this.dg_col.MinimumWidth = 6;
+            this.dg_col.Name = "dg_col";
+            this.dg_col.ReadOnly = true;
+            this.dg_col.Width = 86;
+            // 
+            // tt_col
+            // 
+            this.tt_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.tt_col.HeaderText = "Thành tiền";
+            this.tt_col.MinimumWidth = 6;
+            this.tt_col.Name = "tt_col";
+            this.tt_col.ReadOnly = true;
+            this.tt_col.Width = 105;
             // 
             // PhieuBanHang
             // 
