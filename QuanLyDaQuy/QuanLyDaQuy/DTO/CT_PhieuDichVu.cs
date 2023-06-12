@@ -53,7 +53,7 @@ namespace QuanLyDaQuy.DTO
             DAO.DataProvider.Instance.ExecuteQuery("insert into CT_PhieuDichVu (MaPhieuDV, MaDV , DonGia, DonGiaDuocTinh, SL, ThanhTien," +
                                         " TraTruoc, ConLai, NgayGiao, TinhTrang) values" +
                                         "(" + MaPhieuDV + ',' + MaDV + ',' + DonGia + "," + DonGiaDuocTinh + "," + SL + "," + ThanhTien + ","
-                                        + TraTruoc + "," + ConLai + ",'" + NgayGiao.ToString("dd/MM/yyyy") + "', N'" + TinhTrang + "')");
+                                        + TraTruoc + "," + ConLai + ",'" + NgayGiao.ToString("MM/dd/yyyy") + "', N'" + TinhTrang + "')");
         }
     }
 }
