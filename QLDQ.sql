@@ -538,7 +538,7 @@ RETURN 0
 ---------------Quang------------
 
 GO
-CREATE PROCEDURE [dbo].[loadPhieuDV_Full]	
+CREATE PROCEDURE [dbo].[loadPhieuDV_Full] @Day int, @Month int, @Year int
 AS
 	SELECT
 		MaPhieuDV,
@@ -551,11 +551,15 @@ AS
 		TinhTrang
 	from PHIEUDICHVU, KHACHHANG
 	where PHIEUDICHVU.MaKH = KHACHHANG.MaKH
+			AND (@Day = 0 OR (@Day > 0 AND @Day = DAY(NgayLap)))
+			AND (@Month = 0 OR (@Month > 0 AND @Month = Month(NgayLap)))
+			AND (@Year = 0 OR (@Year > 0 AND @Year = Year(NgayLap)))
 RETURN 0
 
 GO
-CREATE PROCEDURE [dbo].[loadPhieuDV_byTenKH] @TenKH nvarchar(100)
+CREATE PROCEDURE [dbo].[loadPhieuDV_byTenKH] @TenKH nvarchar(100), @Day int, @Month int, @Year int
 AS
+BEGIN
 	SELECT
 		MaPhieuDV,
 		TenKH,
@@ -565,12 +569,16 @@ AS
 		TraTruoc,
 		ConLai,
 		TinhTrang
-	from PHIEUDICHVU, KHACHHANG
-	where PHIEUDICHVU.MaKH = KHACHHANG.MaKH and TenKH like (@TenKH + '%')
+	FROM PHIEUDICHVU, KHACHHANG
+	WHERE PHIEUDICHVU.MaKH = KHACHHANG.MaKH and TenKH like (@TenKH + '%')
+			AND (@Day = 0 OR (@Day > 0 AND @Day = DAY(NgayLap)))
+			AND (@Month = 0 OR (@Month > 0 AND @Month = Month(NgayLap)))
+			AND (@Year = 0 OR (@Year > 0 AND @Year = Year(NgayLap)))
+END
 RETURN 0
 
 GO
-CREATE PROCEDURE [dbo].[loadPhieuDV_bySDT] @SDT varchar(20)
+CREATE PROCEDURE [dbo].[loadPhieuDV_bySDT] @SDT varchar(20), @Day int, @Month int, @Year int
 AS
 	SELECT
 		MaPhieuDV,
@@ -583,26 +591,13 @@ AS
 		TinhTrang
 	from PHIEUDICHVU, KHACHHANG
 	where PHIEUDICHVU.MaKH = KHACHHANG.MaKH and SDT like (@SDT + '%')
+			AND (@Day = 0 OR (@Day > 0 AND @Day = DAY(NgayLap)))
+			AND (@Month = 0 OR (@Month > 0 AND @Month = Month(NgayLap)))
+			AND (@Year = 0 OR (@Year > 0 AND @Year = Year(NgayLap)))
 RETURN 0
 
 GO
-CREATE PROCEDURE [dbo].[loadPhieuDV_byNgayLap] @Month int, @Year int
-AS
-	SELECT
-		MaPhieuDV,
-		TenKH,
-		SDT,
-		NgayLap,
-		TongTien,
-		TraTruoc,
-		ConLai,
-		TinhTrang
-	from PHIEUDICHVU, KHACHHANG
-	where PHIEUDICHVU.MaKH = KHACHHANG.MaKH and MONTH(NgayLap) = @Month and YEAR(NgayLap) = @Year
-RETURN 0
-
-GO
-CREATE PROCEDURE [dbo].[loadPhieuDV_byHoanThanh]
+CREATE PROCEDURE [dbo].[loadPhieuDV_byHoanThanh] @Day int, @Month int, @Year int
 AS
 	SELECT
 		MaPhieuDV,
@@ -615,10 +610,13 @@ AS
 		TinhTrang
 	from PHIEUDICHVU, KHACHHANG
 	where PHIEUDICHVU.MaKH = KHACHHANG.MaKH and TinhTrang = N'Hoàn thành'
+			AND (@Day = 0 OR (@Day > 0 AND @Day = DAY(NgayLap)))
+			AND (@Month = 0 OR (@Month > 0 AND @Month = Month(NgayLap)))
+			AND (@Year = 0 OR (@Year > 0 AND @Year = Year(NgayLap)))
 RETURN 0
 
 GO
-CREATE PROCEDURE [dbo].[loadPhieuDV_byChuaHoanThanh]
+CREATE PROCEDURE [dbo].[loadPhieuDV_byChuaHoanThanh] @Day int, @Month int, @Year int
 AS
 	SELECT
 		MaPhieuDV,
@@ -631,12 +629,32 @@ AS
 		TinhTrang
 	from PHIEUDICHVU, KHACHHANG
 	where PHIEUDICHVU.MaKH = KHACHHANG.MaKH and TinhTrang = N'Chưa hoàn thành'
+			AND (@Day = 0 OR (@Day > 0 AND @Day = DAY(NgayLap)))
+			AND (@Month = 0 OR (@Month > 0 AND @Month = Month(NgayLap)))
+			AND (@Year = 0 OR (@Year > 0 AND @Year = Year(NgayLap)))
+RETURN 0
+
+GO
+CREATE PROCEDURE [dbo].[loadPhieuDV_byMaPhieuDV] @MaPhieuDV int
+AS
+	SELECT
+		MaPhieuDV,
+		TenKH,
+		SDT,
+		NgayLap,
+		TongTien,
+		TraTruoc,
+		ConLai,
+		TinhTrang
+	from PHIEUDICHVU, KHACHHANG
+	where PHIEUDICHVU.MaKH = KHACHHANG.MaKH and MaPhieuDV = @MaPhieuDV
 RETURN 0
 
 GO
 CREATE PROCEDURE [dbo].[loadCTPhieuDV_byMaPhieuDV] @MaPhieuDV int
 AS
 	SELECT
+		DICHVU.MaDV as MaDV,
 		TenDV,
 		CT_PHIEUDICHVU.DonGia as DonGia,
 		DonGiaDuocTinh,
