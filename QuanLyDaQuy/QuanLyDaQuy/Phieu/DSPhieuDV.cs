@@ -201,11 +201,12 @@ namespace QuanLyDaQuy.Phieu
 
         private void Init_DateTimeSearch()
         {
+            textBox_Nam.Text = "0";
             Create_DateTime_ComboBox_Items();
             comboBox_Thang.DataSource = Month12;
-            comboBox_Thang.SelectedIndex = 0;
             comboBox_Ngay.DataSource = Days31;
-            textBox_Nam.Text = "0";
+            comboBox_Thang.SelectedIndex = 0;
+            comboBox_Ngay.SelectedIndex = 0;
             comboBox_Ngay.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_Thang.DropDownStyle = ComboBoxStyle.DropDownList;
         }
