@@ -142,5 +142,12 @@ namespace QuanLyDaQuy.Phieu
             }
             return testDate;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int MaPhieuMH = Convert.ToInt32(dtgView_DS_phieu_mua_hang.SelectedRows[0].Cells[0].Value);
+            DSPhieuMH_CT_PhieuMuaHang dSPhieuMH_CT_PhieuMuaHang = new DSPhieuMH_CT_PhieuMuaHang(MaPhieuMH);
+            dSPhieuMH_CT_PhieuMuaHang.Show();
+        }
     }
 }

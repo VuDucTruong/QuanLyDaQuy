@@ -73,6 +73,12 @@
     <Compile Include="Phieu\BaoCaoTonKho.Designer.cs">
       <DependentUpon>BaoCaoTonKho.cs</DependentUpon>
     </Compile>
+    <Compile Include="Phieu\DSPhieuMH_CT_PhieuMuaHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Phieu\DSPhieuMH_CT_PhieuMuaHang.Designer.cs">
+      <DependentUpon>DSPhieuMH_CT_PhieuMuaHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Phieu\DsPhieuBH.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Phieu\BaoCaoTonKho.resx">
       <DependentUpon>BaoCaoTonKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phieu\DSPhieuMH_CT_PhieuMuaHang.resx">
+      <DependentUpon>DSPhieuMH_CT_PhieuMuaHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Phieu\DsPhieuBH.resx">
       <DependentUpon>DsPhieuBH.cs</DependentUpon>

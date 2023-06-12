@@ -44,6 +44,7 @@
             this.loadPhieuMH_byTenNCCTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadPhieuMH_byTenNCCTableAdapter();
             this.loadPhieuMH_byNgayLapTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadPhieuMH_byNgayLapTableAdapter();
             this.loadPhieuMH_byMaPhieuMHTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadPhieuMH_byMaPhieuMHTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgView_DS_phieu_mua_hang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).BeginInit();
@@ -73,7 +74,7 @@
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(800, 450);
+            this.tableLayoutPanel.Size = new System.Drawing.Size(800, 513);
             this.tableLayoutPanel.TabIndex = 0;
             // 
             // btn_search
@@ -152,9 +153,10 @@
             // 
             // dtgView_DS_phieu_mua_hang
             // 
+            this.dtgView_DS_phieu_mua_hang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgView_DS_phieu_mua_hang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableLayoutPanel.SetColumnSpan(this.dtgView_DS_phieu_mua_hang, 5);
-            this.dtgView_DS_phieu_mua_hang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgView_DS_phieu_mua_hang.Location = new System.Drawing.Point(3, 103);
             this.dtgView_DS_phieu_mua_hang.Name = "dtgView_DS_phieu_mua_hang";
             this.dtgView_DS_phieu_mua_hang.RowHeadersWidth = 51;
@@ -193,11 +195,22 @@
             // 
             this.loadPhieuMH_byMaPhieuMHTableAdapter.ClearBeforeFill = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(617, 457);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // DSPhieuMH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 513);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.tableLayoutPanel);
             this.Name = "DSPhieuMH";
             this.Text = "DSPhieuMH";
@@ -228,5 +241,6 @@
         private QLDQDataSetTableAdapters.loadPhieuMH_byTenNCCTableAdapter loadPhieuMH_byTenNCCTableAdapter;
         private QLDQDataSetTableAdapters.loadPhieuMH_byNgayLapTableAdapter loadPhieuMH_byNgayLapTableAdapter;
         private QLDQDataSetTableAdapters.loadPhieuMH_byMaPhieuMHTableAdapter loadPhieuMH_byMaPhieuMHTableAdapter;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -534,6 +534,37 @@ AS
 	where PHIEUMUAHANG.MaNCC = NHACUNGCAP.MaNCC and TongTien = @TongTien
 RETURN 0
 
+GO
+CREATE PROCEDURE [dbo].[loadPhieuMH_byMaPhieuMH_For_CT_PhieuMuaHang] @MaPhieuMH int
+AS
+	SELECT
+		MaPhieuMH,
+		TenNCC,
+		NgayLap,
+		DiaChi,
+		SDT,
+		TongTien
+	from PHIEUMUAHANG, NHACUNGCAP
+	where PHIEUMUAHANG.MaNCC = NHACUNGCAP.MaNCC and MaPhieuMH = @MaPhieuMH
+RETURN 0
+
+GO
+CREATE PROCEDURE [dbo].[loadCTPhieuMH_byMaPhieuMH] @MaPhieuMH int
+AS
+	SELECT
+		ROW_NUMBER() OVER (ORDER BY TenSP) AS STT,
+		TenSP,
+		TenLSP,
+		SL,
+		DVT,
+		DonGia,
+		ThanhTien
+	from PHIEUMUAHANG, CT_PHIEUMUAHANG, SANPHAM, LOAISANPHAM, DONVITINH
+	where PHIEUMUAHANG.MaPhieuMH = CT_PHIEUMUAHANG.MaPhieuMH and PHIEUMUAHANG.MaPhieuMH = @MaPhieuMH
+	and CT_PHIEUMUAHANG.MaSP = SANPHAM.MaSP 
+	and SANPHAM.MaLSP = LOAISANPHAM.MaLSP
+	and LOAISANPHAM.MaDVT = DONVITINH.MaDVT
+RETURN 0
 
 ---------------Quang------------
 
