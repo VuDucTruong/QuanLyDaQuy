@@ -1,6 +1,6 @@
 ﻿namespace QuanLyDaQuy.Phieu
 {
-    partial class PhieuDichVu
+    partial class SuaPhieuDichVu
     {
         /// <summary>
         /// Required designer variable.
@@ -40,18 +40,17 @@
             this.textBox_NgayLap = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label_TongTienTraTruoc = new System.Windows.Forms.Label();
-            this.comboBox_KhachHang = new System.Windows.Forms.ComboBox();
             this.textBox_SDT = new System.Windows.Forms.TextBox();
             this.textBox_TongTien = new System.Windows.Forms.TextBox();
             this.textBox_TongTienTraTruoc = new System.Windows.Forms.TextBox();
             this.textBox_TongTienConLai = new System.Windows.Forms.TextBox();
+            this.textBox_KhachHang = new System.Windows.Forms.TextBox();
             this.button_Huy = new System.Windows.Forms.Button();
             this.button_OK = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.button_XoaDong = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenDV = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.TenDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DonGiaDuocTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SL = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,6 +67,8 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
@@ -117,11 +118,11 @@
             this.tableLayoutPanel1.Controls.Add(this.label2, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.label_TongTienTraTruoc, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox_KhachHang, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.textBox_SDT, 4, 2);
             this.tableLayoutPanel1.Controls.Add(this.textBox_TongTien, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.textBox_TongTienTraTruoc, 3, 3);
             this.tableLayoutPanel1.Controls.Add(this.textBox_TongTienConLai, 5, 3);
+            this.tableLayoutPanel1.Controls.Add(this.textBox_KhachHang, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(4, 4);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
@@ -136,6 +137,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(981, 404);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
@@ -182,7 +184,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(975, 60);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Lập phiếu dịch vụ";
+            this.label1.Text = "Phiếu dịch vụ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBox_SoPhieu
@@ -249,16 +251,6 @@
             this.label_TongTienTraTruoc.TabIndex = 16;
             this.label_TongTienTraTruoc.Text = "Tổng tiền trả trước";
             // 
-            // comboBox_KhachHang
-            // 
-            this.tableLayoutPanel1.SetColumnSpan(this.comboBox_KhachHang, 2);
-            this.comboBox_KhachHang.FormattingEnabled = true;
-            this.comboBox_KhachHang.Location = new System.Drawing.Point(166, 103);
-            this.comboBox_KhachHang.Name = "comboBox_KhachHang";
-            this.comboBox_KhachHang.Size = new System.Drawing.Size(258, 24);
-            this.comboBox_KhachHang.TabIndex = 18;
-            this.comboBox_KhachHang.SelectedIndexChanged += new System.EventHandler(this.KhachHang_SelectedIndexChanged);
-            // 
             // textBox_SDT
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.textBox_SDT, 2);
@@ -295,6 +287,15 @@
             this.textBox_TongTienConLai.TabIndex = 22;
             this.textBox_TongTienConLai.Text = "0";
             // 
+            // textBox_KhachHang
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.textBox_KhachHang, 2);
+            this.textBox_KhachHang.Enabled = false;
+            this.textBox_KhachHang.Location = new System.Drawing.Point(166, 103);
+            this.textBox_KhachHang.Name = "textBox_KhachHang";
+            this.textBox_KhachHang.Size = new System.Drawing.Size(258, 22);
+            this.textBox_KhachHang.TabIndex = 23;
+            // 
             // button_Huy
             // 
             this.button_Huy.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -330,7 +331,6 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 121F));
             this.tableLayoutPanel2.Controls.Add(this.button_Huy, 4, 0);
             this.tableLayoutPanel2.Controls.Add(this.button_OK, 3, 0);
-            this.tableLayoutPanel2.Controls.Add(this.button_XoaDong, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 415);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -338,17 +338,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(983, 32);
             this.tableLayoutPanel2.TabIndex = 16;
-            // 
-            // button_XoaDong
-            // 
-            this.button_XoaDong.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_XoaDong.Location = new System.Drawing.Point(3, 3);
-            this.button_XoaDong.Name = "button_XoaDong";
-            this.button_XoaDong.Size = new System.Drawing.Size(114, 26);
-            this.button_XoaDong.TabIndex = 16;
-            this.button_XoaDong.Text = "Xóa dòng";
-            this.button_XoaDong.UseVisualStyleBackColor = true;
-            this.button_XoaDong.Click += new System.EventHandler(this.button_XoaDong_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -376,12 +365,11 @@
             // TenDV
             // 
             this.TenDV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TenDV.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.TenDV.HeaderText = "Loại dịch vụ";
             this.TenDV.MinimumWidth = 6;
             this.TenDV.Name = "TenDV";
+            this.TenDV.ReadOnly = true;
             this.TenDV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TenDV.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // DonGia
             // 
@@ -397,6 +385,7 @@
             this.DonGiaDuocTinh.HeaderText = "Đơn giá được tính";
             this.DonGiaDuocTinh.MinimumWidth = 6;
             this.DonGiaDuocTinh.Name = "DonGiaDuocTinh";
+            this.DonGiaDuocTinh.ReadOnly = true;
             // 
             // SL
             // 
@@ -404,6 +393,7 @@
             this.SL.HeaderText = "Số lượng";
             this.SL.MinimumWidth = 6;
             this.SL.Name = "SL";
+            this.SL.ReadOnly = true;
             // 
             // ThanhTien
             // 
@@ -419,6 +409,7 @@
             this.TraTruoc.HeaderText = "Trả trước";
             this.TraTruoc.MinimumWidth = 6;
             this.TraTruoc.Name = "TraTruoc";
+            this.TraTruoc.ReadOnly = true;
             // 
             // ConLai
             // 
@@ -434,6 +425,7 @@
             this.NgayGiao.HeaderText = "Ngày giao";
             this.NgayGiao.MinimumWidth = 6;
             this.NgayGiao.Name = "NgayGiao";
+            this.NgayGiao.ReadOnly = true;
             // 
             // TinhTrang
             // 
@@ -447,15 +439,15 @@
             this.TinhTrang.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.TinhTrang.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // PhieuDichVu
+            // SuaPhieuDichVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(989, 450);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "PhieuDichVu";
-            this.Text = "Nhập phiếu dịch vụ";
+            this.Name = "SuaPhieuDichVu";
+            this.Text = "Phiếu dịch vụ";
             this.Load += new System.EventHandler(this.PhieuDichVu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -483,16 +475,15 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label_TongTien;
         private System.Windows.Forms.Label label_TongTienTraTruoc;
-        private System.Windows.Forms.ComboBox comboBox_KhachHang;
         private System.Windows.Forms.TextBox textBox_SDT;
         private System.Windows.Forms.TextBox textBox_TongTien;
         private System.Windows.Forms.TextBox textBox_TongTienTraTruoc;
         private System.Windows.Forms.TextBox textBox_TongTienConLai;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Button button_XoaDong;
+        private System.Windows.Forms.TextBox textBox_KhachHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewComboBoxColumn TenDV;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenDV;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGiaDuocTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn SL;
