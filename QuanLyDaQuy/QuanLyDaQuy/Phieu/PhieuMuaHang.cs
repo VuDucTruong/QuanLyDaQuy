@@ -80,6 +80,7 @@ namespace QuanLyDaQuy.Phieu
                     List<CT_PhieuMuaHang> ct_phieuMuaHangs = new List<CT_PhieuMuaHang>();
                     foreach (DataGridViewRow row in dt_grid_phieumuahang.Rows)
                     {
+                        //lay thong tin tu dtgv
                         if (row.Index == dt_grid_phieumuahang.Rows.Count - 1)
                         {
                             continue;
@@ -90,6 +91,8 @@ namespace QuanLyDaQuy.Phieu
                         double DonGia = Convert.ToInt32(row.Cells[5].Value);
                         double ThanhTien = Convert.ToInt32(row.Cells[6].Value);
                         ct_phieuMuaHangs.Add(new CT_PhieuMuaHang(MaPhieuMH, MaSP, SL, DonGia, ThanhTien));
+                        //update so luong ton trong bang TONKHO
+                        UpdateSLT(MaSP, SL);
                     }
 
                     //Insert
@@ -109,6 +112,16 @@ namespace QuanLyDaQuy.Phieu
                 }
             }
         }
+        private void UpdateSLT(int maSP, int soLuong)
+        {
+            string updateQuery = $"UPDATE SANPHAM SET SoLuongTon = SoLuongTon + {soLuong} WHERE MaSP = {maSP}";
+
+            int affectedRows = DataProvider.Instance.ExecuteNonQuery(updateQuery);
+
+            if (affectedRows <= 0)
+                MessageBox.Show($"Lỗi cập nhật số lượng tồn sản phẩm có mã {maSP}");
+
+        }
         private void btn_huy_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -116,14 +129,60 @@ namespace QuanLyDaQuy.Phieu
 
         private void dt_grid_phieumuahang_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
-            var cb = e.Control as DataGridViewComboBoxEditingControl;
-            if (cb != null)
+            var dataGridView = sender as DataGridView;
+
+            if (dataGridView.CurrentCell is DataGridViewComboBoxCell && e.Control is System.Windows.Forms.ComboBox)
             {
+                var cb = e.Control as System.Windows.Forms.ComboBox;
                 cb.DropDownStyle = ComboBoxStyle.DropDown;
                 cb.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
                 cb.AutoCompleteSource = AutoCompleteSource.ListItems;
+                cb.PreviewKeyDown -= ComboBox_PreviewKeyDown;
+                cb.PreviewKeyDown += ComboBox_PreviewKeyDown;
+                cb.SelectedIndexChanged -= ComboBox_SelectedIndexChanged;
+                cb.SelectedIndexChanged += ComboBox_SelectedIndexChanged;
+                e.CellStyle.BackColor = this.dt_grid_phieumuahang.DefaultCellStyle.BackColor;
+                cb.SelectedIndex = -1;
             }
+        }
+        private void ComboBox_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyCode == Keys.Tab)
+            {
+                e.IsInputKey = true;
+            }
+        }
 
+        private void ComboBox_SelectedIndexChanged(object sender, System.EventArgs e)
+        {
+            var comboBox = sender as System.Windows.Forms.ComboBox;
+            //Choose San pham
+            if (dt_grid_phieumuahang.CurrentCell.ColumnIndex == 1)
+            {
+                if (comboBox.Text == "" || comboBox.Text == null)
+                {
+                    return;
+                }
+                string tenSP = comboBox.Text;
+                //Check san pham trung
+                if (IsDuplicateProductSelected(tenSP))
+                {
+                    MessageBox.Show("Sản phẩm đã được chọn trước đó!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    dt_grid_phieumuahang.CurrentRow.Cells[1].Value = null;
+                    return;
+                }
+                SanPham sanPham = sanPhams.FirstOrDefault(x => x.TenSP == tenSP);
+                //Update don gia mua
+                dt_grid_phieumuahang.CurrentRow.Cells[5].Value = sanPham.DonGiaMua;
+
+                //Update loai san pham + DVT
+                string tenLSP = loaiSanPhams.FirstOrDefault(x => x.MaLSP == sanPham.MaLSP).TenLSP;
+                dt_grid_phieumuahang.CurrentRow.Cells[2].Value = tenLSP;
+                updateDonViTinh(tenLSP, dt_grid_phieumuahang.CurrentCell.RowIndex);
+                //Set so luong, thanh tien = 0;
+                dt_grid_phieumuahang.CurrentRow.Cells[3].Value = 0;
+                dt_grid_phieumuahang.CurrentRow.Cells[3].Value = 0;
+            }
         }
 
         private void autoFillInfo()
@@ -131,17 +190,13 @@ namespace QuanLyDaQuy.Phieu
             dt_grid_phieumuahang.Rows[0].Cells[0].Value = 1;
             DateTime dt = DateTime.Today;
             tb_ngaylap.Text = dt.ToString("dd/MM/yyyy");
-            int soPhieu = 0;
-            try
+
+            if (!int.TryParse(DataProvider.Instance.ExecuteScalar("select max(MaPhieuMH) from PHIEUMUAHANG").ToString(),
+                out int soPhieu))
             {
-                soPhieu = Convert.ToInt32(DataProvider.Instance.ExecuteQuery("Select MAX(MaPhieuMH) " +
-                    "From PHIEUMUAHANG"));
+                soPhieu = 0;
             }
-            catch (Exception e)
-            {
-                soPhieu = 1;
-            }
-            tb_sophieu.Text = soPhieu.ToString();
+            tb_sophieu.Text = (soPhieu + 1).ToString();
 
             //foreach (DataGridViewColumn col in dt_grid_phieumuahang.Columns)
             //{
@@ -187,10 +242,6 @@ namespace QuanLyDaQuy.Phieu
         }
         private void loadDatatoViewSource()
         {
-            foreach (LoaiSanPham loaiSanPham in loaiSanPhams)
-            {
-                phieuMuaHang_column_loaiSanPham.Items.Add(loaiSanPham.TenLSP);
-            }
             foreach (NhaCungCap nhaCungCap in NhaCungCaps)
             {
                 cb_nhaCungCap.Items.Add(nhaCungCap.TenNCC);
@@ -201,37 +252,38 @@ namespace QuanLyDaQuy.Phieu
             }
         }
 
-        private void dt_grid_phieumuahang_DataError(object sender, DataGridViewDataErrorEventArgs e)
-        {
-            MessageBox.Show("Error happened " + e.Context.ToString());
-            dt_grid_phieumuahang.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = null;
-            e.Cancel = true;
-        }
+        //private void dt_grid_phieumuahang_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        //{
+        //    MessageBox.Show("Error happened " + e.Context.ToString());
+        //    dt_grid_phieumuahang.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = null;
+        //    e.Cancel = true;
+        //}
 
         private void dt_grid_phieumuahang_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
             if (e.ColumnIndex == 1)
             {
-                if (dt_grid_phieumuahang.Rows[e.RowIndex].Cells[2].Value != null)
-                {
-                    //Update items cb_sanpham
-                    string tenLSP = dt_grid_phieumuahang.Rows[e.RowIndex].Cells[2].Value.ToString();
-                    LoaiSanPham loaiSanPham = loaiSanPhams.FirstOrDefault(x => x.TenLSP == tenLSP);
-                    List<SanPham> sanPhamByTenLSP = sanPhams.Where<SanPham>(x => x.MaLSP == loaiSanPham.MaLSP).ToList();
-                    (dt_grid_phieumuahang.Rows[e.RowIndex].Cells[1] as DataGridViewComboBoxCell).Items.Clear();
-                    foreach (SanPham sanPham in sanPhamByTenLSP)
-                    {
-                        (dt_grid_phieumuahang.Rows[e.RowIndex].Cells[1] as DataGridViewComboBoxCell).Items.Add(sanPham.TenSP);
-                    }
-                }
-                else
-                {
-                    (dt_grid_phieumuahang.Rows[e.RowIndex].Cells[1] as DataGridViewComboBoxCell).Items.Clear();
-                    foreach (SanPham sanPham in sanPhams)
-                    {
-                        (dt_grid_phieumuahang.Rows[e.RowIndex].Cells[1] as DataGridViewComboBoxCell).Items.Add(sanPham.TenSP);
-                    }
-                }
+                //if (dt_grid_phieumuahang.Rows[e.RowIndex].Cells[2].Value != null)
+                //{
+                //    //Update items cb_sanpham
+                //    string tenLSP = dt_grid_phieumuahang.Rows[e.RowIndex].Cells[2].Value.ToString();
+                //    LoaiSanPham loaiSanPham = loaiSanPhams.FirstOrDefault(x => x.TenLSP == tenLSP);
+                //    List<SanPham> sanPhamByTenLSP = sanPhams.Where<SanPham>(x => x.MaLSP == loaiSanPham.MaLSP).ToList();
+                //    (dt_grid_phieumuahang.Rows[e.RowIndex].Cells[1] as DataGridViewComboBoxCell).Items.Clear();
+                //    foreach (SanPham sanPham in sanPhamByTenLSP)
+                //    {
+                //        (dt_grid_phieumuahang.Rows[e.RowIndex].Cells[1] as DataGridViewComboBoxCell).Items.Add(sanPham.TenSP);
+                //    }
+                //}
+                //else
+                //{
+                //    (dt_grid_phieumuahang.Rows[e.RowIndex].Cells[1] as DataGridViewComboBoxCell).Items.Clear();
+                //    foreach (SanPham sanPham in sanPhams)
+                //    {
+                //        (dt_grid_phieumuahang.Rows[e.RowIndex].Cells[1] as DataGridViewComboBoxCell).Items.Add(sanPham.TenSP);
+                //    }
+                //}
+                dt_grid_phieumuahang.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
             }
         }
 
@@ -242,48 +294,6 @@ namespace QuanLyDaQuy.Phieu
 
         private void dt_grid_phieumuahang_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            //Choose San pham
-            if (e.ColumnIndex == 1)
-            {
-                if (dt_grid_phieumuahang.Rows[e.RowIndex].Cells[1].Value == null)
-                {
-                    return;
-                }
-                string tenSP = dt_grid_phieumuahang.Rows[e.RowIndex].Cells[1].Value.ToString();
-                //Check san pham trung
-                if (IsDuplicateProductSelected(tenSP))
-                {
-                    MessageBox.Show("Sản phẩm đã được chọn trước đó!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    dt_grid_phieumuahang.Rows[e.RowIndex].Cells[1].Value = null;
-                    return;
-                }
-                SanPham sanPham = sanPhams.FirstOrDefault(x => x.TenSP == tenSP);
-                //Update don gia mua
-                dt_grid_phieumuahang.Rows[e.RowIndex].Cells[5].Value = sanPham.DonGiaMua;
-
-                //Update loai san pham + DVT
-                string tenLSP = loaiSanPhams.FirstOrDefault(x => x.MaLSP == sanPham.MaLSP).TenLSP;
-                dt_grid_phieumuahang.Rows[e.RowIndex].Cells[2].Value = tenLSP;
-                updateDonViTinh(tenLSP, e.RowIndex);
-            }
-
-            //Choose loai san pham
-            if (e.ColumnIndex == 2)
-            {
-                if (dt_grid_phieumuahang.Rows[e.RowIndex].Cells[2].Value == null)
-                {
-                    return;
-                }
-                string tenLSP = dt_grid_phieumuahang.Rows[e.RowIndex].Cells[2].Value.ToString();
-                //Update don vi tinh
-                updateDonViTinh(tenLSP, e.RowIndex);
-                //Xoa san pham
-                dt_grid_phieumuahang.Rows[e.RowIndex].Cells[1].Value = null;
-                //Xoa don gia
-                dt_grid_phieumuahang.Rows[e.RowIndex].Cells[5].Value = null;
-                //Xoa thanh tien
-                dt_grid_phieumuahang.Rows[e.RowIndex].Cells[6].Value = null;
-            }
             //So luong inputed
             if (dt_grid_phieumuahang.Rows[e.RowIndex].Cells[3].Value != null)
             {
@@ -293,7 +303,9 @@ namespace QuanLyDaQuy.Phieu
                     dt_grid_phieumuahang.Rows[e.RowIndex].Cells[3].Value = null;
                     return;
                 }
-                //Calculating thanh tien
+                string tenSP = dt_grid_phieumuahang.Rows[e.RowIndex].Cells[1].Value.ToString();
+
+                //update thanh tien
                 if (dt_grid_phieumuahang.Rows[e.RowIndex].Cells[1].Value != null)
                 {
                     dt_grid_phieumuahang.Rows[e.RowIndex].Cells[6].Value =
@@ -302,6 +314,11 @@ namespace QuanLyDaQuy.Phieu
                     //update tong tien
                     updateTongTien();
                 }
+
+            }
+            if (e.ColumnIndex == 1)
+            {
+                dt_grid_phieumuahang.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             }
         }
         private void updateTongTien()
