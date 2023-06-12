@@ -1,5 +1,8 @@
 ﻿create database QLDQ
+go
 use QLDQ
+go
+
 
 create table SANPHAM
 (
@@ -156,6 +159,114 @@ as begin
 	update SANPHAM
 	set DonGiaBan = DonGiaMua * ( 100 + @LOINHUAN ) /100
 	where MaSP = @MaSP
+end
+-----PHIEUMUAHANG cap nhat TONKHO
+go
+create trigger trg_insert_PHIEUMUAHANG
+on PHIEUMUAHANG
+for insert
+as begin
+	declare @Thang int , @Nam int , @Row int
+	select @Thang = MONTH(NgayLap) , @Nam = YEAR(NgayLap) from inserted
+	select @Row = count(*) from TONKHO where @Thang = MONTH(Thang) and @Nam = YEAR(Thang)
+	if(@Row = 0)
+	begin
+		insert into TONKHO ( Thang , MaSP , SLTonDau , SLMuaVao , SLBanRa , SLTonCuoi )
+		select NgayLap , MASP , SoLuongTon , 0 , 0 , SoLuongTon
+		from inserted , SANPHAM
+	end
+end
+go 
+create trigger trg_insert_CT_PHIEUMUAHANG
+on CT_PHIEUMUAHANG
+for insert 
+as begin
+	declare @Thang int , @Nam int
+	declare @SoLuong int
+	select @Thang = MONTH(NgayLap) , @Nam = YEAR(NgayLap) from inserted , PHIEUMUAHANG where inserted.MaPhieuMH = PHIEUMUAHANG.MaPhieuMH
+
+	update TONKHO
+	set SLMuaVao += SL , SLTonCuoi += SL
+	from inserted
+	where TONKHO.MaSP = inserted.MaSP
+
+	update SANPHAM
+	set SoLuongTon += SL
+	from inserted
+	where SANPHAM.MaSP = inserted.MaSP
+end
+go 
+create trigger trg_update_CT_PHIEUMUAHANG
+on CT_PHIEUMUAHANG
+for update 
+as begin
+	declare @Thang int , @Nam int
+	declare @SoLuong int
+	select @Thang = MONTH(NgayLap) , @Nam = YEAR(NgayLap) from inserted , PHIEUMUAHANG where inserted.MaPhieuMH = PHIEUMUAHANG.MaPhieuMH
+
+	update TONKHO
+	set SLMuaVao += inserted.SL - deleted.SL , SLTonCuoi += inserted.SL - deleted.SL
+	from inserted ,deleted
+	where TONKHO.MaSP = inserted.MaSP and inserted.MaSP = deleted.MaSP
+
+	update SANPHAM
+	set SoLuongTon += inserted.SL - deleted.SL
+	from inserted , deleted
+	where SANPHAM.MaSP = inserted.MaSP and inserted.MaSP = deleted.MaSP
+end
+-------PHIEUBANHANG cap nhat TONKHO-------
+go
+create trigger trg_insert_PHIEUBANHANG
+on PHIEUBANHANG
+for insert
+as begin
+	declare @Thang int , @Nam int , @Row int
+	select @Thang = MONTH(NgayLap) , @Nam = YEAR(NgayLap) from inserted
+	select @Row = count(*) from TONKHO where @Thang = MONTH(Thang) and @Nam = YEAR(Thang)
+	if(@Row = 0)
+	begin
+		insert into TONKHO ( Thang , MaSP , SLTonDau , SLMuaVao , SLBanRa , SLTonCuoi )
+		select NgayLap , MASP , SoLuongTon , 0 , 0 , SoLuongTon
+		from inserted , SANPHAM
+	end
+end
+go 
+create trigger trg_insert_CT_PHIEUBANHANG
+on CT_PHIEUBANHANG
+for insert 
+as begin
+	declare @Thang int , @Nam int
+	declare @SoLuong int
+	select @Thang = MONTH(NgayLap) , @Nam = YEAR(NgayLap) from inserted , PHIEUBANHANG where inserted.MaPhieuBH = PHIEUBANHANG.MaPhieuBH
+
+	update TONKHO
+	set SLBanRa += SL , SLTonCuoi -= SL
+	from inserted
+	where TONKHO.MaSP = inserted.MaSP
+
+	update SANPHAM
+	set SoLuongTon -= SL
+	from inserted
+	where SANPHAM.MaSP = inserted.MaSP
+end
+go 
+create trigger trg_update_CT_PHIEUBANHANG
+on CT_PHIEUBANHANG
+for update 
+as begin
+	declare @Thang int , @Nam int
+	declare @SoLuong int
+	select @Thang = MONTH(NgayLap) , @Nam = YEAR(NgayLap) from inserted , PHIEUBANHANG where inserted.MaPhieuBH = PHIEUBANHANG.MaPhieuBH
+
+	update TONKHO
+	set SLBanRa += inserted.SL - deleted.SL , SLTonCuoi -= inserted.SL - deleted.SL
+	from inserted ,deleted
+	where TONKHO.MaSP = inserted.MaSP and inserted.MaSP = deleted.MaSP
+
+	update SANPHAM
+	set SoLuongTon -= inserted.SL - deleted.SL
+	from inserted , deleted
+	where SANPHAM.MaSP = inserted.MaSP and inserted.MaSP = deleted.MaSP
 end
 --select *
 select * from DONVITINH
@@ -317,3 +428,224 @@ insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values
 
 
 insert into THAMSO values ('SoTienTraTruoc' , 0.5)
+
+GO
+CREATE PROCEDURE [dbo].[loadSanPhamFull]
+	
+AS
+	SELECT MaSP as "Mã sản phẩm" , 
+		TenSP as "Tên sản phẩm" ,
+		TenLSP as "Tên loại sản phẩm",
+		DonGiaBan as "Đơn giá bán",
+		DonGiaMua as "Đơn giá mua",
+		SoLuongTon as "Số lượng tồn",
+		DVT as "Đơn vị tính"
+	from SANPHAM , LOAISANPHAM , DONVITINH where SANPHAM.MaLSP = LOAISANPHAM.MaLSP and LOAISANPHAM.MaDVT = DONVITINH.MaDVT
+RETURN 0
+
+GO
+CREATE PROCEDURE [dbo].[loadLoaiSanPham]
+	
+AS
+	SELECT TenLSP , DVT
+	from LOAISANPHAM , DONVITINH where LOAISANPHAM.MaDVT = DONVITINH.MaDVT
+RETURN 0
+
+GO
+CREATE PROCEDURE [dbo].[loadTonKho]
+	@Thang int,
+	@Nam int
+AS
+	SELECT TenSP , SLTonDau , SLBanRa , SLMuaVao , SLTonCuoi , DVT
+	from TONKHO , SANPHAM , LOAISANPHAM , DONVITINH
+	where TONKHO.MaSP = SANPHAM.MaSP and SANPHAM.MaLSP = LOAISANPHAM.MaLSP and LOAISANPHAM.MaDVT = DONVITINH.MaDVT and MONTH(Thang) = @Thang and YEAR(Thang) = @Nam
+RETURN 0
+
+
+--insert into TONKHO ( Thang,MaSP ,SLTonDau ,SLTonCuoi ,SLMuaVao ,SLBanRa ) values ( '1/1/2003' , 1 , 0 , 0 , 0 , 0 )
+--insert into TONKHO ( Thang,MaSP ,SLTonDau ,SLTonCuoi ,SLMuaVao ,SLBanRa ) values ( '1/2/2004' , 2 , 0 , 0 , 0 , 0 )
+--insert into TONKHO ( Thang,MaSP ,SLTonDau ,SLTonCuoi ,SLMuaVao ,SLBanRa ) values ( '1/3/2010' , 3 , 0 , 0 , 0 , 0 )
+
+--delete from TONKHO
+
+--select distinct YEAR(Thang)
+--from TONKHO
+-----------Tri--------------
+
+
+----------Hung------------
+GO
+CREATE PROCEDURE [dbo].[loadPhieuMH_Full]	
+AS
+	SELECT
+		MaPhieuMH,
+		TenNCC,
+		NgayLap,
+		TongTien
+	from PHIEUMUAHANG, NHACUNGCAP
+	where PHIEUMUAHANG.MaNCC = NHACUNGCAP.MaNCC
+RETURN 0
+
+GO
+CREATE PROCEDURE [dbo].[loadPhieuMH_byMaPhieuMH] @MaPhieuMH int
+AS
+	SELECT
+		MaPhieuMH,
+		TenNCC,
+		NgayLap,
+		TongTien
+	from PHIEUMUAHANG, NHACUNGCAP
+	where PHIEUMUAHANG.MaNCC = NHACUNGCAP.MaNCC and MaPhieuMH = @MaPhieuMH
+RETURN 0
+
+GO
+CREATE PROCEDURE [dbo].[loadPhieuMH_byTenNCC] @TenNCC nvarchar(100)
+AS
+	SELECT
+		MaPhieuMH,
+		TenNCC,
+		NgayLap,
+		TongTien
+	from PHIEUMUAHANG, NHACUNGCAP
+	where PHIEUMUAHANG.MaNCC = NHACUNGCAP.MaNCC and TenNCC like (@TenNCC + '%')
+RETURN 0
+
+GO
+CREATE PROCEDURE [dbo].[loadPhieuMH_byNgayLap] @Month int, @Year int
+AS
+	SELECT
+		MaPhieuMH,
+		TenNCC,
+		NgayLap,
+		TongTien
+	from PHIEUMUAHANG, NHACUNGCAP
+	where PHIEUMUAHANG.MaNCC = NHACUNGCAP.MaNCC and MONTH(NgayLap) = @Month and YEAR(NgayLap) = @Year
+RETURN 0
+
+GO
+CREATE PROCEDURE [dbo].[loadPhieuMH_byTongTien] @TongTien int
+AS
+	SELECT
+		MaPhieuMH,
+		TenNCC,
+		NgayLap,
+		TongTien
+	from PHIEUMUAHANG, NHACUNGCAP
+	where PHIEUMUAHANG.MaNCC = NHACUNGCAP.MaNCC and TongTien = @TongTien
+RETURN 0
+
+
+---------------Quang------------
+
+GO
+CREATE PROCEDURE [dbo].[loadPhieuDV_Full]	
+AS
+	SELECT
+		MaPhieuDV,
+		TenKH,
+		SDT,
+		NgayLap,
+		TongTien,
+		TraTruoc,
+		ConLai,
+		TinhTrang
+	from PHIEUDICHVU, KHACHHANG
+	where PHIEUDICHVU.MaKH = KHACHHANG.MaKH
+RETURN 0
+
+GO
+CREATE PROCEDURE [dbo].[loadPhieuDV_byTenKH] @TenKH nvarchar(100)
+AS
+	SELECT
+		MaPhieuDV,
+		TenKH,
+		SDT,
+		NgayLap,
+		TongTien,
+		TraTruoc,
+		ConLai,
+		TinhTrang
+	from PHIEUDICHVU, KHACHHANG
+	where PHIEUDICHVU.MaKH = KHACHHANG.MaKH and TenKH like (@TenKH + '%')
+RETURN 0
+
+GO
+CREATE PROCEDURE [dbo].[loadPhieuDV_bySDT] @SDT varchar(20)
+AS
+	SELECT
+		MaPhieuDV,
+		TenKH,
+		SDT,
+		NgayLap,
+		TongTien,
+		TraTruoc,
+		ConLai,
+		TinhTrang
+	from PHIEUDICHVU, KHACHHANG
+	where PHIEUDICHVU.MaKH = KHACHHANG.MaKH and SDT like (@SDT + '%')
+RETURN 0
+
+GO
+CREATE PROCEDURE [dbo].[loadPhieuDV_byNgayLap] @Month int, @Year int
+AS
+	SELECT
+		MaPhieuDV,
+		TenKH,
+		SDT,
+		NgayLap,
+		TongTien,
+		TraTruoc,
+		ConLai,
+		TinhTrang
+	from PHIEUDICHVU, KHACHHANG
+	where PHIEUDICHVU.MaKH = KHACHHANG.MaKH and MONTH(NgayLap) = @Month and YEAR(NgayLap) = @Year
+RETURN 0
+
+GO
+CREATE PROCEDURE [dbo].[loadPhieuDV_byHoanThanh]
+AS
+	SELECT
+		MaPhieuDV,
+		TenKH,
+		SDT,
+		NgayLap,
+		TongTien,
+		TraTruoc,
+		ConLai,
+		TinhTrang
+	from PHIEUDICHVU, KHACHHANG
+	where PHIEUDICHVU.MaKH = KHACHHANG.MaKH and TinhTrang = N'Hoàn thành'
+RETURN 0
+
+GO
+CREATE PROCEDURE [dbo].[loadPhieuDV_byChuaHoanThanh]
+AS
+	SELECT
+		MaPhieuDV,
+		TenKH,
+		SDT,
+		NgayLap,
+		TongTien,
+		TraTruoc,
+		ConLai,
+		TinhTrang
+	from PHIEUDICHVU, KHACHHANG
+	where PHIEUDICHVU.MaKH = KHACHHANG.MaKH and TinhTrang = N'Chưa hoàn thành'
+RETURN 0
+
+GO
+CREATE PROCEDURE [dbo].[loadCTPhieuDV_byMaPhieuDV] @MaPhieuDV int
+AS
+	SELECT
+		TenDV,
+		CT_PHIEUDICHVU.DonGia as DonGia,
+		DonGiaDuocTinh,
+		SL,
+		ThanhTien,
+		TraTruoc,
+		ConLai,
+		NgayGiao,
+		TinhTrang
+	from CT_PHIEUDICHVU, DICHVU
+	where CT_PHIEUDICHVU.MaDV = DICHVU.MaDV and MaPhieuDV = @MaPhieuDV
+RETURN 0

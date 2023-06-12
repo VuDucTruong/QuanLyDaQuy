@@ -1,4 +1,5 @@
-﻿using QuanLyDaQuy.DTO;
+﻿using QuanLyDaQuy.DAO;
+using QuanLyDaQuy.DTO;
 using QuanLyDaQuy.Phieu;
 using System;
 using System.Collections.Generic;
@@ -38,30 +39,62 @@ namespace QuanLyDaQuy
                             thongTinKhachHang1.BringToFront(); break;
                         case 3:
                             thongTinNCC1.BringToFront(); break;
+                        case 4:
+                            thongTinLSP1.BringToFront(); break;
 
                     }
                 }
             }
         }
 
-        private void thongTinMatHang1_Load(object sender, EventArgs e)
+        private void phiếuMuaHàngToolStripMenuItem2_Click(object sender, EventArgs e)
         {
+            PhieuMuaHang phieu = new PhieuMuaHang();   
+            phieu.Show();
+        }
+
+        private void phiếuBánHàngToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            PhieuBanHang phieu = new PhieuBanHang();
+            phieu.Show();
+        }
+
+        private void phiếuDịchVụToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            PhieuDichVu phieu = new PhieuDichVu();
+            phieu.Show();
+        }
+
+        private void báoCáoTồnKhoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            BaoCaoTonKho baoCaoTonKho = new BaoCaoTonKho();
+            baoCaoTonKho.Show();
+        }
+
+        private void phieuDichVuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DSPhieuDV dSPhieuDV = new DSPhieuDV();
+            dSPhieuDV.Show();
+        }
+
+        private void phiếuMuaHàngToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            DSPhieuMH dSPhieuMH = new DSPhieuMH();
+            dSPhieuMH.Show();
+        }
+
+        private void toolStripTextBox5_Click(object sender, EventArgs e)
+        {
+            DsPhieuBH dsPhieuBH = new DsPhieuBH();
+            dsPhieuBH.Show();
 
         }
 
-
-        private void toolStripTextBox2_Click(object sender, EventArgs e)
+        private void phiếuBánHàngToolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            PhieuBanHang phieuBanHang = new PhieuBanHang();
-            phieuBanHang.Show();
-
-
-        }
-
-        private void toolStripTextBox7_Click(object sender, EventArgs e)
-        {
-            PhieuDichVu phieuDichVu = new PhieuDichVu();
-            phieuDichVu.Show();
+            DsPhieuBH dsPhieuBH = new DsPhieuBH();
+            dsPhieuBH.Show();
         }
     }
+
 }
