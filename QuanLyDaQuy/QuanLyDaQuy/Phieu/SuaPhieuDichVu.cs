@@ -40,7 +40,7 @@ namespace QuanLyDaQuy.Phieu
                 textBox_TongTienTraTruoc.Text = row["TraTruoc"].ToString();
                 textBox_TongTienConLai.Text = row["ConLai"].ToString();
                 DateTime NgayLapPhieu;
-                DateTime.TryParseExact(row["NgayLap"].ToString(), "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out NgayLapPhieu);
+                DateTime.TryParseExact(row["NgayLap"].ToString().Split(' ')[0], "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out NgayLapPhieu);
                 textBox_NgayLap.Text = NgayLapPhieu.ToString("dd/MM/yyyy");
                 tinhTrangPhieu = row["TinhTrang"].ToString();
             }
@@ -63,7 +63,8 @@ namespace QuanLyDaQuy.Phieu
                 DateTime.TryParseExact(row["NgayGiao"].ToString().Split(' ')[0], "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out NgayGiao);
                 string ngayGiao = NgayGiao.ToString("dd/MM/yyyy");
                 string tinhTrang = row["TinhTrang"].ToString();
-                dataGridView1.Rows.Add(stt, tenDV, donGia, donGiaDuocTinh, sl, thanhTien, traTruoc, conLai, ngayGiao, tinhTrang);                   
+                dataGridView1.Rows.Add(stt, tenDV, donGia, donGiaDuocTinh, sl, thanhTien, traTruoc, conLai, ngayGiao, tinhTrang);
+                stt++;
             }           
         }
 

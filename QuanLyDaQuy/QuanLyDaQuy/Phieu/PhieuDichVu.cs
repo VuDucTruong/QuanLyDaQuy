@@ -30,7 +30,7 @@ namespace QuanLyDaQuy.Phieu
         private void PhieuDichVu_Load(object sender, EventArgs e)
         {
             // Select ID
-            DataTable latestID = DAO.DataProvider.Instance.ExecuteQuery("select TOP(1) MaPhieuDV from PHIEUDICHVU");
+            DataTable latestID = DAO.DataProvider.Instance.ExecuteQuery("select TOP(1) MaPhieuDV from PHIEUDICHVU ORDER BY MaPhieuDV DESC");
             int id = 0;
             foreach (DataRow row in latestID.Rows)
             {
@@ -94,6 +94,21 @@ namespace QuanLyDaQuy.Phieu
                 comboBox.SelectedIndexChanged -= new EventHandler(CellDichVu_SelectedIndexChanged);
                 comboBox.SelectedIndexChanged += new EventHandler(CellDichVu_SelectedIndexChanged);
             }
+            else if (e.Control is TextBox)
+            {
+                TextBox textBox = e.Control as TextBox;
+                if (dataGridView1.CurrentCell.ColumnIndex != 8)
+                {
+                    textBox.KeyPress -= new KeyPressEventHandler(CellNumber_KeyPress);
+                    textBox.KeyPress += new KeyPressEventHandler(CellNumber_KeyPress);
+                }
+                else
+                {
+                    textBox.KeyPress -= new KeyPressEventHandler(CellDateTime_KeyPress);
+                    textBox.KeyPress += new KeyPressEventHandler(CellDateTime_KeyPress);
+                } 
+                    
+            }
         }
         private void CellDichVu_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -126,8 +141,22 @@ namespace QuanLyDaQuy.Phieu
                 DonGia.Value = DonGiaDVs[comboBox.SelectedIndex];
                 DonGiaDuocTinh.Value = DonGiaDVs[comboBox.SelectedIndex];
             }
+        }
 
+        private void CellNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
 
+        private void CellDateTime_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar)&& e.KeyChar != '/' && !char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
 
         private void dataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
