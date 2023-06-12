@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QuanLyDaQuy.DTO
 {
@@ -21,6 +23,23 @@ namespace QuanLyDaQuy.DTO
             SL = sL;
             DonGia = donGia;
             ThanhTien = thanhTien;
+        }
+
+        public void ExecuteInsert()
+        {
+            try
+            {
+                string query = "insert into CT_PHIEUBANHANG " +
+                "( MaPhieuBH , MaSP , SL , DonGia, ThanhTien) values" +
+                $"({MaPhieuBH},{MaSP},{SL},{DonGia},{ThanhTien})";
+
+                DAO.DataProvider.Instance.ExecuteQuery(query);
+
+            }
+            catch
+            {
+                MessageBox.Show("Lỗi chèn dữ liệu CT_PBH");
+            }
         }
     }
 }
