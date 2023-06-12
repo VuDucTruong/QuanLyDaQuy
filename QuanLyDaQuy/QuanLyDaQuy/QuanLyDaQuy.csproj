@@ -109,6 +109,12 @@
     <Compile Include="Phieu\PhieuMuaHang.Designer.cs">
       <DependentUpon>PhieuMuaHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Phieu\SuaPhieuDichVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Phieu\SuaPhieuDichVu.Designer.cs">
+      <DependentUpon>SuaPhieuDichVu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Phieu\ThemDVForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +215,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Phieu\PhieuMuaHang.resx">
       <DependentUpon>PhieuMuaHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phieu\SuaPhieuDichVu.resx">
+      <DependentUpon>SuaPhieuDichVu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Phieu\ThemDVForm.resx">
       <DependentUpon>ThemDVForm.cs</DependentUpon>
