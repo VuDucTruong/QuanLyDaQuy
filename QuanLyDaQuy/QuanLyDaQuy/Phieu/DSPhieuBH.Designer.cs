@@ -81,6 +81,7 @@ namespace QuanLyDaQuy.Phieu
             this.btn_detail.TabIndex = 7;
             this.btn_detail.Text = "Xem chi tiết phiếu";
             this.btn_detail.UseVisualStyleBackColor = true;
+            this.btn_detail.Click += new System.EventHandler(this.btn_detail_Click);
             // 
             // label1
             // 
@@ -263,7 +264,6 @@ namespace QuanLyDaQuy.Phieu
             this.dgv_ds_pbh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_ds_pbh.Location = new System.Drawing.Point(3, 135);
             this.dgv_ds_pbh.Name = "dgv_ds_pbh";
-            this.dgv_ds_pbh.RowHeadersVisible = false;
             this.dgv_ds_pbh.RowHeadersWidth = 51;
             this.dgv_ds_pbh.RowTemplate.Height = 24;
             this.dgv_ds_pbh.Size = new System.Drawing.Size(976, 358);

@@ -472,6 +472,37 @@ RETURN 0
 --from TONKHO
 -----------Tri--------------
 
+GO
+CREATE PROCEDURE [dbo].[loadPhieuBH_byMaPhieuBH_For_CTPhieuBH] @MaPhieuBH int
+AS
+	SELECT
+		MaPhieuBH,
+		TenKH,
+		NgayLap,
+		SDT,
+		TongTien
+	from PHIEUBANHANG, KHACHHANG
+	where PHIEUBANHANG.MaKH = KHACHHANG.MaKH and MaPhieuBH = @MaPhieuBH
+RETURN 0
+
+GO
+CREATE PROCEDURE [dbo].[loadCTPhieuBH_byMaPhieuBH] @MaPhieuBH int
+AS
+	SELECT
+		ROW_NUMBER() OVER (ORDER BY TenSP) AS STT,
+		TenSP,
+		TenLSP,
+		SL,
+		DVT,
+		DonGia,
+		ThanhTien
+	from PHIEUBANHANG, CT_PHIEUBANHANG, SANPHAM, LOAISANPHAM, DONVITINH
+	where PHIEUBANHANG.MaPhieuBH = CT_PHIEUBANHANG.MaPhieuBH and PHIEUBANHANG.MaPhieuBH = @MaPhieuBH
+	and CT_PHIEUBANHANG.MaSP = SANPHAM.MaSP 
+	and SANPHAM.MaLSP = LOAISANPHAM.MaLSP
+	and LOAISANPHAM.MaDVT = DONVITINH.MaDVT
+RETURN 0
+
 
 ----------Hung------------
 GO

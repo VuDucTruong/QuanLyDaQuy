@@ -363,5 +363,21 @@ namespace QuanLyDaQuy.Phieu
             }
 
         }
+
+        private void btn_detail_Click(object sender, EventArgs e)
+        {
+            int MaPhieuBH = 0;
+            try
+            {
+                MaPhieuBH = Convert.ToInt32(dgv_ds_pbh.SelectedRows[0].Cells[0].Value);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Bạn phải chọn một dòng để xem chi tiết phiếu!", "Cảnh báo");
+                return;
+            }
+            CTPhieuBH cTPhieuBH = new CTPhieuBH(MaPhieuBH);
+            cTPhieuBH.Show();
+        }
     }
 }
