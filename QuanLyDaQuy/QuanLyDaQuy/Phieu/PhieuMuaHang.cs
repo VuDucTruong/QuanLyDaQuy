@@ -51,7 +51,7 @@ namespace QuanLyDaQuy.Phieu
                     testEmpty = true;
                 }
                 // So luong
-                else if (row.Cells[3].Value == null || row.Cells[3].Value.ToString() == "")
+                else if (row.Cells[3].Value == null || row.Cells[3].Value.ToString() == "" || Convert.ToInt32(row.Cells[3].Value) == 0)
                 {
                     testEmpty = true;
                 }
@@ -68,42 +68,42 @@ namespace QuanLyDaQuy.Phieu
             {
                 //try
                 //{
-                    //Phieu mua hang
-                    int maPhieuMH = Convert.ToInt32(tb_sophieu.Text);
-                    int maNCC = NhaCungCaps.FirstOrDefault(x => x.TenNCC == cb_nhaCungCap.Text).MaNCC;
-                    DateTime ngayLap;
-                    DateTime.TryParseExact(tb_ngaylap.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out ngayLap); ;
-                    double tongTien = Convert.ToDouble(tb_thanhTien.Text);
-                    PhieuMuaHangDTO phieuMuaHang = new PhieuMuaHangDTO(maPhieuMH, maNCC, ngayLap, tongTien);
+                //Phieu mua hang
+                int maPhieuMH = Convert.ToInt32(tb_sophieu.Text);
+                int maNCC = NhaCungCaps.FirstOrDefault(x => x.TenNCC == cb_nhaCungCap.Text).MaNCC;
+                DateTime ngayLap;
+                DateTime.TryParseExact(tb_ngaylap.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out ngayLap); ;
+                double tongTien = Convert.ToDouble(tb_thanhTien.Text);
+                PhieuMuaHangDTO phieuMuaHang = new PhieuMuaHangDTO(maPhieuMH, maNCC, ngayLap, tongTien);
 
-                    //CT_PhieuMuaHang
-                    List<CT_PhieuMuaHang> ct_phieuMuaHangs = new List<CT_PhieuMuaHang>();
-                    foreach (DataGridViewRow row in dt_grid_phieumuahang.Rows)
+                //CT_PhieuMuaHang
+                List<CT_PhieuMuaHang> ct_phieuMuaHangs = new List<CT_PhieuMuaHang>();
+                foreach (DataGridViewRow row in dt_grid_phieumuahang.Rows)
+                {
+                    //lay thong tin tu dtgv
+                    if (row.Index == dt_grid_phieumuahang.Rows.Count - 1)
                     {
-                        //lay thong tin tu dtgv
-                        if (row.Index == dt_grid_phieumuahang.Rows.Count - 1)
-                        {
-                            continue;
-                        }
-                        int MaPhieuMH = Convert.ToInt32(tb_sophieu.Text);
-                        int MaSP = sanPhams.FirstOrDefault(x => x.TenSP == row.Cells[1].Value.ToString()).MaSP;
-                        int SL = Convert.ToInt32(row.Cells[3].Value);
-                        double DonGia = Convert.ToInt32(row.Cells[5].Value);
-                        double ThanhTien = Convert.ToInt32(row.Cells[6].Value);
-                        ct_phieuMuaHangs.Add(new CT_PhieuMuaHang(MaPhieuMH, MaSP, SL, DonGia, ThanhTien));
-                        //update so luong ton trong bang TONKHO
-                        UpdateSLT(MaSP, SL);
+                        continue;
                     }
+                    int MaPhieuMH = Convert.ToInt32(tb_sophieu.Text);
+                    int MaSP = sanPhams.FirstOrDefault(x => x.TenSP == row.Cells[1].Value.ToString()).MaSP;
+                    int SL = Convert.ToInt32(row.Cells[3].Value);
+                    double DonGia = Convert.ToInt32(row.Cells[5].Value);
+                    double ThanhTien = Convert.ToInt32(row.Cells[6].Value);
+                    ct_phieuMuaHangs.Add(new CT_PhieuMuaHang(MaPhieuMH, MaSP, SL, DonGia, ThanhTien));
+                    //update so luong ton trong bang TONKHO
+                    UpdateSLT(MaSP, SL);
+                }
 
-                    //Insert
-                    phieuMuaHang.Perform_Insert();
-                    foreach (CT_PhieuMuaHang item in ct_phieuMuaHangs)
-                    {
-                        item.Perform_Insert();
-                    }
+                //Insert
+                phieuMuaHang.Perform_Insert();
+                foreach (CT_PhieuMuaHang item in ct_phieuMuaHangs)
+                {
+                    item.Perform_Insert();
+                }
 
-                    MessageBox.Show("Lập phiếu thành công!", "Thông báo");
-                    Close();
+                MessageBox.Show("Lập phiếu thành công!", "Thông báo");
+                Close();
                 //}
                 //catch (Exception error)
                 //{
@@ -300,7 +300,7 @@ namespace QuanLyDaQuy.Phieu
                 //Validating so luong
                 if (!Validating_NumberInt(dt_grid_phieumuahang.Rows[e.RowIndex].Cells[3].Value.ToString()))
                 {
-                    dt_grid_phieumuahang.Rows[e.RowIndex].Cells[3].Value = null;
+                    dt_grid_phieumuahang.Rows[e.RowIndex].Cells[3].Value = 0;
                     return;
                 }
                 string tenSP = dt_grid_phieumuahang.Rows[e.RowIndex].Cells[1].Value.ToString();
@@ -308,9 +308,9 @@ namespace QuanLyDaQuy.Phieu
                 //update thanh tien
                 if (dt_grid_phieumuahang.Rows[e.RowIndex].Cells[1].Value != null)
                 {
-                    dt_grid_phieumuahang.Rows[e.RowIndex].Cells[6].Value =
-                        Convert.ToInt32(dt_grid_phieumuahang.Rows[e.RowIndex].Cells[3].Value)
+                    long thanhTien = Convert.ToInt32(dt_grid_phieumuahang.Rows[e.RowIndex].Cells[3].Value)
                         * Convert.ToInt32(dt_grid_phieumuahang.Rows[e.RowIndex].Cells[5].Value);
+                    dt_grid_phieumuahang.Rows[e.RowIndex].Cells[6].Value = thanhTien.ToString();
                     //update tong tien
                     updateTongTien();
                 }
@@ -323,7 +323,7 @@ namespace QuanLyDaQuy.Phieu
         }
         private void updateTongTien()
         {
-            int sum = 0;
+            long sum = 0;
             for (int i = 0; i < dt_grid_phieumuahang.Rows.Count; ++i)
             {
                 sum += Convert.ToInt32(dt_grid_phieumuahang.Rows[i].Cells[6].Value);

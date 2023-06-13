@@ -226,7 +226,7 @@ namespace QuanLyDaQuy.Phieu
                         double minValue = (ThanhTien * PhanTramTraTruocToiThieu);
                         if (TraTruoc < minValue)
                         {
-                            TraTruoc = minValue;
+                            TraTruoc = Math.Round(minValue);
                             row.Cells[6].Value = TraTruoc;
                         }    
                         // update ConLai

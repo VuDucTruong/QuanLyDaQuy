@@ -438,7 +438,7 @@ AS
 		TenLSP as "Tên loại sản phẩm",
 		FORMAT(DonGiaBan,'c', 'vi-VN') as "Đơn giá bán",
 		FORMAT(DonGiaMua,'c', 'vi-VN') as "Đơn giá mua",
-		FORMAT(SoLuongTon,'c', 'vi-VN') as "Số lượng tồn",
+		SoLuongTon as "Số lượng tồn",
 		DVT as "Đơn vị tính"
 	from SANPHAM , LOAISANPHAM , DONVITINH where SANPHAM.MaLSP = LOAISANPHAM.MaLSP and LOAISANPHAM.MaDVT = DONVITINH.MaDVT
 RETURN 0

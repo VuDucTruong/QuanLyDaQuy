@@ -22,7 +22,6 @@ namespace QuanLyDaQuy.Phieu
         {
             Init_DateTimeSearch();
             // TODO: This line of code loads data into the 'qLDQDataSet.loadPhieuMH_Full' table. You can move, or remove it, as needed.
-            dtgView_DS_phieu_mua_hang.DataSource = this.qLDQDataSet.loadPhieuMH_Full;
             this.loadPhieuMH_FullTableAdapter.Fill(this.qLDQDataSet.loadPhieuMH_Full, 0, 0, 0);
             comboBox_SearchMode.SelectedIndex = 0;
         }
@@ -108,6 +107,14 @@ namespace QuanLyDaQuy.Phieu
                         this.loadPhieuMH_byTongTienTableAdapter.Fill(this.qLDQDataSet.loadPhieuMH_byTongTien, Convert.ToInt32(tb_Search.Text), day, month, year);
                         break;
                     }
+            }
+            if (dtgView_DS_phieu_mua_hang.Rows.Count == 0)
+            {
+                MessageBox.Show("Không tìm thấy kết quả!", "Thông báo");
+            }
+            else
+            {
+                MessageBox.Show("Tra cứu thành công!", "Thông báo");
             }
         }
         private void Init_DateTimeSearch()
