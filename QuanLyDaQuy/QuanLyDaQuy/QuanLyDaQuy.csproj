@@ -133,8 +133,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\NhaCungCapDAO.cs" />
     <Compile Include="DAO\PhieuDichVuDAO.cs" />
     <Compile Include="DAO\PhieuMuaHangDAO.cs" />
+    <Compile Include="DAO\SanPhamDAO.cs" />
     <Compile Include="DAO\SuaPhieuDichVuDAO.cs" />
     <Compile Include="DAO\ThemDVFormDAO.cs" />
     <Compile Include="DAO\ThemDVTFormDAO.cs" />
