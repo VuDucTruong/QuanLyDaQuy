@@ -86,12 +86,12 @@ namespace QuanLyDaQuy.Phieu
             // label1
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(976, 55);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Danh sách phiếu bán hàng";
+            this.label1.Text = "DANH SÁCH PHIẾU BÁN HÀNG";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel2
@@ -122,10 +122,10 @@ namespace QuanLyDaQuy.Phieu
             // 
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label6.Location = new System.Drawing.Point(343, 40);
+            this.label6.Location = new System.Drawing.Point(344, 40);
             this.label6.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 31);
+            this.label6.Size = new System.Drawing.Size(40, 31);
             this.label6.TabIndex = 7;
             this.label6.Text = "Ngày";
             // 
@@ -161,10 +161,10 @@ namespace QuanLyDaQuy.Phieu
             // 
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label3.Location = new System.Drawing.Point(320, 5);
+            this.label3.Location = new System.Drawing.Point(325, 5);
             this.label3.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 30);
+            this.label3.Size = new System.Drawing.Size(59, 30);
             this.label3.TabIndex = 1;
             this.label3.Text = "Từ khóa:";
             // 
@@ -213,10 +213,10 @@ namespace QuanLyDaQuy.Phieu
             // 
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label4.Location = new System.Drawing.Point(352, 5);
+            this.label4.Location = new System.Drawing.Point(353, 5);
             this.label4.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 25);
+            this.label4.Size = new System.Drawing.Size(36, 25);
             this.label4.TabIndex = 12;
             this.label4.Text = "Năm";
             // 
@@ -250,10 +250,10 @@ namespace QuanLyDaQuy.Phieu
             // 
             this.label5.AutoSize = true;
             this.label5.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label5.Location = new System.Drawing.Point(144, 5);
+            this.label5.Location = new System.Drawing.Point(147, 5);
             this.label5.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 25);
+            this.label5.Size = new System.Drawing.Size(46, 25);
             this.label5.TabIndex = 10;
             this.label5.Text = "Tháng";
             // 
@@ -278,7 +278,7 @@ namespace QuanLyDaQuy.Phieu
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "DsPhieuBH";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Phiếu";
+            this.Text = "DANH SÁCH PHIẾU BÁN HÀNG";
             this.Load += new System.EventHandler(this.DsPhieuBH_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);

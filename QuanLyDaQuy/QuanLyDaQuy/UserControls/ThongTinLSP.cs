@@ -33,14 +33,14 @@ namespace QuanLyDaQuy.UserControls
             
         }
        
-        private void insertDVT_btn_Click(object sender, EventArgs e)
+        public void insertDVT_btn_Click(object sender, EventArgs e)
         {
             ThemDVTForm themDVTForm = new ThemDVTForm();
             themDVTForm.thongTinLSP = this;
             themDVTForm.ShowDialog();
         }
 
-        private void insertLSP_btn_Click(object sender, EventArgs e)
+        public void insertLSP_btn_Click(object sender, EventArgs e)
         {
             ThemLSPForm themLSPForm = new ThemLSPForm();
             themLSPForm.ThongTinLSP = this;

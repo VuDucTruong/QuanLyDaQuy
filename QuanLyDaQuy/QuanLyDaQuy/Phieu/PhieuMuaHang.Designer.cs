@@ -111,7 +111,7 @@
             this.lb_title.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tab_lay_phieumuahang.SetColumnSpan(this.lb_title, 6);
             this.lb_title.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lb_title.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_title.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_title.Location = new System.Drawing.Point(3, 0);
             this.lb_title.Name = "lb_title";
             this.lb_title.Size = new System.Drawing.Size(967, 35);
@@ -429,7 +429,8 @@
             this.ClientSize = new System.Drawing.Size(975, 555);
             this.Controls.Add(this.tab_lay_phieumuahang);
             this.Name = "PhieuMuaHang";
-            this.Text = "PhieuMuaHang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "PHIẾU MUA HÀNG";
             this.tab_lay_phieumuahang.ResumeLayout(false);
             this.tab_lay_phieumuahang.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dt_grid_phieumuahang)).EndInit();

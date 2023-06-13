@@ -27,7 +27,6 @@ namespace QuanLyDaQuy.Phieu
             LoadRelatedTables();
             LoadKhachHangFull();
             LoadSanPhamFull();
-
         }
 
 

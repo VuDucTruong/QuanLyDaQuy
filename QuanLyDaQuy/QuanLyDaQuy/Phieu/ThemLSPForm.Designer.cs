@@ -40,13 +40,13 @@
             this.LoiNhuan_tb = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.DVT_cb = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.qLDQDataSet = new QuanLyDaQuy.QLDQDataSet();
             this.dONVITINHBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLDQDataSet = new QuanLyDaQuy.QLDQDataSet();
+            this.label1 = new System.Windows.Forms.Label();
             this.dONVITINHTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.DONVITINHTableAdapter();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dONVITINHBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // cancel_btn
@@ -83,7 +83,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 275F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 306F));
             this.tableLayoutPanel1.Controls.Add(this.id_tb, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label10, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.LSP_tb, 1, 1);
@@ -97,7 +97,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(758, 126);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(760, 126);
             this.tableLayoutPanel1.TabIndex = 48;
             // 
             // id_tb
@@ -152,7 +152,7 @@
             this.LoiNhuan_tb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.LoiNhuan_tb.Location = new System.Drawing.Point(455, 21);
             this.LoiNhuan_tb.Name = "LoiNhuan_tb";
-            this.LoiNhuan_tb.Size = new System.Drawing.Size(298, 22);
+            this.LoiNhuan_tb.Size = new System.Drawing.Size(300, 22);
             this.LoiNhuan_tb.TabIndex = 25;
             this.LoiNhuan_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LoiNhuan_tb_KeyPress);
             // 
@@ -175,28 +175,28 @@
             this.DVT_cb.FormattingEnabled = true;
             this.DVT_cb.Location = new System.Drawing.Point(455, 82);
             this.DVT_cb.Name = "DVT_cb";
-            this.DVT_cb.Size = new System.Drawing.Size(298, 24);
+            this.DVT_cb.Size = new System.Drawing.Size(300, 24);
             this.DVT_cb.TabIndex = 48;
             // 
-            // label1
+            // dONVITINHBindingSource
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(228, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(356, 32);
-            this.label1.TabIndex = 47;
-            this.label1.Text = "THÊM LOẠI SẢN PHẨM";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.dONVITINHBindingSource.DataMember = "DONVITINH";
+            this.dONVITINHBindingSource.DataSource = this.qLDQDataSet;
             // 
             // qLDQDataSet
             // 
             this.qLDQDataSet.DataSetName = "QLDQDataSet";
             this.qLDQDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // dONVITINHBindingSource
+            // label1
             // 
-            this.dONVITINHBindingSource.DataMember = "DONVITINH";
-            this.dONVITINHBindingSource.DataSource = this.qLDQDataSet;
+            this.label1.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(228, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(356, 32);
+            this.label1.TabIndex = 47;
+            this.label1.Text = "THÊM LOẠI SẢN PHẨM";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // dONVITINHTableAdapter
             // 
@@ -212,12 +212,13 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label1);
             this.Name = "ThemLSPForm";
-            this.Text = "ThemLSPForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "THÊM LOẠI SẢN PHẨM";
             this.Load += new System.EventHandler(this.ThemLSPForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dONVITINHBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

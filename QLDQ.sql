@@ -436,9 +436,9 @@ AS
 	SELECT MaSP as "Mã sản phẩm" , 
 		TenSP as "Tên sản phẩm" ,
 		TenLSP as "Tên loại sản phẩm",
-		DonGiaBan as "Đơn giá bán",
-		DonGiaMua as "Đơn giá mua",
-		SoLuongTon as "Số lượng tồn",
+		FORMAT(DonGiaBan,'c', 'vi-VN') as "Đơn giá bán",
+		FORMAT(DonGiaMua,'c', 'vi-VN') as "Đơn giá mua",
+		FORMAT(SoLuongTon,'c', 'vi-VN') as "Số lượng tồn",
 		DVT as "Đơn vị tính"
 	from SANPHAM , LOAISANPHAM , DONVITINH where SANPHAM.MaLSP = LOAISANPHAM.MaLSP and LOAISANPHAM.MaDVT = DONVITINH.MaDVT
 RETURN 0
@@ -461,7 +461,16 @@ AS
 	where TONKHO.MaSP = SANPHAM.MaSP and SANPHAM.MaLSP = LOAISANPHAM.MaLSP and LOAISANPHAM.MaDVT = DONVITINH.MaDVT and MONTH(Thang) = @Thang and YEAR(Thang) = @Nam
 RETURN 0
 
-
+GO
+CREATE PROCEDURE [dbo].[loadDichVu]
+	
+AS
+	SELECT 
+	MaDV ,
+	TenDV , 
+	FORMAT(DonGiaDV,'c', 'vi-VN') as DonGiaDV
+	from DICHVU
+RETURN 0
 --insert into TONKHO ( Thang,MaSP ,SLTonDau ,SLTonCuoi ,SLMuaVao ,SLBanRa ) values ( '1/1/2003' , 1 , 0 , 0 , 0 , 0 )
 --insert into TONKHO ( Thang,MaSP ,SLTonDau ,SLTonCuoi ,SLMuaVao ,SLBanRa ) values ( '1/2/2004' , 2 , 0 , 0 , 0 , 0 )
 --insert into TONKHO ( Thang,MaSP ,SLTonDau ,SLTonCuoi ,SLMuaVao ,SLBanRa ) values ( '1/3/2010' , 3 , 0 , 0 , 0 , 0 )
@@ -478,9 +487,9 @@ AS
 	SELECT
 		MaPhieuBH,
 		TenKH,
-		NgayLap,
+		FORMAT(NgayLap , 'dd/MM/yyyy') as NgayLap,
 		SDT,
-		TongTien
+		FORMAT(TongTien,'c', 'vi-VN') as TongTien
 	from PHIEUBANHANG, KHACHHANG
 	where PHIEUBANHANG.MaKH = KHACHHANG.MaKH and MaPhieuBH = @MaPhieuBH
 RETURN 0
@@ -494,8 +503,8 @@ AS
 		TenLSP,
 		SL,
 		DVT,
-		DonGia,
-		ThanhTien
+		FORMAT(DonGia,'c', 'vi-VN') as DonGia,
+		FORMAT(ThanhTien,'c', 'vi-VN') as ThanhTien
 	from PHIEUBANHANG, CT_PHIEUBANHANG, SANPHAM, LOAISANPHAM, DONVITINH
 	where PHIEUBANHANG.MaPhieuBH = CT_PHIEUBANHANG.MaPhieuBH and PHIEUBANHANG.MaPhieuBH = @MaPhieuBH
 	and CT_PHIEUBANHANG.MaSP = SANPHAM.MaSP 
@@ -511,8 +520,8 @@ AS
 	SELECT
 		MaPhieuMH,
 		TenNCC,
-		NgayLap,
-		TongTien
+		FORMAT(NgayLap , 'dd/MM/yyyy') as NgayLap,
+		FORMAT(TongTien,'c', 'vi-VN') as TongTien
 	from PHIEUMUAHANG, NHACUNGCAP
 	where PHIEUMUAHANG.MaNCC = NHACUNGCAP.MaNCC
 			AND (@Day = 0 OR (@Day > 0 AND @Day = DAY(NgayLap)))
@@ -526,8 +535,8 @@ AS
 	SELECT
 		MaPhieuMH,
 		TenNCC,
-		NgayLap,
-		TongTien
+		FORMAT(NgayLap , 'dd/MM/yyyy') as NgayLap,
+		FORMAT(TongTien,'c', 'vi-VN') as TongTien
 	from PHIEUMUAHANG, NHACUNGCAP
 	where PHIEUMUAHANG.MaNCC = NHACUNGCAP.MaNCC and MaPhieuMH = @MaPhieuMH
 			AND (@Day = 0 OR (@Day > 0 AND @Day = DAY(NgayLap)))
@@ -541,8 +550,8 @@ AS
 	SELECT
 		MaPhieuMH,
 		TenNCC,
-		NgayLap,
-		TongTien
+		FORMAT(NgayLap , 'dd/MM/yyyy') as NgayLap,
+		FORMAT(TongTien,'c', 'vi-VN') as TongTien
 	from PHIEUMUAHANG, NHACUNGCAP
 	where PHIEUMUAHANG.MaNCC = NHACUNGCAP.MaNCC and TenNCC like (@TenNCC + '%')
 			AND (@Day = 0 OR (@Day > 0 AND @Day = DAY(NgayLap)))
@@ -556,8 +565,8 @@ AS
 	SELECT
 		MaPhieuMH,
 		TenNCC,
-		NgayLap,
-		TongTien
+		FORMAT(NgayLap , 'dd/MM/yyyy') as NgayLap,
+		FORMAT(TongTien,'c', 'vi-VN') as TongTien
 	from PHIEUMUAHANG, NHACUNGCAP
 	where PHIEUMUAHANG.MaNCC = NHACUNGCAP.MaNCC and TongTien = @TongTien
 			AND (@Day = 0 OR (@Day > 0 AND @Day = DAY(NgayLap)))
@@ -571,10 +580,10 @@ AS
 	SELECT
 		MaPhieuMH,
 		TenNCC,
-		NgayLap,
+		FORMAT(NgayLap , 'dd/MM/yyyy') as NgayLap,
 		DiaChi,
 		SDT,
-		TongTien
+		FORMAT(TongTien,'c', 'vi-VN') as TongTien
 	from PHIEUMUAHANG, NHACUNGCAP
 	where PHIEUMUAHANG.MaNCC = NHACUNGCAP.MaNCC and MaPhieuMH = @MaPhieuMH
 RETURN 0
@@ -588,8 +597,8 @@ AS
 		TenLSP,
 		SL,
 		DVT,
-		DonGia,
-		ThanhTien
+		FORMAT(DonGia,'c', 'vi-VN') as DonGia,
+		FORMAT(ThanhTien,'c', 'vi-VN') as ThanhTien
 	from PHIEUMUAHANG, CT_PHIEUMUAHANG, SANPHAM, LOAISANPHAM, DONVITINH
 	where PHIEUMUAHANG.MaPhieuMH = CT_PHIEUMUAHANG.MaPhieuMH and PHIEUMUAHANG.MaPhieuMH = @MaPhieuMH
 	and CT_PHIEUMUAHANG.MaSP = SANPHAM.MaSP 
@@ -607,10 +616,10 @@ AS
 		MaPhieuDV,
 		TenKH,
 		SDT,
-		NgayLap,
-		TongTien,
-		TraTruoc,
-		ConLai,
+		FORMAT(NgayLap , 'dd/MM/yyyy') as NgayLap,
+		FORMAT(TongTien,'c', 'vi-VN') as TongTien,
+		FORMAT(TraTruoc,'c', 'vi-VN') as TraTruoc,
+		FORMAT(ConLai,'c', 'vi-VN') as ConLai,
 		TinhTrang
 	from PHIEUDICHVU, KHACHHANG
 	where PHIEUDICHVU.MaKH = KHACHHANG.MaKH
@@ -627,10 +636,10 @@ BEGIN
 		MaPhieuDV,
 		TenKH,
 		SDT,
-		NgayLap,
-		TongTien,
-		TraTruoc,
-		ConLai,
+		FORMAT(NgayLap , 'dd/MM/yyyy') as NgayLap,
+		FORMAT(TongTien,'c', 'vi-VN') as TongTien,
+		FORMAT(TraTruoc,'c', 'vi-VN') as TraTruoc,
+		FORMAT(ConLai,'c', 'vi-VN') as ConLai,
 		TinhTrang
 	FROM PHIEUDICHVU, KHACHHANG
 	WHERE PHIEUDICHVU.MaKH = KHACHHANG.MaKH and TenKH like (@TenKH + '%')
@@ -647,10 +656,10 @@ AS
 		MaPhieuDV,
 		TenKH,
 		SDT,
-		NgayLap,
-		TongTien,
-		TraTruoc,
-		ConLai,
+		FORMAT(NgayLap , 'dd/MM/yyyy') as NgayLap,
+		FORMAT(TongTien,'c', 'vi-VN') as TongTien,
+		FORMAT(TraTruoc,'c', 'vi-VN') as TraTruoc,
+		FORMAT(ConLai,'c', 'vi-VN') as ConLai,
 		TinhTrang
 	from PHIEUDICHVU, KHACHHANG
 	where PHIEUDICHVU.MaKH = KHACHHANG.MaKH and SDT like (@SDT + '%')
@@ -666,10 +675,10 @@ AS
 		MaPhieuDV,
 		TenKH,
 		SDT,
-		NgayLap,
-		TongTien,
-		TraTruoc,
-		ConLai,
+		FORMAT(NgayLap , 'dd/MM/yyyy') as NgayLap,
+		FORMAT(TongTien,'c', 'vi-VN') as TongTien,
+		FORMAT(TraTruoc,'c', 'vi-VN') as TraTruoc,
+		FORMAT(ConLai,'c', 'vi-VN') as ConLai,
 		TinhTrang
 	from PHIEUDICHVU, KHACHHANG
 	where PHIEUDICHVU.MaKH = KHACHHANG.MaKH and TinhTrang = N'Hoàn thành'
@@ -685,10 +694,10 @@ AS
 		MaPhieuDV,
 		TenKH,
 		SDT,
-		NgayLap,
-		TongTien,
-		TraTruoc,
-		ConLai,
+		FORMAT(NgayLap , 'dd/MM/yyyy') as NgayLap,
+		FORMAT(TongTien,'c', 'vi-VN') as TongTien,
+		FORMAT(TraTruoc,'c', 'vi-VN') as TraTruoc,
+		FORMAT(ConLai,'c', 'vi-VN') as ConLai,
 		TinhTrang
 	from PHIEUDICHVU, KHACHHANG
 	where PHIEUDICHVU.MaKH = KHACHHANG.MaKH and TinhTrang = N'Chưa hoàn thành'
@@ -704,10 +713,10 @@ AS
 		MaPhieuDV,
 		TenKH,
 		SDT,
-		NgayLap,
-		TongTien,
-		TraTruoc,
-		ConLai,
+		FORMAT(NgayLap , 'dd/MM/yyyy') as NgayLap,
+		FORMAT(TongTien,'c', 'vi-VN') as TongTien,
+		FORMAT(TraTruoc,'c', 'vi-VN') as TraTruoc,
+		FORMAT(ConLai,'c', 'vi-VN') as ConLai,
 		TinhTrang
 	from PHIEUDICHVU, KHACHHANG
 	where PHIEUDICHVU.MaKH = KHACHHANG.MaKH and MaPhieuDV = @MaPhieuDV
@@ -719,14 +728,15 @@ AS
 	SELECT
 		DICHVU.MaDV as MaDV,
 		TenDV,
-		CT_PHIEUDICHVU.DonGia as DonGia,
-		DonGiaDuocTinh,
+		FORMAT(DonGia,'c', 'vi-VN') as DonGia,
+		FORMAT(DonGiaDuocTinh,'c', 'vi-VN') as DonGiaDuocTinh,
 		SL,
-		ThanhTien,
-		TraTruoc,
-		ConLai,
-		NgayGiao,
+		FORMAT(ThanhTien,'c', 'vi-VN') as ThanhTien,
+		FORMAT(TraTruoc,'c', 'vi-VN') as TraTruoc,
+		FORMAT(ConLai,'c', 'vi-VN') as ConLai,
+		FORMAT(NgayGiao , 'dd/MM/yyyy') as NgayGiao,
 		TinhTrang
 	from CT_PHIEUDICHVU, DICHVU
 	where CT_PHIEUDICHVU.MaDV = DICHVU.MaDV and MaPhieuDV = @MaPhieuDV
 RETURN 0
+

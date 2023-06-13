@@ -128,12 +128,12 @@
             this.lb_ds_phieu_mua_hang.AutoSize = true;
             this.tableLayoutPanel.SetColumnSpan(this.lb_ds_phieu_mua_hang, 5);
             this.lb_ds_phieu_mua_hang.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lb_ds_phieu_mua_hang.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_ds_phieu_mua_hang.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_ds_phieu_mua_hang.Location = new System.Drawing.Point(3, 0);
             this.lb_ds_phieu_mua_hang.Name = "lb_ds_phieu_mua_hang";
             this.lb_ds_phieu_mua_hang.Size = new System.Drawing.Size(794, 65);
             this.lb_ds_phieu_mua_hang.TabIndex = 3;
-            this.lb_ds_phieu_mua_hang.Text = "Danh sách phiếu mua hàng";
+            this.lb_ds_phieu_mua_hang.Text = "DANH SÁCH PHIẾU MUA HÀNG";
             this.lb_ds_phieu_mua_hang.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dtgView_DS_phieu_mua_hang
@@ -308,7 +308,8 @@
             this.ClientSize = new System.Drawing.Size(800, 513);
             this.Controls.Add(this.tableLayoutPanel);
             this.Name = "DSPhieuMH";
-            this.Text = "DSPhieuMH";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "DANH SÁCH PHIẾU MUA HÀNG";
             this.Load += new System.EventHandler(this.DSPhieuMH_Load);
             this.tableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanel.PerformLayout();

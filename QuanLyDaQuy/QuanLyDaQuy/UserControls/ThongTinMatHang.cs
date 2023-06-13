@@ -30,7 +30,7 @@ namespace QuanLyDaQuy
             loadLoaiSanPhamTableAdapter.Fill(qLDQDataSet.loadLoaiSanPham);
         }
 
-        private void insert_btn_Click(object sender, EventArgs e)
+        public void insert_btn_Click(object sender, EventArgs e)
         {
             ThemSPForm themSPForm = new ThemSPForm();
             themSPForm.thongTinMatHang = this;

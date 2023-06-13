@@ -32,21 +32,21 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.loadTonKhoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLDQDataSet = new QuanLyDaQuy.QLDQDataSet();
-            this.loadTonKhoTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadTonKhoTableAdapter();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.tenSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sLTonDauDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sLBanRaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sLMuaVaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sLTonCuoiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dVTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loadTonKhoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLDQDataSet = new QuanLyDaQuy.QLDQDataSet();
+            this.loadTonKhoTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadTonKhoTableAdapter();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -76,12 +76,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(4, 1);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(959, 38);
+            this.label1.Size = new System.Drawing.Size(959, 33);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Báo cáo tồn kho";
+            this.label1.Text = "BÁO CÁO TỒN KHO";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
@@ -94,10 +94,19 @@
             this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(4, 43);
+            this.panel1.Location = new System.Drawing.Point(4, 38);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(959, 34);
             this.panel1.TabIndex = 3;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(356, 5);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(132, 24);
+            this.comboBox2.TabIndex = 7;
             // 
             // button1
             // 
@@ -164,35 +173,12 @@
             this.sLTonCuoiDataGridViewTextBoxColumn,
             this.dVTDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.loadTonKhoBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 84);
+            this.dataGridView1.Location = new System.Drawing.Point(4, 79);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(959, 336);
             this.dataGridView1.TabIndex = 4;
-            // 
-            // loadTonKhoBindingSource
-            // 
-            this.loadTonKhoBindingSource.DataMember = "loadTonKho";
-            this.loadTonKhoBindingSource.DataSource = this.qLDQDataSet;
-            // 
-            // qLDQDataSet
-            // 
-            this.qLDQDataSet.DataSetName = "QLDQDataSet";
-            this.qLDQDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // loadTonKhoTableAdapter
-            // 
-            this.loadTonKhoTableAdapter.ClearBeforeFill = true;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(356, 5);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(132, 24);
-            this.comboBox2.TabIndex = 7;
             // 
             // tenSPDataGridViewTextBoxColumn
             // 
@@ -236,6 +222,20 @@
             this.dVTDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.dVTDataGridViewTextBoxColumn.Name = "dVTDataGridViewTextBoxColumn";
             // 
+            // loadTonKhoBindingSource
+            // 
+            this.loadTonKhoBindingSource.DataMember = "loadTonKho";
+            this.loadTonKhoBindingSource.DataSource = this.qLDQDataSet;
+            // 
+            // qLDQDataSet
+            // 
+            this.qLDQDataSet.DataSetName = "QLDQDataSet";
+            this.qLDQDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // loadTonKhoTableAdapter
+            // 
+            this.loadTonKhoTableAdapter.ClearBeforeFill = true;
+            // 
             // BaoCaoTonKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -243,7 +243,8 @@
             this.ClientSize = new System.Drawing.Size(991, 439);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "BaoCaoTonKho";
-            this.Text = "BaoCaoTonKho";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "BÁO CÁO TỒN KHO";
             this.Load += new System.EventHandler(this.BaoCaoTonKho_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

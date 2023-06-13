@@ -33,6 +33,8 @@
             this.MaSP_tb = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.LoaiSP_cb = new System.Windows.Forms.ComboBox();
+            this.loadLoaiSanPhamBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLDQDataSet = new QuanLyDaQuy.QLDQDataSet();
             this.SLT_tb = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -45,12 +47,10 @@
             this.DVT_tb = new System.Windows.Forms.TextBox();
             this.insert_btn = new System.Windows.Forms.Button();
             this.update_btn = new System.Windows.Forms.Button();
-            this.qLDQDataSet = new QuanLyDaQuy.QLDQDataSet();
-            this.loadLoaiSanPhamBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.loadLoaiSanPhamTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadLoaiSanPhamTableAdapter();
-            this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loadLoaiSanPhamBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -58,10 +58,10 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(292, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(260, 32);
+            this.label1.Size = new System.Drawing.Size(257, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "THÊM MẶT HÀNG";
             // 
@@ -92,9 +92,19 @@
             this.LoaiSP_cb.Size = new System.Drawing.Size(177, 24);
             this.LoaiSP_cb.TabIndex = 32;
             // 
+            // loadLoaiSanPhamBindingSource
+            // 
+            this.loadLoaiSanPhamBindingSource.DataMember = "loadLoaiSanPham";
+            this.loadLoaiSanPhamBindingSource.DataSource = this.qLDQDataSet;
+            // 
+            // qLDQDataSet
+            // 
+            this.qLDQDataSet.DataSetName = "QLDQDataSet";
+            this.qLDQDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // SLT_tb
             // 
-            this.SLT_tb.Location = new System.Drawing.Point(491, 67);
+            this.SLT_tb.Location = new System.Drawing.Point(491, 87);
             this.SLT_tb.Name = "SLT_tb";
             this.SLT_tb.Size = new System.Drawing.Size(177, 22);
             this.SLT_tb.TabIndex = 31;
@@ -104,7 +114,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(383, 64);
+            this.label7.Location = new System.Drawing.Point(383, 84);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(87, 16);
             this.label7.TabIndex = 30;
@@ -113,7 +123,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(383, 34);
+            this.label8.Location = new System.Drawing.Point(383, 43);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(76, 16);
             this.label8.TabIndex = 29;
@@ -130,7 +140,7 @@
             // 
             // Mua_tb
             // 
-            this.Mua_tb.Location = new System.Drawing.Point(106, 67);
+            this.Mua_tb.Location = new System.Drawing.Point(106, 87);
             this.Mua_tb.Name = "Mua_tb";
             this.Mua_tb.Size = new System.Drawing.Size(177, 22);
             this.Mua_tb.TabIndex = 25;
@@ -138,7 +148,7 @@
             // 
             // TenSP_tb
             // 
-            this.TenSP_tb.Location = new System.Drawing.Point(106, 37);
+            this.TenSP_tb.Location = new System.Drawing.Point(106, 46);
             this.TenSP_tb.Name = "TenSP_tb";
             this.TenSP_tb.Size = new System.Drawing.Size(177, 22);
             this.TenSP_tb.TabIndex = 24;
@@ -146,7 +156,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(5, 64);
+            this.label6.Location = new System.Drawing.Point(5, 84);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(91, 16);
             this.label6.TabIndex = 23;
@@ -155,7 +165,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(5, 34);
+            this.label5.Location = new System.Drawing.Point(5, 43);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 16);
             this.label5.TabIndex = 22;
@@ -194,7 +204,7 @@
             // DVT_tb
             // 
             this.DVT_tb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadLoaiSanPhamBindingSource, "DVT", true));
-            this.DVT_tb.Location = new System.Drawing.Point(491, 37);
+            this.DVT_tb.Location = new System.Drawing.Point(491, 46);
             this.DVT_tb.Name = "DVT_tb";
             this.DVT_tb.Size = new System.Drawing.Size(177, 22);
             this.DVT_tb.TabIndex = 39;
@@ -220,16 +230,6 @@
             this.update_btn.UseVisualStyleBackColor = true;
             this.update_btn.Click += new System.EventHandler(this.update_btn_Click);
             // 
-            // qLDQDataSet
-            // 
-            this.qLDQDataSet.DataSetName = "QLDQDataSet";
-            this.qLDQDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // loadLoaiSanPhamBindingSource
-            // 
-            this.loadLoaiSanPhamBindingSource.DataMember = "loadLoaiSanPham";
-            this.loadLoaiSanPhamBindingSource.DataSource = this.qLDQDataSet;
-            // 
             // loadLoaiSanPhamTableAdapter
             // 
             this.loadLoaiSanPhamTableAdapter.ClearBeforeFill = true;
@@ -244,12 +244,13 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label1);
             this.Name = "ThemSPForm";
-            this.Text = "ThemSPForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "THÊM MẶT HÀNG";
             this.Load += new System.EventHandler(this.ThemSPForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.loadLoaiSanPhamBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.loadLoaiSanPhamBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
