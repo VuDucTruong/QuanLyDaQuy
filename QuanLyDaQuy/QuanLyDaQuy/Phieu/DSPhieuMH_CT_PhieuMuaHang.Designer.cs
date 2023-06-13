@@ -44,18 +44,18 @@
             this.tab_lay_phieumuahang = new System.Windows.Forms.TableLayoutPanel();
             this.dt_grid_phieumuahang = new System.Windows.Forms.DataGridView();
             this.loadCTPhieuMHbyMaPhieuMHBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tb_thanhTien = new System.Windows.Forms.TextBox();
             this.tb_nhaCungCap = new System.Windows.Forms.TextBox();
             this.lb_thanhTien = new System.Windows.Forms.Label();
+            this.tb_thanhTien = new System.Windows.Forms.TextBox();
             this.loadPhieuMH_byMaPhieuMH_For_CT_PhieuMuaHangTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadPhieuMH_byMaPhieuMH_For_CT_PhieuMuaHangTableAdapter();
             this.loadCTPhieuMH_byMaPhieuMHTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadCTPhieuMH_byMaPhieuMHTableAdapter();
-            this.phieuMuaHang_column_STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phieuMuaHang_column_sanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phieuMuaHang_column_loaiSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phieuMuaHang_column_soLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phieuMuaHang_column_donViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phieuMuaHang_column_donGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phieuMuaHang_column_thanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sTTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenLSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sLDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dVTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donGiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thanhTienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.loadPhieuMuaHangFull_BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).BeginInit();
             this.tab_lay_phieumuahang.SuspendLayout();
@@ -245,13 +245,13 @@
             this.dt_grid_phieumuahang.AutoGenerateColumns = false;
             this.dt_grid_phieumuahang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dt_grid_phieumuahang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.phieuMuaHang_column_STT,
-            this.phieuMuaHang_column_sanPham,
-            this.phieuMuaHang_column_loaiSanPham,
-            this.phieuMuaHang_column_soLuong,
-            this.phieuMuaHang_column_donViTinh,
-            this.phieuMuaHang_column_donGia,
-            this.phieuMuaHang_column_thanhTien});
+            this.sTTDataGridViewTextBoxColumn,
+            this.tenSPDataGridViewTextBoxColumn,
+            this.tenLSPDataGridViewTextBoxColumn,
+            this.sLDataGridViewTextBoxColumn,
+            this.dVTDataGridViewTextBoxColumn,
+            this.donGiaDataGridViewTextBoxColumn,
+            this.thanhTienDataGridViewTextBoxColumn});
             this.tab_lay_phieumuahang.SetColumnSpan(this.dt_grid_phieumuahang, 6);
             this.dt_grid_phieumuahang.DataSource = this.loadCTPhieuMHbyMaPhieuMHBindingSource;
             this.dt_grid_phieumuahang.Dock = System.Windows.Forms.DockStyle.Top;
@@ -267,18 +267,6 @@
             // 
             this.loadCTPhieuMHbyMaPhieuMHBindingSource.DataMember = "loadCTPhieuMH_byMaPhieuMH";
             this.loadCTPhieuMHbyMaPhieuMHBindingSource.DataSource = this.qLDQDataSet;
-            // 
-            // tb_thanhTien
-            // 
-            this.tb_thanhTien.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.tb_thanhTien.BackColor = System.Drawing.SystemColors.Window;
-            this.tab_lay_phieumuahang.SetColumnSpan(this.tb_thanhTien, 2);
-            this.tb_thanhTien.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadPhieuMuaHangFull_BindingSource, "TongTien", true));
-            this.tb_thanhTien.Location = new System.Drawing.Point(573, 485);
-            this.tb_thanhTien.Name = "tb_thanhTien";
-            this.tb_thanhTien.ReadOnly = true;
-            this.tb_thanhTien.Size = new System.Drawing.Size(219, 22);
-            this.tb_thanhTien.TabIndex = 13;
             // 
             // tb_nhaCungCap
             // 
@@ -303,6 +291,18 @@
             this.lb_thanhTien.TabIndex = 12;
             this.lb_thanhTien.Text = "Tổng tiền: ";
             // 
+            // tb_thanhTien
+            // 
+            this.tb_thanhTien.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.tb_thanhTien.BackColor = System.Drawing.SystemColors.Window;
+            this.tab_lay_phieumuahang.SetColumnSpan(this.tb_thanhTien, 2);
+            this.tb_thanhTien.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadPhieuMuaHangFull_BindingSource, "TongTien", true));
+            this.tb_thanhTien.Location = new System.Drawing.Point(573, 485);
+            this.tb_thanhTien.Name = "tb_thanhTien";
+            this.tb_thanhTien.ReadOnly = true;
+            this.tb_thanhTien.Size = new System.Drawing.Size(219, 22);
+            this.tb_thanhTien.TabIndex = 13;
+            // 
             // loadPhieuMH_byMaPhieuMH_For_CT_PhieuMuaHangTableAdapter
             // 
             this.loadPhieuMH_byMaPhieuMH_For_CT_PhieuMuaHangTableAdapter.ClearBeforeFill = true;
@@ -311,76 +311,70 @@
             // 
             this.loadCTPhieuMH_byMaPhieuMHTableAdapter.ClearBeforeFill = true;
             // 
-            // phieuMuaHang_column_STT
+            // sTTDataGridViewTextBoxColumn
             // 
-            this.phieuMuaHang_column_STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.phieuMuaHang_column_STT.DataPropertyName = "STT";
-            this.phieuMuaHang_column_STT.HeaderText = "STT";
-            this.phieuMuaHang_column_STT.MinimumWidth = 6;
-            this.phieuMuaHang_column_STT.Name = "phieuMuaHang_column_STT";
-            this.phieuMuaHang_column_STT.ReadOnly = true;
-            this.phieuMuaHang_column_STT.Width = 63;
+            this.sTTDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.sTTDataGridViewTextBoxColumn.DataPropertyName = "STT";
+            this.sTTDataGridViewTextBoxColumn.HeaderText = "STT";
+            this.sTTDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sTTDataGridViewTextBoxColumn.Name = "sTTDataGridViewTextBoxColumn";
+            this.sTTDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sTTDataGridViewTextBoxColumn.Width = 63;
             // 
-            // phieuMuaHang_column_sanPham
+            // tenSPDataGridViewTextBoxColumn
             // 
-            this.phieuMuaHang_column_sanPham.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.phieuMuaHang_column_sanPham.DataPropertyName = "TenSP";
-            this.phieuMuaHang_column_sanPham.HeaderText = "Sản phẩm";
-            this.phieuMuaHang_column_sanPham.MinimumWidth = 6;
-            this.phieuMuaHang_column_sanPham.Name = "phieuMuaHang_column_sanPham";
-            this.phieuMuaHang_column_sanPham.ReadOnly = true;
-            this.phieuMuaHang_column_sanPham.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.tenSPDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tenSPDataGridViewTextBoxColumn.DataPropertyName = "TenSP";
+            this.tenSPDataGridViewTextBoxColumn.HeaderText = "Tên sản phẩm";
+            this.tenSPDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tenSPDataGridViewTextBoxColumn.Name = "tenSPDataGridViewTextBoxColumn";
             // 
-            // phieuMuaHang_column_loaiSanPham
+            // tenLSPDataGridViewTextBoxColumn
             // 
-            this.phieuMuaHang_column_loaiSanPham.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.phieuMuaHang_column_loaiSanPham.DataPropertyName = "TenLSP";
-            this.phieuMuaHang_column_loaiSanPham.HeaderText = "Loại sản phẩm";
-            this.phieuMuaHang_column_loaiSanPham.MinimumWidth = 6;
-            this.phieuMuaHang_column_loaiSanPham.Name = "phieuMuaHang_column_loaiSanPham";
-            this.phieuMuaHang_column_loaiSanPham.ReadOnly = true;
-            this.phieuMuaHang_column_loaiSanPham.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.phieuMuaHang_column_loaiSanPham.Width = 124;
+            this.tenLSPDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.tenLSPDataGridViewTextBoxColumn.DataPropertyName = "TenLSP";
+            this.tenLSPDataGridViewTextBoxColumn.HeaderText = "Tên loại sản phẩm";
+            this.tenLSPDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tenLSPDataGridViewTextBoxColumn.Name = "tenLSPDataGridViewTextBoxColumn";
+            this.tenLSPDataGridViewTextBoxColumn.Width = 104;
             // 
-            // phieuMuaHang_column_soLuong
+            // sLDataGridViewTextBoxColumn
             // 
-            this.phieuMuaHang_column_soLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.phieuMuaHang_column_soLuong.DataPropertyName = "SL";
-            this.phieuMuaHang_column_soLuong.HeaderText = "Số lượng";
-            this.phieuMuaHang_column_soLuong.MinimumWidth = 6;
-            this.phieuMuaHang_column_soLuong.Name = "phieuMuaHang_column_soLuong";
-            this.phieuMuaHang_column_soLuong.ReadOnly = true;
-            this.phieuMuaHang_column_soLuong.Width = 89;
+            this.sLDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.sLDataGridViewTextBoxColumn.DataPropertyName = "SL";
+            this.sLDataGridViewTextBoxColumn.HeaderText = "Số lượng";
+            this.sLDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sLDataGridViewTextBoxColumn.Name = "sLDataGridViewTextBoxColumn";
+            this.sLDataGridViewTextBoxColumn.Width = 83;
             // 
-            // phieuMuaHang_column_donViTinh
+            // dVTDataGridViewTextBoxColumn
             // 
-            this.phieuMuaHang_column_donViTinh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.phieuMuaHang_column_donViTinh.DataPropertyName = "DVT";
-            this.phieuMuaHang_column_donViTinh.HeaderText = "Đơn vị tính";
-            this.phieuMuaHang_column_donViTinh.MinimumWidth = 6;
-            this.phieuMuaHang_column_donViTinh.Name = "phieuMuaHang_column_donViTinh";
-            this.phieuMuaHang_column_donViTinh.ReadOnly = true;
-            this.phieuMuaHang_column_donViTinh.Width = 96;
+            this.dVTDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dVTDataGridViewTextBoxColumn.DataPropertyName = "DVT";
+            this.dVTDataGridViewTextBoxColumn.HeaderText = "Đơn vị tính";
+            this.dVTDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dVTDataGridViewTextBoxColumn.Name = "dVTDataGridViewTextBoxColumn";
+            this.dVTDataGridViewTextBoxColumn.Width = 71;
             // 
-            // phieuMuaHang_column_donGia
+            // donGiaDataGridViewTextBoxColumn
             // 
-            this.phieuMuaHang_column_donGia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.phieuMuaHang_column_donGia.DataPropertyName = "DonGia";
-            this.phieuMuaHang_column_donGia.HeaderText = "Đơn giá";
-            this.phieuMuaHang_column_donGia.MinimumWidth = 6;
-            this.phieuMuaHang_column_donGia.Name = "phieuMuaHang_column_donGia";
-            this.phieuMuaHang_column_donGia.ReadOnly = true;
-            this.phieuMuaHang_column_donGia.Width = 82;
+            this.donGiaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.donGiaDataGridViewTextBoxColumn.DataPropertyName = "DonGia";
+            this.donGiaDataGridViewTextBoxColumn.HeaderText = "Đơn giá";
+            this.donGiaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.donGiaDataGridViewTextBoxColumn.Name = "donGiaDataGridViewTextBoxColumn";
+            this.donGiaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.donGiaDataGridViewTextBoxColumn.Width = 76;
             // 
-            // phieuMuaHang_column_thanhTien
+            // thanhTienDataGridViewTextBoxColumn
             // 
-            this.phieuMuaHang_column_thanhTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.phieuMuaHang_column_thanhTien.DataPropertyName = "ThanhTien";
-            this.phieuMuaHang_column_thanhTien.HeaderText = "Thành tiền";
-            this.phieuMuaHang_column_thanhTien.MinimumWidth = 6;
-            this.phieuMuaHang_column_thanhTien.Name = "phieuMuaHang_column_thanhTien";
-            this.phieuMuaHang_column_thanhTien.ReadOnly = true;
-            this.phieuMuaHang_column_thanhTien.Width = 98;
+            this.thanhTienDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.thanhTienDataGridViewTextBoxColumn.DataPropertyName = "ThanhTien";
+            this.thanhTienDataGridViewTextBoxColumn.HeaderText = "Thành tiền";
+            this.thanhTienDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.thanhTienDataGridViewTextBoxColumn.Name = "thanhTienDataGridViewTextBoxColumn";
+            this.thanhTienDataGridViewTextBoxColumn.ReadOnly = true;
+            this.thanhTienDataGridViewTextBoxColumn.Width = 91;
             // 
             // DSPhieuMH_CT_PhieuMuaHang
             // 
@@ -422,12 +416,12 @@
         private QLDQDataSetTableAdapters.loadPhieuMH_byMaPhieuMH_For_CT_PhieuMuaHangTableAdapter loadPhieuMH_byMaPhieuMH_For_CT_PhieuMuaHangTableAdapter;
         private System.Windows.Forms.BindingSource loadCTPhieuMHbyMaPhieuMHBindingSource;
         private QLDQDataSetTableAdapters.loadCTPhieuMH_byMaPhieuMHTableAdapter loadCTPhieuMH_byMaPhieuMHTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phieuMuaHang_column_STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phieuMuaHang_column_sanPham;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phieuMuaHang_column_loaiSanPham;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phieuMuaHang_column_soLuong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phieuMuaHang_column_donViTinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phieuMuaHang_column_donGia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phieuMuaHang_column_thanhTien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sTTDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenSPDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenLSPDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sLDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dVTDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn donGiaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn thanhTienDataGridViewTextBoxColumn;
     }
 }
