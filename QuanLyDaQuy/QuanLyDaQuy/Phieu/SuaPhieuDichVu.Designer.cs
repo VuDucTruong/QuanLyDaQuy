@@ -43,7 +43,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label_TongTien = new System.Windows.Forms.Label();
             this.label_KhachHang = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label_Title = new System.Windows.Forms.Label();
             this.textBox_SoPhieu = new System.Windows.Forms.TextBox();
             this.label_SoPhieu = new System.Windows.Forms.Label();
             this.label_NgayLap = new System.Windows.Forms.Label();
@@ -55,7 +55,7 @@
             this.textBox_TongTienTraTruoc = new System.Windows.Forms.TextBox();
             this.textBox_TongTienConLai = new System.Windows.Forms.TextBox();
             this.textBox_KhachHang = new System.Windows.Forms.TextBox();
-            this.button_Huy = new System.Windows.Forms.Button();
+            this.button_Close = new System.Windows.Forms.Button();
             this.button_OK = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -195,7 +195,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label3, 4, 3);
             this.tableLayoutPanel1.Controls.Add(this.label_TongTien, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.label_KhachHang, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label_Title, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.textBox_SoPhieu, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label_SoPhieu, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label_NgayLap, 3, 1);
@@ -259,18 +259,18 @@
             this.label_KhachHang.TabIndex = 9;
             this.label_KhachHang.Text = "Khách hàng";
             // 
-            // label1
+            // label_Title
             // 
-            this.label1.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.label1, 6);
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(975, 60);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Phiếu dịch vụ";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_Title.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.label_Title, 6);
+            this.label_Title.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label_Title.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Title.Location = new System.Drawing.Point(3, 0);
+            this.label_Title.Name = "label_Title";
+            this.label_Title.Size = new System.Drawing.Size(975, 60);
+            this.label_Title.TabIndex = 3;
+            this.label_Title.Text = "PHIẾU DỊCH VỤ";
+            this.label_Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBox_SoPhieu
             // 
@@ -381,17 +381,17 @@
             this.textBox_KhachHang.Size = new System.Drawing.Size(258, 22);
             this.textBox_KhachHang.TabIndex = 23;
             // 
-            // button_Huy
+            // button_Close
             // 
-            this.button_Huy.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_Huy.Location = new System.Drawing.Point(866, 4);
-            this.button_Huy.Margin = new System.Windows.Forms.Padding(4);
-            this.button_Huy.Name = "button_Huy";
-            this.button_Huy.Size = new System.Drawing.Size(113, 24);
-            this.button_Huy.TabIndex = 14;
-            this.button_Huy.Text = "Hủy";
-            this.button_Huy.UseVisualStyleBackColor = true;
-            this.button_Huy.Click += new System.EventHandler(this.button_Huy_Click);
+            this.button_Close.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_Close.Location = new System.Drawing.Point(866, 4);
+            this.button_Close.Margin = new System.Windows.Forms.Padding(4);
+            this.button_Close.Name = "button_Close";
+            this.button_Close.Size = new System.Drawing.Size(113, 24);
+            this.button_Close.TabIndex = 14;
+            this.button_Close.Text = "Đóng";
+            this.button_Close.UseVisualStyleBackColor = true;
+            this.button_Close.Click += new System.EventHandler(this.button_Huy_Click);
             // 
             // button_OK
             // 
@@ -414,7 +414,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 121F));
-            this.tableLayoutPanel2.Controls.Add(this.button_Huy, 4, 0);
+            this.tableLayoutPanel2.Controls.Add(this.button_Close, 4, 0);
             this.tableLayoutPanel2.Controls.Add(this.button_OK, 3, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 415);
@@ -464,13 +464,13 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_Title;
         private System.Windows.Forms.Label label_NgayLap;
         private System.Windows.Forms.TextBox textBox_SoPhieu;
         private System.Windows.Forms.Label label_SoPhieu;
         private System.Windows.Forms.Label label_KhachHang;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button_Huy;
+        private System.Windows.Forms.Button button_Close;
         private System.Windows.Forms.Button button_OK;
         private System.Windows.Forms.TextBox textBox_NgayLap;
         private System.Windows.Forms.Label label3;

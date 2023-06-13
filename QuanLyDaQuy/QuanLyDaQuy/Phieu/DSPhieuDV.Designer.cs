@@ -49,12 +49,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label_Title = new System.Windows.Forms.Label();
             this.comboBox_SearchMode = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox_Search = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.buttonCT = new System.Windows.Forms.Button();
+            this.button_Search = new System.Windows.Forms.Button();
+            this.button_CT = new System.Windows.Forms.Button();
             this.mãPhiếuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tênKháchHàngDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loadPhieuDV_FullTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadPhieuDV_FullTableAdapter();
@@ -90,12 +90,12 @@
             this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label3, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label_Title, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.comboBox_SearchMode, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.textBox_Search, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 4, 1);
-            this.tableLayoutPanel1.Controls.Add(this.buttonCT, 4, 4);
+            this.tableLayoutPanel1.Controls.Add(this.button_Search, 4, 1);
+            this.tableLayoutPanel1.Controls.Add(this.button_CT, 4, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -318,18 +318,18 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Từ khóa:";
             // 
-            // label1
+            // label_Title
             // 
-            this.label1.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.label1, 5);
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(834, 60);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "DANH SÁCH PHIẾU DỊCH VỤ";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_Title.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.label_Title, 5);
+            this.label_Title.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label_Title.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Title.Location = new System.Drawing.Point(3, 0);
+            this.label_Title.Name = "label_Title";
+            this.label_Title.Size = new System.Drawing.Size(834, 60);
+            this.label_Title.TabIndex = 2;
+            this.label_Title.Text = "DANH SÁCH PHIẾU DỊCH VỤ";
+            this.label_Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // comboBox_SearchMode
             // 
@@ -368,28 +368,28 @@
             this.textBox_Search.Size = new System.Drawing.Size(360, 22);
             this.textBox_Search.TabIndex = 7;
             // 
-            // button1
+            // button_Search
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.button1.Location = new System.Drawing.Point(721, 63);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 34);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Tìm kiếm";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button_Search.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.button_Search.Location = new System.Drawing.Point(721, 63);
+            this.button_Search.Name = "button_Search";
+            this.button_Search.Size = new System.Drawing.Size(116, 34);
+            this.button_Search.TabIndex = 8;
+            this.button_Search.Text = "Tìm kiếm";
+            this.button_Search.UseVisualStyleBackColor = true;
+            this.button_Search.Click += new System.EventHandler(this.button1_Click);
             // 
-            // buttonCT
+            // button_CT
             // 
-            this.buttonCT.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonCT.Location = new System.Drawing.Point(721, 418);
-            this.buttonCT.Name = "buttonCT";
-            this.buttonCT.Size = new System.Drawing.Size(116, 29);
-            this.buttonCT.TabIndex = 9;
-            this.buttonCT.Text = "Xem chi tiết";
-            this.buttonCT.UseVisualStyleBackColor = true;
-            this.buttonCT.Click += new System.EventHandler(this.buttonCT_Click);
+            this.button_CT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_CT.Location = new System.Drawing.Point(721, 418);
+            this.button_CT.Name = "button_CT";
+            this.button_CT.Size = new System.Drawing.Size(116, 29);
+            this.button_CT.TabIndex = 9;
+            this.button_CT.Text = "Xem chi tiết";
+            this.button_CT.UseVisualStyleBackColor = true;
+            this.button_CT.Click += new System.EventHandler(this.buttonCT_Click);
             // 
             // mãPhiếuDataGridViewTextBoxColumn
             // 
@@ -496,13 +496,13 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_Title;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox comboBox_SearchMode;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox_Search;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_Search;
         private System.Windows.Forms.DataGridViewTextBoxColumn mãPhiếuDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn tênKháchHàngDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngàyLậpDataGridViewTextBoxColumn;
@@ -539,7 +539,7 @@
         private System.Windows.Forms.ComboBox comboBox_Ngay;
         private System.Windows.Forms.ComboBox comboBox_Thang;
         private System.Windows.Forms.TextBox textBox_Nam;
-        private System.Windows.Forms.Button buttonCT;
+        private System.Windows.Forms.Button button_CT;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn sDTDataGridViewTextBoxColumn;
