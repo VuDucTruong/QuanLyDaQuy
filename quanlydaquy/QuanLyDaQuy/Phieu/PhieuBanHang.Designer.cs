@@ -156,6 +156,7 @@ namespace QuanLyDaQuy.Phieu
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_phieubanhang.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgv_phieubanhang.RowHeadersVisible = false;
             this.dgv_phieubanhang.RowHeadersWidth = 51;
             this.dgv_phieubanhang.RowTemplate.Height = 24;
             this.dgv_phieubanhang.Size = new System.Drawing.Size(976, 324);
