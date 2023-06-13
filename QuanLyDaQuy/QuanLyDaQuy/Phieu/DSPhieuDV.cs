@@ -299,7 +299,11 @@ namespace QuanLyDaQuy.Phieu
         private void buttonCT_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count <= 0 || dataGridView1.SelectedRows[0].Index < 0)
+            {
+                MessageBox.Show("Bạn phải chọn một dòng để xem chi tiết phiếu!", "Thông báo");
                 return;
+            }    
+
             int index = dataGridView1.SelectedRows[0].Index;
             SuaPhieuDichVu ct_phieu = new SuaPhieuDichVu(Convert.ToInt32(dataGridView1.Rows[index].Cells[0].Value));
             ct_phieu.ShowDialog();
