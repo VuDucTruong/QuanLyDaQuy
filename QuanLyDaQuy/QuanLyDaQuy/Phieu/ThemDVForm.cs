@@ -24,8 +24,7 @@ namespace QuanLyDaQuy.Phieu
             {
                 try
                 {
-                    string query = string.Format("insert into DICHVU values ( N'{0}' , {1} )", DV_tb.Text, Convert.ToDouble(DonGia_tb.Text));
-                    int data = DataProvider.Instance.ExecuteNonQuery(query);
+                    int data = ThemDVFormDAO.Instance.insertDichVu(DV_tb.Text, DonGia_tb.Text);
                     if (data > 0)
                     {
                         MessageBox.Show("Đã thêm dịch vụ thành công!", "Thành công");
@@ -51,7 +50,7 @@ namespace QuanLyDaQuy.Phieu
             int id;
             try
             {
-                id = Convert.ToInt32(DataProvider.Instance.ExecuteScalar("select max(MaDV) from DICHVU")) + 1;
+                id = ThemDVFormDAO.Instance.getMaDVLonNhat() + 1;
             }
             catch { id = 1; }
             MaDV_tb.Text = id.ToString();
