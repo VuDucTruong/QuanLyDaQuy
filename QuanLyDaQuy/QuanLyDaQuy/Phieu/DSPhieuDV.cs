@@ -89,6 +89,15 @@ namespace QuanLyDaQuy.Phieu
         private void button1_Click(object sender, EventArgs e)
         {
             Reload_DataGrid(); 
+            if (dataGridView1.Rows.Count > 0)
+            {
+                MessageBox.Show("Tra cứu thành công", "Thông báo");
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy kết quả", "Thông báo");
+            } 
+                
         }
 
         private bool Validating_DateTimeBy_MonthYear(string date)
@@ -167,11 +176,7 @@ namespace QuanLyDaQuy.Phieu
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0)
-                return;
-            SuaPhieuDichVu ct_phieu = new SuaPhieuDichVu(Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[0].Value));
-            ct_phieu.ShowDialog();
-            Reload_DataGrid();
+
         }
 
         #region Other functions
@@ -289,6 +294,16 @@ namespace QuanLyDaQuy.Phieu
             {
                 textBox_Nam.Text = "0";
             }    
+        }
+
+        private void buttonCT_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count <= 0 || dataGridView1.SelectedRows[0].Index < 0)
+                return;
+            int index = dataGridView1.SelectedRows[0].Index;
+            SuaPhieuDichVu ct_phieu = new SuaPhieuDichVu(Convert.ToInt32(dataGridView1.Rows[index].Cells[0].Value));
+            ct_phieu.ShowDialog();
+            Reload_DataGrid();
         }
     }
 }
