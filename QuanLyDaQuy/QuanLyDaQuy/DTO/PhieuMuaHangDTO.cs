@@ -25,7 +25,7 @@ namespace QuanLyDaQuy.DTO
         {
             DAO.DataProvider.Instance.ExecuteQuery("SET IDENTITY_INSERT dbo.PHIEUMUAHANG ON " +
                 "insert into PhieuMuaHang (MaPhieuMH, MaNCC, NgayLap, TongTien) values" +
-                                                    "(" + MaPhieuMH + ", " + MaNCC + ", '" + NgayLap.ToString("dd/MM/yyyy") + "'," + TongTien + ") " +
+                                                    "(" + MaPhieuMH + ", " + MaNCC + ", '" + NgayLap.ToString("MM/dd/yyyy") + "'," + TongTien + ") " +
                                                     "SET IDENTITY_INSERT dbo.PHIEUMUAHANG OFF");
         }
     }

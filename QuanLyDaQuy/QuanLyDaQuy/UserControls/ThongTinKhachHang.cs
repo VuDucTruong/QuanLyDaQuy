@@ -29,7 +29,7 @@ namespace QuanLyDaQuy.UserControls
             RefreshData();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void button1_Click(object sender, EventArgs e)
         {
             ThemKHForm themKHForm = new ThemKHForm();
             themKHForm.thongTinKhachHang = this;

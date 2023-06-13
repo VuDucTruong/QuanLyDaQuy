@@ -49,51 +49,75 @@ namespace QuanLyDaQuy
 
         private void phiếuMuaHàngToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            PhieuMuaHang phieu = new PhieuMuaHang();   
-            phieu.Show();
+            PhieuMuaHang phieu = new PhieuMuaHang();
+            phieu.ShowDialog(this);
         }
 
         private void phiếuBánHàngToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             PhieuBanHang phieu = new PhieuBanHang();
-            phieu.Show();
+            phieu.ShowDialog(this);
         }
 
         private void phiếuDịchVụToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             PhieuDichVu phieu = new PhieuDichVu();
-            phieu.Show();
-        }
-
-        private void báoCáoTồnKhoToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            BaoCaoTonKho baoCaoTonKho = new BaoCaoTonKho();
-            baoCaoTonKho.Show();
+            phieu.ShowDialog(this);
         }
 
         private void phieuDichVuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DSPhieuDV dSPhieuDV = new DSPhieuDV();
-            dSPhieuDV.Show();
+            dSPhieuDV.ShowDialog(this);
         }
 
         private void phiếuMuaHàngToolStripMenuItem3_Click(object sender, EventArgs e)
         {
             DSPhieuMH dSPhieuMH = new DSPhieuMH();
-            dSPhieuMH.Show();
+            dSPhieuMH.ShowDialog(this);
         }
 
-        private void toolStripTextBox5_Click(object sender, EventArgs e)
-        {
-            DsPhieuBH dsPhieuBH = new DsPhieuBH();
-            dsPhieuBH.Show();
-
-        }
 
         private void phiếuBánHàngToolStripMenuItem3_Click(object sender, EventArgs e)
         {
             DsPhieuBH dsPhieuBH = new DsPhieuBH();
-            dsPhieuBH.Show();
+            dsPhieuBH.ShowDialog(this);
+        }
+
+        private void báoBáoTồnKhoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BaoCaoTonKho baoCaoTonKho = new BaoCaoTonKho();
+            baoCaoTonKho.ShowDialog(this);
+        }
+
+        private void thêmMặtHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            thongTinMatHang1.insert_btn_Click(null, null);
+        }
+
+        private void thêmDịchVụToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            thongTinDichVu1.button1_Click(null, null);
+        }
+
+        private void thêmKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            thongTinKhachHang1.button1_Click(null, null);
+        }
+
+        private void thêmNhàCungCấpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            thongTinNCC1.insert_btn_Click(null, null);
+        }
+
+        private void thêmLoạiSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            thongTinLSP1.insertLSP_btn_Click((object)null, null);
+        }
+
+        private void thêmĐơnVịTínhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            thongTinLSP1.insertDVT_btn_Click(((object)null), null);
         }
     }
 

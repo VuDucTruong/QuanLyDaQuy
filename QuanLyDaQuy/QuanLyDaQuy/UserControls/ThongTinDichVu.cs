@@ -29,7 +29,7 @@ namespace QuanLyDaQuy
             dICHVUTableAdapter.Fill(this.qLDQDataSet.DICHVU);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void button1_Click(object sender, EventArgs e)
         {
             
             ThemDVForm themDVForm = new ThemDVForm();

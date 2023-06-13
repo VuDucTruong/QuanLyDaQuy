@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using QuanLyDaQuy.DTO;
 using QuanLyDaQuy.DAO;
 using System.Text.RegularExpressions;
+using System.Globalization;
 
 namespace QuanLyDaQuy.Phieu
 {
@@ -26,7 +27,6 @@ namespace QuanLyDaQuy.Phieu
             LoadRelatedTables();
             LoadKhachHangFull();
             LoadSanPhamFull();
-
         }
 
 
@@ -561,9 +561,12 @@ namespace QuanLyDaQuy.Phieu
         {
             try
             {
+                DateTime ngayLapDateTime = DateTime.ParseExact(ngayLap, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                string ngayLapFormatted = ngayLapDateTime.ToString("MM/dd/yyyy");
+
                 string query = "insert into PHIEUBANHANG " +
                 "( MaKH , NgayLap , TongTien ) values" +
-                $"({maKH},'{ngayLap}',{tongTien})";
+                $"({maKH},'{ngayLapFormatted}',{tongTien})";
 
                 int affectedRows = DataProvider.Instance.ExecuteNonQuery(query);
                 MessageBox.Show($"Thêm thành công {affectedRows} phiếu bán hàng");

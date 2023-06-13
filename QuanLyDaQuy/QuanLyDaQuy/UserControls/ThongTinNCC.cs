@@ -26,7 +26,7 @@ namespace QuanLyDaQuy.UserControls
         {
             RefreshData();
         }
-        private void insert_btn_Click(object sender, EventArgs e)
+        public void insert_btn_Click(object sender, EventArgs e)
         {
             ThemNCCForm themNCCForm = new ThemNCCForm();
             themNCCForm.thongTinNCC = this;

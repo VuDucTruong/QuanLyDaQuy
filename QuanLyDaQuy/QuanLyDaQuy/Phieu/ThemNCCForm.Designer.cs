@@ -47,7 +47,7 @@
             // 
             this.canncel_btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.canncel_btn.Location = new System.Drawing.Point(708, 236);
+            this.canncel_btn.Location = new System.Drawing.Point(722, 236);
             this.canncel_btn.Name = "canncel_btn";
             this.canncel_btn.Size = new System.Drawing.Size(75, 23);
             this.canncel_btn.TabIndex = 46;
@@ -59,9 +59,9 @@
             // 
             this.insert_btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.insert_btn.Location = new System.Drawing.Point(605, 236);
+            this.insert_btn.Location = new System.Drawing.Point(560, 236);
             this.insert_btn.Name = "insert_btn";
-            this.insert_btn.Size = new System.Drawing.Size(75, 23);
+            this.insert_btn.Size = new System.Drawing.Size(82, 23);
             this.insert_btn.TabIndex = 45;
             this.insert_btn.Text = "Thêm";
             this.insert_btn.UseVisualStyleBackColor = true;
@@ -69,9 +69,8 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.AutoSize = true;
+            this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Inset;
             this.tableLayoutPanel1.ColumnCount = 4;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -86,7 +85,7 @@
             this.tableLayoutPanel1.Controls.Add(this.Address_tb, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.Phone_tb, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 2, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 82);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(26, 74);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
@@ -172,8 +171,8 @@
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(293, 9);
+            this.label1.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(261, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(330, 32);
             this.label1.TabIndex = 43;
@@ -184,13 +183,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 277);
+            this.ClientSize = new System.Drawing.Size(843, 277);
             this.Controls.Add(this.canncel_btn);
             this.Controls.Add(this.insert_btn);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ThemNCCForm";
-            this.Text = "ThemNCCForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "THÊM NHÀ CUNG CẤP";
             this.Load += new System.EventHandler(this.ThemNCCForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
