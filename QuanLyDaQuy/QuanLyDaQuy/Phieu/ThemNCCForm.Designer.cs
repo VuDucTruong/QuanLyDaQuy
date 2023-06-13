@@ -39,7 +39,7 @@
             this.Address_tb = new System.Windows.Forms.TextBox();
             this.Phone_tb = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label_Title = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -169,15 +169,15 @@
             this.label2.Text = "Địa chỉ : ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // label_Title
             // 
-            this.label1.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(261, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(330, 32);
-            this.label1.TabIndex = 43;
-            this.label1.Text = "THÊM NHÀ CUNG CẤP";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label_Title.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Title.Location = new System.Drawing.Point(174, 9);
+            this.label_Title.Name = "label_Title";
+            this.label_Title.Size = new System.Drawing.Size(487, 43);
+            this.label_Title.TabIndex = 43;
+            this.label_Title.Text = "THÊM NHÀ CUNG CẤP";
+            this.label_Title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // ThemNCCForm
             // 
@@ -187,7 +187,7 @@
             this.Controls.Add(this.canncel_btn);
             this.Controls.Add(this.insert_btn);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label_Title);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ThemNCCForm";
@@ -211,7 +211,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox Phone_tb;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_Title;
         private System.Windows.Forms.TextBox Address_tb;
         private System.Windows.Forms.TextBox MaNCC_tb;
         private System.Windows.Forms.Label label2;

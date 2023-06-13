@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label_Title = new System.Windows.Forms.Label();
             this.MaSP_tb = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.LoaiSP_cb = new System.Windows.Forms.ComboBox();
@@ -46,24 +46,24 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.DVT_tb = new System.Windows.Forms.TextBox();
             this.insert_btn = new System.Windows.Forms.Button();
-            this.update_btn = new System.Windows.Forms.Button();
+            this.cancel_btn = new System.Windows.Forms.Button();
             this.loadLoaiSanPhamTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadLoaiSanPhamTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.loadLoaiSanPhamBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // label_Title
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.label_Title.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(292, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(257, 33);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "THÊM MẶT HÀNG";
+            this.label_Title.AutoSize = true;
+            this.label_Title.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Title.Location = new System.Drawing.Point(292, 9);
+            this.label_Title.Name = "label_Title";
+            this.label_Title.Size = new System.Drawing.Size(257, 33);
+            this.label_Title.TabIndex = 0;
+            this.label_Title.Text = "THÊM MẶT HÀNG";
             // 
             // MaSP_tb
             // 
@@ -220,15 +220,15 @@
             this.insert_btn.UseVisualStyleBackColor = true;
             this.insert_btn.Click += new System.EventHandler(this.insert_btn_Click);
             // 
-            // update_btn
+            // cancel_btn
             // 
-            this.update_btn.Location = new System.Drawing.Point(713, 237);
-            this.update_btn.Name = "update_btn";
-            this.update_btn.Size = new System.Drawing.Size(75, 23);
-            this.update_btn.TabIndex = 38;
-            this.update_btn.Text = "Hủy bỏ";
-            this.update_btn.UseVisualStyleBackColor = true;
-            this.update_btn.Click += new System.EventHandler(this.update_btn_Click);
+            this.cancel_btn.Location = new System.Drawing.Point(713, 237);
+            this.cancel_btn.Name = "cancel_btn";
+            this.cancel_btn.Size = new System.Drawing.Size(75, 23);
+            this.cancel_btn.TabIndex = 38;
+            this.cancel_btn.Text = "Hủy bỏ";
+            this.cancel_btn.UseVisualStyleBackColor = true;
+            this.cancel_btn.Click += new System.EventHandler(this.update_btn_Click);
             // 
             // loadLoaiSanPhamTableAdapter
             // 
@@ -239,10 +239,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(801, 279);
-            this.Controls.Add(this.update_btn);
+            this.Controls.Add(this.cancel_btn);
             this.Controls.Add(this.insert_btn);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label_Title);
             this.Name = "ThemSPForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "THÊM MẶT HÀNG";
@@ -258,7 +258,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_Title;
         private System.Windows.Forms.TextBox MaSP_tb;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox LoaiSP_cb;
@@ -272,7 +272,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button insert_btn;
-        private System.Windows.Forms.Button update_btn;
+        private System.Windows.Forms.Button cancel_btn;
         private System.Windows.Forms.TextBox DVT_tb;
         private QLDQDataSet qLDQDataSet;
         private System.Windows.Forms.BindingSource loadLoaiSanPhamBindingSource;
