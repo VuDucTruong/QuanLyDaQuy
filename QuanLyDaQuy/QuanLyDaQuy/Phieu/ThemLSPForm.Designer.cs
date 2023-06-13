@@ -83,7 +83,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 306F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 308F));
             this.tableLayoutPanel1.Controls.Add(this.id_tb, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label10, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.LSP_tb, 1, 1);
@@ -97,13 +97,13 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(760, 126);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 126);
             this.tableLayoutPanel1.TabIndex = 48;
             // 
             // id_tb
             // 
             this.id_tb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.id_tb.Location = new System.Drawing.Point(135, 21);
+            this.id_tb.Location = new System.Drawing.Point(144, 21);
             this.id_tb.Name = "id_tb";
             this.id_tb.ReadOnly = true;
             this.id_tb.Size = new System.Drawing.Size(208, 22);
@@ -113,16 +113,16 @@
             // 
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(5, 24);
+            this.label10.Location = new System.Drawing.Point(5, 23);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(122, 16);
+            this.label10.Size = new System.Drawing.Size(131, 17);
             this.label10.TabIndex = 34;
             this.label10.Text = "Mã loại sản phẩm : ";
             // 
             // LSP_tb
             // 
             this.LSP_tb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.LSP_tb.Location = new System.Drawing.Point(135, 83);
+            this.LSP_tb.Location = new System.Drawing.Point(144, 83);
             this.LSP_tb.Name = "LSP_tb";
             this.LSP_tb.Size = new System.Drawing.Size(208, 22);
             this.LSP_tb.TabIndex = 24;
@@ -131,9 +131,9 @@
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(5, 86);
+            this.label5.Location = new System.Drawing.Point(5, 85);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(122, 16);
+            this.label5.Size = new System.Drawing.Size(131, 17);
             this.label5.TabIndex = 22;
             this.label5.Text = "Loại sản phẩm : ";
             // 
@@ -141,18 +141,18 @@
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(351, 24);
+            this.label6.Location = new System.Drawing.Point(360, 23);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(96, 16);
+            this.label6.Size = new System.Drawing.Size(109, 17);
             this.label6.TabIndex = 23;
             this.label6.Text = "Lợi nhuận (%) : ";
             // 
             // LoiNhuan_tb
             // 
             this.LoiNhuan_tb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.LoiNhuan_tb.Location = new System.Drawing.Point(455, 21);
+            this.LoiNhuan_tb.Location = new System.Drawing.Point(477, 21);
             this.LoiNhuan_tb.Name = "LoiNhuan_tb";
-            this.LoiNhuan_tb.Size = new System.Drawing.Size(300, 22);
+            this.LoiNhuan_tb.Size = new System.Drawing.Size(302, 22);
             this.LoiNhuan_tb.TabIndex = 25;
             this.LoiNhuan_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LoiNhuan_tb_KeyPress);
             // 
@@ -160,9 +160,9 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(351, 86);
+            this.label2.Location = new System.Drawing.Point(360, 85);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 16);
+            this.label2.Size = new System.Drawing.Size(109, 17);
             this.label2.TabIndex = 47;
             this.label2.Text = "Đơn vị tính : ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -173,9 +173,9 @@
             this.DVT_cb.DataSource = this.dONVITINHBindingSource;
             this.DVT_cb.DisplayMember = "DVT";
             this.DVT_cb.FormattingEnabled = true;
-            this.DVT_cb.Location = new System.Drawing.Point(455, 82);
+            this.DVT_cb.Location = new System.Drawing.Point(477, 81);
             this.DVT_cb.Name = "DVT_cb";
-            this.DVT_cb.Size = new System.Drawing.Size(300, 24);
+            this.DVT_cb.Size = new System.Drawing.Size(302, 24);
             this.DVT_cb.TabIndex = 48;
             // 
             // dONVITINHBindingSource
