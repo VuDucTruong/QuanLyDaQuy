@@ -51,11 +51,17 @@
             this.loadPhieuMH_byTongTienTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadPhieuMH_byTongTienTableAdapter();
             this.loadPhieuMH_byTenNCCTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadPhieuMH_byTenNCCTableAdapter();
             this.loadPhieuMH_byMaPhieuMHTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadPhieuMH_byMaPhieuMHTableAdapter();
+            this.loadPhieuMHFullBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.maPhieuMHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenNCCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngayLapDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tongTienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgView_DS_phieu_mua_hang)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loadPhieuMHFullBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loadPhieuMHFullBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel
@@ -138,14 +144,24 @@
             // 
             // dtgView_DS_phieu_mua_hang
             // 
+            this.dtgView_DS_phieu_mua_hang.AllowUserToAddRows = false;
             this.dtgView_DS_phieu_mua_hang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtgView_DS_phieu_mua_hang.AutoGenerateColumns = false;
             this.dtgView_DS_phieu_mua_hang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgView_DS_phieu_mua_hang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.maPhieuMHDataGridViewTextBoxColumn,
+            this.tenNCCDataGridViewTextBoxColumn,
+            this.ngayLapDataGridViewTextBoxColumn,
+            this.tongTienDataGridViewTextBoxColumn});
             this.tableLayoutPanel.SetColumnSpan(this.dtgView_DS_phieu_mua_hang, 5);
+            this.dtgView_DS_phieu_mua_hang.DataSource = this.loadPhieuMHFullBindingSource1;
             this.dtgView_DS_phieu_mua_hang.Location = new System.Drawing.Point(3, 138);
             this.dtgView_DS_phieu_mua_hang.Name = "dtgView_DS_phieu_mua_hang";
+            this.dtgView_DS_phieu_mua_hang.RowHeadersVisible = false;
             this.dtgView_DS_phieu_mua_hang.RowHeadersWidth = 51;
             this.dtgView_DS_phieu_mua_hang.RowTemplate.Height = 24;
+            this.dtgView_DS_phieu_mua_hang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgView_DS_phieu_mua_hang.Size = new System.Drawing.Size(794, 318);
             this.dtgView_DS_phieu_mua_hang.TabIndex = 0;
             this.dtgView_DS_phieu_mua_hang.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dtgView_DS_phieu_mua_hang_DataBindingComplete);
@@ -301,6 +317,46 @@
             // 
             this.loadPhieuMH_byMaPhieuMHTableAdapter.ClearBeforeFill = true;
             // 
+            // loadPhieuMHFullBindingSource1
+            // 
+            this.loadPhieuMHFullBindingSource1.DataMember = "loadPhieuMH_Full";
+            this.loadPhieuMHFullBindingSource1.DataSource = this.qLDQDataSet;
+            // 
+            // maPhieuMHDataGridViewTextBoxColumn
+            // 
+            this.maPhieuMHDataGridViewTextBoxColumn.DataPropertyName = "MaPhieuMH";
+            this.maPhieuMHDataGridViewTextBoxColumn.HeaderText = "Mã phiếu";
+            this.maPhieuMHDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maPhieuMHDataGridViewTextBoxColumn.Name = "maPhieuMHDataGridViewTextBoxColumn";
+            this.maPhieuMHDataGridViewTextBoxColumn.ReadOnly = true;
+            this.maPhieuMHDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // tenNCCDataGridViewTextBoxColumn
+            // 
+            this.tenNCCDataGridViewTextBoxColumn.DataPropertyName = "TenNCC";
+            this.tenNCCDataGridViewTextBoxColumn.HeaderText = "Tên nhà cung cấp";
+            this.tenNCCDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tenNCCDataGridViewTextBoxColumn.Name = "tenNCCDataGridViewTextBoxColumn";
+            this.tenNCCDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // ngayLapDataGridViewTextBoxColumn
+            // 
+            this.ngayLapDataGridViewTextBoxColumn.DataPropertyName = "NgayLap";
+            this.ngayLapDataGridViewTextBoxColumn.HeaderText = "Ngày lập";
+            this.ngayLapDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.ngayLapDataGridViewTextBoxColumn.Name = "ngayLapDataGridViewTextBoxColumn";
+            this.ngayLapDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ngayLapDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // tongTienDataGridViewTextBoxColumn
+            // 
+            this.tongTienDataGridViewTextBoxColumn.DataPropertyName = "TongTien";
+            this.tongTienDataGridViewTextBoxColumn.HeaderText = "Tổng tiền";
+            this.tongTienDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tongTienDataGridViewTextBoxColumn.Name = "tongTienDataGridViewTextBoxColumn";
+            this.tongTienDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tongTienDataGridViewTextBoxColumn.Width = 125;
+            // 
             // DSPhieuMH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -318,6 +374,7 @@
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loadPhieuMHFullBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loadPhieuMHFullBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -346,5 +403,10 @@
         private System.Windows.Forms.ComboBox comboBox_Thang;
         private System.Windows.Forms.Label lb_nam;
         private System.Windows.Forms.TextBox textBox_Nam;
+        private System.Windows.Forms.BindingSource loadPhieuMHFullBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maPhieuMHDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenNCCDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ngayLapDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tongTienDataGridViewTextBoxColumn;
     }
 }
