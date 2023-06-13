@@ -258,6 +258,7 @@
             this.dt_grid_phieumuahang.GridColor = System.Drawing.SystemColors.Control;
             this.dt_grid_phieumuahang.Location = new System.Drawing.Point(3, 143);
             this.dt_grid_phieumuahang.Name = "dt_grid_phieumuahang";
+            this.dt_grid_phieumuahang.RowHeadersVisible = false;
             this.dt_grid_phieumuahang.RowHeadersWidth = 51;
             this.dt_grid_phieumuahang.RowTemplate.Height = 24;
             this.dt_grid_phieumuahang.Size = new System.Drawing.Size(789, 336);
