@@ -1,4 +1,6 @@
-﻿using QuanLyDaQuy.DAO;
+﻿using iText.Layout.Element;
+using QuanLyDaQuy.DAO;
+using QuanLyDaQuy.Export;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,6 +49,17 @@ namespace QuanLyDaQuy.Phieu
             // TODO: This line of code loads data into the 'qLDQDataSet.loadTonKho' table. You can move, or remove it, as needed.
             this.loadTonKhoTableAdapter.Fill(this.qLDQDataSet.loadTonKho, Thang, Nam);
             MessageBox.Show("Đã tra cứu thành công !");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string STRcontent = String.Format("Tháng : {0} Năm : {1}", comboBox1.Text, comboBox2.Text);
+            Paragraph header = new Paragraph(label1.Text).SetFont(ExportPDF.GetUtf8Font());
+            Paragraph content = new Paragraph(STRcontent).SetFont(ExportPDF.GetUtf8Font());
+            if(ExportPDF.ExcuteDataGridView(header, content, dataGridView1))
+            {
+                MessageBox.Show("Xuất thành công !");
+            }
         }
     }
 }

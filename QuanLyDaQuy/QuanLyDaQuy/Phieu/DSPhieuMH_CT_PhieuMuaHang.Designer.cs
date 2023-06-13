@@ -43,12 +43,6 @@
             this.tb_sodienthoai = new System.Windows.Forms.TextBox();
             this.tab_lay_phieumuahang = new System.Windows.Forms.TableLayoutPanel();
             this.dt_grid_phieumuahang = new System.Windows.Forms.DataGridView();
-            this.loadCTPhieuMHbyMaPhieuMHBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tb_nhaCungCap = new System.Windows.Forms.TextBox();
-            this.lb_thanhTien = new System.Windows.Forms.Label();
-            this.tb_thanhTien = new System.Windows.Forms.TextBox();
-            this.loadPhieuMH_byMaPhieuMH_For_CT_PhieuMuaHangTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadPhieuMH_byMaPhieuMH_For_CT_PhieuMuaHangTableAdapter();
-            this.loadCTPhieuMH_byMaPhieuMHTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadCTPhieuMH_byMaPhieuMHTableAdapter();
             this.sTTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenLSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +50,13 @@
             this.dVTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.donGiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thanhTienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loadCTPhieuMHbyMaPhieuMHBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tb_nhaCungCap = new System.Windows.Forms.TextBox();
+            this.lb_thanhTien = new System.Windows.Forms.Label();
+            this.tb_thanhTien = new System.Windows.Forms.TextBox();
+            this.loadPhieuMH_byMaPhieuMH_For_CT_PhieuMuaHangTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadPhieuMH_byMaPhieuMH_For_CT_PhieuMuaHangTableAdapter();
+            this.loadCTPhieuMH_byMaPhieuMHTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadCTPhieuMH_byMaPhieuMHTableAdapter();
+            this.exPDF_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.loadPhieuMuaHangFull_BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).BeginInit();
             this.tab_lay_phieumuahang.SuspendLayout();
@@ -70,9 +71,9 @@
             this.tab_lay_phieumuahang.SetColumnSpan(this.lb_title, 6);
             this.lb_title.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lb_title.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_title.Location = new System.Drawing.Point(3, 0);
+            this.lb_title.Location = new System.Drawing.Point(4, 1);
             this.lb_title.Name = "lb_title";
-            this.lb_title.Size = new System.Drawing.Size(789, 35);
+            this.lb_title.Size = new System.Drawing.Size(1046, 35);
             this.lb_title.TabIndex = 0;
             this.lb_title.Text = "THÔNG TIN PHIẾU MUA HÀNG";
             this.lb_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -83,9 +84,9 @@
             this.lb_sophieu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lb_sophieu.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_sophieu.ForeColor = System.Drawing.Color.Black;
-            this.lb_sophieu.Location = new System.Drawing.Point(3, 35);
+            this.lb_sophieu.Location = new System.Drawing.Point(4, 37);
             this.lb_sophieu.Name = "lb_sophieu";
-            this.lb_sophieu.Size = new System.Drawing.Size(133, 35);
+            this.lb_sophieu.Size = new System.Drawing.Size(177, 35);
             this.lb_sophieu.TabIndex = 1;
             this.lb_sophieu.Text = "Số phiếu:";
             this.lb_sophieu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -97,10 +98,10 @@
             this.tb_sophieu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tb_sophieu.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadPhieuMuaHangFull_BindingSource, "MaPhieuMH", true));
             this.tb_sophieu.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_sophieu.Location = new System.Drawing.Point(142, 40);
+            this.tb_sophieu.Location = new System.Drawing.Point(188, 42);
             this.tb_sophieu.Name = "tb_sophieu";
             this.tb_sophieu.ReadOnly = true;
-            this.tb_sophieu.Size = new System.Drawing.Size(133, 25);
+            this.tb_sophieu.Size = new System.Drawing.Size(177, 25);
             this.tb_sophieu.TabIndex = 2;
             // 
             // loadPhieuMuaHangFull_BindingSource
@@ -118,9 +119,9 @@
             this.kb_ngaylap.AutoSize = true;
             this.kb_ngaylap.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kb_ngaylap.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kb_ngaylap.Location = new System.Drawing.Point(3, 70);
+            this.kb_ngaylap.Location = new System.Drawing.Point(4, 73);
             this.kb_ngaylap.Name = "kb_ngaylap";
-            this.kb_ngaylap.Size = new System.Drawing.Size(133, 35);
+            this.kb_ngaylap.Size = new System.Drawing.Size(177, 35);
             this.kb_ngaylap.TabIndex = 3;
             this.kb_ngaylap.Text = "Ngày lập:";
             this.kb_ngaylap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -132,10 +133,10 @@
             this.tb_ngaylap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tb_ngaylap.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadPhieuMuaHangFull_BindingSource, "NgayLap", true));
             this.tb_ngaylap.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_ngaylap.Location = new System.Drawing.Point(142, 75);
+            this.tb_ngaylap.Location = new System.Drawing.Point(188, 78);
             this.tb_ngaylap.Name = "tb_ngaylap";
             this.tb_ngaylap.ReadOnly = true;
-            this.tb_ngaylap.Size = new System.Drawing.Size(133, 25);
+            this.tb_ngaylap.Size = new System.Drawing.Size(177, 25);
             this.tb_ngaylap.TabIndex = 4;
             // 
             // lb_nhacungcap
@@ -143,9 +144,9 @@
             this.lb_nhacungcap.AutoSize = true;
             this.lb_nhacungcap.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lb_nhacungcap.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_nhacungcap.Location = new System.Drawing.Point(281, 35);
+            this.lb_nhacungcap.Location = new System.Drawing.Point(372, 37);
             this.lb_nhacungcap.Name = "lb_nhacungcap";
-            this.lb_nhacungcap.Size = new System.Drawing.Size(133, 35);
+            this.lb_nhacungcap.Size = new System.Drawing.Size(177, 35);
             this.lb_nhacungcap.TabIndex = 5;
             this.lb_nhacungcap.Text = "Nhà cung cấp:";
             this.lb_nhacungcap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -155,9 +156,9 @@
             this.lb_diachi.AutoSize = true;
             this.lb_diachi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lb_diachi.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_diachi.Location = new System.Drawing.Point(281, 70);
+            this.lb_diachi.Location = new System.Drawing.Point(372, 73);
             this.lb_diachi.Name = "lb_diachi";
-            this.lb_diachi.Size = new System.Drawing.Size(133, 35);
+            this.lb_diachi.Size = new System.Drawing.Size(177, 35);
             this.lb_diachi.TabIndex = 7;
             this.lb_diachi.Text = "Địa chỉ:";
             this.lb_diachi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -170,10 +171,10 @@
             this.tab_lay_phieumuahang.SetColumnSpan(this.tb_diachi, 2);
             this.tb_diachi.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadPhieuMuaHangFull_BindingSource, "DiaChi", true));
             this.tb_diachi.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_diachi.Location = new System.Drawing.Point(420, 75);
+            this.tb_diachi.Location = new System.Drawing.Point(556, 78);
             this.tb_diachi.Name = "tb_diachi";
             this.tb_diachi.ReadOnly = true;
-            this.tb_diachi.Size = new System.Drawing.Size(270, 25);
+            this.tb_diachi.Size = new System.Drawing.Size(358, 25);
             this.tb_diachi.TabIndex = 8;
             // 
             // lb_sodienthoai
@@ -181,9 +182,9 @@
             this.lb_sodienthoai.AutoSize = true;
             this.lb_sodienthoai.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lb_sodienthoai.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_sodienthoai.Location = new System.Drawing.Point(281, 105);
+            this.lb_sodienthoai.Location = new System.Drawing.Point(372, 109);
             this.lb_sodienthoai.Name = "lb_sodienthoai";
-            this.lb_sodienthoai.Size = new System.Drawing.Size(133, 35);
+            this.lb_sodienthoai.Size = new System.Drawing.Size(177, 35);
             this.lb_sodienthoai.TabIndex = 9;
             this.lb_sodienthoai.Text = "Số điện thoại:";
             this.lb_sodienthoai.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -196,15 +197,16 @@
             this.tab_lay_phieumuahang.SetColumnSpan(this.tb_sodienthoai, 2);
             this.tb_sodienthoai.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadPhieuMuaHangFull_BindingSource, "SDT", true));
             this.tb_sodienthoai.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_sodienthoai.Location = new System.Drawing.Point(420, 110);
+            this.tb_sodienthoai.Location = new System.Drawing.Point(556, 114);
             this.tb_sodienthoai.Name = "tb_sodienthoai";
             this.tb_sodienthoai.ReadOnly = true;
-            this.tb_sodienthoai.Size = new System.Drawing.Size(270, 25);
+            this.tb_sodienthoai.Size = new System.Drawing.Size(358, 25);
             this.tb_sodienthoai.TabIndex = 10;
             // 
             // tab_lay_phieumuahang
             // 
             this.tab_lay_phieumuahang.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tab_lay_phieumuahang.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tab_lay_phieumuahang.ColumnCount = 6;
             this.tab_lay_phieumuahang.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.52629F));
             this.tab_lay_phieumuahang.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.52629F));
@@ -224,6 +226,7 @@
             this.tab_lay_phieumuahang.Controls.Add(this.tb_sodienthoai, 3, 3);
             this.tab_lay_phieumuahang.Controls.Add(this.dt_grid_phieumuahang, 0, 4);
             this.tab_lay_phieumuahang.Controls.Add(this.tb_nhaCungCap, 3, 1);
+            this.tab_lay_phieumuahang.Controls.Add(this.exPDF_btn, 5, 6);
             this.tab_lay_phieumuahang.Controls.Add(this.lb_thanhTien, 3, 5);
             this.tab_lay_phieumuahang.Controls.Add(this.tb_thanhTien, 4, 5);
             this.tab_lay_phieumuahang.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -237,7 +240,7 @@
             this.tab_lay_phieumuahang.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tab_lay_phieumuahang.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tab_lay_phieumuahang.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tab_lay_phieumuahang.Size = new System.Drawing.Size(797, 519);
+            this.tab_lay_phieumuahang.Size = new System.Drawing.Size(1056, 581);
             this.tab_lay_phieumuahang.TabIndex = 1;
             // 
             // dt_grid_phieumuahang
@@ -256,61 +259,13 @@
             this.dt_grid_phieumuahang.DataSource = this.loadCTPhieuMHbyMaPhieuMHBindingSource;
             this.dt_grid_phieumuahang.Dock = System.Windows.Forms.DockStyle.Top;
             this.dt_grid_phieumuahang.GridColor = System.Drawing.SystemColors.Control;
-            this.dt_grid_phieumuahang.Location = new System.Drawing.Point(3, 143);
+            this.dt_grid_phieumuahang.Location = new System.Drawing.Point(4, 148);
             this.dt_grid_phieumuahang.Name = "dt_grid_phieumuahang";
             this.dt_grid_phieumuahang.RowHeadersVisible = false;
             this.dt_grid_phieumuahang.RowHeadersWidth = 51;
             this.dt_grid_phieumuahang.RowTemplate.Height = 24;
-            this.dt_grid_phieumuahang.Size = new System.Drawing.Size(789, 336);
+            this.dt_grid_phieumuahang.Size = new System.Drawing.Size(1046, 336);
             this.dt_grid_phieumuahang.TabIndex = 11;
-            // 
-            // loadCTPhieuMHbyMaPhieuMHBindingSource
-            // 
-            this.loadCTPhieuMHbyMaPhieuMHBindingSource.DataMember = "loadCTPhieuMH_byMaPhieuMH";
-            this.loadCTPhieuMHbyMaPhieuMHBindingSource.DataSource = this.qLDQDataSet;
-            // 
-            // tb_nhaCungCap
-            // 
-            this.tb_nhaCungCap.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.tb_nhaCungCap.BackColor = System.Drawing.SystemColors.Window;
-            this.tab_lay_phieumuahang.SetColumnSpan(this.tb_nhaCungCap, 2);
-            this.tb_nhaCungCap.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadPhieuMuaHangFull_BindingSource, "TenNCC", true));
-            this.tb_nhaCungCap.Location = new System.Drawing.Point(420, 41);
-            this.tb_nhaCungCap.Name = "tb_nhaCungCap";
-            this.tb_nhaCungCap.ReadOnly = true;
-            this.tb_nhaCungCap.Size = new System.Drawing.Size(270, 22);
-            this.tb_nhaCungCap.TabIndex = 20;
-            // 
-            // lb_thanhTien
-            // 
-            this.lb_thanhTien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lb_thanhTien.AutoSize = true;
-            this.lb_thanhTien.Location = new System.Drawing.Point(484, 482);
-            this.lb_thanhTien.Name = "lb_thanhTien";
-            this.lb_thanhTien.Size = new System.Drawing.Size(69, 20);
-            this.lb_thanhTien.TabIndex = 12;
-            this.lb_thanhTien.Text = "Tổng tiền: ";
-            // 
-            // tb_thanhTien
-            // 
-            this.tb_thanhTien.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.tb_thanhTien.BackColor = System.Drawing.SystemColors.Window;
-            this.tab_lay_phieumuahang.SetColumnSpan(this.tb_thanhTien, 2);
-            this.tb_thanhTien.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadPhieuMuaHangFull_BindingSource, "TongTien", true));
-            this.tb_thanhTien.Location = new System.Drawing.Point(573, 485);
-            this.tb_thanhTien.Name = "tb_thanhTien";
-            this.tb_thanhTien.ReadOnly = true;
-            this.tb_thanhTien.Size = new System.Drawing.Size(219, 22);
-            this.tb_thanhTien.TabIndex = 13;
-            // 
-            // loadPhieuMH_byMaPhieuMH_For_CT_PhieuMuaHangTableAdapter
-            // 
-            this.loadPhieuMH_byMaPhieuMH_For_CT_PhieuMuaHangTableAdapter.ClearBeforeFill = true;
-            // 
-            // loadCTPhieuMH_byMaPhieuMHTableAdapter
-            // 
-            this.loadCTPhieuMH_byMaPhieuMHTableAdapter.ClearBeforeFill = true;
             // 
             // sTTDataGridViewTextBoxColumn
             // 
@@ -377,11 +332,70 @@
             this.thanhTienDataGridViewTextBoxColumn.ReadOnly = true;
             this.thanhTienDataGridViewTextBoxColumn.Width = 91;
             // 
+            // loadCTPhieuMHbyMaPhieuMHBindingSource
+            // 
+            this.loadCTPhieuMHbyMaPhieuMHBindingSource.DataMember = "loadCTPhieuMH_byMaPhieuMH";
+            this.loadCTPhieuMHbyMaPhieuMHBindingSource.DataSource = this.qLDQDataSet;
+            // 
+            // tb_nhaCungCap
+            // 
+            this.tb_nhaCungCap.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_nhaCungCap.BackColor = System.Drawing.SystemColors.Window;
+            this.tab_lay_phieumuahang.SetColumnSpan(this.tb_nhaCungCap, 2);
+            this.tb_nhaCungCap.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadPhieuMuaHangFull_BindingSource, "TenNCC", true));
+            this.tb_nhaCungCap.Location = new System.Drawing.Point(556, 43);
+            this.tb_nhaCungCap.Name = "tb_nhaCungCap";
+            this.tb_nhaCungCap.ReadOnly = true;
+            this.tb_nhaCungCap.Size = new System.Drawing.Size(358, 22);
+            this.tb_nhaCungCap.TabIndex = 20;
+            // 
+            // lb_thanhTien
+            // 
+            this.lb_thanhTien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lb_thanhTien.AutoSize = true;
+            this.lb_thanhTien.Location = new System.Drawing.Point(664, 488);
+            this.lb_thanhTien.Name = "lb_thanhTien";
+            this.lb_thanhTien.Size = new System.Drawing.Size(69, 20);
+            this.lb_thanhTien.TabIndex = 12;
+            this.lb_thanhTien.Text = "Tổng tiền: ";
+            // 
+            // tb_thanhTien
+            // 
+            this.tb_thanhTien.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.tb_thanhTien.BackColor = System.Drawing.SystemColors.Window;
+            this.tab_lay_phieumuahang.SetColumnSpan(this.tb_thanhTien, 2);
+            this.tb_thanhTien.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadPhieuMuaHangFull_BindingSource, "TongTien", true));
+            this.tb_thanhTien.Location = new System.Drawing.Point(831, 491);
+            this.tb_thanhTien.Name = "tb_thanhTien";
+            this.tb_thanhTien.ReadOnly = true;
+            this.tb_thanhTien.Size = new System.Drawing.Size(219, 22);
+            this.tb_thanhTien.TabIndex = 13;
+            // 
+            // loadPhieuMH_byMaPhieuMH_For_CT_PhieuMuaHangTableAdapter
+            // 
+            this.loadPhieuMH_byMaPhieuMH_For_CT_PhieuMuaHangTableAdapter.ClearBeforeFill = true;
+            // 
+            // loadCTPhieuMH_byMaPhieuMHTableAdapter
+            // 
+            this.loadCTPhieuMH_byMaPhieuMHTableAdapter.ClearBeforeFill = true;
+            // 
+            // exPDF_btn
+            // 
+            this.exPDF_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.exPDF_btn.Location = new System.Drawing.Point(947, 540);
+            this.exPDF_btn.Name = "exPDF_btn";
+            this.exPDF_btn.Size = new System.Drawing.Size(103, 35);
+            this.exPDF_btn.TabIndex = 21;
+            this.exPDF_btn.Text = "Xuất PDF";
+            this.exPDF_btn.UseVisualStyleBackColor = true;
+            this.exPDF_btn.Click += new System.EventHandler(this.button1_Click);
+            // 
             // DSPhieuMH_CT_PhieuMuaHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(797, 519);
+            this.ClientSize = new System.Drawing.Size(1056, 581);
             this.Controls.Add(this.tab_lay_phieumuahang);
             this.Name = "DSPhieuMH_CT_PhieuMuaHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -424,5 +438,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dVTDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn donGiaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn thanhTienDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button exPDF_btn;
     }
 }
