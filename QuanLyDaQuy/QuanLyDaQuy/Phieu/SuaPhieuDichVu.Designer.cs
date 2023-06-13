@@ -269,7 +269,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(975, 60);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Phiếu dịch vụ";
+            this.label1.Text = "PHIẾU DỊCH VỤ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBox_SoPhieu
