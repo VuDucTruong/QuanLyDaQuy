@@ -108,6 +108,14 @@ namespace QuanLyDaQuy.Phieu
                         break;
                     }
             }
+            if (dtgView_DS_phieu_mua_hang.Rows.Count == 0)
+            {
+                MessageBox.Show("Không tìm thấy kết quả!", "Thông báo");
+            }
+            else
+            {
+                MessageBox.Show("Tra cứu thành công!", "Thông báo");
+            }
         }
         private void Init_DateTimeSearch()
         {
