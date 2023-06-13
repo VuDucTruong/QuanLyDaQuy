@@ -119,6 +119,12 @@ namespace QuanLyDaQuy
         {
             thongTinLSP1.insertDVT_btn_Click(((object)null), null);
         }
+
+        private void thayĐổiThamSốToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ThayDoiThamSo thayDoiThamSo = new ThayDoiThamSo();
+            thayDoiThamSo.Show();
+        }
     }
 
 }
