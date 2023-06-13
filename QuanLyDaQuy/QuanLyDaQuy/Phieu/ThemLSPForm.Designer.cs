@@ -42,7 +42,7 @@
             this.DVT_cb = new System.Windows.Forms.ComboBox();
             this.dONVITINHBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qLDQDataSet = new QuanLyDaQuy.QLDQDataSet();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label_Title = new System.Windows.Forms.Label();
             this.dONVITINHTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.DONVITINHTableAdapter();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dONVITINHBindingSource)).BeginInit();
@@ -83,7 +83,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 306F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 308F));
             this.tableLayoutPanel1.Controls.Add(this.id_tb, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label10, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.LSP_tb, 1, 1);
@@ -97,7 +97,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(760, 126);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(762, 126);
             this.tableLayoutPanel1.TabIndex = 48;
             // 
             // id_tb
@@ -152,7 +152,7 @@
             this.LoiNhuan_tb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.LoiNhuan_tb.Location = new System.Drawing.Point(455, 21);
             this.LoiNhuan_tb.Name = "LoiNhuan_tb";
-            this.LoiNhuan_tb.Size = new System.Drawing.Size(300, 22);
+            this.LoiNhuan_tb.Size = new System.Drawing.Size(302, 22);
             this.LoiNhuan_tb.TabIndex = 25;
             this.LoiNhuan_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LoiNhuan_tb_KeyPress);
             // 
@@ -175,7 +175,7 @@
             this.DVT_cb.FormattingEnabled = true;
             this.DVT_cb.Location = new System.Drawing.Point(455, 82);
             this.DVT_cb.Name = "DVT_cb";
-            this.DVT_cb.Size = new System.Drawing.Size(300, 24);
+            this.DVT_cb.Size = new System.Drawing.Size(302, 24);
             this.DVT_cb.TabIndex = 48;
             // 
             // dONVITINHBindingSource
@@ -188,15 +188,15 @@
             this.qLDQDataSet.DataSetName = "QLDQDataSet";
             this.qLDQDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // label1
+            // label_Title
             // 
-            this.label1.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(228, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(356, 32);
-            this.label1.TabIndex = 47;
-            this.label1.Text = "THÊM LOẠI SẢN PHẨM";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label_Title.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Title.Location = new System.Drawing.Point(228, 9);
+            this.label_Title.Name = "label_Title";
+            this.label_Title.Size = new System.Drawing.Size(356, 32);
+            this.label_Title.TabIndex = 47;
+            this.label_Title.Text = "THÊM LOẠI SẢN PHẨM";
+            this.label_Title.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // dONVITINHTableAdapter
             // 
@@ -210,7 +210,7 @@
             this.Controls.Add(this.cancel_btn);
             this.Controls.Add(this.insert_btn);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label_Title);
             this.Name = "ThemLSPForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "THÊM LOẠI SẢN PHẨM";
@@ -236,7 +236,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox LoiNhuan_tb;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_Title;
         private System.Windows.Forms.ComboBox DVT_cb;
         private QLDQDataSet qLDQDataSet;
         private System.Windows.Forms.BindingSource dONVITINHBindingSource;
