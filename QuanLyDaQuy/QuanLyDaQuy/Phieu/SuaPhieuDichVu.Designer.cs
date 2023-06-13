@@ -59,6 +59,7 @@
             this.button_OK = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.exPDF_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -408,6 +409,7 @@
             // 
             // tableLayoutPanel2
             // 
+            this.tableLayoutPanel2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.tableLayoutPanel2.ColumnCount = 5;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -416,7 +418,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 121F));
             this.tableLayoutPanel2.Controls.Add(this.button_Close, 4, 0);
             this.tableLayoutPanel2.Controls.Add(this.button_OK, 3, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Controls.Add(this.exPDF_btn, 2, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 415);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
@@ -438,6 +440,17 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(989, 450);
             this.tableLayoutPanel3.TabIndex = 16;
+            // 
+            // exPDF_btn
+            // 
+            this.exPDF_btn.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.exPDF_btn.Location = new System.Drawing.Point(644, 3);
+            this.exPDF_btn.Name = "exPDF_btn";
+            this.exPDF_btn.Size = new System.Drawing.Size(95, 26);
+            this.exPDF_btn.TabIndex = 16;
+            this.exPDF_btn.Text = "Xuất PDF";
+            this.exPDF_btn.UseVisualStyleBackColor = true;
+            this.exPDF_btn.Click += new System.EventHandler(this.exPDF_btn_Click);
             // 
             // SuaPhieuDichVu
             // 
@@ -493,5 +506,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ConLai;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayGiao;
         private System.Windows.Forms.DataGridViewComboBoxColumn TinhTrang;
+        private System.Windows.Forms.Button exPDF_btn;
     }
 }

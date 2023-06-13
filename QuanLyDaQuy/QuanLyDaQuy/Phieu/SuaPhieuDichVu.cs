@@ -1,4 +1,6 @@
-﻿using QuanLyDaQuy.DTO;
+﻿using iText.Layout.Element;
+using QuanLyDaQuy.DTO;
+using QuanLyDaQuy.Export;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,10 +8,12 @@ using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace QuanLyDaQuy.Phieu
 {
@@ -155,8 +159,18 @@ namespace QuanLyDaQuy.Phieu
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
+        }
 
-
+        private void exPDF_btn_Click(object sender, EventArgs e)
+        {
+            string STRcontent = String.Format("Số phiếu : {0} \n Khách hàng : {1} \n Ngày lập : {2} \n Số điện thoại : {3} \n  Tổng tiền : {4} \n Tổng tiền trả trước : {5} \n Còn lại : {6} \n"
+                , textBox_SoPhieu.Text, textBox_KhachHang.Text , textBox_NgayLap.Text , textBox_SDT.Text , textBox_TongTien.Text , textBox_TongTienTraTruoc.Text , textBox_TongTienConLai.Text);
+            Paragraph header = new Paragraph(label_Title.Text).SetFont(ExportPDF.GetUtf8Font());
+            Paragraph content = new Paragraph(STRcontent).SetFont(ExportPDF.GetUtf8Font());
+            if (ExportPDF.ExcuteDataGridView(header, content, dataGridView1))
+            {
+                MessageBox.Show("Xuất thành công !");
+            }
         }
     }
 }
