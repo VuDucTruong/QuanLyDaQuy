@@ -1,4 +1,6 @@
-﻿using QuanLyDaQuy.DTO;
+﻿using iText.Layout.Element;
+using QuanLyDaQuy.DTO;
+using QuanLyDaQuy.Export;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -626,6 +628,21 @@ namespace QuanLyDaQuy.Phieu
                 button_XoaDong.Enabled = false;
             }
 
+        }
+
+        private void btn_XuatPDF_Click(object sender, EventArgs e)
+        {
+            string STRcontent = String.Format("Số phiếu : {0} \n", textBox_SoPhieu.Text) +
+                String.Format("Ngày lập : {0} \n", textBox_NgayLap.Text) +
+                String.Format("Khách hàng : {0} \n", comboBox_KhachHang.Text) +
+                String.Format("Số điện thoại : {0} \n", textBox_SDT.Text) +
+                String.Format("Tổng tiền : {0} Tổng tiền trả trước : {1} Tổng tiền còn lại : {2}", textBox_TongTien.Text, textBox_TongTienTraTruoc.Text, textBox_TongTienConLai.Text);
+            Paragraph header = new Paragraph(label_Title.Text).SetFont(ExportPDF.GetUtf8Font());
+            Paragraph content = new Paragraph(STRcontent).SetFont(ExportPDF.GetUtf8Font());
+            if (ExportPDF.ExcuteDataGridView(header, content, dataGridView1))
+            {
+                MessageBox.Show("Xuất thành công !");
+            }
         }
     }
 }

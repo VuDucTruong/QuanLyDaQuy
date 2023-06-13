@@ -60,6 +60,7 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.button_XoaDong = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.btn_XuatPDF = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -413,6 +414,7 @@
             this.tableLayoutPanel2.Controls.Add(this.button_Huy, 4, 0);
             this.tableLayoutPanel2.Controls.Add(this.button_OK, 3, 0);
             this.tableLayoutPanel2.Controls.Add(this.button_XoaDong, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btn_XuatPDF, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 415);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -446,6 +448,18 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(989, 450);
             this.tableLayoutPanel3.TabIndex = 16;
+            // 
+            // btn_XuatPDF
+            // 
+            this.btn_XuatPDF.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_XuatPDF.Location = new System.Drawing.Point(627, 3);
+            this.btn_XuatPDF.Name = "btn_XuatPDF";
+            this.btn_XuatPDF.Size = new System.Drawing.Size(112, 26);
+            this.btn_XuatPDF.TabIndex = 17;
+            this.btn_XuatPDF.Text = "Xuất PDF";
+            this.btn_XuatPDF.UseVisualStyleBackColor = true;
+            this.btn_XuatPDF.Click += new System.EventHandler(this.btn_XuatPDF_Click);
             // 
             // PhieuDichVu
             // 
@@ -502,5 +516,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ConLai;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayGiao;
         private System.Windows.Forms.DataGridViewComboBoxColumn TinhTrang;
+        private System.Windows.Forms.Button btn_XuatPDF;
     }
 }

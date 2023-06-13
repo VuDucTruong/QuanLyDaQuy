@@ -1,5 +1,7 @@
-﻿using QuanLyDaQuy.DAO;
+﻿using iText.Layout.Element;
+using QuanLyDaQuy.DAO;
 using QuanLyDaQuy.DTO;
+using QuanLyDaQuy.Export;
 using QuanLyDaQuy.QLDQDataSetTableAdapters;
 using System;
 using System.Collections.Generic;
@@ -501,6 +503,22 @@ namespace QuanLyDaQuy.Phieu
             if (!Validating_DateTime(tb_ngaylap.Text))
             {
                 tb_ngaylap.Text = DateTime.Today.ToString("dd/MM/yyyy");
+            }
+        }
+
+        private void btn_xuatPDF_Click(object sender, EventArgs e)
+        {
+            string STRcontent = String.Format("Số phiếu : {0} \n", tb_sophieu.Text) +
+                String.Format("Ngày lập : {0} \n", tb_ngaylap.Text) +
+                String.Format("Tên nhà cung cấp : {0} \n", cb_nhaCungCap.Text) +
+                String.Format("Địa chỉ : {0} \n", tb_diachi.Text) +
+                String.Format("Số điện thoại : {0} \n", tb_sodienthoai.Text) +
+                String.Format("Tổng tiền : {0} \n", tb_thanhTien.Text);
+            Paragraph header = new Paragraph(lb_title.Text).SetFont(ExportPDF.GetUtf8Font());
+            Paragraph content = new Paragraph(STRcontent).SetFont(ExportPDF.GetUtf8Font());
+            if (ExportPDF.ExcuteDataGridView(header, content, dt_grid_phieumuahang))
+            {
+                MessageBox.Show("Xuất thành công !");
             }
         }
     }

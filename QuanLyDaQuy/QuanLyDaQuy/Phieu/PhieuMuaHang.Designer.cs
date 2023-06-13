@@ -58,6 +58,7 @@
             this.btn_huy = new System.Windows.Forms.Button();
             this.qLDQDataSet = new QuanLyDaQuy.QLDQDataSet();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.btn_xuatPDF = new System.Windows.Forms.Button();
             this.tab_lay_phieumuahang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dt_grid_phieumuahang)).BeginInit();
             this.tb_layout_btn.SuspendLayout();
@@ -90,7 +91,7 @@
             this.tab_lay_phieumuahang.Controls.Add(this.btn_xoaDong, 0, 5);
             this.tab_lay_phieumuahang.Controls.Add(this.btn_add_ncc, 5, 1);
             this.tab_lay_phieumuahang.Controls.Add(this.cb_nhaCungCap, 3, 1);
-            this.tab_lay_phieumuahang.Controls.Add(this.tb_layout_btn, 5, 6);
+            this.tab_lay_phieumuahang.Controls.Add(this.tb_layout_btn, 4, 6);
             this.tab_lay_phieumuahang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tab_lay_phieumuahang.Location = new System.Drawing.Point(0, 0);
             this.tab_lay_phieumuahang.Name = "tab_lay_phieumuahang";
@@ -380,24 +381,29 @@
             // 
             // tb_layout_btn
             // 
-            this.tb_layout_btn.ColumnCount = 2;
-            this.tb_layout_btn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tb_layout_btn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tb_layout_btn.Controls.Add(this.btn_lapPhieu, 0, 0);
-            this.tb_layout_btn.Controls.Add(this.btn_huy, 1, 0);
-            this.tb_layout_btn.Location = new System.Drawing.Point(806, 516);
+            this.tb_layout_btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tb_layout_btn.ColumnCount = 4;
+            this.tab_lay_phieumuahang.SetColumnSpan(this.tb_layout_btn, 2);
+            this.tb_layout_btn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.88545F));
+            this.tb_layout_btn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.03096F));
+            this.tb_layout_btn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.69659F));
+            this.tb_layout_btn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tb_layout_btn.Controls.Add(this.btn_huy, 3, 0);
+            this.tb_layout_btn.Controls.Add(this.btn_lapPhieu, 2, 0);
+            this.tb_layout_btn.Controls.Add(this.btn_xuatPDF, 1, 0);
+            this.tb_layout_btn.Location = new System.Drawing.Point(647, 516);
             this.tb_layout_btn.Name = "tb_layout_btn";
             this.tb_layout_btn.RowCount = 1;
             this.tb_layout_btn.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tb_layout_btn.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tb_layout_btn.Size = new System.Drawing.Size(164, 34);
+            this.tb_layout_btn.Size = new System.Drawing.Size(323, 34);
             this.tb_layout_btn.TabIndex = 19;
             // 
             // btn_lapPhieu
             // 
             this.btn_lapPhieu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_lapPhieu.Location = new System.Drawing.Point(3, 3);
+            this.btn_lapPhieu.Location = new System.Drawing.Point(162, 3);
             this.btn_lapPhieu.Name = "btn_lapPhieu";
             this.btn_lapPhieu.Size = new System.Drawing.Size(76, 28);
             this.btn_lapPhieu.TabIndex = 14;
@@ -409,7 +415,7 @@
             // 
             this.btn_huy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_huy.Location = new System.Drawing.Point(85, 3);
+            this.btn_huy.Location = new System.Drawing.Point(244, 3);
             this.btn_huy.Name = "btn_huy";
             this.btn_huy.Size = new System.Drawing.Size(75, 28);
             this.btn_huy.TabIndex = 15;
@@ -421,6 +427,19 @@
             // 
             this.qLDQDataSet.DataSetName = "QLDQDataSet";
             this.qLDQDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btn_xuatPDF
+            // 
+            this.btn_xuatPDF.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_xuatPDF.Location = new System.Drawing.Point(64, 3);
+            this.btn_xuatPDF.Name = "btn_xuatPDF";
+            this.btn_xuatPDF.Size = new System.Drawing.Size(91, 28);
+            this.btn_xuatPDF.TabIndex = 16;
+            this.btn_xuatPDF.Text = "Xuất PDF";
+            this.btn_xuatPDF.UseVisualStyleBackColor = true;
+            this.btn_xuatPDF.Click += new System.EventHandler(this.btn_xuatPDF_Click);
             // 
             // PhieuMuaHang
             // 
@@ -472,5 +491,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn phieuMuaHang_column_donViTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn phieuMuaHang_column_donGia;
         private System.Windows.Forms.DataGridViewTextBoxColumn phieuMuaHang_column_thanhTien;
+        private System.Windows.Forms.Button btn_xuatPDF;
     }
 }

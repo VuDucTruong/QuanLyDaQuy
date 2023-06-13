@@ -59,6 +59,7 @@ namespace QuanLyDaQuy.Phieu
             this.btn_huy = new System.Windows.Forms.Button();
             this.btn_ok = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.btn_XuatPDF = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_phieubanhang)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -174,7 +175,7 @@ namespace QuanLyDaQuy.Phieu
             this.stt_col.HeaderText = "STT";
             this.stt_col.MinimumWidth = 6;
             this.stt_col.Name = "stt_col";
-            this.stt_col.Width = 64;
+            this.stt_col.Width = 63;
             // 
             // sp_col
             // 
@@ -199,7 +200,7 @@ namespace QuanLyDaQuy.Phieu
             this.lsp_col.Name = "lsp_col";
             this.lsp_col.ReadOnly = true;
             this.lsp_col.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.lsp_col.Width = 119;
+            this.lsp_col.Width = 124;
             // 
             // sl_col
             // 
@@ -208,7 +209,7 @@ namespace QuanLyDaQuy.Phieu
             this.sl_col.HeaderText = "Số lượng";
             this.sl_col.MinimumWidth = 6;
             this.sl_col.Name = "sl_col";
-            this.sl_col.Width = 86;
+            this.sl_col.Width = 89;
             // 
             // dvt_col
             // 
@@ -218,7 +219,7 @@ namespace QuanLyDaQuy.Phieu
             this.dvt_col.MinimumWidth = 6;
             this.dvt_col.Name = "dvt_col";
             this.dvt_col.ReadOnly = true;
-            this.dvt_col.Width = 75;
+            this.dvt_col.Width = 96;
             // 
             // dg_col
             // 
@@ -228,7 +229,7 @@ namespace QuanLyDaQuy.Phieu
             this.dg_col.MinimumWidth = 6;
             this.dg_col.Name = "dg_col";
             this.dg_col.ReadOnly = true;
-            this.dg_col.Width = 63;
+            this.dg_col.Width = 82;
             // 
             // tt_col
             // 
@@ -237,7 +238,7 @@ namespace QuanLyDaQuy.Phieu
             this.tt_col.MinimumWidth = 6;
             this.tt_col.Name = "tt_col";
             this.tt_col.ReadOnly = true;
-            this.tt_col.Width = 97;
+            this.tt_col.Width = 98;
             // 
             // tb_sophieu
             // 
@@ -349,7 +350,7 @@ namespace QuanLyDaQuy.Phieu
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.94872F));
             this.tableLayoutPanel3.Controls.Add(this.btn_delete, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.tb_tongtien, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 2, 1);
+            this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.label2, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 513);
@@ -388,26 +389,28 @@ namespace QuanLyDaQuy.Phieu
             // 
             // tableLayoutPanel4
             // 
-            this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Controls.Add(this.btn_huy, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.btn_ok, 0, 0);
+            this.tableLayoutPanel4.ColumnCount = 3;
+            this.tableLayoutPanel3.SetColumnSpan(this.tableLayoutPanel4, 2);
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.Controls.Add(this.btn_huy, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.btn_ok, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.btn_XuatPDF, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(764, 40);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(671, 40);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(209, 51);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(302, 51);
             this.tableLayoutPanel4.TabIndex = 21;
             // 
             // btn_huy
             // 
             this.btn_huy.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btn_huy.Location = new System.Drawing.Point(107, 11);
+            this.btn_huy.Location = new System.Drawing.Point(203, 11);
             this.btn_huy.Name = "btn_huy";
-            this.btn_huy.Size = new System.Drawing.Size(99, 37);
+            this.btn_huy.Size = new System.Drawing.Size(96, 37);
             this.btn_huy.TabIndex = 21;
             this.btn_huy.TabStop = false;
             this.btn_huy.Text = "Hủy phiếu";
@@ -418,9 +421,9 @@ namespace QuanLyDaQuy.Phieu
             // 
             this.btn_ok.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btn_ok.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btn_ok.Location = new System.Drawing.Point(3, 10);
+            this.btn_ok.Location = new System.Drawing.Point(103, 11);
             this.btn_ok.Name = "btn_ok";
-            this.btn_ok.Size = new System.Drawing.Size(98, 38);
+            this.btn_ok.Size = new System.Drawing.Size(94, 37);
             this.btn_ok.TabIndex = 20;
             this.btn_ok.TabStop = false;
             this.btn_ok.Text = "Lập phiếu";
@@ -439,6 +442,17 @@ namespace QuanLyDaQuy.Phieu
             this.label2.TabIndex = 19;
             this.label2.Text = "Tổng tiền:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btn_XuatPDF
+            // 
+            this.btn_XuatPDF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_XuatPDF.Location = new System.Drawing.Point(3, 11);
+            this.btn_XuatPDF.Name = "btn_XuatPDF";
+            this.btn_XuatPDF.Size = new System.Drawing.Size(94, 37);
+            this.btn_XuatPDF.TabIndex = 22;
+            this.btn_XuatPDF.Text = "Xuất PDF";
+            this.btn_XuatPDF.UseVisualStyleBackColor = true;
+            this.btn_XuatPDF.Click += new System.EventHandler(this.btn_XuatPDF_Click);
             // 
             // PhieuBanHang
             // 
@@ -490,5 +504,6 @@ namespace QuanLyDaQuy.Phieu
         private System.Windows.Forms.DataGridViewTextBoxColumn dvt_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn dg_col;
         private System.Windows.Forms.DataGridViewTextBoxColumn tt_col;
+        private System.Windows.Forms.Button btn_XuatPDF;
     }
 }

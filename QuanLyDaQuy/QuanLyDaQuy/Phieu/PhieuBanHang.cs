@@ -11,6 +11,8 @@ using QuanLyDaQuy.DTO;
 using QuanLyDaQuy.DAO;
 using System.Text.RegularExpressions;
 using System.Globalization;
+using iText.Layout.Element;
+using QuanLyDaQuy.Export;
 
 namespace QuanLyDaQuy.Phieu
 {
@@ -695,6 +697,21 @@ namespace QuanLyDaQuy.Phieu
                     DataGridViewComboBoxCell comboBoxCell = dataGridView.CurrentCell as DataGridViewComboBoxCell;
                     comboBoxCell.Value = comboBoxCell.FormattedValue;
                 }
+            }
+        }
+
+        private void btn_XuatPDF_Click(object sender, EventArgs e)
+        {
+            string STRcontent = String.Format("Số phiếu : {0} \n", tb_sophieu.Text) +
+                String.Format("Ngày lập : {0} \n", tb_ngaylap.Text) +
+                String.Format("Khách hàng : {0} \n", cb_khachhang.Text) +
+                String.Format("Số điện thoại : {0} \n", cb_sdt.Text) +
+                String.Format("Tổng tiền : {0} ", tb_tongtien.Text);
+            Paragraph header = new Paragraph(lb_title.Text).SetFont(ExportPDF.GetUtf8Font());
+            Paragraph content = new Paragraph(STRcontent).SetFont(ExportPDF.GetUtf8Font());
+            if (ExportPDF.ExcuteDataGridView(header, content, dgv_phieubanhang))
+            {
+                MessageBox.Show("Xuất thành công !");
             }
         }
     }
