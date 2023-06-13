@@ -103,6 +103,12 @@
     <Compile Include="Phieu\DSPhieuMH_CT_PhieuMuaHang.Designer.cs">
       <DependentUpon>DSPhieuMH_CT_PhieuMuaHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Phieu\getDataGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Phieu\getDataGrid.Designer.cs">
+      <DependentUpon>getDataGrid.cs</DependentUpon>
+    </Compile>
     <Compile Include="Phieu\PhieuBanHang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Phieu\DSPhieuMH_CT_PhieuMuaHang.resx">
       <DependentUpon>DSPhieuMH_CT_PhieuMuaHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Phieu\getDataGrid.resx">
+      <DependentUpon>getDataGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Phieu\PhieuBanHang.resx">
       <DependentUpon>PhieuBanHang.cs</DependentUpon>
