@@ -25,8 +25,7 @@ namespace QuanLyDaQuy.Phieu
             {
                 try
                 {
-                    string query = string.Format("insert into KHACHHANG values ( N'{0}' , '{1}' )", name_tb.Text, phone_tb.Text);
-                    int data = DataProvider.Instance.ExecuteNonQuery(query);
+                    int data = ThemKHFormDAO.Instance.insertKhachHang(name_tb.Text, phone_tb.Text);
                     if (data > 0)
                     {
                         MessageBox.Show("Đã thêm khách hàng thành công!", "Thành công");
@@ -64,7 +63,7 @@ namespace QuanLyDaQuy.Phieu
             int id;
             try
             {
-                id = Convert.ToInt32(DataProvider.Instance.ExecuteScalar("select max(MaKH) from KHACHHANG")) + 1;
+                id = ThemKHFormDAO.Instance.getMaKHLonNhat() + 1;
             }
             catch { id = 1; }
             

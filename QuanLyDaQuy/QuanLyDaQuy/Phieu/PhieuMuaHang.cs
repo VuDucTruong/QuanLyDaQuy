@@ -116,9 +116,7 @@ namespace QuanLyDaQuy.Phieu
         }
         private void UpdateSLT(int maSP, int soLuong)
         {
-            string updateQuery = $"UPDATE SANPHAM SET SoLuongTon = SoLuongTon + {soLuong} WHERE MaSP = {maSP}";
-
-            int affectedRows = DataProvider.Instance.ExecuteNonQuery(updateQuery);
+            int affectedRows = PhieuMuaHangDAO.Instance.updateSLT(maSP, soLuong);
 
             if (affectedRows <= 0)
                 MessageBox.Show($"Lỗi cập nhật số lượng tồn sản phẩm có mã {maSP}");
@@ -193,11 +191,7 @@ namespace QuanLyDaQuy.Phieu
             DateTime dt = DateTime.Today;
             tb_ngaylap.Text = dt.ToString("dd/MM/yyyy");
 
-            if (!int.TryParse(DataProvider.Instance.ExecuteScalar("select max(MaPhieuMH) from PHIEUMUAHANG").ToString(),
-                out int soPhieu))
-            {
-                soPhieu = 0;
-            }
+            int soPhieu = PhieuMuaHangDAO.Instance.getSoPhieuLonNhat();
             tb_sophieu.Text = (soPhieu + 1).ToString();
 
             //foreach (DataGridViewColumn col in dt_grid_phieumuahang.Columns)
@@ -214,28 +208,28 @@ namespace QuanLyDaQuy.Phieu
             NhaCungCaps = new List<NhaCungCap>();
 
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("Select * From LOAISANPHAM");
+            DataTable data = PhieuMuaHangDAO.Instance.GetLoaiSanPhamFull();
             foreach (DataRow item in data.Rows)
             {
                 LoaiSanPham loaiSanPham = new LoaiSanPham(item);
                 loaiSanPhams.Add(loaiSanPham);
             }
 
-            data = DataProvider.Instance.ExecuteQuery("Select * From SANPHAM");
+            data = PhieuMuaHangDAO.Instance.GetSanPhamFull();
             foreach (DataRow item in data.Rows)
             {
                 SanPham sanPham = new SanPham(item);
                 sanPhams.Add(sanPham);
             }
 
-            data = DataProvider.Instance.ExecuteQuery("Select * From DONVITINH");
+            data = PhieuMuaHangDAO.Instance.GetDonViTinhFull();
             foreach (DataRow item in data.Rows)
             {
                 DonViTinh donViTinh = new DonViTinh(item);
                 donViTinhs.Add(donViTinh);
             }
 
-            data = DataProvider.Instance.ExecuteQuery("Select * From NHACUNGCAP");
+            data = PhieuMuaHangDAO.Instance.GetNhaCungCapFull();
             foreach (DataRow item in data.Rows)
             {
                 NhaCungCap nhaCungCap = new NhaCungCap(item);
@@ -400,7 +394,7 @@ namespace QuanLyDaQuy.Phieu
 
         private void refreshComboBoxNhaCungCaps()
         {
-            DataTable data = DataProvider.Instance.ExecuteQuery("Select * From NHACUNGCAP");
+            DataTable data = PhieuMuaHangDAO.Instance.GetNhaCungCapFull();
             NhaCungCaps.Clear();
             foreach (DataRow item in data.Rows)
             {

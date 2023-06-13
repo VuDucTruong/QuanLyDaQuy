@@ -25,8 +25,7 @@ namespace QuanLyDaQuy.Phieu
             {
                 try
                 {
-                    string query = string.Format("insert into DONVITINH values ( N'{0}')", dvt_tb.Text);
-                    int data = DataProvider.Instance.ExecuteNonQuery(query);
+                    int data = ThemDVTFormDAO.Instance.insertDVT(dvt_tb.Text);
                     if (data > 0)
                     {
                         MessageBox.Show("Đã thêm đơn vị tính thành công!", "Thành công");
@@ -56,7 +55,7 @@ namespace QuanLyDaQuy.Phieu
             int id;
             try
             {
-                id = Convert.ToInt32(DataProvider.Instance.ExecuteScalar("select max(MaDVT) from DONVITINH")) + 1;
+                id = ThemDVTFormDAO.Instance.getMaDVTLonNhat() + 1;
             }
             catch { id = 1; }
             id_tb.Text = id.ToString();
