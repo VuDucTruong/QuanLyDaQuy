@@ -33,8 +33,7 @@ namespace QuanLyDaQuy.Phieu
                 LoaiSanPham loaiSanPham = new LoaiSanPham(dataTable.Rows[0]);
                 try
                 {
-                    string query = string.Format("insert into SANPHAM ( TenSP , MaLSP , DonGiaMua , SoLuongTon) values ( N'{0}' , {1} , {2} , {3} )", TenSP_tb.Text , loaiSanPham.MaLSP , Convert.ToDouble(Mua_tb.Text) , Convert.ToInt16(SLT_tb.Text));
-                    int data = DataProvider.Instance.ExecuteNonQuery(query);
+                    int data = SanPhamDAO.Instance.Insert_SanPham(TenSP_tb.Text, loaiSanPham.MaLSP, Convert.ToDouble(Mua_tb.Text), Convert.ToInt16(SLT_tb.Text));
                     if (data > 0)
                     {
                         MessageBox.Show("Đã thêm sản phẩm thành công!", "Thành công");
@@ -88,7 +87,7 @@ namespace QuanLyDaQuy.Phieu
             int id;
             try
             {
-                id = Convert.ToInt32(DataProvider.Instance.ExecuteScalar("select max(MaSP) from SANPHAM")) + 1;
+                id = SanPhamDAO.Instance.GetNew_MaSP();
             }
             catch
             {
