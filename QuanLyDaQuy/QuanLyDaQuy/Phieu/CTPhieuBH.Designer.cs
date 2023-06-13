@@ -236,9 +236,12 @@
             this.dgv_ct_phieubanhang.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgv_ct_phieubanhang.GridColor = System.Drawing.SystemColors.Control;
             this.dgv_ct_phieubanhang.Location = new System.Drawing.Point(3, 108);
+            this.dgv_ct_phieubanhang.MultiSelect = false;
             this.dgv_ct_phieubanhang.Name = "dgv_ct_phieubanhang";
+            this.dgv_ct_phieubanhang.RowHeadersVisible = false;
             this.dgv_ct_phieubanhang.RowHeadersWidth = 51;
             this.dgv_ct_phieubanhang.RowTemplate.Height = 24;
+            this.dgv_ct_phieubanhang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_ct_phieubanhang.Size = new System.Drawing.Size(784, 336);
             this.dgv_ct_phieubanhang.TabIndex = 11;
             // 
@@ -250,7 +253,7 @@
             this.phieuMuaHang_column_STT.MinimumWidth = 6;
             this.phieuMuaHang_column_STT.Name = "phieuMuaHang_column_STT";
             this.phieuMuaHang_column_STT.ReadOnly = true;
-            this.phieuMuaHang_column_STT.Width = 63;
+            this.phieuMuaHang_column_STT.Width = 64;
             // 
             // phieuMuaHang_column_sanPham
             // 
@@ -271,7 +274,7 @@
             this.phieuMuaHang_column_loaiSanPham.Name = "phieuMuaHang_column_loaiSanPham";
             this.phieuMuaHang_column_loaiSanPham.ReadOnly = true;
             this.phieuMuaHang_column_loaiSanPham.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.phieuMuaHang_column_loaiSanPham.Width = 114;
+            this.phieuMuaHang_column_loaiSanPham.Width = 119;
             // 
             // phieuMuaHang_column_soLuong
             // 
@@ -281,7 +284,7 @@
             this.phieuMuaHang_column_soLuong.MinimumWidth = 6;
             this.phieuMuaHang_column_soLuong.Name = "phieuMuaHang_column_soLuong";
             this.phieuMuaHang_column_soLuong.ReadOnly = true;
-            this.phieuMuaHang_column_soLuong.Width = 83;
+            this.phieuMuaHang_column_soLuong.Width = 86;
             // 
             // phieuMuaHang_column_donViTinh
             // 
@@ -291,7 +294,7 @@
             this.phieuMuaHang_column_donViTinh.MinimumWidth = 6;
             this.phieuMuaHang_column_donViTinh.Name = "phieuMuaHang_column_donViTinh";
             this.phieuMuaHang_column_donViTinh.ReadOnly = true;
-            this.phieuMuaHang_column_donViTinh.Width = 71;
+            this.phieuMuaHang_column_donViTinh.Width = 75;
             // 
             // phieuMuaHang_column_donGia
             // 
@@ -301,7 +304,7 @@
             this.phieuMuaHang_column_donGia.MinimumWidth = 6;
             this.phieuMuaHang_column_donGia.Name = "phieuMuaHang_column_donGia";
             this.phieuMuaHang_column_donGia.ReadOnly = true;
-            this.phieuMuaHang_column_donGia.Width = 76;
+            this.phieuMuaHang_column_donGia.Width = 63;
             // 
             // phieuMuaHang_column_thanhTien
             // 
@@ -311,7 +314,7 @@
             this.phieuMuaHang_column_thanhTien.MinimumWidth = 6;
             this.phieuMuaHang_column_thanhTien.Name = "phieuMuaHang_column_thanhTien";
             this.phieuMuaHang_column_thanhTien.ReadOnly = true;
-            this.phieuMuaHang_column_thanhTien.Width = 91;
+            this.phieuMuaHang_column_thanhTien.Width = 97;
             // 
             // loadCTPhieuBHbyMaPhieuBHBindingSource
             // 
@@ -334,10 +337,10 @@
             // 
             this.lb_tt.AutoSize = true;
             this.lb_tt.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lb_tt.Location = new System.Drawing.Point(616, 452);
+            this.lb_tt.Location = new System.Drawing.Point(609, 452);
             this.lb_tt.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.lb_tt.Name = "lb_tt";
-            this.lb_tt.Size = new System.Drawing.Size(69, 53);
+            this.lb_tt.Size = new System.Drawing.Size(76, 53);
             this.lb_tt.TabIndex = 12;
             this.lb_tt.Text = "Tổng tiền: ";
             // 

@@ -208,12 +208,12 @@ namespace QuanLyDaQuy.Phieu
                 if (dataTable.Rows.Count > 0)
                 {
                     dgv_ds_pbh.DataSource = dataTable;
-                    // AddRowNumbers(dataTable, "STT");
+                    MessageBox.Show("Tìm kiếm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
                     dgv_ds_pbh.DataSource = null;
-                    MessageBox.Show("Không tìm thấy kết quả!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Tìm kiếm thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)

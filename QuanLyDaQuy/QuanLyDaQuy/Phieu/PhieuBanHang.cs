@@ -482,7 +482,7 @@ namespace QuanLyDaQuy.Phieu
                     // Nếu đã duyệt hết các hàng của bảng thì reload lại thành form mới
                     if (row.IsNewRow)
                     {
-                        ReloadForm();
+                        this.Close();
                         return;
                     }
 
@@ -569,7 +569,7 @@ namespace QuanLyDaQuy.Phieu
                 $"({maKH},'{ngayLapFormatted}',{tongTien})";
 
                 int affectedRows = DataProvider.Instance.ExecuteNonQuery(query);
-                MessageBox.Show($"Thêm thành công {affectedRows} phiếu bán hàng");
+                MessageBox.Show($"Thêm thành công phiếu bán hàng");
 
             }
             catch
@@ -601,7 +601,7 @@ namespace QuanLyDaQuy.Phieu
                 if (result != null)
                 {
                     int maKH = Convert.ToInt32(result);
-                    MessageBox.Show($"Thêm khách hàng thành công, mã khách hàng: {maKH}");
+                    MessageBox.Show($"Thêm khách hàng thành công");
                     return maKH;
                 }
 
@@ -650,11 +650,11 @@ namespace QuanLyDaQuy.Phieu
 
         private void PhieuBanHang_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có chắc muốn đóng form?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.No)
-            {
-                e.Cancel = true; // Hủy sự kiện đóng form nếu người dùng chọn "No"
-            }
+            //DialogResult result = MessageBox.Show("Bạn có chắc muốn đóng form?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            //if (result == DialogResult.No)
+            //{
+            //    e.Cancel = true; // Hủy sự kiện đóng form nếu người dùng chọn "No"
+            //}
 
         }
 

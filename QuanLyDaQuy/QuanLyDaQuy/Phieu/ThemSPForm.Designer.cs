@@ -46,7 +46,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.DVT_tb = new System.Windows.Forms.TextBox();
             this.insert_btn = new System.Windows.Forms.Button();
-            this.update_btn = new System.Windows.Forms.Button();
+            this.cancel_btn = new System.Windows.Forms.Button();
             this.loadLoaiSanPhamTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadLoaiSanPhamTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.loadLoaiSanPhamBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).BeginInit();
@@ -220,15 +220,15 @@
             this.insert_btn.UseVisualStyleBackColor = true;
             this.insert_btn.Click += new System.EventHandler(this.insert_btn_Click);
             // 
-            // update_btn
+            // cancel_btn
             // 
-            this.update_btn.Location = new System.Drawing.Point(713, 237);
-            this.update_btn.Name = "update_btn";
-            this.update_btn.Size = new System.Drawing.Size(75, 23);
-            this.update_btn.TabIndex = 38;
-            this.update_btn.Text = "Hủy bỏ";
-            this.update_btn.UseVisualStyleBackColor = true;
-            this.update_btn.Click += new System.EventHandler(this.update_btn_Click);
+            this.cancel_btn.Location = new System.Drawing.Point(713, 237);
+            this.cancel_btn.Name = "cancel_btn";
+            this.cancel_btn.Size = new System.Drawing.Size(75, 23);
+            this.cancel_btn.TabIndex = 38;
+            this.cancel_btn.Text = "Hủy bỏ";
+            this.cancel_btn.UseVisualStyleBackColor = true;
+            this.cancel_btn.Click += new System.EventHandler(this.update_btn_Click);
             // 
             // loadLoaiSanPhamTableAdapter
             // 
@@ -239,7 +239,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(801, 279);
-            this.Controls.Add(this.update_btn);
+            this.Controls.Add(this.cancel_btn);
             this.Controls.Add(this.insert_btn);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label_Title);
@@ -272,7 +272,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button insert_btn;
-        private System.Windows.Forms.Button update_btn;
+        private System.Windows.Forms.Button cancel_btn;
         private System.Windows.Forms.TextBox DVT_tb;
         private QLDQDataSet qLDQDataSet;
         private System.Windows.Forms.BindingSource loadLoaiSanPhamBindingSource;

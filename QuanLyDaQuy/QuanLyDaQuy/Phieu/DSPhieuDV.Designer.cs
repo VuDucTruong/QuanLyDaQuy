@@ -31,6 +31,16 @@
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sDTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loadPhieuDVFullBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLDQDataSet = new QuanLyDaQuy.QLDQDataSet();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.comboBox_Thang = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -39,13 +49,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label_Title = new System.Windows.Forms.Label();
             this.comboBox_SearchMode = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox_Search = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.loadPhieuDVFullBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLDQDataSet = new QuanLyDaQuy.QLDQDataSet();
+            this.button_Search = new System.Windows.Forms.Button();
+            this.button_CT = new System.Windows.Forms.Button();
             this.mãPhiếuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tênKháchHàngDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loadPhieuDV_FullTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadPhieuDV_FullTableAdapter();
@@ -61,9 +70,9 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loadPhieuDVFullBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loadPhieuDVbyTenKHBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loadPhieuDVbySDTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loadPhieuDVbyHoanThanhBindingSource)).BeginInit();
@@ -81,19 +90,21 @@
             this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label3, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label_Title, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.comboBox_SearchMode, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.textBox_Search, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 4, 1);
+            this.tableLayoutPanel1.Controls.Add(this.button_Search, 4, 1);
+            this.tableLayoutPanel1.Controls.Add(this.button_CT, 4, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(840, 450);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -101,19 +112,114 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.sDTDataGridViewTextBoxColumn,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7});
             this.tableLayoutPanel1.SetColumnSpan(this.dataGridView1, 5);
+            this.dataGridView1.DataSource = this.loadPhieuDVFullBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 143);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(834, 304);
+            this.dataGridView1.Size = new System.Drawing.Size(834, 269);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "MaPhieuDV";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Mã phiếu";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "TenKH";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Tên khách hàng";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // sDTDataGridViewTextBoxColumn
+            // 
+            this.sDTDataGridViewTextBoxColumn.DataPropertyName = "SDT";
+            this.sDTDataGridViewTextBoxColumn.HeaderText = "SDT";
+            this.sDTDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sDTDataGridViewTextBoxColumn.Name = "sDTDataGridViewTextBoxColumn";
+            this.sDTDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sDTDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "NgayLap";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Ngày lập";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "TongTien";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Tổng tiền";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "TraTruoc";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Trả trước";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "ConLai";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Còn lại";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "TinhTrang";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Tình trạng";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 125;
+            // 
+            // loadPhieuDVFullBindingSource
+            // 
+            this.loadPhieuDVFullBindingSource.DataMember = "loadPhieuDV_Full";
+            this.loadPhieuDVFullBindingSource.DataSource = this.qLDQDataSet;
+            // 
+            // qLDQDataSet
+            // 
+            this.qLDQDataSet.DataSetName = "QLDQDataSet";
+            this.qLDQDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tableLayoutPanel2
             // 
@@ -212,18 +318,18 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Từ khóa:";
             // 
-            // label1
+            // label_Title
             // 
-            this.label1.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.label1, 5);
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(834, 60);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "DANH SÁCH PHIẾU DỊCH VỤ";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_Title.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.label_Title, 5);
+            this.label_Title.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label_Title.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Title.Location = new System.Drawing.Point(3, 0);
+            this.label_Title.Name = "label_Title";
+            this.label_Title.Size = new System.Drawing.Size(834, 60);
+            this.label_Title.TabIndex = 2;
+            this.label_Title.Text = "DANH SÁCH PHIẾU DỊCH VỤ";
+            this.label_Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // comboBox_SearchMode
             // 
@@ -262,27 +368,28 @@
             this.textBox_Search.Size = new System.Drawing.Size(360, 22);
             this.textBox_Search.TabIndex = 7;
             // 
-            // button1
+            // button_Search
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.button1.Location = new System.Drawing.Point(721, 63);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 34);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Tìm kiếm";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button_Search.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.button_Search.Location = new System.Drawing.Point(721, 63);
+            this.button_Search.Name = "button_Search";
+            this.button_Search.Size = new System.Drawing.Size(116, 34);
+            this.button_Search.TabIndex = 8;
+            this.button_Search.Text = "Tìm kiếm";
+            this.button_Search.UseVisualStyleBackColor = true;
+            this.button_Search.Click += new System.EventHandler(this.button1_Click);
             // 
-            // loadPhieuDVFullBindingSource
+            // button_CT
             // 
-            this.loadPhieuDVFullBindingSource.DataMember = "loadPhieuDV_Full";
-            this.loadPhieuDVFullBindingSource.DataSource = this.qLDQDataSet;
-            // 
-            // qLDQDataSet
-            // 
-            this.qLDQDataSet.DataSetName = "QLDQDataSet";
-            this.qLDQDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.button_CT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_CT.Location = new System.Drawing.Point(721, 418);
+            this.button_CT.Name = "button_CT";
+            this.button_CT.Size = new System.Drawing.Size(116, 29);
+            this.button_CT.TabIndex = 9;
+            this.button_CT.Text = "Xem chi tiết";
+            this.button_CT.UseVisualStyleBackColor = true;
+            this.button_CT.Click += new System.EventHandler(this.buttonCT_Click);
             // 
             // mãPhiếuDataGridViewTextBoxColumn
             // 
@@ -374,10 +481,10 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loadPhieuDVFullBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loadPhieuDVbyTenKHBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loadPhieuDVbySDTBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loadPhieuDVbyHoanThanhBindingSource)).EndInit();
@@ -389,13 +496,13 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_Title;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox comboBox_SearchMode;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox_Search;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_Search;
         private System.Windows.Forms.DataGridViewTextBoxColumn mãPhiếuDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn tênKháchHàngDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngàyLậpDataGridViewTextBoxColumn;
@@ -432,5 +539,14 @@
         private System.Windows.Forms.ComboBox comboBox_Ngay;
         private System.Windows.Forms.ComboBox comboBox_Thang;
         private System.Windows.Forms.TextBox textBox_Nam;
+        private System.Windows.Forms.Button button_CT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sDTDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
     }
 }

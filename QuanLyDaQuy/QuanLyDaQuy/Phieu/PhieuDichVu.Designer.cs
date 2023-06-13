@@ -43,7 +43,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label_TongTien = new System.Windows.Forms.Label();
             this.label_KhachHang = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label_Title = new System.Windows.Forms.Label();
             this.textBox_SoPhieu = new System.Windows.Forms.TextBox();
             this.label_SoPhieu = new System.Windows.Forms.Label();
             this.label_NgayLap = new System.Windows.Forms.Label();
@@ -191,7 +191,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label3, 4, 3);
             this.tableLayoutPanel1.Controls.Add(this.label_TongTien, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.label_KhachHang, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label_Title, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.textBox_SoPhieu, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label_SoPhieu, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label_NgayLap, 3, 1);
@@ -254,18 +254,18 @@
             this.label_KhachHang.TabIndex = 9;
             this.label_KhachHang.Text = "Khách hàng";
             // 
-            // label1
+            // label_Title
             // 
-            this.label1.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.label1, 6);
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(975, 60);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "PHIẾU DỊCH VỤ";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_Title.AutoSize = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.label_Title, 6);
+            this.label_Title.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label_Title.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Title.Location = new System.Drawing.Point(3, 0);
+            this.label_Title.Name = "label_Title";
+            this.label_Title.Size = new System.Drawing.Size(975, 60);
+            this.label_Title.TabIndex = 3;
+            this.label_Title.Text = "PHIẾU DỊCH VỤ";
+            this.label_Title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBox_SoPhieu
             // 
@@ -472,7 +472,7 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_Title;
         private System.Windows.Forms.Label label_NgayLap;
         private System.Windows.Forms.TextBox textBox_SoPhieu;
         private System.Windows.Forms.Label label_SoPhieu;
