@@ -581,6 +581,7 @@ namespace QuanLyDaQuy.Phieu
             }
             Form1 form = (Form1)Owner;
             form.thongTinMatHang1.RefreshData();
+            form.thongTinKhachHang1.RefreshData();
         }
 
         private void AddPhieuBanHang(int maKH, string ngayLap, float tongTien)
