@@ -34,6 +34,7 @@
             this.maDVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenDVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.donGiaDVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loadDichVuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qLDQDataSet = new QuanLyDaQuy.QLDQDataSet();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,14 +49,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.MaDV_tb = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.loadDichVuBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.loadDichVuTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadDichVuTableAdapter();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loadDichVuBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.loadDichVuBindingSource)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -67,17 +69,15 @@
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(5, 252);
+            this.panel2.Location = new System.Drawing.Point(3, 263);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(945, 357);
+            this.panel2.Size = new System.Drawing.Size(948, 352);
             this.panel2.TabIndex = 12;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -86,13 +86,14 @@
             this.tenDVDataGridViewTextBoxColumn,
             this.donGiaDVDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.loadDichVuBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 28);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 26);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(937, 324);
+            this.dataGridView1.Size = new System.Drawing.Size(946, 324);
             this.dataGridView1.TabIndex = 8;
             // 
             // maDVDataGridViewTextBoxColumn
@@ -119,6 +120,11 @@
             this.donGiaDVDataGridViewTextBoxColumn.Name = "donGiaDVDataGridViewTextBoxColumn";
             this.donGiaDVDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // loadDichVuBindingSource
+            // 
+            this.loadDichVuBindingSource.DataMember = "loadDichVu";
+            this.loadDichVuBindingSource.DataSource = this.qLDQDataSet;
+            // 
             // qLDQDataSet
             // 
             this.qLDQDataSet.DataSetName = "QLDQDataSet";
@@ -135,15 +141,15 @@
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(325, 9);
+            this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(294, 33);
+            this.label2.Size = new System.Drawing.Size(948, 100);
             this.label2.TabIndex = 10;
             this.label2.Text = "THÔNG TIN DỊCH VỤ";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
@@ -237,7 +243,7 @@
             this.panel1.Controls.Add(this.DV_tb);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Location = new System.Drawing.Point(5, 93);
+            this.panel1.Location = new System.Drawing.Point(3, 103);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(492, 126);
             this.panel1.TabIndex = 11;
@@ -260,36 +266,48 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Mã dịch vụ : ";
             // 
-            // loadDichVuBindingSource
-            // 
-            this.loadDichVuBindingSource.DataMember = "loadDichVu";
-            this.loadDichVuBindingSource.DataSource = this.qLDQDataSet;
-            // 
             // loadDichVuTableAdapter
             // 
             this.loadDichVuTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 160F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(954, 618);
+            this.tableLayoutPanel1.TabIndex = 13;
             // 
             // ThongTinDichVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ThongTinDichVu";
             this.Size = new System.Drawing.Size(954, 618);
             this.Load += new System.EventHandler(this.ThongTinDichVu_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loadDichVuBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.loadDichVuBindingSource)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -316,5 +334,6 @@
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource loadDichVuBindingSource;
         private QLDQDataSetTableAdapters.loadDichVuTableAdapter loadDichVuTableAdapter;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
