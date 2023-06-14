@@ -30,7 +30,7 @@ namespace QuanLyDaQuy.Phieu
                                "JOIN KHACHHANG KH ON PBH.MaKH = KH.MaKH";
 
                 DataTable dataTable = DataProvider.Instance.ExecuteQuery(query);
-
+                AddColumnName(dataTable);
                 dgv_ds_pbh.DataSource = dataTable;
 
                 // Gọi hàm AddRowNumbers để thêm cột STT vào DataTable
@@ -204,9 +204,12 @@ namespace QuanLyDaQuy.Phieu
                     dataTable = DataProvider.Instance.ExecuteQuery(query, new object[] { keyword });
                 }
 
-                // Xử lý hiển thị dữ liệu và thêm cột STT
+                // Xử lý hiển thị dữ liệu
                 if (dataTable.Rows.Count > 0)
                 {
+
+                    AddColumnName(dataTable);
+
                     dgv_ds_pbh.DataSource = dataTable;
                     MessageBox.Show("Tìm kiếm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -219,6 +222,24 @@ namespace QuanLyDaQuy.Phieu
             catch (Exception ex)
             {
                 MessageBox.Show("Có lỗi khi tìm kiếm: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void AddColumnName(DataTable dataTable)
+        {
+            string[] columnNames = new string[]
+            {
+                    "Mã phiếu",
+                    "Mã khách hàng",
+                    "Tên khách hàng",
+                    "Số điện thoại",
+                    "Ngày lập",
+                    "Tổng tiền"
+            };
+
+            for (int i = 0; i < dataTable.Columns.Count; i++)
+            {
+                dataTable.Columns[i].ColumnName = columnNames[i];
             }
         }
 
@@ -284,42 +305,26 @@ namespace QuanLyDaQuy.Phieu
             switch (cbb_searchMode.SelectedIndex)
             { 
                 case 1: // Mã phiếu
-                    {
                         isEnableKeyWord = true;
-                    }
                     break;
 
                 case 2: // Mã khách hàng
-                    {
                         isEnableKeyWord = true;
-
-                    }
-
                     break;
 
                 case 3: // Tên khách hàng
-                    {
                         isEnableKeyWord = true;
-
-                    }
-
                     break;
 
                 case 4: // Số điện thoại
-                    {
                         isEnableKeyWord = true;
-
-                    }
-
                     break;
 
                 case 5: // Ngày lập
                     {
                         isEnableKeyWord = false;
                         isEnableDate = true;
-
                     }
-
                     break;
 
                 default:
@@ -351,12 +356,14 @@ namespace QuanLyDaQuy.Phieu
 
         private void dgv_ds_pbh_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (e.ColumnIndex == dgv_ds_pbh.Columns["NgayLap"].Index && e.Value != null)
+            int ngayLapColumnIndex = 4; // Thay chỉ số này bằng chỉ số tương ứng với cột "NgayLap" trong DataGridView
+
+            if (e.ColumnIndex == ngayLapColumnIndex && e.Value != null)
             {
                 // Kiểm tra giá trị ngày lập có đúng định dạng ngày không
                 if (DateTime.TryParse(e.Value.ToString(), out DateTime ngayLap))
                 {
-                    // Định dạng ngày thành chuỗi "ddMMyyyy"
+                    // Định dạng ngày thành chuỗi "dd/MM/yyyy"
                     e.Value = ngayLap.ToString("dd/MM/yyyy");
                     e.FormattingApplied = true;
                 }
