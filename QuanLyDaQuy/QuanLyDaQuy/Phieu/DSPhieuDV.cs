@@ -63,20 +63,14 @@ namespace QuanLyDaQuy.Phieu
                         enableSearchBox = true;
                         break;
                     }
-                // NgayLap
+                // Hoan thanh
                 case 3:
                     {
                         textBox_Search.Text = "";
                         break;
                     }
-                // Hoan thanh
-                case 4:
-                    {
-                        textBox_Search.Text = "";
-                        break;
-                    }
                 // Chua hoan thanh
-                case 5:
+                case 4:
                     {
                         textBox_Search.Text = "";
                         break;
