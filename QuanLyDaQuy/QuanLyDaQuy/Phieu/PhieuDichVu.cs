@@ -653,5 +653,18 @@ namespace QuanLyDaQuy.Phieu
                 MessageBox.Show("Xuất thành công !");
             }
         }
+
+        private void KhachHang_Leave(object sender, EventArgs e)
+        {
+            int index = ((ComboBox)sender).SelectedIndex;
+            if (index == -1 || ((ComboBox)sender).Text != ((ComboBox)sender).Items[index].ToString())
+            {
+                textBox_SDT.Text = "";
+            }
+            else
+            {
+                textBox_SDT.Text = SDT[index];
+            }
+        }
     }
 }

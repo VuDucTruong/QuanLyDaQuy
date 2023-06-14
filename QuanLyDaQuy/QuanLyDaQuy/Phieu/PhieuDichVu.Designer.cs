@@ -341,6 +341,7 @@
             this.comboBox_KhachHang.Size = new System.Drawing.Size(258, 24);
             this.comboBox_KhachHang.TabIndex = 18;
             this.comboBox_KhachHang.SelectedIndexChanged += new System.EventHandler(this.KhachHang_SelectedIndexChanged);
+            this.comboBox_KhachHang.Leave += new System.EventHandler(this.KhachHang_Leave);
             // 
             // textBox_SDT
             // 
