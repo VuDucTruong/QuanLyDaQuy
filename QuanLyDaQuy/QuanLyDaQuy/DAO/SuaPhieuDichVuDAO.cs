@@ -29,17 +29,31 @@ namespace QuanLyDaQuy.DAO
             DataTable data = DAO.DataProvider.Instance.ExecuteQuery("EXEC [dbo].[loadCTPhieuDV_byMaPhieuDV] @MaPhieuDV = " + MaPhieuDV);
             return data;
         }
-        public void updatePhieuDV(string tinhTrangPhieu, int MaPhieuDV)
+        public void updatePhieuDV(string SoTienTraTruoc, string SoTienConLai, string tinhTrangPhieu, int MaPhieuDV)
         {
             DAO.DataProvider.Instance.ExecuteQuery("update PHIEUDICHVU " +
-                                                            "set TinhTrang = N'" + tinhTrangPhieu + "' " +
-                                                            "where MaPhieuDV = " + MaPhieuDV);
+                                                        "set TraTruoc = " + SoTienTraTruoc + " " +
+                                                        "where MaPhieuDV = " + MaPhieuDV);
+
+            DAO.DataProvider.Instance.ExecuteQuery("update PHIEUDICHVU " +
+                                                        "set ConLai = " + SoTienConLai + " " +
+                                                        "where MaPhieuDV = " + MaPhieuDV);
+
+            DAO.DataProvider.Instance.ExecuteQuery("update PHIEUDICHVU " +
+                                                        "set TinhTrang = N'" + tinhTrangPhieu + "' " +
+                                                        "where MaPhieuDV = " + MaPhieuDV);
         }
         public void updateCTPhieuDV(DataGridViewRow row, int MaPhieuDV, List<int> MaDVs)
         {
             DAO.DataProvider.Instance.ExecuteQuery("update CT_PHIEUDICHVU " +
-                                                                "set TinhTrang = N'" + row.Cells[9].Value.ToString() + "' " +
-                                                                "where MaPhieuDV = " + MaPhieuDV + " and MaDV = " + MaDVs[row.Index]);
+                                                            "set TraTruoc = " + row.Cells[6].Value.ToString() + " " +
+                                                            "where MaPhieuDV = " + MaPhieuDV + " and MaDV = " + MaDVs[row.Index]);
+            DAO.DataProvider.Instance.ExecuteQuery("update CT_PHIEUDICHVU " +
+                                                            "set ConLai = " + row.Cells[7].Value.ToString() + " " +
+                                                            "where MaPhieuDV = " + MaPhieuDV + " and MaDV = " + MaDVs[row.Index]);
+            DAO.DataProvider.Instance.ExecuteQuery("update CT_PHIEUDICHVU " +
+                                                            "set TinhTrang = N'" + row.Cells[9].Value.ToString() + "' " +
+                                                            "where MaPhieuDV = " + MaPhieuDV + " and MaDV = " + MaDVs[row.Index]);
         }
     }
 }

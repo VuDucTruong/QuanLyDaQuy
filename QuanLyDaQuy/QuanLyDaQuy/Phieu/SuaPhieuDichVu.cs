@@ -23,7 +23,7 @@ namespace QuanLyDaQuy.Phieu
         private int MaPhieuDV = 0;
         string tinhTrangPhieu = "";
         List<int> MaDVs = new List<int>();
-
+        double PhanTramTraTruocToiThieu = 0;
         public SuaPhieuDichVu(int maPhieuDV)
         {
             InitializeComponent();
@@ -41,9 +41,9 @@ namespace QuanLyDaQuy.Phieu
             {
                 textBox_KhachHang.Text = row["TenKH"].ToString();
                 textBox_SDT.Text = row["SDT"].ToString();
-                textBox_TongTien.Text = row["TongTien"].ToString();
-                textBox_TongTienTraTruoc.Text = row["TraTruoc"].ToString();
-                textBox_TongTienConLai.Text = row["ConLai"].ToString();
+                textBox_TongTien.Text = row["TongTien"].ToString().Split(',')[0].Replace(".", "");
+                textBox_TongTienTraTruoc.Text = row["TraTruoc"].ToString().Split(',')[0].Replace(".", "");
+                textBox_TongTienConLai.Text = row["ConLai"].ToString().Split(',')[0].Replace(".", "");
                 DateTime NgayLapPhieu;
                 DateTime.TryParseExact(row["NgayLap"].ToString().Split(' ')[0], "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out NgayLapPhieu);
                 textBox_NgayLap.Text = NgayLapPhieu.ToString("dd/MM/yyyy");
@@ -58,26 +58,45 @@ namespace QuanLyDaQuy.Phieu
                 MaDVs.Add(Convert.ToInt32(row["MaDV"]));
                 // tenDV
                 string tenDV = row["TenDV"].ToString();
-                string donGia = row["DonGia"].ToString();
-                string donGiaDuocTinh = row["DonGiaDuocTinh"].ToString();
+                string donGia = row["DonGia"].ToString().Split(',')[0].Replace(".", "");
+                string donGiaDuocTinh = row["DonGiaDuocTinh"].ToString().Split(',')[0].Replace(".", "");
                 string sl = row["SL"].ToString();
-                string thanhTien = row["ThanhTien"].ToString();
-                string traTruoc = row["TraTruoc"].ToString();
-                string conLai = row["ConLai"].ToString();
+                string thanhTien = row["ThanhTien"].ToString().Split(',')[0].Replace(".", "");
+                string traTruoc = row["TraTruoc"].ToString().Split(',')[0].Replace(".", "");
+                string conLai = row["ConLai"].ToString().Split(',')[0].Replace(".", "");
                 DateTime NgayGiao;
                 DateTime.TryParseExact(row["NgayGiao"].ToString().Split(' ')[0], "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out NgayGiao);
                 string ngayGiao = NgayGiao.ToString("dd/MM/yyyy");
                 string tinhTrang = row["TinhTrang"].ToString();
                 dataGridView1.Rows.Add(stt, tenDV, donGia, donGiaDuocTinh, sl, thanhTien, traTruoc, conLai, ngayGiao, tinhTrang);
                 stt++;
-            }           
+            }
+
+            // Select ThamSo
+            DataTable ThamSo = DAO.PhieuDichVuDAO.Instance.Get_SoTienTraTruoc();
+            foreach (DataRow row in ThamSo.Rows)
+            {
+                PhanTramTraTruocToiThieu = Convert.ToDouble(row["GiaTri"]);
+            }
         }
 
         private void dataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
         {
-
+            if (e.Control is System.Windows.Forms.TextBox)
+            {
+                System.Windows.Forms.TextBox textBox = e.Control as System.Windows.Forms.TextBox;
+                textBox.KeyPress -= new KeyPressEventHandler(CellNumber_KeyPress);
+                textBox.KeyPress += new KeyPressEventHandler(CellNumber_KeyPress);
+            }
         }
 
+        private void CellNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsNumber(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
 
         private void dataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
@@ -86,19 +105,154 @@ namespace QuanLyDaQuy.Phieu
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            tinhTrangPhieu = "Hoàn thành";
+            Cell_Validating(sender, e);
 
-            // check Tinh Trang
+
+            if (e.RowIndex < 0)
+                return;
+            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+            if (row.IsNewRow || row.Cells[0].Value == null)
+                return;
+            switch (e.ColumnIndex)
+            {
+                // Tra truoc changed          
+                case 6:
+                    {
+                        double TraTruoc = Convert.ToDouble(row.Cells[6].Value);
+                        double ThanhTien = Convert.ToDouble(row.Cells[5].Value);
+                        // update ConLai
+                        row.Cells[7].Value = ThanhTien - TraTruoc;
+                        TinhTongTienConLai();
+                        TinhTongTienTraTruoc();
+                        break;
+                    }
+                case 9:
+                    {
+                        tinhTrangPhieu = "Hoàn thành";
+
+                        // check Tinh Trang
+                        foreach (DataGridViewRow r in dataGridView1.Rows)
+                        {
+                            if (r.IsNewRow || r.Cells[0].Value == null)
+                                continue;
+                            if (r.Cells[9].Value.ToString() != "Hoàn thành")
+                            {
+                                tinhTrangPhieu = "Chưa hoàn thành";
+                                break;
+                            }
+                        }
+                        break;
+                    }
+            }
+
+
+
+        }
+
+        private void TinhTongTienTraTruoc()
+        {
+            double TongTienTraTruoc = 0;
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                if (row.IsNewRow || row.Cells[0].Value == null)
-                    continue;
-                if (row.Cells[9].Value.ToString() != "Hoàn thành")
+                TongTienTraTruoc += Convert.ToDouble(row.Cells[6].Value);
+            }
+            textBox_TongTienTraTruoc.Text = TongTienTraTruoc.ToString();
+        }
+
+        private void TinhTongTienConLai()
+        {
+            double TongTienConLai = 0;
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                TongTienConLai += Convert.ToDouble(row.Cells[7].Value);
+            }
+            textBox_TongTienConLai.Text = TongTienConLai.ToString();
+        }
+
+        private void Cell_Validating(object sender, DataGridViewCellEventArgs e)
+        {
+            // Update new value
+            if (e.RowIndex < 0)
+                return;
+
+            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+
+            string fixValue = "";
+            bool cancel = false;
+
+            // Empty
+            if (row.Cells[e.ColumnIndex].Value == null)
+            {
+                switch (e.ColumnIndex)
                 {
-                    tinhTrangPhieu = "Chưa hoàn thành";
-                    break;
+                    // Tra truoc changed          
+                    case 6:
+                        {
+                            double ThanhTien = Convert.ToDouble(row.Cells[5].Value);
+                            fixValue = (ThanhTien * PhanTramTraTruocToiThieu).ToString();
+                            cancel = true;
+                            break;
+                        }
+                    case 8:
+                        {
+                            fixValue = "";
+                            cancel = true;
+                            break;
+                        }
                 }
             }
+            else
+            {
+                // Have value
+                string value = row.Cells[e.ColumnIndex].Value.ToString();
+                switch (e.ColumnIndex)
+                {
+                    // Tra truoc changed          
+                    case 6:
+                        {
+                            double ThanhTien = Convert.ToDouble(row.Cells[5].Value);
+                            double amount = Convert.ToDouble(value);
+                            double Rate = PhanTramTraTruocToiThieu * 100;
+                            if (Validating_NumberDouble(value))
+                            {
+                                if (amount < ThanhTien * PhanTramTraTruocToiThieu)
+                                {
+                                    MessageBox.Show("Số tiền trả trước phải lớn hơn "
+                                        + Rate.ToString() + "% thành tiền!", "Cảnh báo");
+                                    fixValue = (ThanhTien * PhanTramTraTruocToiThieu).ToString();
+                                    cancel = true;
+                                }
+                            }
+                            else
+                            {
+                                fixValue = (ThanhTien * PhanTramTraTruocToiThieu).ToString();
+                                cancel = true;
+                            }
+
+                            break;
+                        }
+                }
+            }
+
+
+            if (cancel)
+            {
+                row.Cells[e.ColumnIndex].Value = fixValue;
+            }
+        }
+
+        private bool Validating_NumberDouble(string text)
+        {
+            try
+            {
+                Convert.ToDouble(text);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Bạn phải nhập số thực vào ô này!", "Cảnh báo");
+                return false;
+            }
+            return true;
         }
 
         private void button_Huy_Click(object sender, EventArgs e)
@@ -115,7 +269,7 @@ namespace QuanLyDaQuy.Phieu
             {
                 try
                 {
-                    SuaPhieuDichVuDAO.Instance.updatePhieuDV(tinhTrangPhieu, MaPhieuDV);
+                    SuaPhieuDichVuDAO.Instance.updatePhieuDV(textBox_TongTienTraTruoc.Text, textBox_TongTienConLai.Text, tinhTrangPhieu, MaPhieuDV);
                     foreach (DataGridViewRow row in dataGridView1.Rows)
                     {
                         SuaPhieuDichVuDAO.Instance.updateCTPhieuDV(row, MaPhieuDV, MaDVs);

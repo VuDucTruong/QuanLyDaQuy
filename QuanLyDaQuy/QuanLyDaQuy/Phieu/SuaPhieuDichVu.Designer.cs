@@ -29,16 +29,6 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonGiaDuocTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TraTruoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ConLai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayGiao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TinhTrang = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.label_TongTien = new System.Windows.Forms.Label();
@@ -58,8 +48,18 @@
             this.button_Close = new System.Windows.Forms.Button();
             this.button_OK = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.exPDF_btn = new System.Windows.Forms.Button();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenDV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DonGiaDuocTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TraTruoc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ConLai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayGiao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TinhTrang = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -98,91 +98,6 @@
             this.dataGridView1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dataGridView1_RowsAdded);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             this.dataGridView1.Leave += new System.EventHandler(this.dataGridView1_FocusLeave);
-            // 
-            // STT
-            // 
-            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.STT.HeaderText = "STT";
-            this.STT.MinimumWidth = 6;
-            this.STT.Name = "STT";
-            this.STT.ReadOnly = true;
-            // 
-            // TenDV
-            // 
-            this.TenDV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TenDV.HeaderText = "Loại dịch vụ";
-            this.TenDV.MinimumWidth = 6;
-            this.TenDV.Name = "TenDV";
-            this.TenDV.ReadOnly = true;
-            this.TenDV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // DonGia
-            // 
-            this.DonGia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DonGia.HeaderText = "Đơn giá dịch vụ";
-            this.DonGia.MinimumWidth = 6;
-            this.DonGia.Name = "DonGia";
-            this.DonGia.ReadOnly = true;
-            // 
-            // DonGiaDuocTinh
-            // 
-            this.DonGiaDuocTinh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DonGiaDuocTinh.HeaderText = "Đơn giá được tính";
-            this.DonGiaDuocTinh.MinimumWidth = 6;
-            this.DonGiaDuocTinh.Name = "DonGiaDuocTinh";
-            this.DonGiaDuocTinh.ReadOnly = true;
-            // 
-            // SL
-            // 
-            this.SL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.SL.HeaderText = "Số lượng";
-            this.SL.MinimumWidth = 6;
-            this.SL.Name = "SL";
-            this.SL.ReadOnly = true;
-            // 
-            // ThanhTien
-            // 
-            this.ThanhTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ThanhTien.HeaderText = "Thành tiền";
-            this.ThanhTien.MinimumWidth = 6;
-            this.ThanhTien.Name = "ThanhTien";
-            this.ThanhTien.ReadOnly = true;
-            // 
-            // TraTruoc
-            // 
-            this.TraTruoc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TraTruoc.HeaderText = "Trả trước";
-            this.TraTruoc.MinimumWidth = 6;
-            this.TraTruoc.Name = "TraTruoc";
-            this.TraTruoc.ReadOnly = true;
-            // 
-            // ConLai
-            // 
-            this.ConLai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ConLai.HeaderText = "Còn lại";
-            this.ConLai.MinimumWidth = 6;
-            this.ConLai.Name = "ConLai";
-            this.ConLai.ReadOnly = true;
-            // 
-            // NgayGiao
-            // 
-            this.NgayGiao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NgayGiao.HeaderText = "Ngày giao";
-            this.NgayGiao.MinimumWidth = 6;
-            this.NgayGiao.Name = "NgayGiao";
-            this.NgayGiao.ReadOnly = true;
-            // 
-            // TinhTrang
-            // 
-            this.TinhTrang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TinhTrang.HeaderText = "Tình trạng";
-            this.TinhTrang.Items.AddRange(new object[] {
-            "Hoàn thành",
-            "Chưa hoàn thành"});
-            this.TinhTrang.MinimumWidth = 6;
-            this.TinhTrang.Name = "TinhTrang";
-            this.TinhTrang.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.TinhTrang.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // tableLayoutPanel1
             // 
@@ -426,6 +341,17 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(983, 32);
             this.tableLayoutPanel2.TabIndex = 16;
             // 
+            // exPDF_btn
+            // 
+            this.exPDF_btn.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.exPDF_btn.Location = new System.Drawing.Point(644, 3);
+            this.exPDF_btn.Name = "exPDF_btn";
+            this.exPDF_btn.Size = new System.Drawing.Size(95, 26);
+            this.exPDF_btn.TabIndex = 16;
+            this.exPDF_btn.Text = "Xuất PDF";
+            this.exPDF_btn.UseVisualStyleBackColor = true;
+            this.exPDF_btn.Click += new System.EventHandler(this.exPDF_btn_Click);
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
@@ -441,16 +367,89 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(989, 450);
             this.tableLayoutPanel3.TabIndex = 16;
             // 
-            // exPDF_btn
+            // STT
             // 
-            this.exPDF_btn.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.exPDF_btn.Location = new System.Drawing.Point(644, 3);
-            this.exPDF_btn.Name = "exPDF_btn";
-            this.exPDF_btn.Size = new System.Drawing.Size(95, 26);
-            this.exPDF_btn.TabIndex = 16;
-            this.exPDF_btn.Text = "Xuất PDF";
-            this.exPDF_btn.UseVisualStyleBackColor = true;
-            this.exPDF_btn.Click += new System.EventHandler(this.exPDF_btn_Click);
+            this.STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.STT.HeaderText = "STT";
+            this.STT.MinimumWidth = 6;
+            this.STT.Name = "STT";
+            this.STT.ReadOnly = true;
+            // 
+            // TenDV
+            // 
+            this.TenDV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TenDV.HeaderText = "Loại dịch vụ";
+            this.TenDV.MinimumWidth = 6;
+            this.TenDV.Name = "TenDV";
+            this.TenDV.ReadOnly = true;
+            this.TenDV.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // DonGia
+            // 
+            this.DonGia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DonGia.HeaderText = "Đơn giá dịch vụ";
+            this.DonGia.MinimumWidth = 6;
+            this.DonGia.Name = "DonGia";
+            this.DonGia.ReadOnly = true;
+            // 
+            // DonGiaDuocTinh
+            // 
+            this.DonGiaDuocTinh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DonGiaDuocTinh.HeaderText = "Đơn giá được tính";
+            this.DonGiaDuocTinh.MinimumWidth = 6;
+            this.DonGiaDuocTinh.Name = "DonGiaDuocTinh";
+            this.DonGiaDuocTinh.ReadOnly = true;
+            // 
+            // SL
+            // 
+            this.SL.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.SL.HeaderText = "Số lượng";
+            this.SL.MinimumWidth = 6;
+            this.SL.Name = "SL";
+            this.SL.ReadOnly = true;
+            // 
+            // ThanhTien
+            // 
+            this.ThanhTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ThanhTien.HeaderText = "Thành tiền";
+            this.ThanhTien.MinimumWidth = 6;
+            this.ThanhTien.Name = "ThanhTien";
+            this.ThanhTien.ReadOnly = true;
+            // 
+            // TraTruoc
+            // 
+            this.TraTruoc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TraTruoc.HeaderText = "Trả trước";
+            this.TraTruoc.MinimumWidth = 6;
+            this.TraTruoc.Name = "TraTruoc";
+            // 
+            // ConLai
+            // 
+            this.ConLai.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ConLai.HeaderText = "Còn lại";
+            this.ConLai.MinimumWidth = 6;
+            this.ConLai.Name = "ConLai";
+            this.ConLai.ReadOnly = true;
+            // 
+            // NgayGiao
+            // 
+            this.NgayGiao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NgayGiao.HeaderText = "Ngày giao";
+            this.NgayGiao.MinimumWidth = 6;
+            this.NgayGiao.Name = "NgayGiao";
+            this.NgayGiao.ReadOnly = true;
+            // 
+            // TinhTrang
+            // 
+            this.TinhTrang.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TinhTrang.HeaderText = "Tình trạng";
+            this.TinhTrang.Items.AddRange(new object[] {
+            "Hoàn thành",
+            "Chưa hoàn thành"});
+            this.TinhTrang.MinimumWidth = 6;
+            this.TinhTrang.Name = "TinhTrang";
+            this.TinhTrang.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.TinhTrang.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // SuaPhieuDichVu
             // 
@@ -496,6 +495,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TextBox textBox_KhachHang;
+        private System.Windows.Forms.Button exPDF_btn;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDV;
         private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
@@ -506,6 +506,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ConLai;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayGiao;
         private System.Windows.Forms.DataGridViewComboBoxColumn TinhTrang;
-        private System.Windows.Forms.Button exPDF_btn;
     }
 }
