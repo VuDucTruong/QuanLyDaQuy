@@ -250,6 +250,7 @@
             this.dt_grid_phieumuahang.GridColor = System.Drawing.SystemColors.Control;
             this.dt_grid_phieumuahang.Location = new System.Drawing.Point(3, 143);
             this.dt_grid_phieumuahang.Name = "dt_grid_phieumuahang";
+            this.dt_grid_phieumuahang.ReadOnly = true;
             this.dt_grid_phieumuahang.RowHeadersWidth = 51;
             this.dt_grid_phieumuahang.RowTemplate.Height = 24;
             this.dt_grid_phieumuahang.Size = new System.Drawing.Size(967, 337);
@@ -268,7 +269,7 @@
             this.phieuMuaHang_column_STT.MinimumWidth = 6;
             this.phieuMuaHang_column_STT.Name = "phieuMuaHang_column_STT";
             this.phieuMuaHang_column_STT.ReadOnly = true;
-            this.phieuMuaHang_column_STT.Width = 63;
+            this.phieuMuaHang_column_STT.Width = 64;
             // 
             // phieuMuaHang_column_sanPham
             // 
@@ -276,6 +277,7 @@
             this.phieuMuaHang_column_sanPham.HeaderText = "Sản phẩm";
             this.phieuMuaHang_column_sanPham.MinimumWidth = 6;
             this.phieuMuaHang_column_sanPham.Name = "phieuMuaHang_column_sanPham";
+            this.phieuMuaHang_column_sanPham.ReadOnly = true;
             this.phieuMuaHang_column_sanPham.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.phieuMuaHang_column_sanPham.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
@@ -287,7 +289,7 @@
             this.phieuMuaHang_column_loaiSanPham.Name = "phieuMuaHang_column_loaiSanPham";
             this.phieuMuaHang_column_loaiSanPham.ReadOnly = true;
             this.phieuMuaHang_column_loaiSanPham.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.phieuMuaHang_column_loaiSanPham.Width = 124;
+            this.phieuMuaHang_column_loaiSanPham.Width = 119;
             // 
             // phieuMuaHang_column_soLuong
             // 
@@ -295,7 +297,8 @@
             this.phieuMuaHang_column_soLuong.HeaderText = "Số lượng";
             this.phieuMuaHang_column_soLuong.MinimumWidth = 6;
             this.phieuMuaHang_column_soLuong.Name = "phieuMuaHang_column_soLuong";
-            this.phieuMuaHang_column_soLuong.Width = 89;
+            this.phieuMuaHang_column_soLuong.ReadOnly = true;
+            this.phieuMuaHang_column_soLuong.Width = 86;
             // 
             // phieuMuaHang_column_donViTinh
             // 
@@ -304,7 +307,7 @@
             this.phieuMuaHang_column_donViTinh.MinimumWidth = 6;
             this.phieuMuaHang_column_donViTinh.Name = "phieuMuaHang_column_donViTinh";
             this.phieuMuaHang_column_donViTinh.ReadOnly = true;
-            this.phieuMuaHang_column_donViTinh.Width = 96;
+            this.phieuMuaHang_column_donViTinh.Width = 75;
             // 
             // phieuMuaHang_column_donGia
             // 
@@ -313,7 +316,7 @@
             this.phieuMuaHang_column_donGia.MinimumWidth = 6;
             this.phieuMuaHang_column_donGia.Name = "phieuMuaHang_column_donGia";
             this.phieuMuaHang_column_donGia.ReadOnly = true;
-            this.phieuMuaHang_column_donGia.Width = 82;
+            this.phieuMuaHang_column_donGia.Width = 63;
             // 
             // phieuMuaHang_column_thanhTien
             // 
@@ -322,16 +325,16 @@
             this.phieuMuaHang_column_thanhTien.MinimumWidth = 6;
             this.phieuMuaHang_column_thanhTien.Name = "phieuMuaHang_column_thanhTien";
             this.phieuMuaHang_column_thanhTien.ReadOnly = true;
-            this.phieuMuaHang_column_thanhTien.Width = 98;
+            this.phieuMuaHang_column_thanhTien.Width = 97;
             // 
             // lb_thanhTien
             // 
             this.lb_thanhTien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_thanhTien.AutoSize = true;
-            this.lb_thanhTien.Location = new System.Drawing.Point(731, 483);
+            this.lb_thanhTien.Location = new System.Drawing.Point(724, 483);
             this.lb_thanhTien.Name = "lb_thanhTien";
-            this.lb_thanhTien.Size = new System.Drawing.Size(69, 30);
+            this.lb_thanhTien.Size = new System.Drawing.Size(76, 30);
             this.lb_thanhTien.TabIndex = 12;
             this.lb_thanhTien.Text = "Tổng tiền: ";
             // 

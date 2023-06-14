@@ -443,8 +443,14 @@ namespace QuanLyDaQuy.Phieu
         {
             try
             {
-                // Lấy tất cả thông tin
-                string tenKH = cb_khachhang.Text;
+                DialogResult dialogResult = MessageBox.Show("Xin hãy kiểm tra kĩ nội dung trước khi lập phiếu." +
+                                           "\nBạn có chắc muốn lập phiếu này không?", "Thông báo", MessageBoxButtons.YesNo);
+
+                if (dialogResult == DialogResult.No)
+                    return;
+
+                    // Lấy tất cả thông tin
+                    string tenKH = cb_khachhang.Text;
                 if (string.IsNullOrEmpty(tenKH))
                 {
                     MessageBox.Show("Tên khách hàng không được để trống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
