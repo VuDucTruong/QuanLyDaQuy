@@ -87,7 +87,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 261F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 263F));
             this.tableLayoutPanel1.Controls.Add(this.label10, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.id_tb, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.name_tb, 1, 1);
@@ -95,12 +95,12 @@
             this.tableLayoutPanel1.Controls.Add(this.label6, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.phone_tb, 3, 0);
             this.tableLayoutPanel1.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 82);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(5, 82);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 126);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(786, 126);
             this.tableLayoutPanel1.TabIndex = 43;
             // 
             // label10
@@ -155,7 +155,7 @@
             this.phone_tb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.phone_tb.Location = new System.Drawing.Point(524, 21);
             this.phone_tb.Name = "phone_tb";
-            this.phone_tb.Size = new System.Drawing.Size(255, 22);
+            this.phone_tb.Size = new System.Drawing.Size(257, 22);
             this.phone_tb.TabIndex = 25;
             this.phone_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.phone_tb_KeyPress);
             // 
@@ -168,6 +168,8 @@
             this.Controls.Add(this.insert_btn);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label_Title);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "ThemKHForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "THÊM KHÁCH HÀNG";

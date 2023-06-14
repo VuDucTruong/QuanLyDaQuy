@@ -59,8 +59,8 @@
             this.button_OK = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.button_XoaDong = new System.Windows.Forms.Button();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_XuatPDF = new System.Windows.Forms.Button();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -386,7 +386,7 @@
             this.button_Huy.Name = "button_Huy";
             this.button_Huy.Size = new System.Drawing.Size(113, 24);
             this.button_Huy.TabIndex = 14;
-            this.button_Huy.Text = "Hủy";
+            this.button_Huy.Text = "Hủy phiếu";
             this.button_Huy.UseVisualStyleBackColor = true;
             this.button_Huy.Click += new System.EventHandler(this.button_Huy_Click);
             // 
@@ -399,7 +399,7 @@
             this.button_OK.Name = "button_OK";
             this.button_OK.Size = new System.Drawing.Size(112, 24);
             this.button_OK.TabIndex = 15;
-            this.button_OK.Text = "OK";
+            this.button_OK.Text = "Lập phiếu";
             this.button_OK.UseVisualStyleBackColor = true;
             this.button_OK.Click += new System.EventHandler(this.button_OK_Click);
             // 
@@ -434,6 +434,18 @@
             this.button_XoaDong.UseVisualStyleBackColor = true;
             this.button_XoaDong.Click += new System.EventHandler(this.button_XoaDong_Click);
             // 
+            // btn_XuatPDF
+            // 
+            this.btn_XuatPDF.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_XuatPDF.Location = new System.Drawing.Point(627, 3);
+            this.btn_XuatPDF.Name = "btn_XuatPDF";
+            this.btn_XuatPDF.Size = new System.Drawing.Size(112, 26);
+            this.btn_XuatPDF.TabIndex = 17;
+            this.btn_XuatPDF.Text = "Xuất PDF";
+            this.btn_XuatPDF.UseVisualStyleBackColor = true;
+            this.btn_XuatPDF.Click += new System.EventHandler(this.btn_XuatPDF_Click);
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
@@ -448,18 +460,6 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(989, 450);
             this.tableLayoutPanel3.TabIndex = 16;
-            // 
-            // btn_XuatPDF
-            // 
-            this.btn_XuatPDF.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_XuatPDF.Location = new System.Drawing.Point(627, 3);
-            this.btn_XuatPDF.Name = "btn_XuatPDF";
-            this.btn_XuatPDF.Size = new System.Drawing.Size(112, 26);
-            this.btn_XuatPDF.TabIndex = 17;
-            this.btn_XuatPDF.Text = "Xuất PDF";
-            this.btn_XuatPDF.UseVisualStyleBackColor = true;
-            this.btn_XuatPDF.Click += new System.EventHandler(this.btn_XuatPDF_Click);
             // 
             // PhieuDichVu
             // 

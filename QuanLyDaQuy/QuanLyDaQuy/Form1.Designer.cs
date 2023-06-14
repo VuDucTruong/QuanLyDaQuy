@@ -212,7 +212,7 @@
             this.phiếuMuaHàngToolStripMenuItem2.Name = "phiếuMuaHàngToolStripMenuItem2";
             this.phiếuMuaHàngToolStripMenuItem2.ShortcutKeyDisplayString = "F1";
             this.phiếuMuaHàngToolStripMenuItem2.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.phiếuMuaHàngToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.phiếuMuaHàngToolStripMenuItem2.Size = new System.Drawing.Size(222, 26);
             this.phiếuMuaHàngToolStripMenuItem2.Text = "Phiếu mua hàng";
             this.phiếuMuaHàngToolStripMenuItem2.Click += new System.EventHandler(this.phiếuMuaHàngToolStripMenuItem2_Click);
             // 
@@ -221,7 +221,7 @@
             this.phiếuBánHàngToolStripMenuItem2.Name = "phiếuBánHàngToolStripMenuItem2";
             this.phiếuBánHàngToolStripMenuItem2.ShortcutKeyDisplayString = "F2";
             this.phiếuBánHàngToolStripMenuItem2.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.phiếuBánHàngToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.phiếuBánHàngToolStripMenuItem2.Size = new System.Drawing.Size(222, 26);
             this.phiếuBánHàngToolStripMenuItem2.Text = "Phiếu bán hàng";
             this.phiếuBánHàngToolStripMenuItem2.Click += new System.EventHandler(this.phiếuBánHàngToolStripMenuItem2_Click);
             // 
@@ -230,7 +230,7 @@
             this.phiếuDịchVụToolStripMenuItem2.Name = "phiếuDịchVụToolStripMenuItem2";
             this.phiếuDịchVụToolStripMenuItem2.ShortcutKeyDisplayString = "F3";
             this.phiếuDịchVụToolStripMenuItem2.ShortcutKeys = System.Windows.Forms.Keys.F3;
-            this.phiếuDịchVụToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.phiếuDịchVụToolStripMenuItem2.Size = new System.Drawing.Size(222, 26);
             this.phiếuDịchVụToolStripMenuItem2.Text = "Phiếu dịch vụ";
             this.phiếuDịchVụToolStripMenuItem2.Click += new System.EventHandler(this.phiếuDịchVụToolStripMenuItem2_Click);
             // 
@@ -249,7 +249,7 @@
             this.phiếuMuaHàngToolStripMenuItem3.Name = "phiếuMuaHàngToolStripMenuItem3";
             this.phiếuMuaHàngToolStripMenuItem3.ShortcutKeyDisplayString = "F4";
             this.phiếuMuaHàngToolStripMenuItem3.ShortcutKeys = System.Windows.Forms.Keys.F4;
-            this.phiếuMuaHàngToolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
+            this.phiếuMuaHàngToolStripMenuItem3.Size = new System.Drawing.Size(222, 26);
             this.phiếuMuaHàngToolStripMenuItem3.Text = "Phiếu mua hàng";
             this.phiếuMuaHàngToolStripMenuItem3.Click += new System.EventHandler(this.phiếuMuaHàngToolStripMenuItem3_Click);
             // 
@@ -258,7 +258,7 @@
             this.phiếuBánHàngToolStripMenuItem3.Name = "phiếuBánHàngToolStripMenuItem3";
             this.phiếuBánHàngToolStripMenuItem3.ShortcutKeyDisplayString = "F5";
             this.phiếuBánHàngToolStripMenuItem3.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.phiếuBánHàngToolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
+            this.phiếuBánHàngToolStripMenuItem3.Size = new System.Drawing.Size(222, 26);
             this.phiếuBánHàngToolStripMenuItem3.Text = "Phiếu bán hàng";
             this.phiếuBánHàngToolStripMenuItem3.Click += new System.EventHandler(this.phiếuBánHàngToolStripMenuItem3_Click);
             // 
@@ -267,7 +267,7 @@
             this.phiếuDịchVụToolStripMenuItem3.Name = "phiếuDịchVụToolStripMenuItem3";
             this.phiếuDịchVụToolStripMenuItem3.ShortcutKeyDisplayString = "F6";
             this.phiếuDịchVụToolStripMenuItem3.ShortcutKeys = System.Windows.Forms.Keys.F6;
-            this.phiếuDịchVụToolStripMenuItem3.Size = new System.Drawing.Size(224, 26);
+            this.phiếuDịchVụToolStripMenuItem3.Size = new System.Drawing.Size(222, 26);
             this.phiếuDịchVụToolStripMenuItem3.Text = "Phiếu dịch vụ";
             this.phiếuDịchVụToolStripMenuItem3.Click += new System.EventHandler(this.phieuDichVuToolStripMenuItem_Click);
             // 
@@ -405,7 +405,9 @@
             this.Controls.Add(this.thongTinLSP1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.menuStrip2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip2;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MÀN HÌNH CHÍNH";

@@ -83,7 +83,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 308F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 310F));
             this.tableLayoutPanel1.Controls.Add(this.id_tb, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label10, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.LSP_tb, 1, 1);
@@ -92,12 +92,12 @@
             this.tableLayoutPanel1.Controls.Add(this.LoiNhuan_tb, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.DVT_cb, 3, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(25, 81);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 78);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(762, 126);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(764, 126);
             this.tableLayoutPanel1.TabIndex = 48;
             // 
             // id_tb
@@ -152,7 +152,7 @@
             this.LoiNhuan_tb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.LoiNhuan_tb.Location = new System.Drawing.Point(455, 21);
             this.LoiNhuan_tb.Name = "LoiNhuan_tb";
-            this.LoiNhuan_tb.Size = new System.Drawing.Size(302, 22);
+            this.LoiNhuan_tb.Size = new System.Drawing.Size(304, 22);
             this.LoiNhuan_tb.TabIndex = 25;
             this.LoiNhuan_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LoiNhuan_tb_KeyPress);
             // 
@@ -175,7 +175,7 @@
             this.DVT_cb.FormattingEnabled = true;
             this.DVT_cb.Location = new System.Drawing.Point(455, 82);
             this.DVT_cb.Name = "DVT_cb";
-            this.DVT_cb.Size = new System.Drawing.Size(302, 24);
+            this.DVT_cb.Size = new System.Drawing.Size(304, 24);
             this.DVT_cb.TabIndex = 48;
             // 
             // dONVITINHBindingSource
@@ -211,6 +211,8 @@
             this.Controls.Add(this.insert_btn);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label_Title);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "ThemLSPForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "THÊM LOẠI SẢN PHẨM";

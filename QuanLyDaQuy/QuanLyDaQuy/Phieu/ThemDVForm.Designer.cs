@@ -167,6 +167,8 @@
             this.Controls.Add(this.btn_Them);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label_Title);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "ThemDVForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "THÊM DỊCH VỤ";

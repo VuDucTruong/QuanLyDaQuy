@@ -243,6 +243,8 @@
             this.Controls.Add(this.insert_btn);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label_Title);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "ThemSPForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "THÊM MẶT HÀNG";

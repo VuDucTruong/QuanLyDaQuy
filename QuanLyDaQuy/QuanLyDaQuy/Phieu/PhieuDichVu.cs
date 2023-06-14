@@ -151,6 +151,7 @@ namespace QuanLyDaQuy.Phieu
         {
             ComboBox comboBox = sender as ComboBox;
             comboBox.SelectedIndexChanged -= new EventHandler(CellDichVu_SelectedIndexChanged);
+            comboBox.Leave -= new EventHandler(CellDichVu_Leave);
         }
 
         private void CellNumber_KeyPress(object sender, KeyPressEventArgs e)

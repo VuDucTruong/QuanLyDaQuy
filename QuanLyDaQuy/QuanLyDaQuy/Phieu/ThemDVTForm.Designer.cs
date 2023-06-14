@@ -72,7 +72,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 275F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 308F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 310F));
             this.tableLayoutPanel1.Controls.Add(this.label10, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.id_tb, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label6, 2, 0);
@@ -118,7 +118,7 @@
             this.dvt_tb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dvt_tb.Location = new System.Drawing.Point(471, 28);
             this.dvt_tb.Name = "dvt_tb";
-            this.dvt_tb.Size = new System.Drawing.Size(302, 22);
+            this.dvt_tb.Size = new System.Drawing.Size(304, 22);
             this.dvt_tb.TabIndex = 25;
             // 
             // label_Title
@@ -142,6 +142,8 @@
             this.Controls.Add(this.insert_btn);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label_Title);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "ThemDVTForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "THÊM ĐƠN VỊ TÍNH";
