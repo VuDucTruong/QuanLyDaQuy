@@ -45,18 +45,20 @@ namespace QuanLyDaQuy.Phieu
             // 
             // dgv_ds_thamSo
             // 
+            this.dgv_ds_thamSo.AllowUserToAddRows = false;
+            this.dgv_ds_thamSo.AllowUserToDeleteRows = false;
             this.dgv_ds_thamSo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_ds_thamSo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.maTS_col,
             this.tenTS_col,
             this.giatri_col});
             this.dgv_ds_thamSo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_ds_thamSo.Location = new System.Drawing.Point(3, 42);
+            this.dgv_ds_thamSo.Location = new System.Drawing.Point(3, 53);
             this.dgv_ds_thamSo.Name = "dgv_ds_thamSo";
             this.dgv_ds_thamSo.RowHeadersVisible = false;
             this.dgv_ds_thamSo.RowHeadersWidth = 51;
             this.dgv_ds_thamSo.RowTemplate.Height = 24;
-            this.dgv_ds_thamSo.Size = new System.Drawing.Size(636, 178);
+            this.dgv_ds_thamSo.Size = new System.Drawing.Size(636, 172);
             this.dgv_ds_thamSo.TabIndex = 0;
             // 
             // maTS_col
@@ -67,7 +69,7 @@ namespace QuanLyDaQuy.Phieu
             this.maTS_col.MinimumWidth = 6;
             this.maTS_col.Name = "maTS_col";
             this.maTS_col.ReadOnly = true;
-            this.maTS_col.Width = 110;
+            this.maTS_col.Width = 105;
             // 
             // tenTS_col
             // 
@@ -85,7 +87,7 @@ namespace QuanLyDaQuy.Phieu
             this.giatri_col.HeaderText = "Giá trị";
             this.giatri_col.MinimumWidth = 6;
             this.giatri_col.Name = "giatri_col";
-            this.giatri_col.Width = 75;
+            this.giatri_col.Width = 70;
             // 
             // tableLayoutPanel1
             // 
@@ -98,34 +100,34 @@ namespace QuanLyDaQuy.Phieu
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(642, 263);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.81132F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.2956F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.72142F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
             this.tableLayoutPanel2.Controls.Add(this.btn_save, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.btn_cancel, 2, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 226);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 231);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(636, 34);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(636, 29);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // btn_save
             // 
-            this.btn_save.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btn_save.Location = new System.Drawing.Point(447, 3);
+            this.btn_save.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_save.Location = new System.Drawing.Point(399, 3);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(94, 28);
+            this.btn_save.Size = new System.Drawing.Size(114, 23);
             this.btn_save.TabIndex = 0;
             this.btn_save.Text = "Lưu thay đổi";
             this.btn_save.UseVisualStyleBackColor = true;
@@ -133,9 +135,10 @@ namespace QuanLyDaQuy.Phieu
             // 
             // btn_cancel
             // 
-            this.btn_cancel.Location = new System.Drawing.Point(557, 3);
+            this.btn_cancel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_cancel.Location = new System.Drawing.Point(519, 3);
             this.btn_cancel.Name = "btn_cancel";
-            this.btn_cancel.Size = new System.Drawing.Size(75, 28);
+            this.btn_cancel.Size = new System.Drawing.Size(114, 23);
             this.btn_cancel.TabIndex = 1;
             this.btn_cancel.Text = "Hủy";
             this.btn_cancel.UseVisualStyleBackColor = true;
@@ -148,7 +151,7 @@ namespace QuanLyDaQuy.Phieu
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(636, 39);
+            this.label1.Size = new System.Drawing.Size(636, 50);
             this.label1.TabIndex = 2;
             this.label1.Text = "THAY ĐỔI THAM SỐ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -161,7 +164,7 @@ namespace QuanLyDaQuy.Phieu
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ThayDoiThamSo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ThayDoiThamSo";
+            this.Text = "THAY ĐỔI THAM SỐ";
             this.Load += new System.EventHandler(this.ThayDoiThamSo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ds_thamSo)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
