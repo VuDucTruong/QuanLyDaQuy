@@ -185,16 +185,20 @@ as begin
 	declare @SoLuong int
 	select @Thang = MONTH(NgayLap) , @Nam = YEAR(NgayLap) from inserted , PHIEUMUAHANG where inserted.MaPhieuMH = PHIEUMUAHANG.MaPhieuMH
 
-	update TONKHO
-	set SLMuaVao += SL , SLTonCuoi += SL
-	from inserted
-	where TONKHO.MaSP = inserted.MaSP
-
 	update SANPHAM
 	set SoLuongTon += SL
 	from inserted
 	where SANPHAM.MaSP = inserted.MaSP
+
+	update TONKHO
+	set SLMuaVao += SL , SLTonCuoi = SoLuongTon
+	from inserted , SANPHAM
+	where TONKHO.MaSP = inserted.MaSP and SANPHAM.MaSP = inserted.MaSP
+
+	
 end
+
+
 go 
 create trigger trg_update_CT_PHIEUMUAHANG
 on CT_PHIEUMUAHANG
