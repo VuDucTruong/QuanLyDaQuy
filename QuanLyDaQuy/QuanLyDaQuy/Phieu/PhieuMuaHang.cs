@@ -515,5 +515,15 @@ namespace QuanLyDaQuy.Phieu
                 MessageBox.Show("Xuất thành công !");
             }
         }
+
+        private void dt_grid_phieumuahang_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            dt_grid_phieumuahang.Rows[e.RowIndex].Cells[1].Value = "";
+            dt_grid_phieumuahang.Rows[e.RowIndex].Cells[2].Value = "";
+            dt_grid_phieumuahang.Rows[e.RowIndex].Cells[4].Value = "";
+            dt_grid_phieumuahang.Rows[e.RowIndex].Cells[5].Value = 0;
+            e.Cancel = true;
+            MessageBox.Show("Giá trị không hợp lệ!");
+        }
     }
 }

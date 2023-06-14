@@ -107,6 +107,7 @@
             this.đơnVịTínhDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.loadSanPhamFullBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(3, 28);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
@@ -122,7 +123,7 @@
             this.mãSảnPhẩmDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.mãSảnPhẩmDataGridViewTextBoxColumn.Name = "mãSảnPhẩmDataGridViewTextBoxColumn";
             this.mãSảnPhẩmDataGridViewTextBoxColumn.ReadOnly = true;
-            this.mãSảnPhẩmDataGridViewTextBoxColumn.Width = 104;
+            this.mãSảnPhẩmDataGridViewTextBoxColumn.Width = 109;
             // 
             // tênSảnPhẩmDataGridViewTextBoxColumn
             // 
@@ -131,7 +132,7 @@
             this.tênSảnPhẩmDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tênSảnPhẩmDataGridViewTextBoxColumn.Name = "tênSảnPhẩmDataGridViewTextBoxColumn";
             this.tênSảnPhẩmDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tênSảnPhẩmDataGridViewTextBoxColumn.Width = 109;
+            this.tênSảnPhẩmDataGridViewTextBoxColumn.Width = 115;
             // 
             // tênLoạiSảnPhẩmDataGridViewTextBoxColumn
             // 
@@ -140,7 +141,7 @@
             this.tênLoạiSảnPhẩmDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tênLoạiSảnPhẩmDataGridViewTextBoxColumn.Name = "tênLoạiSảnPhẩmDataGridViewTextBoxColumn";
             this.tênLoạiSảnPhẩmDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tênLoạiSảnPhẩmDataGridViewTextBoxColumn.Width = 104;
+            this.tênLoạiSảnPhẩmDataGridViewTextBoxColumn.Width = 109;
             // 
             // đơnGiáBánDataGridViewTextBoxColumn
             // 
@@ -149,6 +150,7 @@
             this.đơnGiáBánDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.đơnGiáBánDataGridViewTextBoxColumn.Name = "đơnGiáBánDataGridViewTextBoxColumn";
             this.đơnGiáBánDataGridViewTextBoxColumn.ReadOnly = true;
+            this.đơnGiáBánDataGridViewTextBoxColumn.Width = 105;
             // 
             // đơnGiáMuaDataGridViewTextBoxColumn
             // 
@@ -157,7 +159,7 @@
             this.đơnGiáMuaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.đơnGiáMuaDataGridViewTextBoxColumn.Name = "đơnGiáMuaDataGridViewTextBoxColumn";
             this.đơnGiáMuaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.đơnGiáMuaDataGridViewTextBoxColumn.Width = 102;
+            this.đơnGiáMuaDataGridViewTextBoxColumn.Width = 108;
             // 
             // sốLượngTồnDataGridViewTextBoxColumn
             // 
@@ -166,7 +168,7 @@
             this.sốLượngTồnDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.sốLượngTồnDataGridViewTextBoxColumn.Name = "sốLượngTồnDataGridViewTextBoxColumn";
             this.sốLượngTồnDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sốLượngTồnDataGridViewTextBoxColumn.Width = 101;
+            this.sốLượngTồnDataGridViewTextBoxColumn.Width = 108;
             // 
             // đơnVịTínhDataGridViewTextBoxColumn
             // 
@@ -175,7 +177,7 @@
             this.đơnVịTínhDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.đơnVịTínhDataGridViewTextBoxColumn.Name = "đơnVịTínhDataGridViewTextBoxColumn";
             this.đơnVịTínhDataGridViewTextBoxColumn.ReadOnly = true;
-            this.đơnVịTínhDataGridViewTextBoxColumn.Width = 71;
+            this.đơnVịTínhDataGridViewTextBoxColumn.Width = 75;
             // 
             // loadSanPhamFullBindingSource
             // 
@@ -192,7 +194,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(3, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(135, 16);
+            this.label4.Size = new System.Drawing.Size(147, 17);
             this.label4.TabIndex = 7;
             this.label4.Text = "Danh sách mặt hàng :";
             // 
@@ -220,7 +222,7 @@
             this.panel1.Controls.Add(this.LSP_cb);
             this.panel1.Location = new System.Drawing.Point(5, 93);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(920, 145);
+            this.panel1.Size = new System.Drawing.Size(920, 146);
             this.panel1.TabIndex = 17;
             // 
             // DVT_tb
@@ -251,7 +253,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(5, 52);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(93, 16);
+            this.label10.Size = new System.Drawing.Size(102, 17);
             this.label10.TabIndex = 20;
             this.label10.Text = "Mã mặt hàng : ";
             // 
@@ -271,7 +273,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(645, 52);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(87, 16);
+            this.label7.Size = new System.Drawing.Size(96, 17);
             this.label7.TabIndex = 16;
             this.label7.Text = "Số lượng tồn :";
             // 
@@ -280,7 +282,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(337, 115);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(76, 16);
+            this.label8.Size = new System.Drawing.Size(87, 17);
             this.label8.TabIndex = 13;
             this.label8.Text = "Đơn vị tính : ";
             // 
@@ -289,7 +291,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(337, 80);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(100, 16);
+            this.label9.Size = new System.Drawing.Size(110, 17);
             this.label9.TabIndex = 12;
             this.label9.Text = "Loại mặt hàng : ";
             // 
@@ -309,7 +311,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(337, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 16);
+            this.label1.Size = new System.Drawing.Size(93, 17);
             this.label1.TabIndex = 10;
             this.label1.Text = "Đơn giá bán :";
             // 
@@ -321,7 +323,7 @@
             this.flowLayoutPanel1.Controls.Add(this.update_btn);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(753, 108);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(162, 32);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(162, 33);
             this.flowLayoutPanel1.TabIndex = 9;
             // 
             // insert_btn
@@ -329,7 +331,7 @@
             this.insert_btn.AutoSize = true;
             this.insert_btn.Location = new System.Drawing.Point(3, 3);
             this.insert_btn.Name = "insert_btn";
-            this.insert_btn.Size = new System.Drawing.Size(75, 26);
+            this.insert_btn.Size = new System.Drawing.Size(75, 27);
             this.insert_btn.TabIndex = 6;
             this.insert_btn.Text = "Thêm";
             this.insert_btn.UseVisualStyleBackColor = true;
@@ -340,7 +342,7 @@
             this.update_btn.AutoSize = true;
             this.update_btn.Location = new System.Drawing.Point(84, 3);
             this.update_btn.Name = "update_btn";
-            this.update_btn.Size = new System.Drawing.Size(75, 26);
+            this.update_btn.Size = new System.Drawing.Size(75, 27);
             this.update_btn.TabIndex = 8;
             this.update_btn.Text = "Sửa";
             this.update_btn.UseVisualStyleBackColor = true;
@@ -351,7 +353,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(5, 11);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 16);
+            this.label3.Size = new System.Drawing.Size(143, 17);
             this.label3.TabIndex = 6;
             this.label3.Text = "Thông tin mặt hàng : ";
             // 
@@ -379,7 +381,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(5, 113);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(91, 16);
+            this.label6.Size = new System.Drawing.Size(100, 17);
             this.label6.TabIndex = 1;
             this.label6.Text = "Đơn giá mua : ";
             // 
@@ -388,7 +390,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(5, 85);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(71, 16);
+            this.label5.Size = new System.Drawing.Size(79, 17);
             this.label5.TabIndex = 0;
             this.label5.Text = "Mặt hàng : ";
             // 

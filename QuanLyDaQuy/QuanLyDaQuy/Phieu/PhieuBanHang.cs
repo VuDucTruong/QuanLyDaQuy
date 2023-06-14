@@ -662,19 +662,19 @@ namespace QuanLyDaQuy.Phieu
 
         private void dgv_phieubanhang_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
         {
-            if (e.ColumnIndex == dgv_phieubanhang.Columns["sp_col"].Index)
-            {
-                dgv_phieubanhang.Columns["sp_col"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
-                dgv_phieubanhang.Columns["sp_col"].Width = 300;
-            }
+            //if (e.ColumnIndex == dgv_phieubanhang.Columns["sp_col"].Index)
+            //{
+            //    dgv_phieubanhang.Columns["sp_col"].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+            //    dgv_phieubanhang.Columns["sp_col"].Width = 300;
+            //}
         }
 
         private void dgv_phieubanhang_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == dgv_phieubanhang.Columns["sp_col"].Index)
-            {
-                dgv_phieubanhang.Columns["sp_col"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            }
+            //if (e.ColumnIndex == dgv_phieubanhang.Columns["sp_col"].Index)
+            //{
+            //    dgv_phieubanhang.Columns["sp_col"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            //}
         }
 
         private void dgv_phieubanhang_KeyDown(object sender, KeyEventArgs e)
