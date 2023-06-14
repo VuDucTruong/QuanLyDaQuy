@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.mãSảnPhẩmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +65,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.loadSanPhamFullTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadSanPhamFullTableAdapter();
             this.loadLoaiSanPhamTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadLoaiSanPhamTableAdapter();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loadSanPhamFullBindingSource)).BeginInit();
@@ -73,37 +73,27 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loadLoaiSanPhamBindingSource)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(5, 252);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 263);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1156, 357);
+            this.panel2.Size = new System.Drawing.Size(945, 352);
             this.panel2.TabIndex = 18;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.mãSảnPhẩmDataGridViewTextBoxColumn,
@@ -114,15 +104,15 @@
             this.sốLượngTồnDataGridViewTextBoxColumn,
             this.đơnVịTínhDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.loadSanPhamFullBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 28);
-            this.dataGridView1.MaximumSize = new System.Drawing.Size(1148, 324);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 26);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1148, 324);
+            this.dataGridView1.Size = new System.Drawing.Size(943, 324);
             this.dataGridView1.TabIndex = 8;
             // 
             // mãSảnPhẩmDataGridViewTextBoxColumn
@@ -133,7 +123,7 @@
             this.mãSảnPhẩmDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.mãSảnPhẩmDataGridViewTextBoxColumn.Name = "mãSảnPhẩmDataGridViewTextBoxColumn";
             this.mãSảnPhẩmDataGridViewTextBoxColumn.ReadOnly = true;
-            this.mãSảnPhẩmDataGridViewTextBoxColumn.Width = 113;
+            this.mãSảnPhẩmDataGridViewTextBoxColumn.Width = 104;
             // 
             // tênSảnPhẩmDataGridViewTextBoxColumn
             // 
@@ -152,7 +142,7 @@
             this.tênLoạiSảnPhẩmDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.tênLoạiSảnPhẩmDataGridViewTextBoxColumn.Name = "tênLoạiSảnPhẩmDataGridViewTextBoxColumn";
             this.tênLoạiSảnPhẩmDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tênLoạiSảnPhẩmDataGridViewTextBoxColumn.Width = 143;
+            this.tênLoạiSảnPhẩmDataGridViewTextBoxColumn.Width = 104;
             // 
             // đơnGiáBánDataGridViewTextBoxColumn
             // 
@@ -162,7 +152,6 @@
             this.đơnGiáBánDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.đơnGiáBánDataGridViewTextBoxColumn.Name = "đơnGiáBánDataGridViewTextBoxColumn";
             this.đơnGiáBánDataGridViewTextBoxColumn.ReadOnly = true;
-            this.đơnGiáBánDataGridViewTextBoxColumn.Width = 108;
             // 
             // đơnGiáMuaDataGridViewTextBoxColumn
             // 
@@ -172,7 +161,7 @@
             this.đơnGiáMuaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.đơnGiáMuaDataGridViewTextBoxColumn.Name = "đơnGiáMuaDataGridViewTextBoxColumn";
             this.đơnGiáMuaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.đơnGiáMuaDataGridViewTextBoxColumn.Width = 111;
+            this.đơnGiáMuaDataGridViewTextBoxColumn.Width = 102;
             // 
             // sốLượngTồnDataGridViewTextBoxColumn
             // 
@@ -182,7 +171,7 @@
             this.sốLượngTồnDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.sốLượngTồnDataGridViewTextBoxColumn.Name = "sốLượngTồnDataGridViewTextBoxColumn";
             this.sốLượngTồnDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sốLượngTồnDataGridViewTextBoxColumn.Width = 110;
+            this.sốLượngTồnDataGridViewTextBoxColumn.Width = 101;
             // 
             // đơnVịTínhDataGridViewTextBoxColumn
             // 
@@ -192,7 +181,7 @@
             this.đơnVịTínhDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.đơnVịTínhDataGridViewTextBoxColumn.Name = "đơnVịTínhDataGridViewTextBoxColumn";
             this.đơnVịTínhDataGridViewTextBoxColumn.ReadOnly = true;
-            this.đơnVịTínhDataGridViewTextBoxColumn.Width = 96;
+            this.đơnVịTínhDataGridViewTextBoxColumn.Width = 71;
             // 
             // loadSanPhamFullBindingSource
             // 
@@ -235,7 +224,7 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.LSP_tb);
             this.panel1.Controls.Add(this.LSP_cb);
-            this.panel1.Location = new System.Drawing.Point(5, 93);
+            this.panel1.Location = new System.Drawing.Point(3, 103);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(920, 146);
             this.panel1.TabIndex = 17;
@@ -375,11 +364,11 @@
             // Mua_tb
             // 
             this.Mua_tb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadSanPhamFullBindingSource, "Đơn giá mua", true));
-            this.Mua_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Mua_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Mua_tb.Location = new System.Drawing.Point(102, 113);
             this.Mua_tb.Name = "Mua_tb";
             this.Mua_tb.ReadOnly = true;
-            this.Mua_tb.Size = new System.Drawing.Size(177, 22);
+            this.Mua_tb.Size = new System.Drawing.Size(177, 27);
             this.Mua_tb.TabIndex = 4;
             this.Mua_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Mua_tb_KeyPress);
             // 
@@ -434,15 +423,15 @@
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(305, 10);
+            this.label2.Location = new System.Drawing.Point(3, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(331, 33);
+            this.label2.Size = new System.Drawing.Size(945, 100);
             this.label2.TabIndex = 16;
             this.label2.Text = "THÔNG TIN MẶT HÀNG";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // loadSanPhamFullTableAdapter
             // 
@@ -452,15 +441,31 @@
             // 
             this.loadLoaiSanPhamTableAdapter.ClearBeforeFill = true;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 160F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(951, 618);
+            this.tableLayoutPanel1.TabIndex = 19;
+            // 
             // ThongTinMatHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label2);
+            this.AutoSize = true;
+            this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ThongTinMatHang";
-            this.Size = new System.Drawing.Size(1165, 618);
+            this.Size = new System.Drawing.Size(951, 618);
             this.Load += new System.EventHandler(this.ThongTinMatHang_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -472,8 +477,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.loadLoaiSanPhamBindingSource)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -515,5 +521,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn đơnGiáMuaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sốLượngTồnDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn đơnVịTínhDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }
