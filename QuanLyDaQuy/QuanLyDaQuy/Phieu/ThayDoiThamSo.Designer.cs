@@ -60,6 +60,7 @@ namespace QuanLyDaQuy.Phieu
             this.dgv_ds_thamSo.RowTemplate.Height = 24;
             this.dgv_ds_thamSo.Size = new System.Drawing.Size(636, 172);
             this.dgv_ds_thamSo.TabIndex = 0;
+            this.dgv_ds_thamSo.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgv_ds_thamSo_EditControlShowing);
             // 
             // maTS_col
             // 

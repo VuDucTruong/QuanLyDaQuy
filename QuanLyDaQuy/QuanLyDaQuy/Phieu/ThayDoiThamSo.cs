@@ -78,5 +78,26 @@ namespace QuanLyDaQuy.Phieu
             }
         }
 
+        private void dgv_ds_thamSo_EditControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            if (e.Control is TextBox)
+            {
+                TextBox textBox = e.Control as TextBox;
+                if (dgv_ds_thamSo.CurrentCell.ColumnIndex == 2)
+                {
+                    textBox.KeyPress -= new KeyPressEventHandler(CellNumber_KeyPress);
+                    textBox.KeyPress += new KeyPressEventHandler(CellNumber_KeyPress);
+                }
+            }
+        }
+
+        private void CellNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsNumber(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+        }
+
     }
 }
