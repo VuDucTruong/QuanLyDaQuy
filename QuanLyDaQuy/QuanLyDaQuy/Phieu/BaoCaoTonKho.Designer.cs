@@ -38,16 +38,16 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.loadTonKhoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLDQDataSet = new QuanLyDaQuy.QLDQDataSet();
+            this.loadTonKhoTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadTonKhoTableAdapter();
+            this.button2 = new System.Windows.Forms.Button();
             this.tenSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sLTonDauDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sLBanRaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sLMuaVaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sLTonCuoiDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dVTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.loadTonKhoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLDQDataSet = new QuanLyDaQuy.QLDQDataSet();
-            this.loadTonKhoTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadTonKhoTableAdapter();
-            this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -183,48 +183,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(959, 336);
             this.dataGridView1.TabIndex = 4;
             // 
-            // tenSPDataGridViewTextBoxColumn
-            // 
-            this.tenSPDataGridViewTextBoxColumn.DataPropertyName = "TenSP";
-            this.tenSPDataGridViewTextBoxColumn.HeaderText = "Tên sản phẩm";
-            this.tenSPDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tenSPDataGridViewTextBoxColumn.Name = "tenSPDataGridViewTextBoxColumn";
-            // 
-            // sLTonDauDataGridViewTextBoxColumn
-            // 
-            this.sLTonDauDataGridViewTextBoxColumn.DataPropertyName = "SLTonDau";
-            this.sLTonDauDataGridViewTextBoxColumn.HeaderText = "Tồn đầu";
-            this.sLTonDauDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.sLTonDauDataGridViewTextBoxColumn.Name = "sLTonDauDataGridViewTextBoxColumn";
-            // 
-            // sLBanRaDataGridViewTextBoxColumn
-            // 
-            this.sLBanRaDataGridViewTextBoxColumn.DataPropertyName = "SLBanRa";
-            this.sLBanRaDataGridViewTextBoxColumn.HeaderText = "Số lượng bán ra";
-            this.sLBanRaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.sLBanRaDataGridViewTextBoxColumn.Name = "sLBanRaDataGridViewTextBoxColumn";
-            // 
-            // sLMuaVaoDataGridViewTextBoxColumn
-            // 
-            this.sLMuaVaoDataGridViewTextBoxColumn.DataPropertyName = "SLMuaVao";
-            this.sLMuaVaoDataGridViewTextBoxColumn.HeaderText = "Số lượng mua vào";
-            this.sLMuaVaoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.sLMuaVaoDataGridViewTextBoxColumn.Name = "sLMuaVaoDataGridViewTextBoxColumn";
-            // 
-            // sLTonCuoiDataGridViewTextBoxColumn
-            // 
-            this.sLTonCuoiDataGridViewTextBoxColumn.DataPropertyName = "SLTonCuoi";
-            this.sLTonCuoiDataGridViewTextBoxColumn.HeaderText = "Số lượng tồn cuối";
-            this.sLTonCuoiDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.sLTonCuoiDataGridViewTextBoxColumn.Name = "sLTonCuoiDataGridViewTextBoxColumn";
-            // 
-            // dVTDataGridViewTextBoxColumn
-            // 
-            this.dVTDataGridViewTextBoxColumn.DataPropertyName = "DVT";
-            this.dVTDataGridViewTextBoxColumn.HeaderText = "Đơn vị tính";
-            this.dVTDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dVTDataGridViewTextBoxColumn.Name = "dVTDataGridViewTextBoxColumn";
-            // 
             // loadTonKhoBindingSource
             // 
             this.loadTonKhoBindingSource.DataMember = "loadTonKho";
@@ -248,6 +206,54 @@
             this.button2.Text = "Xuất PDF";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // tenSPDataGridViewTextBoxColumn
+            // 
+            this.tenSPDataGridViewTextBoxColumn.DataPropertyName = "TenSP";
+            this.tenSPDataGridViewTextBoxColumn.HeaderText = "Tên sản phẩm";
+            this.tenSPDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tenSPDataGridViewTextBoxColumn.Name = "tenSPDataGridViewTextBoxColumn";
+            this.tenSPDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sLTonDauDataGridViewTextBoxColumn
+            // 
+            this.sLTonDauDataGridViewTextBoxColumn.DataPropertyName = "SLTonDau";
+            this.sLTonDauDataGridViewTextBoxColumn.HeaderText = "Tồn đầu";
+            this.sLTonDauDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sLTonDauDataGridViewTextBoxColumn.Name = "sLTonDauDataGridViewTextBoxColumn";
+            this.sLTonDauDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sLBanRaDataGridViewTextBoxColumn
+            // 
+            this.sLBanRaDataGridViewTextBoxColumn.DataPropertyName = "SLBanRa";
+            this.sLBanRaDataGridViewTextBoxColumn.HeaderText = "Số lượng bán ra";
+            this.sLBanRaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sLBanRaDataGridViewTextBoxColumn.Name = "sLBanRaDataGridViewTextBoxColumn";
+            this.sLBanRaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sLMuaVaoDataGridViewTextBoxColumn
+            // 
+            this.sLMuaVaoDataGridViewTextBoxColumn.DataPropertyName = "SLMuaVao";
+            this.sLMuaVaoDataGridViewTextBoxColumn.HeaderText = "Số lượng mua vào";
+            this.sLMuaVaoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sLMuaVaoDataGridViewTextBoxColumn.Name = "sLMuaVaoDataGridViewTextBoxColumn";
+            this.sLMuaVaoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sLTonCuoiDataGridViewTextBoxColumn
+            // 
+            this.sLTonCuoiDataGridViewTextBoxColumn.DataPropertyName = "SLTonCuoi";
+            this.sLTonCuoiDataGridViewTextBoxColumn.HeaderText = "Số lượng tồn cuối";
+            this.sLTonCuoiDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sLTonCuoiDataGridViewTextBoxColumn.Name = "sLTonCuoiDataGridViewTextBoxColumn";
+            this.sLTonCuoiDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dVTDataGridViewTextBoxColumn
+            // 
+            this.dVTDataGridViewTextBoxColumn.DataPropertyName = "DVT";
+            this.dVTDataGridViewTextBoxColumn.HeaderText = "Đơn vị tính";
+            this.dVTDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dVTDataGridViewTextBoxColumn.Name = "dVTDataGridViewTextBoxColumn";
+            this.dVTDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // BaoCaoTonKho
             // 
@@ -285,12 +291,12 @@
         private QLDQDataSetTableAdapters.loadTonKhoTableAdapter loadTonKhoTableAdapter;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenSPDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sLTonDauDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sLBanRaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sLMuaVaoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sLTonCuoiDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dVTDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button button2;
     }
 }
