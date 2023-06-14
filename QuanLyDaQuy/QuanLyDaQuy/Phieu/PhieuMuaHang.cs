@@ -94,7 +94,7 @@ namespace QuanLyDaQuy.Phieu
                     double ThanhTien = Convert.ToInt32(row.Cells[6].Value);
                     ct_phieuMuaHangs.Add(new CT_PhieuMuaHang(MaPhieuMH, MaSP, SL, DonGia, ThanhTien));
                     //update so luong ton trong bang TONKHO
-                    UpdateSLT(MaSP, SL);
+                    
                 }
 
                 //Insert

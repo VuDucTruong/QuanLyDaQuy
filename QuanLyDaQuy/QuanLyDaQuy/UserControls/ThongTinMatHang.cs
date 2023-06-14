@@ -142,5 +142,9 @@ namespace QuanLyDaQuy
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            RefreshData();
+        }
     }
 }

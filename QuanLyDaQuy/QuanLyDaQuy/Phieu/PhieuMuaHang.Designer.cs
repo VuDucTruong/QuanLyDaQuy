@@ -41,6 +41,13 @@
             this.lb_sodienthoai = new System.Windows.Forms.Label();
             this.tb_sodienthoai = new System.Windows.Forms.TextBox();
             this.dt_grid_phieumuahang = new System.Windows.Forms.DataGridView();
+            this.phieuMuaHang_column_STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phieuMuaHang_column_sanPham = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.phieuMuaHang_column_loaiSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phieuMuaHang_column_soLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phieuMuaHang_column_donViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phieuMuaHang_column_donGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phieuMuaHang_column_thanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lb_thanhTien = new System.Windows.Forms.Label();
             this.tb_thanhTien = new System.Windows.Forms.TextBox();
             this.btn_xoaDong = new System.Windows.Forms.Button();
@@ -52,13 +59,6 @@
             this.btn_xuatPDF = new System.Windows.Forms.Button();
             this.qLDQDataSet = new QuanLyDaQuy.QLDQDataSet();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.phieuMuaHang_column_STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phieuMuaHang_column_sanPham = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.phieuMuaHang_column_loaiSanPham = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phieuMuaHang_column_soLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phieuMuaHang_column_donViTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phieuMuaHang_column_donGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phieuMuaHang_column_thanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tab_lay_phieumuahang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dt_grid_phieumuahang)).BeginInit();
             this.tb_layout_btn.SuspendLayout();
@@ -261,6 +261,69 @@
             this.dt_grid_phieumuahang.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dt_grid_phieumuahang_RowsAdded);
             this.dt_grid_phieumuahang.SelectionChanged += new System.EventHandler(this.dt_grid_phieumuahang_SelectionChanged);
             // 
+            // phieuMuaHang_column_STT
+            // 
+            this.phieuMuaHang_column_STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.phieuMuaHang_column_STT.HeaderText = "STT";
+            this.phieuMuaHang_column_STT.MinimumWidth = 6;
+            this.phieuMuaHang_column_STT.Name = "phieuMuaHang_column_STT";
+            this.phieuMuaHang_column_STT.ReadOnly = true;
+            this.phieuMuaHang_column_STT.Width = 63;
+            // 
+            // phieuMuaHang_column_sanPham
+            // 
+            this.phieuMuaHang_column_sanPham.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.phieuMuaHang_column_sanPham.HeaderText = "Sản phẩm";
+            this.phieuMuaHang_column_sanPham.MinimumWidth = 6;
+            this.phieuMuaHang_column_sanPham.Name = "phieuMuaHang_column_sanPham";
+            this.phieuMuaHang_column_sanPham.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.phieuMuaHang_column_sanPham.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // phieuMuaHang_column_loaiSanPham
+            // 
+            this.phieuMuaHang_column_loaiSanPham.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.phieuMuaHang_column_loaiSanPham.HeaderText = "Loại sản phẩm";
+            this.phieuMuaHang_column_loaiSanPham.MinimumWidth = 6;
+            this.phieuMuaHang_column_loaiSanPham.Name = "phieuMuaHang_column_loaiSanPham";
+            this.phieuMuaHang_column_loaiSanPham.ReadOnly = true;
+            this.phieuMuaHang_column_loaiSanPham.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.phieuMuaHang_column_loaiSanPham.Width = 124;
+            // 
+            // phieuMuaHang_column_soLuong
+            // 
+            this.phieuMuaHang_column_soLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.phieuMuaHang_column_soLuong.HeaderText = "Số lượng";
+            this.phieuMuaHang_column_soLuong.MinimumWidth = 6;
+            this.phieuMuaHang_column_soLuong.Name = "phieuMuaHang_column_soLuong";
+            this.phieuMuaHang_column_soLuong.Width = 89;
+            // 
+            // phieuMuaHang_column_donViTinh
+            // 
+            this.phieuMuaHang_column_donViTinh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.phieuMuaHang_column_donViTinh.HeaderText = "Đơn vị tính";
+            this.phieuMuaHang_column_donViTinh.MinimumWidth = 6;
+            this.phieuMuaHang_column_donViTinh.Name = "phieuMuaHang_column_donViTinh";
+            this.phieuMuaHang_column_donViTinh.ReadOnly = true;
+            this.phieuMuaHang_column_donViTinh.Width = 96;
+            // 
+            // phieuMuaHang_column_donGia
+            // 
+            this.phieuMuaHang_column_donGia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.phieuMuaHang_column_donGia.HeaderText = "Đơn giá";
+            this.phieuMuaHang_column_donGia.MinimumWidth = 6;
+            this.phieuMuaHang_column_donGia.Name = "phieuMuaHang_column_donGia";
+            this.phieuMuaHang_column_donGia.ReadOnly = true;
+            this.phieuMuaHang_column_donGia.Width = 82;
+            // 
+            // phieuMuaHang_column_thanhTien
+            // 
+            this.phieuMuaHang_column_thanhTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.phieuMuaHang_column_thanhTien.HeaderText = "Thành tiền";
+            this.phieuMuaHang_column_thanhTien.MinimumWidth = 6;
+            this.phieuMuaHang_column_thanhTien.Name = "phieuMuaHang_column_thanhTien";
+            this.phieuMuaHang_column_thanhTien.ReadOnly = true;
+            this.phieuMuaHang_column_thanhTien.Width = 98;
+            // 
             // lb_thanhTien
             // 
             this.lb_thanhTien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -375,69 +438,6 @@
             // 
             this.qLDQDataSet.DataSetName = "QLDQDataSet";
             this.qLDQDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // phieuMuaHang_column_STT
-            // 
-            this.phieuMuaHang_column_STT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.phieuMuaHang_column_STT.HeaderText = "STT";
-            this.phieuMuaHang_column_STT.MinimumWidth = 6;
-            this.phieuMuaHang_column_STT.Name = "phieuMuaHang_column_STT";
-            this.phieuMuaHang_column_STT.ReadOnly = true;
-            this.phieuMuaHang_column_STT.Width = 63;
-            // 
-            // phieuMuaHang_column_sanPham
-            // 
-            this.phieuMuaHang_column_sanPham.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.phieuMuaHang_column_sanPham.HeaderText = "Sản phẩm";
-            this.phieuMuaHang_column_sanPham.MinimumWidth = 6;
-            this.phieuMuaHang_column_sanPham.Name = "phieuMuaHang_column_sanPham";
-            this.phieuMuaHang_column_sanPham.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.phieuMuaHang_column_sanPham.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // phieuMuaHang_column_loaiSanPham
-            // 
-            this.phieuMuaHang_column_loaiSanPham.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.phieuMuaHang_column_loaiSanPham.HeaderText = "Loại sản phẩm";
-            this.phieuMuaHang_column_loaiSanPham.MinimumWidth = 6;
-            this.phieuMuaHang_column_loaiSanPham.Name = "phieuMuaHang_column_loaiSanPham";
-            this.phieuMuaHang_column_loaiSanPham.ReadOnly = true;
-            this.phieuMuaHang_column_loaiSanPham.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.phieuMuaHang_column_loaiSanPham.Width = 124;
-            // 
-            // phieuMuaHang_column_soLuong
-            // 
-            this.phieuMuaHang_column_soLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.phieuMuaHang_column_soLuong.HeaderText = "Số lượng";
-            this.phieuMuaHang_column_soLuong.MinimumWidth = 6;
-            this.phieuMuaHang_column_soLuong.Name = "phieuMuaHang_column_soLuong";
-            this.phieuMuaHang_column_soLuong.Width = 89;
-            // 
-            // phieuMuaHang_column_donViTinh
-            // 
-            this.phieuMuaHang_column_donViTinh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.phieuMuaHang_column_donViTinh.HeaderText = "Đơn vị tính";
-            this.phieuMuaHang_column_donViTinh.MinimumWidth = 6;
-            this.phieuMuaHang_column_donViTinh.Name = "phieuMuaHang_column_donViTinh";
-            this.phieuMuaHang_column_donViTinh.ReadOnly = true;
-            this.phieuMuaHang_column_donViTinh.Width = 96;
-            // 
-            // phieuMuaHang_column_donGia
-            // 
-            this.phieuMuaHang_column_donGia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.phieuMuaHang_column_donGia.HeaderText = "Đơn giá";
-            this.phieuMuaHang_column_donGia.MinimumWidth = 6;
-            this.phieuMuaHang_column_donGia.Name = "phieuMuaHang_column_donGia";
-            this.phieuMuaHang_column_donGia.ReadOnly = true;
-            this.phieuMuaHang_column_donGia.Width = 82;
-            // 
-            // phieuMuaHang_column_thanhTien
-            // 
-            this.phieuMuaHang_column_thanhTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.phieuMuaHang_column_thanhTien.HeaderText = "Thành tiền";
-            this.phieuMuaHang_column_thanhTien.MinimumWidth = 6;
-            this.phieuMuaHang_column_thanhTien.Name = "phieuMuaHang_column_thanhTien";
-            this.phieuMuaHang_column_thanhTien.ReadOnly = true;
-            this.phieuMuaHang_column_thanhTien.Width = 98;
             // 
             // PhieuMuaHang
             // 

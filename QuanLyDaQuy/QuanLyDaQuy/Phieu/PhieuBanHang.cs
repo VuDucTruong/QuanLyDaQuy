@@ -513,7 +513,7 @@ namespace QuanLyDaQuy.Phieu
                     float thanhTien = Convert.ToSingle(row.Cells["tt_col"].Value);
 
                     // Cập nhật thuộc tính SoLuongTon trong bảng Sản phẩm
-                    UpdateSLT(maSP, soLuong);
+                    
 
                     // Thêm chi tiết phiếu bán hàng vào bảng CT_PHIEUBANHANG
                     AddCTPhieuBanHang(maPhieuBH, maSP, soLuong, donGia, thanhTien);
