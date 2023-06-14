@@ -259,6 +259,8 @@ namespace QuanLyDaQuy.Phieu
             // 
             // dgv_ds_pbh
             // 
+            this.dgv_ds_pbh.AllowUserToAddRows = false;
+            this.dgv_ds_pbh.AllowUserToDeleteRows = false;
             this.dgv_ds_pbh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_ds_pbh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_ds_pbh.Dock = System.Windows.Forms.DockStyle.Fill;
