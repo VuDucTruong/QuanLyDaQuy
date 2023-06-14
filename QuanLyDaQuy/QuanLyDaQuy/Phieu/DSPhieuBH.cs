@@ -377,7 +377,7 @@ namespace QuanLyDaQuy.Phieu
                 return;
             }
             CTPhieuBH cTPhieuBH = new CTPhieuBH(MaPhieuBH);
-            cTPhieuBH.Show();
+            cTPhieuBH.ShowDialog();
         }
     }
 }

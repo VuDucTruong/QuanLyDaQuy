@@ -157,12 +157,12 @@ namespace QuanLyDaQuy.Phieu
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_phieubanhang.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgv_phieubanhang.RowHeadersVisible = false;
             this.dgv_phieubanhang.RowHeadersWidth = 51;
             this.dgv_phieubanhang.RowTemplate.Height = 24;
             this.dgv_phieubanhang.Size = new System.Drawing.Size(976, 324);
             this.dgv_phieubanhang.TabIndex = 5;
             this.dgv_phieubanhang.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_phieubanhang_CellValueChanged);
+            this.dgv_phieubanhang.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgv_phieubanhang_DataError);
             this.dgv_phieubanhang.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dgv_phieubanhang_EditingControlShowing);
             this.dgv_phieubanhang.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgv_phieubanhang_RowsAdded);
             this.dgv_phieubanhang.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgv_phieubanhang_RowsRemoved);
@@ -173,7 +173,7 @@ namespace QuanLyDaQuy.Phieu
             this.stt_col.HeaderText = "STT";
             this.stt_col.MinimumWidth = 6;
             this.stt_col.Name = "stt_col";
-            this.stt_col.Width = 63;
+            this.stt_col.Width = 64;
             // 
             // sp_col
             // 
@@ -198,7 +198,7 @@ namespace QuanLyDaQuy.Phieu
             this.lsp_col.Name = "lsp_col";
             this.lsp_col.ReadOnly = true;
             this.lsp_col.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.lsp_col.Width = 124;
+            this.lsp_col.Width = 119;
             // 
             // sl_col
             // 
@@ -207,7 +207,7 @@ namespace QuanLyDaQuy.Phieu
             this.sl_col.HeaderText = "Số lượng";
             this.sl_col.MinimumWidth = 6;
             this.sl_col.Name = "sl_col";
-            this.sl_col.Width = 89;
+            this.sl_col.Width = 86;
             // 
             // dvt_col
             // 
@@ -217,7 +217,7 @@ namespace QuanLyDaQuy.Phieu
             this.dvt_col.MinimumWidth = 6;
             this.dvt_col.Name = "dvt_col";
             this.dvt_col.ReadOnly = true;
-            this.dvt_col.Width = 96;
+            this.dvt_col.Width = 75;
             // 
             // dg_col
             // 
@@ -227,7 +227,7 @@ namespace QuanLyDaQuy.Phieu
             this.dg_col.MinimumWidth = 6;
             this.dg_col.Name = "dg_col";
             this.dg_col.ReadOnly = true;
-            this.dg_col.Width = 82;
+            this.dg_col.Width = 63;
             // 
             // tt_col
             // 
@@ -236,7 +236,7 @@ namespace QuanLyDaQuy.Phieu
             this.tt_col.MinimumWidth = 6;
             this.tt_col.Name = "tt_col";
             this.tt_col.ReadOnly = true;
-            this.tt_col.Width = 98;
+            this.tt_col.Width = 97;
             // 
             // tb_sophieu
             // 

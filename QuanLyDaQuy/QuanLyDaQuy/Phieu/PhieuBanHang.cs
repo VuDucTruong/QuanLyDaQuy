@@ -241,6 +241,7 @@ namespace QuanLyDaQuy.Phieu
                 currentRow.Cells["sl_col"].Value = 0;
                 currentRow.Cells["tt_col"].Value = 0;
 
+                currentRow.Cells["sl_col"].Selected = true;
             }
             catch
             {
@@ -722,6 +723,31 @@ namespace QuanLyDaQuy.Phieu
             {
                 MessageBox.Show("Xuất thành công !");
             }
+        }
+
+        private void dgv_phieubanhang_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            //dgv_phieubanhang.Rows.Remove(e.RowIndex);
+            //dgv_phieubanhang.Rows[e.RowIndex].Cells[1].Value = "";
+            //dgv_phieubanhang.Rows[e.RowIndex].Cells[2].Value = "";
+            //dgv_phieubanhang.Rows[e.RowIndex].Cells[4].Value = "";
+            //dgv_phieubanhang.Rows[e.RowIndex].Cells[5].Value = 0;
+            ////e.Cancel = true;
+            //dgv_phieubanhang.CurrentCell = dgv_phieubanhang.Rows[e.RowIndex].Cells["sl_col"];
+            //MessageBox.Show("Giá trị không hợp lệ!");
+
+            DataGridViewCell selectedCell = dgv_phieubanhang.SelectedCells[0];
+
+            // Lấy hàng chứa cell đó
+            DataGridViewRow selectedRow = selectedCell.OwningRow;
+
+            // Kiểm tra nếu hàng không phải là hàng mới
+            if (!selectedRow.IsNewRow)
+            {
+                // Xóa hàng
+                dgv_phieubanhang.Rows.Remove(selectedRow);
+            }
+
         }
     }
 }
