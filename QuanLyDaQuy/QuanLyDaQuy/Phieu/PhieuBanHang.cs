@@ -13,6 +13,7 @@ using System.Text.RegularExpressions;
 using System.Globalization;
 using iText.Layout.Element;
 using QuanLyDaQuy.Export;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace QuanLyDaQuy.Phieu
 {
@@ -145,22 +146,23 @@ namespace QuanLyDaQuy.Phieu
             {
                 var dataGridView = sender as DataGridView;
 
-                if (dataGridView.CurrentCell is DataGridViewComboBoxCell && e.Control is ComboBox)
+                if (dataGridView.CurrentCell is DataGridViewComboBoxCell && e.Control is System.Windows.Forms.ComboBox)
                 {
-                    var comboBox = e.Control as ComboBox;
+                    var comboBox = e.Control as System.Windows.Forms.ComboBox;
 
                     // Cấu hình combobox cho chức năng suggest và tự động hoàn thành
                     comboBox.DropDownStyle = ComboBoxStyle.DropDown;
                     comboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
                     comboBox.AutoCompleteSource = AutoCompleteSource.ListItems;
 
-                    comboBox.SelectedIndexChanged -= new EventHandler(ComboBox_SelectedIndexChanged);
+
                     comboBox.SelectedIndexChanged += new EventHandler(ComboBox_SelectedIndexChanged);
 
                     // Chặn phím Tab trong ComboBox
-                    comboBox.PreviewKeyDown -= new PreviewKeyDownEventHandler(ComboBox_PreviewKeyDown);
                     comboBox.PreviewKeyDown += new PreviewKeyDownEventHandler(ComboBox_PreviewKeyDown);
 
+                    // Them event Leave
+                    comboBox.Leave += new EventHandler(ComboBox_Leave);
                 }
 
             }
@@ -179,11 +181,18 @@ namespace QuanLyDaQuy.Phieu
             }
         }
 
+        private void ComboBox_Leave(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ComboBox comboBox = sender as System.Windows.Forms.ComboBox;
+            comboBox.SelectedIndexChanged -= new EventHandler(ComboBox_SelectedIndexChanged);
+            comboBox.PreviewKeyDown -= new PreviewKeyDownEventHandler(ComboBox_PreviewKeyDown);
+        }
+
         private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
-                var comboBox = sender as ComboBox;
+                var comboBox = sender as System.Windows.Forms.ComboBox;
                 var selectedValue = comboBox.SelectedValue;
                 if (selectedValue == null || !int.TryParse(selectedValue.ToString(), out int maSP))
                     return;
