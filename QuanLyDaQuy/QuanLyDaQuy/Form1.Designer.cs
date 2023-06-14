@@ -427,11 +427,11 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Panel panel2;
-        private ThongTinMatHang thongTinMatHang1;
-        private ThongTinDichVu thongTinDichVu1;
-        private UserControls.ThongTinKhachHang thongTinKhachHang1;
-        private UserControls.ThongTinNCC thongTinNCC1;
-        private UserControls.ThongTinLSP thongTinLSP1;
+        public ThongTinMatHang thongTinMatHang1;
+        public ThongTinDichVu thongTinDichVu1;
+        public UserControls.ThongTinKhachHang thongTinKhachHang1;
+        public UserControls.ThongTinNCC thongTinNCC1;
+        public UserControls.ThongTinLSP thongTinLSP1;
         private System.Windows.Forms.ToolStripMenuItem phiếuDịchVụToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem lậpPhiếuToolStripMenuItem;

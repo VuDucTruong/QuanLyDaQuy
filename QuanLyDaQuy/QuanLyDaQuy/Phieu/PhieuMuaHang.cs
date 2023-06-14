@@ -103,7 +103,8 @@ namespace QuanLyDaQuy.Phieu
                 {
                     item.Perform_Insert();
                 }
-
+                Form1 form = (Form1)Owner;
+                form.thongTinMatHang1.RefreshData();
                 MessageBox.Show("Lập phiếu thành công!", "Thông báo");
                 Close();
                 //}
