@@ -31,13 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.mãSảnPhẩmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tênSảnPhẩmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tênLoạiSảnPhẩmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.đơnGiáBánDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.đơnGiáMuaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sốLượngTồnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.đơnVịTínhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loadSanPhamFullBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qLDQDataSet = new QuanLyDaQuy.QLDQDataSet();
             this.label4 = new System.Windows.Forms.Label();
@@ -65,6 +58,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.loadSanPhamFullTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadSanPhamFullTableAdapter();
             this.loadLoaiSanPhamTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadLoaiSanPhamTableAdapter();
+            this.mãSảnPhẩmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tênSảnPhẩmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tênLoạiSảnPhẩmDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.đơnGiáBánDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.đơnGiáMuaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sốLượngTồnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.đơnVịTínhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loadSanPhamFullBindingSource)).BeginInit();
@@ -116,69 +116,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(937, 324);
             this.dataGridView1.TabIndex = 8;
             // 
-            // mãSảnPhẩmDataGridViewTextBoxColumn
-            // 
-            this.mãSảnPhẩmDataGridViewTextBoxColumn.DataPropertyName = "Mã sản phẩm";
-            this.mãSảnPhẩmDataGridViewTextBoxColumn.HeaderText = "Mã mặt hàng";
-            this.mãSảnPhẩmDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.mãSảnPhẩmDataGridViewTextBoxColumn.Name = "mãSảnPhẩmDataGridViewTextBoxColumn";
-            this.mãSảnPhẩmDataGridViewTextBoxColumn.ReadOnly = true;
-            this.mãSảnPhẩmDataGridViewTextBoxColumn.Width = 109;
-            // 
-            // tênSảnPhẩmDataGridViewTextBoxColumn
-            // 
-            this.tênSảnPhẩmDataGridViewTextBoxColumn.DataPropertyName = "Tên sản phẩm";
-            this.tênSảnPhẩmDataGridViewTextBoxColumn.HeaderText = "Tên mặt hàng";
-            this.tênSảnPhẩmDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tênSảnPhẩmDataGridViewTextBoxColumn.Name = "tênSảnPhẩmDataGridViewTextBoxColumn";
-            this.tênSảnPhẩmDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tênSảnPhẩmDataGridViewTextBoxColumn.Width = 115;
-            // 
-            // tênLoạiSảnPhẩmDataGridViewTextBoxColumn
-            // 
-            this.tênLoạiSảnPhẩmDataGridViewTextBoxColumn.DataPropertyName = "Tên loại sản phẩm";
-            this.tênLoạiSảnPhẩmDataGridViewTextBoxColumn.HeaderText = "Tên loại mặt hàng";
-            this.tênLoạiSảnPhẩmDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tênLoạiSảnPhẩmDataGridViewTextBoxColumn.Name = "tênLoạiSảnPhẩmDataGridViewTextBoxColumn";
-            this.tênLoạiSảnPhẩmDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tênLoạiSảnPhẩmDataGridViewTextBoxColumn.Width = 109;
-            // 
-            // đơnGiáBánDataGridViewTextBoxColumn
-            // 
-            this.đơnGiáBánDataGridViewTextBoxColumn.DataPropertyName = "Đơn giá bán";
-            this.đơnGiáBánDataGridViewTextBoxColumn.HeaderText = "Đơn giá bán";
-            this.đơnGiáBánDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.đơnGiáBánDataGridViewTextBoxColumn.Name = "đơnGiáBánDataGridViewTextBoxColumn";
-            this.đơnGiáBánDataGridViewTextBoxColumn.ReadOnly = true;
-            this.đơnGiáBánDataGridViewTextBoxColumn.Width = 105;
-            // 
-            // đơnGiáMuaDataGridViewTextBoxColumn
-            // 
-            this.đơnGiáMuaDataGridViewTextBoxColumn.DataPropertyName = "Đơn giá mua";
-            this.đơnGiáMuaDataGridViewTextBoxColumn.HeaderText = "Đơn giá mua";
-            this.đơnGiáMuaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.đơnGiáMuaDataGridViewTextBoxColumn.Name = "đơnGiáMuaDataGridViewTextBoxColumn";
-            this.đơnGiáMuaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.đơnGiáMuaDataGridViewTextBoxColumn.Width = 108;
-            // 
-            // sốLượngTồnDataGridViewTextBoxColumn
-            // 
-            this.sốLượngTồnDataGridViewTextBoxColumn.DataPropertyName = "Số lượng tồn";
-            this.sốLượngTồnDataGridViewTextBoxColumn.HeaderText = "Số lượng tồn";
-            this.sốLượngTồnDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.sốLượngTồnDataGridViewTextBoxColumn.Name = "sốLượngTồnDataGridViewTextBoxColumn";
-            this.sốLượngTồnDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sốLượngTồnDataGridViewTextBoxColumn.Width = 108;
-            // 
-            // đơnVịTínhDataGridViewTextBoxColumn
-            // 
-            this.đơnVịTínhDataGridViewTextBoxColumn.DataPropertyName = "Đơn vị tính";
-            this.đơnVịTínhDataGridViewTextBoxColumn.HeaderText = "Đơn vị tính";
-            this.đơnVịTínhDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.đơnVịTínhDataGridViewTextBoxColumn.Name = "đơnVịTínhDataGridViewTextBoxColumn";
-            this.đơnVịTínhDataGridViewTextBoxColumn.ReadOnly = true;
-            this.đơnVịTínhDataGridViewTextBoxColumn.Width = 75;
-            // 
             // loadSanPhamFullBindingSource
             // 
             this.loadSanPhamFullBindingSource.DataMember = "loadSanPhamFull";
@@ -194,7 +131,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(3, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(147, 17);
+            this.label4.Size = new System.Drawing.Size(135, 16);
             this.label4.TabIndex = 7;
             this.label4.Text = "Danh sách mặt hàng :";
             // 
@@ -253,7 +190,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(5, 52);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(102, 17);
+            this.label10.Size = new System.Drawing.Size(93, 16);
             this.label10.TabIndex = 20;
             this.label10.Text = "Mã mặt hàng : ";
             // 
@@ -273,7 +210,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(645, 52);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(96, 17);
+            this.label7.Size = new System.Drawing.Size(87, 16);
             this.label7.TabIndex = 16;
             this.label7.Text = "Số lượng tồn :";
             // 
@@ -282,7 +219,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(337, 115);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(87, 17);
+            this.label8.Size = new System.Drawing.Size(76, 16);
             this.label8.TabIndex = 13;
             this.label8.Text = "Đơn vị tính : ";
             // 
@@ -291,7 +228,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(337, 80);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(110, 17);
+            this.label9.Size = new System.Drawing.Size(100, 16);
             this.label9.TabIndex = 12;
             this.label9.Text = "Loại mặt hàng : ";
             // 
@@ -311,7 +248,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(337, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 17);
+            this.label1.Size = new System.Drawing.Size(85, 16);
             this.label1.TabIndex = 10;
             this.label1.Text = "Đơn giá bán :";
             // 
@@ -353,7 +290,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(5, 11);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(143, 17);
+            this.label3.Size = new System.Drawing.Size(129, 16);
             this.label3.TabIndex = 6;
             this.label3.Text = "Thông tin mặt hàng : ";
             // 
@@ -381,7 +318,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(5, 113);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 17);
+            this.label6.Size = new System.Drawing.Size(91, 16);
             this.label6.TabIndex = 1;
             this.label6.Text = "Đơn giá mua : ";
             // 
@@ -390,7 +327,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(5, 85);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 17);
+            this.label5.Size = new System.Drawing.Size(71, 16);
             this.label5.TabIndex = 0;
             this.label5.Text = "Mặt hàng : ";
             // 
@@ -435,6 +372,74 @@
             // loadLoaiSanPhamTableAdapter
             // 
             this.loadLoaiSanPhamTableAdapter.ClearBeforeFill = true;
+            // 
+            // mãSảnPhẩmDataGridViewTextBoxColumn
+            // 
+            this.mãSảnPhẩmDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.mãSảnPhẩmDataGridViewTextBoxColumn.DataPropertyName = "Mã sản phẩm";
+            this.mãSảnPhẩmDataGridViewTextBoxColumn.HeaderText = "Mã mặt hàng";
+            this.mãSảnPhẩmDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.mãSảnPhẩmDataGridViewTextBoxColumn.Name = "mãSảnPhẩmDataGridViewTextBoxColumn";
+            this.mãSảnPhẩmDataGridViewTextBoxColumn.ReadOnly = true;
+            this.mãSảnPhẩmDataGridViewTextBoxColumn.Width = 113;
+            // 
+            // tênSảnPhẩmDataGridViewTextBoxColumn
+            // 
+            this.tênSảnPhẩmDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tênSảnPhẩmDataGridViewTextBoxColumn.DataPropertyName = "Tên sản phẩm";
+            this.tênSảnPhẩmDataGridViewTextBoxColumn.HeaderText = "Tên mặt hàng";
+            this.tênSảnPhẩmDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tênSảnPhẩmDataGridViewTextBoxColumn.Name = "tênSảnPhẩmDataGridViewTextBoxColumn";
+            this.tênSảnPhẩmDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tênLoạiSảnPhẩmDataGridViewTextBoxColumn
+            // 
+            this.tênLoạiSảnPhẩmDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.tênLoạiSảnPhẩmDataGridViewTextBoxColumn.DataPropertyName = "Tên loại sản phẩm";
+            this.tênLoạiSảnPhẩmDataGridViewTextBoxColumn.HeaderText = "Tên loại mặt hàng";
+            this.tênLoạiSảnPhẩmDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tênLoạiSảnPhẩmDataGridViewTextBoxColumn.Name = "tênLoạiSảnPhẩmDataGridViewTextBoxColumn";
+            this.tênLoạiSảnPhẩmDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tênLoạiSảnPhẩmDataGridViewTextBoxColumn.Width = 104;
+            // 
+            // đơnGiáBánDataGridViewTextBoxColumn
+            // 
+            this.đơnGiáBánDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.đơnGiáBánDataGridViewTextBoxColumn.DataPropertyName = "Đơn giá bán";
+            this.đơnGiáBánDataGridViewTextBoxColumn.HeaderText = "Đơn giá bán";
+            this.đơnGiáBánDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.đơnGiáBánDataGridViewTextBoxColumn.Name = "đơnGiáBánDataGridViewTextBoxColumn";
+            this.đơnGiáBánDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // đơnGiáMuaDataGridViewTextBoxColumn
+            // 
+            this.đơnGiáMuaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.đơnGiáMuaDataGridViewTextBoxColumn.DataPropertyName = "Đơn giá mua";
+            this.đơnGiáMuaDataGridViewTextBoxColumn.HeaderText = "Đơn giá mua";
+            this.đơnGiáMuaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.đơnGiáMuaDataGridViewTextBoxColumn.Name = "đơnGiáMuaDataGridViewTextBoxColumn";
+            this.đơnGiáMuaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.đơnGiáMuaDataGridViewTextBoxColumn.Width = 102;
+            // 
+            // sốLượngTồnDataGridViewTextBoxColumn
+            // 
+            this.sốLượngTồnDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.sốLượngTồnDataGridViewTextBoxColumn.DataPropertyName = "Số lượng tồn";
+            this.sốLượngTồnDataGridViewTextBoxColumn.HeaderText = "Số lượng tồn";
+            this.sốLượngTồnDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sốLượngTồnDataGridViewTextBoxColumn.Name = "sốLượngTồnDataGridViewTextBoxColumn";
+            this.sốLượngTồnDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sốLượngTồnDataGridViewTextBoxColumn.Width = 101;
+            // 
+            // đơnVịTínhDataGridViewTextBoxColumn
+            // 
+            this.đơnVịTínhDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.đơnVịTínhDataGridViewTextBoxColumn.DataPropertyName = "Đơn vị tính";
+            this.đơnVịTínhDataGridViewTextBoxColumn.HeaderText = "Đơn vị tính";
+            this.đơnVịTínhDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.đơnVịTínhDataGridViewTextBoxColumn.Name = "đơnVịTínhDataGridViewTextBoxColumn";
+            this.đơnVịTínhDataGridViewTextBoxColumn.ReadOnly = true;
+            this.đơnVịTínhDataGridViewTextBoxColumn.Width = 71;
             // 
             // ThongTinMatHang
             // 
@@ -485,13 +490,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mãSảnPhẩmDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tênSảnPhẩmDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tênLoạiSảnPhẩmDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn đơnGiáBánDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn đơnGiáMuaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sốLượngTồnDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn đơnVịTínhDataGridViewTextBoxColumn;
         private System.Windows.Forms.ComboBox LSP_cb;
         private System.Windows.Forms.TextBox MaSP_tb;
         private System.Windows.Forms.Label label10;
@@ -499,5 +497,12 @@
         private System.Windows.Forms.TextBox DVT_tb;
         private System.Windows.Forms.BindingSource loadLoaiSanPhamBindingSource;
         private QLDQDataSetTableAdapters.loadLoaiSanPhamTableAdapter loadLoaiSanPhamTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mãSảnPhẩmDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tênSảnPhẩmDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tênLoạiSảnPhẩmDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn đơnGiáBánDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn đơnGiáMuaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sốLượngTồnDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn đơnVịTínhDataGridViewTextBoxColumn;
     }
 }
