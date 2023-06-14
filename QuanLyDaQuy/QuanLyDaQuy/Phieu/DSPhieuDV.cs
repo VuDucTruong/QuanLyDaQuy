@@ -66,7 +66,7 @@ namespace QuanLyDaQuy.Phieu
                 // NgayLap
                 case 3:
                     {
-                        enableSearchBox = true;
+                        textBox_Search.Text = "";
                         break;
                     }
                 // Hoan thanh
