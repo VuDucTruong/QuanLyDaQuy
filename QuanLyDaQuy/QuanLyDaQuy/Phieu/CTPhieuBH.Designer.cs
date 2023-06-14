@@ -51,15 +51,15 @@
             this.phieuMuaHang_column_thanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loadCTPhieuBHbyMaPhieuBHBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tb_kh = new System.Windows.Forms.TextBox();
-            this.tb_tt = new System.Windows.Forms.TextBox();
             this.lb_tt = new System.Windows.Forms.Label();
             this.tableLayout_TongTien = new System.Windows.Forms.TableLayoutPanel();
+            this.tb_tt = new System.Windows.Forms.TextBox();
+            this.btn_XuatPDF = new System.Windows.Forms.Button();
             this.loadCTPhieuMHbyMaPhieuMHBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.loadPhieuMH_byMaPhieuMH_For_CT_PhieuMuaHangTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadPhieuMH_byMaPhieuMH_For_CT_PhieuMuaHangTableAdapter();
             this.loadCTPhieuMH_byMaPhieuMHTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadCTPhieuMH_byMaPhieuMHTableAdapter();
             this.loadPhieuBH_byMaPhieuBH_For_CTPhieuBHTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadPhieuBH_byMaPhieuBH_For_CTPhieuBHTableAdapter();
             this.loadCTPhieuBH_byMaPhieuBHTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadCTPhieuBH_byMaPhieuBHTableAdapter();
-            this.btn_XuatPDF = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.loadPhieuBHbyMaPhieuBHForCTPhieuBHBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loadPhieuMuaHangFull_BindingSource)).BeginInit();
@@ -77,9 +77,9 @@
             this.tab_lay_phieubanhang.SetColumnSpan(this.lb_title, 6);
             this.lb_title.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lb_title.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_title.Location = new System.Drawing.Point(4, 1);
+            this.lb_title.Location = new System.Drawing.Point(3, 0);
             this.lb_title.Name = "lb_title";
-            this.lb_title.Size = new System.Drawing.Size(782, 35);
+            this.lb_title.Size = new System.Drawing.Size(784, 35);
             this.lb_title.TabIndex = 0;
             this.lb_title.Text = "THÔNG TIN PHIẾU BÁN HÀNG";
             this.lb_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -90,9 +90,9 @@
             this.lb_sophieu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lb_sophieu.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_sophieu.ForeColor = System.Drawing.Color.Black;
-            this.lb_sophieu.Location = new System.Drawing.Point(4, 37);
+            this.lb_sophieu.Location = new System.Drawing.Point(3, 35);
             this.lb_sophieu.Name = "lb_sophieu";
-            this.lb_sophieu.Size = new System.Drawing.Size(131, 35);
+            this.lb_sophieu.Size = new System.Drawing.Size(132, 35);
             this.lb_sophieu.TabIndex = 1;
             this.lb_sophieu.Text = "Số phiếu:";
             this.lb_sophieu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -104,10 +104,10 @@
             this.tb_sophieu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tb_sophieu.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadPhieuBHbyMaPhieuBHForCTPhieuBHBindingSource, "MaPhieuBH", true));
             this.tb_sophieu.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_sophieu.Location = new System.Drawing.Point(142, 42);
+            this.tb_sophieu.Location = new System.Drawing.Point(141, 40);
             this.tb_sophieu.Name = "tb_sophieu";
             this.tb_sophieu.ReadOnly = true;
-            this.tb_sophieu.Size = new System.Drawing.Size(131, 25);
+            this.tb_sophieu.Size = new System.Drawing.Size(132, 25);
             this.tb_sophieu.TabIndex = 2;
             // 
             // loadPhieuBHbyMaPhieuBHForCTPhieuBHBindingSource
@@ -130,9 +130,9 @@
             this.lb_kh.AutoSize = true;
             this.lb_kh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lb_kh.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_kh.Location = new System.Drawing.Point(280, 37);
+            this.lb_kh.Location = new System.Drawing.Point(279, 35);
             this.lb_kh.Name = "lb_kh";
-            this.lb_kh.Size = new System.Drawing.Size(131, 35);
+            this.lb_kh.Size = new System.Drawing.Size(132, 35);
             this.lb_kh.TabIndex = 5;
             this.lb_kh.Text = "Khách hàng:";
             this.lb_kh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -140,7 +140,6 @@
             // tab_lay_phieubanhang
             // 
             this.tab_lay_phieubanhang.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tab_lay_phieubanhang.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tab_lay_phieubanhang.ColumnCount = 6;
             this.tab_lay_phieubanhang.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.52629F));
             this.tab_lay_phieubanhang.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.52629F));
@@ -177,9 +176,9 @@
             this.kb_ngaylap.AutoSize = true;
             this.kb_ngaylap.Dock = System.Windows.Forms.DockStyle.Fill;
             this.kb_ngaylap.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kb_ngaylap.Location = new System.Drawing.Point(4, 73);
+            this.kb_ngaylap.Location = new System.Drawing.Point(3, 70);
             this.kb_ngaylap.Name = "kb_ngaylap";
-            this.kb_ngaylap.Size = new System.Drawing.Size(131, 35);
+            this.kb_ngaylap.Size = new System.Drawing.Size(132, 35);
             this.kb_ngaylap.TabIndex = 3;
             this.kb_ngaylap.Text = "Ngày lập:";
             this.kb_ngaylap.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -191,10 +190,10 @@
             this.tb_ngaylap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tb_ngaylap.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadPhieuBHbyMaPhieuBHForCTPhieuBHBindingSource, "NgayLap", true));
             this.tb_ngaylap.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_ngaylap.Location = new System.Drawing.Point(142, 78);
+            this.tb_ngaylap.Location = new System.Drawing.Point(141, 75);
             this.tb_ngaylap.Name = "tb_ngaylap";
             this.tb_ngaylap.ReadOnly = true;
-            this.tb_ngaylap.Size = new System.Drawing.Size(131, 25);
+            this.tb_ngaylap.Size = new System.Drawing.Size(132, 25);
             this.tb_ngaylap.TabIndex = 4;
             // 
             // lb_sdt
@@ -202,9 +201,9 @@
             this.lb_sdt.AutoSize = true;
             this.lb_sdt.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lb_sdt.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_sdt.Location = new System.Drawing.Point(280, 73);
+            this.lb_sdt.Location = new System.Drawing.Point(279, 70);
             this.lb_sdt.Name = "lb_sdt";
-            this.lb_sdt.Size = new System.Drawing.Size(131, 35);
+            this.lb_sdt.Size = new System.Drawing.Size(132, 35);
             this.lb_sdt.TabIndex = 7;
             this.lb_sdt.Text = "Số điện thoại:";
             this.lb_sdt.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -217,10 +216,10 @@
             this.tab_lay_phieubanhang.SetColumnSpan(this.tb_sdt, 2);
             this.tb_sdt.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadPhieuBHbyMaPhieuBHForCTPhieuBHBindingSource, "SDT", true));
             this.tb_sdt.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_sdt.Location = new System.Drawing.Point(418, 78);
+            this.tb_sdt.Location = new System.Drawing.Point(417, 75);
             this.tb_sdt.Name = "tb_sdt";
             this.tb_sdt.ReadOnly = true;
-            this.tb_sdt.Size = new System.Drawing.Size(260, 25);
+            this.tb_sdt.Size = new System.Drawing.Size(261, 25);
             this.tb_sdt.TabIndex = 8;
             // 
             // dgv_ct_phieubanhang
@@ -239,14 +238,14 @@
             this.dgv_ct_phieubanhang.DataSource = this.loadCTPhieuBHbyMaPhieuBHBindingSource;
             this.dgv_ct_phieubanhang.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgv_ct_phieubanhang.GridColor = System.Drawing.SystemColors.Control;
-            this.dgv_ct_phieubanhang.Location = new System.Drawing.Point(4, 112);
+            this.dgv_ct_phieubanhang.Location = new System.Drawing.Point(3, 108);
             this.dgv_ct_phieubanhang.MultiSelect = false;
             this.dgv_ct_phieubanhang.Name = "dgv_ct_phieubanhang";
             this.dgv_ct_phieubanhang.RowHeadersVisible = false;
             this.dgv_ct_phieubanhang.RowHeadersWidth = 51;
             this.dgv_ct_phieubanhang.RowTemplate.Height = 24;
             this.dgv_ct_phieubanhang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_ct_phieubanhang.Size = new System.Drawing.Size(782, 336);
+            this.dgv_ct_phieubanhang.Size = new System.Drawing.Size(784, 336);
             this.dgv_ct_phieubanhang.TabIndex = 11;
             // 
             // phieuMuaHang_column_STT
@@ -331,31 +330,20 @@
             this.tb_kh.BackColor = System.Drawing.SystemColors.Window;
             this.tab_lay_phieubanhang.SetColumnSpan(this.tb_kh, 2);
             this.tb_kh.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadPhieuBHbyMaPhieuBHForCTPhieuBHBindingSource, "TenKH", true));
-            this.tb_kh.Location = new System.Drawing.Point(418, 43);
+            this.tb_kh.Location = new System.Drawing.Point(417, 41);
             this.tb_kh.Name = "tb_kh";
             this.tb_kh.ReadOnly = true;
-            this.tb_kh.Size = new System.Drawing.Size(260, 22);
+            this.tb_kh.Size = new System.Drawing.Size(261, 22);
             this.tb_kh.TabIndex = 20;
-            // 
-            // tb_tt
-            // 
-            this.tb_tt.BackColor = System.Drawing.SystemColors.Window;
-            this.tb_tt.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadPhieuBHbyMaPhieuBHForCTPhieuBHBindingSource, "TongTien", true));
-            this.tb_tt.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tb_tt.Location = new System.Drawing.Point(3, 3);
-            this.tb_tt.Name = "tb_tt";
-            this.tb_tt.ReadOnly = true;
-            this.tb_tt.Size = new System.Drawing.Size(95, 22);
-            this.tb_tt.TabIndex = 13;
             // 
             // lb_tt
             // 
             this.lb_tt.AutoSize = true;
             this.lb_tt.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lb_tt.Location = new System.Drawing.Point(609, 457);
+            this.lb_tt.Location = new System.Drawing.Point(609, 452);
             this.lb_tt.Margin = new System.Windows.Forms.Padding(3, 5, 3, 0);
             this.lb_tt.Name = "lb_tt";
-            this.lb_tt.Size = new System.Drawing.Size(69, 65);
+            this.lb_tt.Size = new System.Drawing.Size(69, 71);
             this.lb_tt.TabIndex = 12;
             this.lb_tt.Text = "Tổng tiền: ";
             // 
@@ -367,13 +355,34 @@
             this.tableLayout_TongTien.Controls.Add(this.tb_tt, 0, 0);
             this.tableLayout_TongTien.Controls.Add(this.btn_XuatPDF, 0, 1);
             this.tableLayout_TongTien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayout_TongTien.Location = new System.Drawing.Point(685, 455);
+            this.tableLayout_TongTien.Location = new System.Drawing.Point(684, 450);
             this.tableLayout_TongTien.Name = "tableLayout_TongTien";
             this.tableLayout_TongTien.RowCount = 2;
             this.tableLayout_TongTien.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayout_TongTien.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayout_TongTien.Size = new System.Drawing.Size(101, 64);
+            this.tableLayout_TongTien.Size = new System.Drawing.Size(103, 70);
             this.tableLayout_TongTien.TabIndex = 21;
+            // 
+            // tb_tt
+            // 
+            this.tb_tt.BackColor = System.Drawing.SystemColors.Window;
+            this.tb_tt.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadPhieuBHbyMaPhieuBHForCTPhieuBHBindingSource, "TongTien", true));
+            this.tb_tt.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tb_tt.Location = new System.Drawing.Point(3, 3);
+            this.tb_tt.Name = "tb_tt";
+            this.tb_tt.ReadOnly = true;
+            this.tb_tt.Size = new System.Drawing.Size(97, 22);
+            this.tb_tt.TabIndex = 13;
+            // 
+            // btn_XuatPDF
+            // 
+            this.btn_XuatPDF.Location = new System.Drawing.Point(3, 38);
+            this.btn_XuatPDF.Name = "btn_XuatPDF";
+            this.btn_XuatPDF.Size = new System.Drawing.Size(95, 26);
+            this.btn_XuatPDF.TabIndex = 14;
+            this.btn_XuatPDF.Text = "Xuất PDF";
+            this.btn_XuatPDF.UseVisualStyleBackColor = true;
+            this.btn_XuatPDF.Click += new System.EventHandler(this.btn_XuatPDF_Click);
             // 
             // loadCTPhieuMHbyMaPhieuMHBindingSource
             // 
@@ -395,16 +404,6 @@
             // loadCTPhieuBH_byMaPhieuBHTableAdapter
             // 
             this.loadCTPhieuBH_byMaPhieuBHTableAdapter.ClearBeforeFill = true;
-            // 
-            // btn_XuatPDF
-            // 
-            this.btn_XuatPDF.Location = new System.Drawing.Point(3, 35);
-            this.btn_XuatPDF.Name = "btn_XuatPDF";
-            this.btn_XuatPDF.Size = new System.Drawing.Size(95, 26);
-            this.btn_XuatPDF.TabIndex = 14;
-            this.btn_XuatPDF.Text = "Xuất PDF";
-            this.btn_XuatPDF.UseVisualStyleBackColor = true;
-            this.btn_XuatPDF.Click += new System.EventHandler(this.btn_XuatPDF_Click);
             // 
             // CTPhieuBH
             // 

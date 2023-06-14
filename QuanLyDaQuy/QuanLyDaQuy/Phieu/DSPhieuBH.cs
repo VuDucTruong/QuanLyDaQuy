@@ -25,7 +25,7 @@ namespace QuanLyDaQuy.Phieu
             {
                 cbb_searchMode.SelectedIndex = 0;
 
-                string query = "SELECT PBH.MaPhieuBH, PBH.MaKH, KH.TenKH, KH.SDT, PBH.NgayLap, PBH.TongTien " +
+                string query = "SELECT PBH.MaPhieuBH, PBH.MaKH, KH.TenKH, KH.SDT, PBH.NgayLap, FORMAT(PBH.TongTien,'c', 'vi-VN') as TongTien " +
                                "FROM PHIEUBANHANG PBH " +
                                "JOIN KHACHHANG KH ON PBH.MaKH = KH.MaKH";
 
@@ -74,22 +74,22 @@ namespace QuanLyDaQuy.Phieu
                 switch (searchOption)
                 {
                     case 0: // Tất cả
-                        query = "SELECT PBH.MaPhieuBH, PBH.MaKH, KH.TenKH, KH.SDT, PBH.NgayLap, PBH.TongTien " +
+                        query = "SELECT PBH.MaPhieuBH, PBH.MaKH, KH.TenKH, KH.SDT, PBH.NgayLap, FORMAT(PBH.TongTien,'c', 'vi-VN') as TongTien " +
                                        "FROM PHIEUBANHANG PBH " +
                                        "JOIN KHACHHANG KH ON PBH.MaKH = KH.MaKH";
                         break;
 
                     case 1: // Mã phiếu
-                        query = "SELECT p.MaPhieuBH, p.MaKH, k.TenKH, k.SDT, p.NgayLap, p.TongTien FROM PHIEUBANHANG p INNER JOIN KHACHHANG k ON p.MaKH = k.MaKH WHERE p.MaPhieuBH = @Keyword";
+                        query = "SELECT p.MaPhieuBH, p.MaKH, k.TenKH, k.SDT, p.NgayLap, FORMAT(p.TongTien,'c', 'vi-VN') as TongTien FROM PHIEUBANHANG p INNER JOIN KHACHHANG k ON p.MaKH = k.MaKH WHERE p.MaPhieuBH = @Keyword";
                         break;
                     case 2: // Mã khách hàng
-                        query = "SELECT p.MaPhieuBH, p.MaKH, k.TenKH, k.SDT, p.NgayLap, p.TongTien FROM PHIEUBANHANG p INNER JOIN KHACHHANG k ON p.MaKH = k.MaKH WHERE p.MaKH = @Keyword";
+                        query = "SELECT p.MaPhieuBH, p.MaKH, k.TenKH, k.SDT, p.NgayLap, FORMAT(p.TongTien,'c', 'vi-VN') as TongTien FROM PHIEUBANHANG p INNER JOIN KHACHHANG k ON p.MaKH = k.MaKH WHERE p.MaKH = @Keyword";
                         break;
                     case 3: // Tên khách hàng
-                        query = "SELECT p.MaPhieuBH, p.MaKH, k.TenKH, k.SDT, p.NgayLap, p.TongTien FROM PHIEUBANHANG p INNER JOIN KHACHHANG k ON p.MaKH = k.MaKH WHERE k.TenKH LIKE '%' + @Keyword + '%'";
+                        query = "SELECT p.MaPhieuBH, p.MaKH, k.TenKH, k.SDT, p.NgayLap, FORMAT(p.TongTien,'c', 'vi-VN') as TongTien FROM PHIEUBANHANG p INNER JOIN KHACHHANG k ON p.MaKH = k.MaKH WHERE k.TenKH LIKE '%' + @Keyword + '%'";
                         break;
                     case 4: // Số điện thoại
-                        query = "SELECT p.MaPhieuBH, p.MaKH, k.TenKH, k.SDT, p.NgayLap, p.TongTien FROM PHIEUBANHANG p INNER JOIN KHACHHANG k ON p.MaKH = k.MaKH WHERE k.SDT LIKE '%' + @Keyword + '%'";
+                        query = "SELECT p.MaPhieuBH, p.MaKH, k.TenKH, k.SDT, p.NgayLap, FORMAT(p.TongTien,'c', 'vi-VN') as TongTien FROM PHIEUBANHANG p INNER JOIN KHACHHANG k ON p.MaKH = k.MaKH WHERE k.SDT LIKE '%' + @Keyword + '%'";
                         break;
                     case 5: // Ngày lập
                         {
@@ -127,7 +127,7 @@ namespace QuanLyDaQuy.Phieu
                                     return;
                                 }
 
-                                query = "SELECT p.MaPhieuBH, p.MaKH, k.TenKH, k.SDT, p.NgayLap, p.TongTien " +
+                                query = "SELECT p.MaPhieuBH, p.MaKH, k.TenKH, k.SDT, p.NgayLap, FORMAT(p.TongTien,'c', 'vi-VN') as TongTien " +
                                         "FROM PHIEUBANHANG p " +
                                         "INNER JOIN KHACHHANG k ON p.MaKH = k.MaKH " +
                                         "WHERE YEAR(p.NgayLap) = @Year AND MONTH(p.NgayLap) = @Month AND DAY(p.NgayLap) = @Day";
@@ -147,7 +147,7 @@ namespace QuanLyDaQuy.Phieu
                                     return;
                                 }
 
-                                query = "SELECT p.MaPhieuBH, p.MaKH, k.TenKH, k.SDT, p.NgayLap, p.TongTien " +
+                                query = "SELECT p.MaPhieuBH, p.MaKH, k.TenKH, k.SDT, p.NgayLap, FORMAT(p.TongTien,'c', 'vi-VN') as TongTien " +
                                         "FROM PHIEUBANHANG p " +
                                         "INNER JOIN KHACHHANG k ON p.MaKH = k.MaKH " +
                                         "WHERE YEAR(p.NgayLap) = @Year AND MONTH(p.NgayLap) = @Month";
@@ -161,7 +161,7 @@ namespace QuanLyDaQuy.Phieu
                                     return;
                                 }
 
-                                query = "SELECT p.MaPhieuBH, p.MaKH, k.TenKH, k.SDT, p.NgayLap, p.TongTien " +
+                                query = "SELECT p.MaPhieuBH, p.MaKH, k.TenKH, k.SDT, p.NgayLap, FORMAT(p.TongTien,'c', 'vi-VN') as TongTien " +
                                         "FROM PHIEUBANHANG p " +
                                         "INNER JOIN KHACHHANG k ON p.MaKH = k.MaKH " +
                                         "WHERE YEAR(p.NgayLap) = @Year";
