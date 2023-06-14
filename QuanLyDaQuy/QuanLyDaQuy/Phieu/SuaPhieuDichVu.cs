@@ -1,4 +1,5 @@
 ﻿using iText.Layout.Element;
+using QuanLyDaQuy.DAO;
 using QuanLyDaQuy.DTO;
 using QuanLyDaQuy.Export;
 using System;
@@ -35,7 +36,7 @@ namespace QuanLyDaQuy.Phieu
             textBox_SoPhieu.Text = MaPhieuDV.ToString();
 
             // Select PHIEUDICHVU dataTable
-            DataTable data_phieu = DAO.DataProvider.Instance.ExecuteQuery("EXEC [dbo].[loadPhieuDV_byMaPhieuDV] @MaPhieuDV = " + MaPhieuDV);
+            DataTable data_phieu = SuaPhieuDichVuDAO.Instance.getPhieuDV_byMaPhieu(MaPhieuDV);
             foreach (DataRow row in data_phieu.Rows)
             {
                 textBox_KhachHang.Text = row["TenKH"].ToString();
@@ -50,7 +51,7 @@ namespace QuanLyDaQuy.Phieu
             }
 
             // Select CT_PHIEUDICHVU
-            DataTable data_ct = DAO.DataProvider.Instance.ExecuteQuery("EXEC [dbo].[loadCTPhieuDV_byMaPhieuDV] @MaPhieuDV = " + MaPhieuDV);
+            DataTable data_ct = SuaPhieuDichVuDAO.Instance.getCTPhieuDV_byMaPhieu(MaPhieuDV);
             int stt = 1;
             foreach (DataRow row in data_ct.Rows)
             {
@@ -114,14 +115,10 @@ namespace QuanLyDaQuy.Phieu
             {
                 try
                 {
-                    DAO.DataProvider.Instance.ExecuteQuery( "update PHIEUDICHVU " +
-                                                            "set TinhTrang = N'" + tinhTrangPhieu + "' " +
-                                                            "where MaPhieuDV = " + MaPhieuDV);
-                    foreach(DataGridViewRow row in dataGridView1.Rows)
+                    SuaPhieuDichVuDAO.Instance.updatePhieuDV(tinhTrangPhieu, MaPhieuDV);
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
                     {
-                        DAO.DataProvider.Instance.ExecuteQuery( "update CT_PHIEUDICHVU " +
-                                                                "set TinhTrang = N'" + row.Cells[9].Value.ToString() + "' " +
-                                                                "where MaPhieuDV = " + MaPhieuDV + " and MaDV = " + MaDVs[row.Index]);
+                        SuaPhieuDichVuDAO.Instance.updateCTPhieuDV(row, MaPhieuDV, MaDVs);
                     }    
 
                     MessageBox.Show("Cập nhật phiếu thành công!", "Thông báo");

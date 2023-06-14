@@ -25,7 +25,7 @@ namespace QuanLyDaQuy.Phieu
             int id;
             try
             {
-                id = Convert.ToInt32(DataProvider.Instance.ExecuteScalar("select max(MaNCC) from NHACUNGCAP")) + 1;
+                id = NhaCungCapDAO.Instance.GetNew_MaNCC();
             }
             catch
             {
@@ -40,8 +40,7 @@ namespace QuanLyDaQuy.Phieu
             {
                 try
                 {
-                    string query = string.Format("insert into NHACUNGCAP values ( N'{0}' , N'{1}' , '{2}')", NCC_tb.Text, Address_tb.Text, Phone_tb.Text);
-                    int data = DataProvider.Instance.ExecuteNonQuery(query);
+                    int data = NhaCungCapDAO.Instance.Insert_NhaCungCap(NCC_tb.Text, Address_tb.Text, Phone_tb.Text);
                     if (data > 0)
                     {
                         MessageBox.Show("Đã thêm nhà cung cấp thành công!", "Thành công");

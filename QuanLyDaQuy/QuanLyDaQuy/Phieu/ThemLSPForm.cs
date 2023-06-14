@@ -25,7 +25,7 @@ namespace QuanLyDaQuy.Phieu
             int id;
             try
             {
-                id = Convert.ToInt32(DataProvider.Instance.ExecuteScalar("select max(MaLSP) from LOAISANPHAM")) + 1;
+                id = ThemLSPFormDAO.Instance.getMaLSPLonNhat() + 1;
             }
             catch
             {
@@ -38,12 +38,11 @@ namespace QuanLyDaQuy.Phieu
         {
             if (!string.IsNullOrEmpty(LSP_tb.Text) && !string.IsNullOrEmpty(LoiNhuan_tb.Text) && !string.IsNullOrEmpty(DVT_cb.Text))
             {
-                int DVT_id = (int)DataProvider.Instance.ExecuteScalar(string.Format("select * from DONVITINH where DVT = N'{0}'" , DVT_cb.Text));
+                int DVT_id = ThemLSPFormDAO.Instance.getMaDVT_byDVT(DVT_cb.Text);
 
                 try
                 {
-                    string query = string.Format("insert into LOAISANPHAM values ( N'{0}' , {1} , {2})", LSP_tb.Text , Convert.ToDouble(LoiNhuan_tb.Text) , DVT_id);
-                    int data = DataProvider.Instance.ExecuteNonQuery(query);
+                    int data = ThemLSPFormDAO.Instance.insertLSP(LSP_tb.Text, LoiNhuan_tb.Text, DVT_id);
                     if (data > 0)
                     {
                         MessageBox.Show("Đã thêm loại sản phẩm thành công!", "Thành công");

@@ -32,7 +32,7 @@ namespace QuanLyDaQuy.Phieu
         private void PhieuDichVu_Load(object sender, EventArgs e)
         {
             // Select ID
-            DataTable latestID = DAO.DataProvider.Instance.ExecuteQuery("select TOP(1) MaPhieuDV from PHIEUDICHVU ORDER BY MaPhieuDV DESC");
+            DataTable latestID = DAO.PhieuDichVuDAO.Instance.GetNew_MaPhieuDV();
             int id = 0;
             foreach (DataRow row in latestID.Rows)
             {
@@ -43,7 +43,7 @@ namespace QuanLyDaQuy.Phieu
 
             // Select KhachHang
             ComboBox khachHangs = new ComboBox();
-            DataTable data_kh = DAO.DataProvider.Instance.ExecuteQuery("select * from KHACHHANG");
+            DataTable data_kh = DAO.PhieuDichVuDAO.Instance.GetAll_KhachHang();
             foreach (DataRow row in data_kh.Rows)
             {
                 MKH.Add(Convert.ToInt32(row["MaKH"]));
@@ -57,7 +57,7 @@ namespace QuanLyDaQuy.Phieu
 
             // Select DichVu
             ComboBox dichVus = new ComboBox();
-            DataTable data_dv = DAO.DataProvider.Instance.ExecuteQuery("select * from DICHVU");
+            DataTable data_dv = DAO.PhieuDichVuDAO.Instance.GetAll_DichVu();
             foreach (DataRow row in data_dv.Rows)
             {
                 dichVus.Items.Add(row["TenDV"]);
@@ -67,7 +67,7 @@ namespace QuanLyDaQuy.Phieu
             ((DataGridViewComboBoxColumn)dataGridView1.Columns["TenDV"]).DataSource = dichVus.Items;
 
             // Select ThamSo
-            DataTable ThamSo = DAO.DataProvider.Instance.ExecuteQuery("select GiaTri from THAMSO where TenThamSo = 'SoTienTraTruoc'");
+            DataTable ThamSo = DAO.PhieuDichVuDAO.Instance.Get_SoTienTraTruoc();
             foreach (DataRow row in ThamSo.Rows)
             {
                 PhanTramTraTruocToiThieu = Convert.ToDouble(row["GiaTri"]);
