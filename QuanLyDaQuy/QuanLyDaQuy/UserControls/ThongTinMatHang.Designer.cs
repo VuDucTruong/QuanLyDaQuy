@@ -85,7 +85,7 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Location = new System.Drawing.Point(5, 252);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(945, 357);
+            this.panel2.Size = new System.Drawing.Size(1156, 357);
             this.panel2.TabIndex = 18;
             // 
             // dataGridView1
@@ -95,7 +95,7 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.mãSảnPhẩmDataGridViewTextBoxColumn,
@@ -113,7 +113,7 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(937, 324);
+            this.dataGridView1.Size = new System.Drawing.Size(1148, 324);
             this.dataGridView1.TabIndex = 8;
             // 
             // mãSảnPhẩmDataGridViewTextBoxColumn
@@ -450,7 +450,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Name = "ThongTinMatHang";
-            this.Size = new System.Drawing.Size(954, 618);
+            this.Size = new System.Drawing.Size(1165, 618);
             this.Load += new System.EventHandler(this.ThongTinMatHang_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

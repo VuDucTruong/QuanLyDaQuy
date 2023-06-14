@@ -139,7 +139,7 @@
             this.traCứuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 28);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1235, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1239, 24);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -193,7 +193,7 @@
             this.quảnLýThôngTinToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(1235, 28);
+            this.menuStrip2.Size = new System.Drawing.Size(1239, 28);
             this.menuStrip2.TabIndex = 12;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -359,9 +359,9 @@
             // 
             // thongTinMatHang1
             // 
-            this.thongTinMatHang1.Location = new System.Drawing.Point(266, 32);
+            this.thongTinMatHang1.Location = new System.Drawing.Point(269, 35);
             this.thongTinMatHang1.Name = "thongTinMatHang1";
-            this.thongTinMatHang1.Size = new System.Drawing.Size(954, 618);
+            this.thongTinMatHang1.Size = new System.Drawing.Size(951, 615);
             this.thongTinMatHang1.TabIndex = 6;
             // 
             // thongTinDichVu1
@@ -396,7 +396,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1235, 665);
+            this.ClientSize = new System.Drawing.Size(1239, 655);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.thongTinMatHang1);
             this.Controls.Add(this.thongTinDichVu1);
