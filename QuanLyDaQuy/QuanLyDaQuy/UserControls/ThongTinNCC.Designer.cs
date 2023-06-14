@@ -91,6 +91,7 @@
             this.sDTDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.nHACUNGCAPBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(3, 28);
+            this.dataGridView1.MaximumSize = new System.Drawing.Size(937, 324);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;

@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.maLSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenLSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loiNhuanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maDVTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lOAISANPHAMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qLDQDataSet = new QuanLyDaQuy.QLDQDataSet();
             this.label4 = new System.Windows.Forms.Label();
@@ -52,6 +56,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.maDVTDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dVTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label7 = new System.Windows.Forms.Label();
             this.lOAISANPHAMTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.LOAISANPHAMTableAdapter();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -64,12 +70,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.dONVITINHTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.DONVITINHTableAdapter();
-            this.maDVTDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dVTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maLSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenLSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.loiNhuanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maDVTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOAISANPHAMBindingSource)).BeginInit();
@@ -113,6 +113,7 @@
             this.maDVTDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.lOAISANPHAMBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(3, 28);
+            this.dataGridView1.MaximumSize = new System.Drawing.Size(535, 324);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
@@ -120,6 +121,45 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(535, 324);
             this.dataGridView1.TabIndex = 8;
+            // 
+            // maLSPDataGridViewTextBoxColumn
+            // 
+            this.maLSPDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.maLSPDataGridViewTextBoxColumn.DataPropertyName = "MaLSP";
+            this.maLSPDataGridViewTextBoxColumn.HeaderText = "MaLSP";
+            this.maLSPDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maLSPDataGridViewTextBoxColumn.Name = "maLSPDataGridViewTextBoxColumn";
+            this.maLSPDataGridViewTextBoxColumn.ReadOnly = true;
+            this.maLSPDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // tenLSPDataGridViewTextBoxColumn
+            // 
+            this.tenLSPDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tenLSPDataGridViewTextBoxColumn.DataPropertyName = "TenLSP";
+            this.tenLSPDataGridViewTextBoxColumn.HeaderText = "TenLSP";
+            this.tenLSPDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tenLSPDataGridViewTextBoxColumn.Name = "tenLSPDataGridViewTextBoxColumn";
+            this.tenLSPDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // loiNhuanDataGridViewTextBoxColumn
+            // 
+            this.loiNhuanDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.loiNhuanDataGridViewTextBoxColumn.DataPropertyName = "LoiNhuan";
+            this.loiNhuanDataGridViewTextBoxColumn.HeaderText = "LoiNhuan";
+            this.loiNhuanDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.loiNhuanDataGridViewTextBoxColumn.Name = "loiNhuanDataGridViewTextBoxColumn";
+            this.loiNhuanDataGridViewTextBoxColumn.ReadOnly = true;
+            this.loiNhuanDataGridViewTextBoxColumn.Width = 93;
+            // 
+            // maDVTDataGridViewTextBoxColumn
+            // 
+            this.maDVTDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.maDVTDataGridViewTextBoxColumn.DataPropertyName = "MaDVT";
+            this.maDVTDataGridViewTextBoxColumn.HeaderText = "MaDVT";
+            this.maDVTDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maDVTDataGridViewTextBoxColumn.Name = "maDVTDataGridViewTextBoxColumn";
+            this.maDVTDataGridViewTextBoxColumn.ReadOnly = true;
+            this.maDVTDataGridViewTextBoxColumn.Width = 83;
             // 
             // lOAISANPHAMBindingSource
             // 
@@ -334,6 +374,7 @@
             this.dVTDataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.dONVITINHBindingSource;
             this.dataGridView2.Location = new System.Drawing.Point(3, 28);
+            this.dataGridView2.MaximumSize = new System.Drawing.Size(389, 324);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersWidth = 51;
@@ -341,6 +382,24 @@
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(389, 324);
             this.dataGridView2.TabIndex = 8;
+            // 
+            // maDVTDataGridViewTextBoxColumn1
+            // 
+            this.maDVTDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.maDVTDataGridViewTextBoxColumn1.DataPropertyName = "MaDVT";
+            this.maDVTDataGridViewTextBoxColumn1.HeaderText = "MaDVT";
+            this.maDVTDataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.maDVTDataGridViewTextBoxColumn1.Name = "maDVTDataGridViewTextBoxColumn1";
+            this.maDVTDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.maDVTDataGridViewTextBoxColumn1.Width = 83;
+            // 
+            // dVTDataGridViewTextBoxColumn
+            // 
+            this.dVTDataGridViewTextBoxColumn.DataPropertyName = "DVT";
+            this.dVTDataGridViewTextBoxColumn.HeaderText = "DVT";
+            this.dVTDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dVTDataGridViewTextBoxColumn.Name = "dVTDataGridViewTextBoxColumn";
+            this.dVTDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // label7
             // 
@@ -453,63 +512,6 @@
             // dONVITINHTableAdapter
             // 
             this.dONVITINHTableAdapter.ClearBeforeFill = true;
-            // 
-            // maDVTDataGridViewTextBoxColumn1
-            // 
-            this.maDVTDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.maDVTDataGridViewTextBoxColumn1.DataPropertyName = "MaDVT";
-            this.maDVTDataGridViewTextBoxColumn1.HeaderText = "MaDVT";
-            this.maDVTDataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.maDVTDataGridViewTextBoxColumn1.Name = "maDVTDataGridViewTextBoxColumn1";
-            this.maDVTDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.maDVTDataGridViewTextBoxColumn1.Width = 83;
-            // 
-            // dVTDataGridViewTextBoxColumn
-            // 
-            this.dVTDataGridViewTextBoxColumn.DataPropertyName = "DVT";
-            this.dVTDataGridViewTextBoxColumn.HeaderText = "DVT";
-            this.dVTDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dVTDataGridViewTextBoxColumn.Name = "dVTDataGridViewTextBoxColumn";
-            this.dVTDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // maLSPDataGridViewTextBoxColumn
-            // 
-            this.maLSPDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.maLSPDataGridViewTextBoxColumn.DataPropertyName = "MaLSP";
-            this.maLSPDataGridViewTextBoxColumn.HeaderText = "MaLSP";
-            this.maLSPDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.maLSPDataGridViewTextBoxColumn.Name = "maLSPDataGridViewTextBoxColumn";
-            this.maLSPDataGridViewTextBoxColumn.ReadOnly = true;
-            this.maLSPDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // tenLSPDataGridViewTextBoxColumn
-            // 
-            this.tenLSPDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tenLSPDataGridViewTextBoxColumn.DataPropertyName = "TenLSP";
-            this.tenLSPDataGridViewTextBoxColumn.HeaderText = "TenLSP";
-            this.tenLSPDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tenLSPDataGridViewTextBoxColumn.Name = "tenLSPDataGridViewTextBoxColumn";
-            this.tenLSPDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // loiNhuanDataGridViewTextBoxColumn
-            // 
-            this.loiNhuanDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.loiNhuanDataGridViewTextBoxColumn.DataPropertyName = "LoiNhuan";
-            this.loiNhuanDataGridViewTextBoxColumn.HeaderText = "LoiNhuan";
-            this.loiNhuanDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.loiNhuanDataGridViewTextBoxColumn.Name = "loiNhuanDataGridViewTextBoxColumn";
-            this.loiNhuanDataGridViewTextBoxColumn.ReadOnly = true;
-            this.loiNhuanDataGridViewTextBoxColumn.Width = 93;
-            // 
-            // maDVTDataGridViewTextBoxColumn
-            // 
-            this.maDVTDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.maDVTDataGridViewTextBoxColumn.DataPropertyName = "MaDVT";
-            this.maDVTDataGridViewTextBoxColumn.HeaderText = "MaDVT";
-            this.maDVTDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.maDVTDataGridViewTextBoxColumn.Name = "maDVTDataGridViewTextBoxColumn";
-            this.maDVTDataGridViewTextBoxColumn.ReadOnly = true;
-            this.maDVTDataGridViewTextBoxColumn.Width = 83;
             // 
             // ThongTinLSP
             // 
