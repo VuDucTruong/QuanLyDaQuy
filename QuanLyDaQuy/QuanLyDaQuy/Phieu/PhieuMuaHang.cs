@@ -299,8 +299,15 @@ namespace QuanLyDaQuy.Phieu
                     dt_grid_phieumuahang.Rows[e.RowIndex].Cells[3].Value = 0;
                     return;
                 }
-                string tenSP = dt_grid_phieumuahang.Rows[e.RowIndex].Cells[1].Value.ToString();
-
+                //Validating ten san pham
+                if (dt_grid_phieumuahang.Rows[e.RowIndex].Cells[1].Value != null)
+                {
+                    string tenSP = dt_grid_phieumuahang.Rows[e.RowIndex].Cells[1].Value.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Không được để trống sản phẩm", "Cảnh báo");
+                }
                 //update thanh tien
                 if (dt_grid_phieumuahang.Rows[e.RowIndex].Cells[1].Value != null)
                 {
