@@ -43,13 +43,6 @@
             this.tb_sodienthoai = new System.Windows.Forms.TextBox();
             this.tab_lay_phieumuahang = new System.Windows.Forms.TableLayoutPanel();
             this.dt_grid_phieumuahang = new System.Windows.Forms.DataGridView();
-            this.sTTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenLSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sLDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dVTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donGiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.thanhTienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loadCTPhieuMHbyMaPhieuMHBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tb_nhaCungCap = new System.Windows.Forms.TextBox();
             this.exPDF_btn = new System.Windows.Forms.Button();
@@ -57,6 +50,13 @@
             this.tb_thanhTien = new System.Windows.Forms.TextBox();
             this.loadPhieuMH_byMaPhieuMH_For_CT_PhieuMuaHangTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadPhieuMH_byMaPhieuMH_For_CT_PhieuMuaHangTableAdapter();
             this.loadCTPhieuMH_byMaPhieuMHTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadCTPhieuMH_byMaPhieuMHTableAdapter();
+            this.sTTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenLSPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sLDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dVTDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donGiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.thanhTienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.loadPhieuMuaHangFull_BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).BeginInit();
             this.tab_lay_phieumuahang.SuspendLayout();
@@ -266,71 +266,6 @@
             this.dt_grid_phieumuahang.Size = new System.Drawing.Size(1048, 336);
             this.dt_grid_phieumuahang.TabIndex = 11;
             // 
-            // sTTDataGridViewTextBoxColumn
-            // 
-            this.sTTDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.sTTDataGridViewTextBoxColumn.DataPropertyName = "STT";
-            this.sTTDataGridViewTextBoxColumn.HeaderText = "STT";
-            this.sTTDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.sTTDataGridViewTextBoxColumn.Name = "sTTDataGridViewTextBoxColumn";
-            this.sTTDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sTTDataGridViewTextBoxColumn.Width = 64;
-            // 
-            // tenSPDataGridViewTextBoxColumn
-            // 
-            this.tenSPDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tenSPDataGridViewTextBoxColumn.DataPropertyName = "TenSP";
-            this.tenSPDataGridViewTextBoxColumn.HeaderText = "Tên sản phẩm";
-            this.tenSPDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tenSPDataGridViewTextBoxColumn.Name = "tenSPDataGridViewTextBoxColumn";
-            // 
-            // tenLSPDataGridViewTextBoxColumn
-            // 
-            this.tenLSPDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.tenLSPDataGridViewTextBoxColumn.DataPropertyName = "TenLSP";
-            this.tenLSPDataGridViewTextBoxColumn.HeaderText = "Tên loại sản phẩm";
-            this.tenLSPDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tenLSPDataGridViewTextBoxColumn.Name = "tenLSPDataGridViewTextBoxColumn";
-            this.tenLSPDataGridViewTextBoxColumn.Width = 109;
-            // 
-            // sLDataGridViewTextBoxColumn
-            // 
-            this.sLDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.sLDataGridViewTextBoxColumn.DataPropertyName = "SL";
-            this.sLDataGridViewTextBoxColumn.HeaderText = "Số lượng";
-            this.sLDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.sLDataGridViewTextBoxColumn.Name = "sLDataGridViewTextBoxColumn";
-            this.sLDataGridViewTextBoxColumn.Width = 86;
-            // 
-            // dVTDataGridViewTextBoxColumn
-            // 
-            this.dVTDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dVTDataGridViewTextBoxColumn.DataPropertyName = "DVT";
-            this.dVTDataGridViewTextBoxColumn.HeaderText = "Đơn vị tính";
-            this.dVTDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.dVTDataGridViewTextBoxColumn.Name = "dVTDataGridViewTextBoxColumn";
-            this.dVTDataGridViewTextBoxColumn.Width = 75;
-            // 
-            // donGiaDataGridViewTextBoxColumn
-            // 
-            this.donGiaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.donGiaDataGridViewTextBoxColumn.DataPropertyName = "DonGia";
-            this.donGiaDataGridViewTextBoxColumn.HeaderText = "Đơn giá";
-            this.donGiaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.donGiaDataGridViewTextBoxColumn.Name = "donGiaDataGridViewTextBoxColumn";
-            this.donGiaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.donGiaDataGridViewTextBoxColumn.Width = 63;
-            // 
-            // thanhTienDataGridViewTextBoxColumn
-            // 
-            this.thanhTienDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.thanhTienDataGridViewTextBoxColumn.DataPropertyName = "ThanhTien";
-            this.thanhTienDataGridViewTextBoxColumn.HeaderText = "Thành tiền";
-            this.thanhTienDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.thanhTienDataGridViewTextBoxColumn.Name = "thanhTienDataGridViewTextBoxColumn";
-            this.thanhTienDataGridViewTextBoxColumn.ReadOnly = true;
-            this.thanhTienDataGridViewTextBoxColumn.Width = 97;
-            // 
             // loadCTPhieuMHbyMaPhieuMHBindingSource
             // 
             this.loadCTPhieuMHbyMaPhieuMHBindingSource.DataMember = "loadCTPhieuMH_byMaPhieuMH";
@@ -364,9 +299,9 @@
             this.lb_thanhTien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_thanhTien.AutoSize = true;
-            this.lb_thanhTien.Location = new System.Drawing.Point(657, 482);
+            this.lb_thanhTien.Location = new System.Drawing.Point(664, 482);
             this.lb_thanhTien.Name = "lb_thanhTien";
-            this.lb_thanhTien.Size = new System.Drawing.Size(76, 20);
+            this.lb_thanhTien.Size = new System.Drawing.Size(69, 20);
             this.lb_thanhTien.TabIndex = 12;
             this.lb_thanhTien.Text = "Tổng tiền: ";
             // 
@@ -389,6 +324,75 @@
             // loadCTPhieuMH_byMaPhieuMHTableAdapter
             // 
             this.loadCTPhieuMH_byMaPhieuMHTableAdapter.ClearBeforeFill = true;
+            // 
+            // sTTDataGridViewTextBoxColumn
+            // 
+            this.sTTDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.sTTDataGridViewTextBoxColumn.DataPropertyName = "STT";
+            this.sTTDataGridViewTextBoxColumn.HeaderText = "STT";
+            this.sTTDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sTTDataGridViewTextBoxColumn.Name = "sTTDataGridViewTextBoxColumn";
+            this.sTTDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sTTDataGridViewTextBoxColumn.Width = 63;
+            // 
+            // tenSPDataGridViewTextBoxColumn
+            // 
+            this.tenSPDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tenSPDataGridViewTextBoxColumn.DataPropertyName = "TenSP";
+            this.tenSPDataGridViewTextBoxColumn.HeaderText = "Tên sản phẩm";
+            this.tenSPDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tenSPDataGridViewTextBoxColumn.Name = "tenSPDataGridViewTextBoxColumn";
+            this.tenSPDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tenLSPDataGridViewTextBoxColumn
+            // 
+            this.tenLSPDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.tenLSPDataGridViewTextBoxColumn.DataPropertyName = "TenLSP";
+            this.tenLSPDataGridViewTextBoxColumn.HeaderText = "Tên loại sản phẩm";
+            this.tenLSPDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tenLSPDataGridViewTextBoxColumn.Name = "tenLSPDataGridViewTextBoxColumn";
+            this.tenLSPDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tenLSPDataGridViewTextBoxColumn.Width = 104;
+            // 
+            // sLDataGridViewTextBoxColumn
+            // 
+            this.sLDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.sLDataGridViewTextBoxColumn.DataPropertyName = "SL";
+            this.sLDataGridViewTextBoxColumn.HeaderText = "Số lượng";
+            this.sLDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.sLDataGridViewTextBoxColumn.Name = "sLDataGridViewTextBoxColumn";
+            this.sLDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sLDataGridViewTextBoxColumn.Width = 83;
+            // 
+            // dVTDataGridViewTextBoxColumn
+            // 
+            this.dVTDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dVTDataGridViewTextBoxColumn.DataPropertyName = "DVT";
+            this.dVTDataGridViewTextBoxColumn.HeaderText = "Đơn vị tính";
+            this.dVTDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.dVTDataGridViewTextBoxColumn.Name = "dVTDataGridViewTextBoxColumn";
+            this.dVTDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dVTDataGridViewTextBoxColumn.Width = 71;
+            // 
+            // donGiaDataGridViewTextBoxColumn
+            // 
+            this.donGiaDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.donGiaDataGridViewTextBoxColumn.DataPropertyName = "DonGia";
+            this.donGiaDataGridViewTextBoxColumn.HeaderText = "Đơn giá";
+            this.donGiaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.donGiaDataGridViewTextBoxColumn.Name = "donGiaDataGridViewTextBoxColumn";
+            this.donGiaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.donGiaDataGridViewTextBoxColumn.Width = 76;
+            // 
+            // thanhTienDataGridViewTextBoxColumn
+            // 
+            this.thanhTienDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.thanhTienDataGridViewTextBoxColumn.DataPropertyName = "ThanhTien";
+            this.thanhTienDataGridViewTextBoxColumn.HeaderText = "Thành tiền";
+            this.thanhTienDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.thanhTienDataGridViewTextBoxColumn.Name = "thanhTienDataGridViewTextBoxColumn";
+            this.thanhTienDataGridViewTextBoxColumn.ReadOnly = true;
+            this.thanhTienDataGridViewTextBoxColumn.Width = 91;
             // 
             // DSPhieuMH_CT_PhieuMuaHang
             // 
@@ -430,6 +434,7 @@
         private QLDQDataSetTableAdapters.loadPhieuMH_byMaPhieuMH_For_CT_PhieuMuaHangTableAdapter loadPhieuMH_byMaPhieuMH_For_CT_PhieuMuaHangTableAdapter;
         private System.Windows.Forms.BindingSource loadCTPhieuMHbyMaPhieuMHBindingSource;
         private QLDQDataSetTableAdapters.loadCTPhieuMH_byMaPhieuMHTableAdapter loadCTPhieuMH_byMaPhieuMHTableAdapter;
+        private System.Windows.Forms.Button exPDF_btn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sTTDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenSPDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenLSPDataGridViewTextBoxColumn;
@@ -437,6 +442,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dVTDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn donGiaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn thanhTienDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button exPDF_btn;
     }
 }
