@@ -103,7 +103,7 @@
             this.tab_lay_phieumuahang.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tab_lay_phieumuahang.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tab_lay_phieumuahang.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tab_lay_phieumuahang.Size = new System.Drawing.Size(975, 555);
+            this.tab_lay_phieumuahang.Size = new System.Drawing.Size(975, 568);
             this.tab_lay_phieumuahang.TabIndex = 0;
             // 
             // lb_title
@@ -382,8 +382,6 @@
             // 
             // tb_layout_btn
             // 
-            this.tb_layout_btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tb_layout_btn.ColumnCount = 3;
             this.tab_lay_phieumuahang.SetColumnSpan(this.tb_layout_btn, 2);
             this.tb_layout_btn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.96825F));
@@ -393,19 +391,20 @@
             this.tb_layout_btn.Controls.Add(this.btn_huy, 2, 0);
             this.tb_layout_btn.Controls.Add(this.btn_lapPhieu, 1, 0);
             this.tb_layout_btn.Controls.Add(this.btn_xuatPDF, 0, 0);
+            this.tb_layout_btn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tb_layout_btn.Location = new System.Drawing.Point(647, 516);
             this.tb_layout_btn.Name = "tb_layout_btn";
             this.tb_layout_btn.RowCount = 1;
             this.tb_layout_btn.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tb_layout_btn.Size = new System.Drawing.Size(323, 34);
+            this.tb_layout_btn.Size = new System.Drawing.Size(323, 47);
             this.tb_layout_btn.TabIndex = 19;
             // 
             // btn_huy
             // 
-            this.btn_huy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_huy.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_huy.Location = new System.Drawing.Point(220, 3);
             this.btn_huy.Name = "btn_huy";
-            this.btn_huy.Size = new System.Drawing.Size(100, 28);
+            this.btn_huy.Size = new System.Drawing.Size(100, 41);
             this.btn_huy.TabIndex = 15;
             this.btn_huy.Text = "Hủy phiếu";
             this.btn_huy.UseVisualStyleBackColor = true;
@@ -413,10 +412,10 @@
             // 
             // btn_lapPhieu
             // 
-            this.btn_lapPhieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_lapPhieu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_lapPhieu.Location = new System.Drawing.Point(112, 3);
             this.btn_lapPhieu.Name = "btn_lapPhieu";
-            this.btn_lapPhieu.Size = new System.Drawing.Size(102, 28);
+            this.btn_lapPhieu.Size = new System.Drawing.Size(102, 41);
             this.btn_lapPhieu.TabIndex = 14;
             this.btn_lapPhieu.Text = "Lập phiếu";
             this.btn_lapPhieu.UseVisualStyleBackColor = true;
@@ -429,7 +428,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_xuatPDF.Location = new System.Drawing.Point(3, 3);
             this.btn_xuatPDF.Name = "btn_xuatPDF";
-            this.btn_xuatPDF.Size = new System.Drawing.Size(103, 28);
+            this.btn_xuatPDF.Size = new System.Drawing.Size(103, 41);
             this.btn_xuatPDF.TabIndex = 16;
             this.btn_xuatPDF.Text = "Xuất PDF";
             this.btn_xuatPDF.UseVisualStyleBackColor = true;
@@ -444,7 +443,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(975, 555);
+            this.ClientSize = new System.Drawing.Size(975, 568);
             this.Controls.Add(this.tab_lay_phieumuahang);
             this.Name = "PhieuMuaHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
