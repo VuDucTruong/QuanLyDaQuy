@@ -112,7 +112,6 @@
             this.loiNhuanDataGridViewTextBoxColumn,
             this.maDVTDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.lOAISANPHAMBindingSource;
-            this.dataGridView1.Enabled = false;
             this.dataGridView1.Location = new System.Drawing.Point(3, 28);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -169,7 +168,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(3, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(164, 16);
+            this.label4.Size = new System.Drawing.Size(176, 17);
             this.label4.TabIndex = 7;
             this.label4.Text = "Danh sách loại sản phẩm :";
             // 
@@ -191,7 +190,7 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Location = new System.Drawing.Point(3, 76);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(522, 164);
+            this.panel1.Size = new System.Drawing.Size(522, 165);
             this.panel1.TabIndex = 14;
             // 
             // MaDVT_tb_1
@@ -235,7 +234,7 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(9, 49);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(122, 16);
+            this.label8.Size = new System.Drawing.Size(131, 17);
             this.label8.TabIndex = 12;
             this.label8.Text = "Mã loại sản phẩm : ";
             // 
@@ -244,7 +243,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(9, 137);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 16);
+            this.label1.Size = new System.Drawing.Size(108, 17);
             this.label1.TabIndex = 10;
             this.label1.Text = "Mã đơn vị tính : ";
             // 
@@ -256,7 +255,7 @@
             this.flowLayoutPanel1.Controls.Add(this.updateLSP_btn);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(355, 127);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(162, 32);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(162, 33);
             this.flowLayoutPanel1.TabIndex = 9;
             // 
             // insertLSP_btn
@@ -264,7 +263,7 @@
             this.insertLSP_btn.AutoSize = true;
             this.insertLSP_btn.Location = new System.Drawing.Point(3, 3);
             this.insertLSP_btn.Name = "insertLSP_btn";
-            this.insertLSP_btn.Size = new System.Drawing.Size(75, 26);
+            this.insertLSP_btn.Size = new System.Drawing.Size(75, 27);
             this.insertLSP_btn.TabIndex = 6;
             this.insertLSP_btn.Text = "Thêm";
             this.insertLSP_btn.UseVisualStyleBackColor = true;
@@ -275,7 +274,7 @@
             this.updateLSP_btn.AutoSize = true;
             this.updateLSP_btn.Location = new System.Drawing.Point(84, 3);
             this.updateLSP_btn.Name = "updateLSP_btn";
-            this.updateLSP_btn.Size = new System.Drawing.Size(75, 26);
+            this.updateLSP_btn.Size = new System.Drawing.Size(75, 27);
             this.updateLSP_btn.TabIndex = 8;
             this.updateLSP_btn.Text = "Sửa";
             this.updateLSP_btn.UseVisualStyleBackColor = true;
@@ -286,7 +285,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(9, 11);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(158, 16);
+            this.label3.Size = new System.Drawing.Size(172, 17);
             this.label3.TabIndex = 6;
             this.label3.Text = "Thông tin loại sản phẩm : ";
             // 
@@ -314,7 +313,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(9, 105);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(73, 16);
+            this.label6.Size = new System.Drawing.Size(83, 17);
             this.label6.TabIndex = 1;
             this.label6.Text = "Lợi nhuận : ";
             // 
@@ -323,7 +322,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(9, 77);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(127, 16);
+            this.label5.Size = new System.Drawing.Size(137, 17);
             this.label5.TabIndex = 0;
             this.label5.Text = "Tên loại sản phẩm : ";
             // 
@@ -396,7 +395,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(3, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(139, 16);
+            this.label7.Size = new System.Drawing.Size(153, 17);
             this.label7.TabIndex = 7;
             this.label7.Text = "Danh sách đơn vị tính :";
             // 
@@ -418,7 +417,7 @@
             this.panel3.Location = new System.Drawing.Point(554, 93);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(0, 40, 0, 0);
-            this.panel3.Size = new System.Drawing.Size(387, 144);
+            this.panel3.Size = new System.Drawing.Size(387, 145);
             this.panel3.TabIndex = 15;
             // 
             // flowLayoutPanel2
@@ -429,7 +428,7 @@
             this.flowLayoutPanel2.Controls.Add(this.updateDVT_btn);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(220, 107);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(162, 32);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(162, 33);
             this.flowLayoutPanel2.TabIndex = 9;
             // 
             // insertDVT_btn
@@ -437,7 +436,7 @@
             this.insertDVT_btn.AutoSize = true;
             this.insertDVT_btn.Location = new System.Drawing.Point(3, 3);
             this.insertDVT_btn.Name = "insertDVT_btn";
-            this.insertDVT_btn.Size = new System.Drawing.Size(75, 26);
+            this.insertDVT_btn.Size = new System.Drawing.Size(75, 27);
             this.insertDVT_btn.TabIndex = 6;
             this.insertDVT_btn.Text = "Thêm";
             this.insertDVT_btn.UseVisualStyleBackColor = true;
@@ -448,7 +447,7 @@
             this.updateDVT_btn.AutoSize = true;
             this.updateDVT_btn.Location = new System.Drawing.Point(84, 3);
             this.updateDVT_btn.Name = "updateDVT_btn";
-            this.updateDVT_btn.Size = new System.Drawing.Size(75, 26);
+            this.updateDVT_btn.Size = new System.Drawing.Size(75, 27);
             this.updateDVT_btn.TabIndex = 8;
             this.updateDVT_btn.Text = "Sửa";
             this.updateDVT_btn.UseVisualStyleBackColor = true;
@@ -459,7 +458,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(3, 8);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(133, 16);
+            this.label9.Size = new System.Drawing.Size(149, 17);
             this.label9.TabIndex = 6;
             this.label9.Text = "Thông tin đơn vị tính : ";
             // 
@@ -486,7 +485,7 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(6, 71);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(76, 16);
+            this.label10.Size = new System.Drawing.Size(87, 17);
             this.label10.TabIndex = 1;
             this.label10.Text = "Đơn vị tính : ";
             // 
@@ -495,7 +494,7 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(6, 43);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(97, 16);
+            this.label11.Size = new System.Drawing.Size(108, 17);
             this.label11.TabIndex = 0;
             this.label11.Text = "Mã đơn vị tính : ";
             // 
