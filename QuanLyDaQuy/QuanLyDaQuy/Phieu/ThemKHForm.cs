@@ -23,6 +23,8 @@ namespace QuanLyDaQuy.Phieu
         {
             if (!string.IsNullOrEmpty(name_tb.Text) && !string.IsNullOrEmpty(phone_tb.Text))
             {
+                if (phone_tb.Text.Length < 10)
+                { MessageBox.Show("Số điện thoại phải từ 10 chữ số trở lên !"); return; }
                 try
                 {
                     int data = ThemKHFormDAO.Instance.insertKhachHang(name_tb.Text, phone_tb.Text);

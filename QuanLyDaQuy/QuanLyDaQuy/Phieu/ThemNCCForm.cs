@@ -38,6 +38,8 @@ namespace QuanLyDaQuy.Phieu
         {
             if (!string.IsNullOrEmpty(NCC_tb.Text) && !string.IsNullOrEmpty(Phone_tb.Text) && !string.IsNullOrEmpty(Address_tb.Text))
             {
+                if (Phone_tb.Text.Length < 10)
+                { MessageBox.Show("Số điện thoại phải từ 10 chữ số trở lên !"); return ; }
                 try
                 {
                     int data = NhaCungCapDAO.Instance.Insert_NhaCungCap(NCC_tb.Text, Address_tb.Text, Phone_tb.Text);

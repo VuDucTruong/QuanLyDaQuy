@@ -126,18 +126,26 @@ namespace QuanLyDaQuy.UserControls
         }
         private Boolean isEditableLSP()
         {
-
-            TenLSP_tb.ReadOnly = !TenLSP_tb.ReadOnly;
-            LoiNhuan_tb.ReadOnly = !LoiNhuan_tb.ReadOnly;
-            MaDVT_tb_1.Visible = !MaDVT_tb_1.Visible;
-            MaDVT_cb.Visible = !MaDVT_cb.Visible;
-            dataGridView1.Enabled = !dataGridView1.Enabled;
+            if(!String.IsNullOrEmpty(TenLSP_tb.Text) && !String.IsNullOrEmpty(LoiNhuan_tb.Text))
+            {
+                TenLSP_tb.ReadOnly = !TenLSP_tb.ReadOnly;
+                LoiNhuan_tb.ReadOnly = !LoiNhuan_tb.ReadOnly;
+                MaDVT_tb_1.Visible = !MaDVT_tb_1.Visible;
+                MaDVT_cb.Visible = !MaDVT_cb.Visible;
+                dataGridView1.Enabled = !dataGridView1.Enabled;
+            }
+            else { MessageBox.Show("Không được để trống ô !"); }
             return TenLSP_tb.ReadOnly;
         }
         private Boolean isEditableDVT()
         {
-            DVT_tb.ReadOnly = !DVT_tb.ReadOnly;
-            dataGridView2.Enabled = !dataGridView2.Enabled;
+            if(!String.IsNullOrEmpty(DVT_tb.Text))
+            {
+                DVT_tb.ReadOnly = !DVT_tb.ReadOnly;
+                dataGridView2.Enabled = !dataGridView2.Enabled;
+            }
+            else { MessageBox.Show("Không được để trống ô !"); }
+            
             return DVT_tb.ReadOnly;
         }
 

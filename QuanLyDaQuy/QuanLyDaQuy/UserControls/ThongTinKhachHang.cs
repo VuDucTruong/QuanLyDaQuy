@@ -57,6 +57,7 @@ namespace QuanLyDaQuy.UserControls
             
             if (!string.IsNullOrEmpty(KH_tb.Text) && !string.IsNullOrEmpty(Phone_tb.Text) && ID > 0)
             {
+
                 string query = string.Format("update KHACHHANG set TenKH = N'{0}' , SDT = '{1}' where MaKH = {2}", KH_tb.Text, Phone_tb.Text, ID);
                 int data = DataProvider.Instance.ExecuteNonQuery(query);
                 if (data > 0)
@@ -69,6 +70,7 @@ namespace QuanLyDaQuy.UserControls
                 {
                     MessageBox.Show("Cập nhật thất bại !", "Thất bại");
                 }
+                
 
             }
             else MessageBox.Show("Hãy nhập đầy đủ thông tin !");
@@ -76,9 +78,16 @@ namespace QuanLyDaQuy.UserControls
 
         public Boolean isEditableTextbox()
         {
-            KH_tb.ReadOnly = !KH_tb.ReadOnly;
-            Phone_tb.ReadOnly = !Phone_tb.ReadOnly;
-            dataGridView1.Enabled = !dataGridView1.Enabled;
+            if (!String.IsNullOrEmpty(KH_tb.Text) && !String.IsNullOrEmpty(Phone_tb.Text))
+            {
+                if (Phone_tb.Text.Length < 10)
+                { MessageBox.Show("Số điện thoại phải từ 10 chữ số trở lên !"); return false; }
+                KH_tb.ReadOnly = !KH_tb.ReadOnly;
+                Phone_tb.ReadOnly = !Phone_tb.ReadOnly;
+                dataGridView1.Enabled = !dataGridView1.Enabled;
+            }
+            else MessageBox.Show("Không được để trống ô !");
+            
             return KH_tb.ReadOnly && Phone_tb.ReadOnly;
         }
 

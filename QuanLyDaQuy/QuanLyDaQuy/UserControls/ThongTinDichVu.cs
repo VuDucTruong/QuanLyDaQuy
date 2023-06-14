@@ -77,15 +77,19 @@ namespace QuanLyDaQuy
 
         public Boolean isEditableTextbox()
         {
-            DV_tb.ReadOnly = !DV_tb.ReadOnly;
-            DonGia_tb.ReadOnly = !DonGia_tb.ReadOnly;
-            dataGridView1.Enabled = !dataGridView1.Enabled;
 
-            if(!DonGia_tb.ReadOnly)
+            if (!String.IsNullOrEmpty(DV_tb.Text) && !String.IsNullOrEmpty(DonGia_tb.Text))
             {
-                DonGia_tb.Text = DonGia_tb.Text.Replace(".", string.Empty).Trim('₫');
-            }
+                DV_tb.ReadOnly = !DV_tb.ReadOnly;
+                DonGia_tb.ReadOnly = !DonGia_tb.ReadOnly;
+                dataGridView1.Enabled = !dataGridView1.Enabled;
 
+                if (!DonGia_tb.ReadOnly)
+                {
+                    DonGia_tb.Text = DonGia_tb.Text.Replace(".", string.Empty).Trim('₫');
+                }
+            }
+            else MessageBox.Show("Không được để trống các ô đó !");
             return DV_tb.ReadOnly && DonGia_tb.ReadOnly;
 
         }

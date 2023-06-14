@@ -95,22 +95,28 @@ namespace QuanLyDaQuy
 
         private Boolean isEditableSP()
         {
-            TenSP_tb.ReadOnly = !TenSP_tb.ReadOnly;
-            Mua_tb.ReadOnly = !Mua_tb.ReadOnly;
-            DVT_tb.ReadOnly= !DVT_tb.ReadOnly;
-            SLT_tb.ReadOnly= !SLT_tb.ReadOnly;
-
-            dataGridView1.Enabled = !dataGridView1.Enabled;
-
-            if(!TenSP_tb.ReadOnly)
+            if(!String.IsNullOrEmpty(TenSP_tb.Text) && !String.IsNullOrEmpty(Mua_tb.Text) && !String.IsNullOrEmpty(SLT_tb.Text))
             {
-                LSP_cb.BringToFront();
-                Mua_tb.Text = Mua_tb.Text.Replace("." , string.Empty).Trim('₫');
+                TenSP_tb.ReadOnly = !TenSP_tb.ReadOnly;
+                Mua_tb.ReadOnly = !Mua_tb.ReadOnly;
+                //DVT_tb.ReadOnly= !DVT_tb.ReadOnly;
+                SLT_tb.ReadOnly = !SLT_tb.ReadOnly;
 
-                //,'₫'
+                dataGridView1.Enabled = !dataGridView1.Enabled;
+
+                if (!TenSP_tb.ReadOnly)
+                {
+                    LSP_cb.BringToFront();
+                    Mua_tb.Text = Mua_tb.Text.Replace(".", string.Empty).Trim('₫');
+
+                    //,'₫'
+                }
+                else LSP_tb.BringToFront();
             }
-            else LSP_tb.BringToFront();
-
+            else
+            {
+                MessageBox.Show("Các ô không được để trống !");
+            }
             return TenSP_tb.ReadOnly;
         }
 

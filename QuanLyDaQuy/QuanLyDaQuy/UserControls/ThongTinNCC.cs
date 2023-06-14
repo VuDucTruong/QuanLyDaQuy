@@ -54,18 +54,22 @@ namespace QuanLyDaQuy.UserControls
 
             if (!string.IsNullOrEmpty(NCC_tb.Text) && !string.IsNullOrEmpty(Phone_tb.Text) && !string.IsNullOrEmpty(Address_tb.Text) && ID > 0)
             {
-                string query = string.Format("update NHACUNGCAP set TenNCC = N'{0}' , DiaChi = N'{1}' , SDT = '{2}' where MaNCC = {3}", NCC_tb.Text, Address_tb.Text, Phone_tb.Text, ID);
-                int data = DataProvider.Instance.ExecuteNonQuery(query);
-                if (data > 0)
+                if(Phone_tb.Text.Length >= 10)
                 {
-                    MessageBox.Show("Đã cập nhật thành công !", "Thành công");
-                    update_btn.Text = "Sửa";
-                    RefreshData();
+                    string query = string.Format("update NHACUNGCAP set TenNCC = N'{0}' , DiaChi = N'{1}' , SDT = '{2}' where MaNCC = {3}", NCC_tb.Text, Address_tb.Text, Phone_tb.Text, ID);
+                    int data = DataProvider.Instance.ExecuteNonQuery(query);
+                    if (data > 0)
+                    {
+                        MessageBox.Show("Đã cập nhật thành công !", "Thành công");
+                        update_btn.Text = "Sửa";
+                        RefreshData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cập nhật thất bại !", "Thất bại");
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Cập nhật thất bại !", "Thất bại");
-                }
+                else { MessageBox.Show("Số điện thoại phải từ 10 số trở lên !"); }
 
             }
             else MessageBox.Show("Hãy nhập đầy đủ thông tin !");
@@ -73,10 +77,17 @@ namespace QuanLyDaQuy.UserControls
 
         private Boolean isEditableNCC()
         {
-            NCC_tb.ReadOnly = !NCC_tb.ReadOnly;
-            Phone_tb.ReadOnly = !Phone_tb.ReadOnly;
-            Address_tb.ReadOnly = !Address_tb.ReadOnly;
-            dataGridView1.Enabled = !dataGridView1.Enabled;
+            if(!String.IsNullOrEmpty(NCC_tb.Text) && !String.IsNullOrEmpty(Phone_tb.Text) && !String.IsNullOrEmpty(Address_tb.Text)) 
+            {
+                if (Phone_tb.Text.Length < 10)
+                { MessageBox.Show("Số điện thoại phải từ 10 chữ số trở lên !"); return false; }
+                NCC_tb.ReadOnly = !NCC_tb.ReadOnly;
+                Phone_tb.ReadOnly = !Phone_tb.ReadOnly;
+                Address_tb.ReadOnly = !Address_tb.ReadOnly;
+                dataGridView1.Enabled = !dataGridView1.Enabled;
+            }
+            else { MessageBox.Show("Không được để trống ô !"); }
+            
             return NCC_tb.ReadOnly;
         }
 
