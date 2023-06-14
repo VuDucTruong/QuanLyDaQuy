@@ -50,7 +50,7 @@ namespace QuanLyDaQuy
             int MaDV = Convert.ToInt32(MaDV_tb.Text);
             if (!string.IsNullOrEmpty(DV_tb.Text) && !string.IsNullOrEmpty(DonGia_tb.Text))
             {
-                string query = string.Format("update DICHVU set TenDV = N'{0}' , DonGiaDV = {1} where MaDV = {2}", DV_tb.Text, Convert.ToInt32(DonGia_tb.Text) , MaDV);
+                string query = string.Format("update DICHVU set TenDV = N'{0}' , DonGiaDV = {1} where MaDV = {2}", DV_tb.Text, Convert.ToInt32(DonGia_tb.Text.Trim('.')) , MaDV);
                 int data = DataProvider.Instance.ExecuteNonQuery(query);
                 if (data > 0)
                 {
@@ -80,6 +80,12 @@ namespace QuanLyDaQuy
             DV_tb.ReadOnly = !DV_tb.ReadOnly;
             DonGia_tb.ReadOnly = !DonGia_tb.ReadOnly;
             dataGridView1.Enabled = !dataGridView1.Enabled;
+
+            if(!DonGia_tb.ReadOnly)
+            {
+                DonGia_tb.Text = DonGia_tb.Text.Replace(".", string.Empty).Trim('₫');
+            }
+
             return DV_tb.ReadOnly && DonGia_tb.ReadOnly;
 
         }

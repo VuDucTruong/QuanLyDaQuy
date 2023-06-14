@@ -1,4 +1,5 @@
-﻿using QuanLyDaQuy.DAO;
+﻿using iText.Commons.Utils;
+using QuanLyDaQuy.DAO;
 using QuanLyDaQuy.Phieu;
 using System;
 using System.Collections.Generic;
@@ -63,16 +64,16 @@ namespace QuanLyDaQuy
                 !string.IsNullOrEmpty(DVT_tb.Text) &&
                 !string.IsNullOrEmpty(SLT_tb.Text) && ID > 0)
             {
-
+               
                 string sub_query = string.Format("select * from LOAISANPHAM where TenLSP = N'{0}'", LSP_cb.Text);
                 int MaLSP = (int)DataProvider.Instance.ExecuteScalar(sub_query);
+               
 
-
-                string query = string.Format("update SANPHAM set TenSP = N'{0}' , DonGiaMua = {1} , MaLSP = {2} , SoLuongTon = {3} where MaSP = {4}", 
-                    TenSP_tb.Text, 
-                    Convert.ToDouble(Mua_tb.Text), 
+                string query = string.Format("update SANPHAM set TenSP = N'{0}' , DonGiaMua = {1} , MaLSP = {2} , SoLuongTon = {3} where MaSP = {4}",
+                    TenSP_tb.Text,
+                    Convert.ToDouble(Mua_tb.Text),
                     MaLSP,
-                    Convert.ToInt32(SLT_tb.Text), 
+                    Convert.ToInt32(SLT_tb.Text),
                     ID);
                 int data = DataProvider.Instance.ExecuteNonQuery(query);
                 if (data > 0)
@@ -88,7 +89,9 @@ namespace QuanLyDaQuy
 
             }
             else MessageBox.Show("Hãy nhập đầy đủ thông tin !");
+            
         }
+
 
         private Boolean isEditableSP()
         {
@@ -102,6 +105,9 @@ namespace QuanLyDaQuy
             if(!TenSP_tb.ReadOnly)
             {
                 LSP_cb.BringToFront();
+                Mua_tb.Text = Mua_tb.Text.Replace("." , string.Empty).Trim('₫');
+
+                //,'₫'
             }
             else LSP_tb.BringToFront();
 
