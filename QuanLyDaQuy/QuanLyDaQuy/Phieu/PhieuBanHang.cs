@@ -30,6 +30,8 @@ namespace QuanLyDaQuy.Phieu
             LoadRelatedTables();
             LoadKhachHangFull();
             LoadSanPhamFull();
+            
+            //form.thongTinMatHang1.RefreshData();
         }
 
 
@@ -441,6 +443,7 @@ namespace QuanLyDaQuy.Phieu
 
         private void btn_ok_Click(object sender, EventArgs e)
         {
+            
             try
             {
                 DialogResult dialogResult = MessageBox.Show("Xin hãy kiểm tra kĩ nội dung trước khi lập phiếu." +
@@ -494,7 +497,7 @@ namespace QuanLyDaQuy.Phieu
                 }
                 else
                     AddPhieuBanHang(maKH, ngayLap, tongTien);
-
+                
                 // Duyệt qua từng dòng trong DataGridView
                 List<DataGridViewRow> rows = dgv_phieubanhang.Rows.Cast<DataGridViewRow>().ToList();
                 foreach (DataGridViewRow row in rows)
@@ -525,6 +528,7 @@ namespace QuanLyDaQuy.Phieu
             {
                 MessageBox.Show("Có lỗi xảy ra!");
             }
+            
         }
 
         bool IsDataGridViewEmpty(DataGridView dataGridView)
@@ -575,6 +579,8 @@ namespace QuanLyDaQuy.Phieu
             {
                 MessageBox.Show($"Lỗi thêm chi tiết phiếu bán hàng: {ex.Message}");
             }
+            Form1 form = (Form1)Owner;
+            form.thongTinMatHang1.RefreshData();
         }
 
         private void AddPhieuBanHang(int maKH, string ngayLap, float tongTien)
