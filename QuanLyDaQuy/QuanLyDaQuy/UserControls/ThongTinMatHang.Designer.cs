@@ -364,11 +364,11 @@
             // Mua_tb
             // 
             this.Mua_tb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadSanPhamFullBindingSource, "Đơn giá mua", true));
-            this.Mua_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Mua_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Mua_tb.Location = new System.Drawing.Point(102, 113);
             this.Mua_tb.Name = "Mua_tb";
             this.Mua_tb.ReadOnly = true;
-            this.Mua_tb.Size = new System.Drawing.Size(177, 27);
+            this.Mua_tb.Size = new System.Drawing.Size(177, 22);
             this.Mua_tb.TabIndex = 4;
             this.Mua_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Mua_tb_KeyPress);
             // 
