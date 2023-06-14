@@ -77,6 +77,14 @@ namespace QuanLyDaQuy.Phieu
             {
                 dtgView_DS_phieu_mua_hang.DataSource = this.qLDQDataSet.loadPhieuMH_Full;
                 this.loadPhieuMH_FullTableAdapter.Fill(this.qLDQDataSet.loadPhieuMH_Full, day, month, year);
+                if (dtgView_DS_phieu_mua_hang.Rows.Count > 0)
+                {
+                    MessageBox.Show("Tra cứu thành công", "Thông báo");
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy kết quả", "Thông báo");
+                }
                 return;
             }
             else if (tb_Search.Text == "")
@@ -108,13 +116,13 @@ namespace QuanLyDaQuy.Phieu
                         break;
                     }
             }
-            if (dtgView_DS_phieu_mua_hang.Rows.Count == 0)
+            if (dtgView_DS_phieu_mua_hang.Rows.Count > 0)
             {
-                MessageBox.Show("Không tìm thấy kết quả!", "Thông báo");
+                MessageBox.Show("Tra cứu thành công", "Thông báo");
             }
             else
             {
-                MessageBox.Show("Tra cứu thành công!", "Thông báo");
+                MessageBox.Show("Không tìm thấy kết quả", "Thông báo");
             }
         }
         private void Init_DateTimeSearch()
