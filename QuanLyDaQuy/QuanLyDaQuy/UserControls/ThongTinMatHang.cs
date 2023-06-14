@@ -67,11 +67,11 @@ namespace QuanLyDaQuy
                
                 string sub_query = string.Format("select * from LOAISANPHAM where TenLSP = N'{0}'", LSP_cb.Text);
                 int MaLSP = (int)DataProvider.Instance.ExecuteScalar(sub_query);
-               
+                MessageBox.Show(Convert.ToDouble(Mua_tb.Text.Split(',')[0]).ToString());
 
                 string query = string.Format("update SANPHAM set TenSP = N'{0}' , DonGiaMua = {1} , MaLSP = {2} , SoLuongTon = {3} where MaSP = {4}",
                     TenSP_tb.Text,
-                    Convert.ToDouble(Mua_tb.Text),
+                    Convert.ToDouble(Mua_tb.Text.Split(',')[0]),
                     MaLSP,
                     Convert.ToInt32(SLT_tb.Text),
                     ID);

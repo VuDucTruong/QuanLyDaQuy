@@ -21,12 +21,12 @@ namespace QuanLyDaQuy
 
         public void RefreshData()
         {
-            dICHVUTableAdapter.Fill(this.qLDQDataSet.DICHVU);
+            loadDichVuTableAdapter.Fill(this.qLDQDataSet.loadDichVu);
         }
 
         private void ThongTinDichVu_Load(object sender, EventArgs e)
         {
-            dICHVUTableAdapter.Fill(this.qLDQDataSet.DICHVU);
+            loadDichVuTableAdapter.Fill(this.qLDQDataSet.loadDichVu);
         }
 
         public void button1_Click(object sender, EventArgs e)
@@ -50,7 +50,7 @@ namespace QuanLyDaQuy
             int MaDV = Convert.ToInt32(MaDV_tb.Text);
             if (!string.IsNullOrEmpty(DV_tb.Text) && !string.IsNullOrEmpty(DonGia_tb.Text))
             {
-                string query = string.Format("update DICHVU set TenDV = N'{0}' , DonGiaDV = {1} where MaDV = {2}", DV_tb.Text, Convert.ToInt32(DonGia_tb.Text.Trim('.')) , MaDV);
+                string query = string.Format("update DICHVU set TenDV = N'{0}' , DonGiaDV = {1} where MaDV = {2}", DV_tb.Text, Convert.ToInt32(DonGia_tb.Text.Split(',')[0]) , MaDV);
                 int data = DataProvider.Instance.ExecuteNonQuery(query);
                 if (data > 0)
                 {
