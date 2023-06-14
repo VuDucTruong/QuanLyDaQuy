@@ -384,15 +384,15 @@
             // 
             this.tb_layout_btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tb_layout_btn.ColumnCount = 4;
+            this.tb_layout_btn.ColumnCount = 3;
             this.tab_lay_phieumuahang.SetColumnSpan(this.tb_layout_btn, 2);
-            this.tb_layout_btn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.88545F));
-            this.tb_layout_btn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.03096F));
-            this.tb_layout_btn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.69659F));
-            this.tb_layout_btn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tb_layout_btn.Controls.Add(this.btn_huy, 3, 0);
-            this.tb_layout_btn.Controls.Add(this.btn_lapPhieu, 2, 0);
-            this.tb_layout_btn.Controls.Add(this.btn_xuatPDF, 1, 0);
+            this.tb_layout_btn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.96825F));
+            this.tb_layout_btn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.65079F));
+            this.tb_layout_btn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.38095F));
+            this.tb_layout_btn.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tb_layout_btn.Controls.Add(this.btn_huy, 2, 0);
+            this.tb_layout_btn.Controls.Add(this.btn_lapPhieu, 1, 0);
+            this.tb_layout_btn.Controls.Add(this.btn_xuatPDF, 0, 0);
             this.tb_layout_btn.Location = new System.Drawing.Point(647, 516);
             this.tb_layout_btn.Name = "tb_layout_btn";
             this.tb_layout_btn.RowCount = 1;
@@ -402,11 +402,10 @@
             // 
             // btn_huy
             // 
-            this.btn_huy.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.btn_huy.Location = new System.Drawing.Point(244, 3);
+            this.btn_huy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_huy.Location = new System.Drawing.Point(220, 3);
             this.btn_huy.Name = "btn_huy";
-            this.btn_huy.Size = new System.Drawing.Size(75, 28);
+            this.btn_huy.Size = new System.Drawing.Size(100, 28);
             this.btn_huy.TabIndex = 15;
             this.btn_huy.Text = "Hủy phiếu";
             this.btn_huy.UseVisualStyleBackColor = true;
@@ -414,11 +413,10 @@
             // 
             // btn_lapPhieu
             // 
-            this.btn_lapPhieu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_lapPhieu.Location = new System.Drawing.Point(162, 3);
+            this.btn_lapPhieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_lapPhieu.Location = new System.Drawing.Point(112, 3);
             this.btn_lapPhieu.Name = "btn_lapPhieu";
-            this.btn_lapPhieu.Size = new System.Drawing.Size(76, 28);
+            this.btn_lapPhieu.Size = new System.Drawing.Size(102, 28);
             this.btn_lapPhieu.TabIndex = 14;
             this.btn_lapPhieu.Text = "Lập phiếu";
             this.btn_lapPhieu.UseVisualStyleBackColor = true;
@@ -429,9 +427,9 @@
             this.btn_xuatPDF.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_xuatPDF.Location = new System.Drawing.Point(64, 3);
+            this.btn_xuatPDF.Location = new System.Drawing.Point(3, 3);
             this.btn_xuatPDF.Name = "btn_xuatPDF";
-            this.btn_xuatPDF.Size = new System.Drawing.Size(91, 28);
+            this.btn_xuatPDF.Size = new System.Drawing.Size(103, 28);
             this.btn_xuatPDF.TabIndex = 16;
             this.btn_xuatPDF.Text = "Xuất PDF";
             this.btn_xuatPDF.UseVisualStyleBackColor = true;
