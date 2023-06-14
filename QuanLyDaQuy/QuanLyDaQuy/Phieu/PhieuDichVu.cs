@@ -22,7 +22,9 @@ namespace QuanLyDaQuy.Phieu
         private List<int> MKH = new List<int>();
         private List<int> MaDVs = new List<int>();
         private List<int> SavedMaDVs = new List<int>();
-        double PhanTramTraTruocToiThieu = 0; 
+        double PhanTramTraTruocToiThieu = 0;
+        bool firstInitComboBoxCell = true;
+        private bool Init_CellSelectedIndex = false;
 
         public PhieuDichVu()
         {
@@ -91,10 +93,9 @@ namespace QuanLyDaQuy.Phieu
             if (dataGridView1.CurrentCell.ColumnIndex == 1 && e.Control is ComboBox)
             {
                 ComboBox comboBox = e.Control as ComboBox;
-
                 // Add eventHandler
-                comboBox.SelectedIndexChanged -= new EventHandler(CellDichVu_SelectedIndexChanged);
                 comboBox.SelectedIndexChanged += new EventHandler(CellDichVu_SelectedIndexChanged);
+                comboBox.Leave += new EventHandler(CellDichVu_Leave);
             }
             else if (e.Control is TextBox)
             {
@@ -112,6 +113,7 @@ namespace QuanLyDaQuy.Phieu
                     
             }
         }
+
         private void CellDichVu_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox comboBox = sender as ComboBox;
@@ -143,6 +145,12 @@ namespace QuanLyDaQuy.Phieu
                 DonGia.Value = DonGiaDVs[comboBox.SelectedIndex];
                 DonGiaDuocTinh.Value = DonGiaDVs[comboBox.SelectedIndex];
             }
+        }
+
+        private void CellDichVu_Leave(object sender, EventArgs e)
+        {
+            ComboBox comboBox = sender as ComboBox;
+            comboBox.SelectedIndexChanged -= new EventHandler(CellDichVu_SelectedIndexChanged);
         }
 
         private void CellNumber_KeyPress(object sender, KeyPressEventArgs e)
