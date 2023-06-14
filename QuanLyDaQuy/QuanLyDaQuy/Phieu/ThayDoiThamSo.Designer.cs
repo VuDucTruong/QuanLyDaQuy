@@ -30,14 +30,14 @@ namespace QuanLyDaQuy.Phieu
         private void InitializeComponent()
         {
             this.dgv_ds_thamSo = new System.Windows.Forms.DataGridView();
+            this.maTS_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenTS_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.giatri_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_save = new System.Windows.Forms.Button();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.maTS_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenTS_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.giatri_col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ds_thamSo)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -58,6 +58,34 @@ namespace QuanLyDaQuy.Phieu
             this.dgv_ds_thamSo.RowTemplate.Height = 24;
             this.dgv_ds_thamSo.Size = new System.Drawing.Size(636, 178);
             this.dgv_ds_thamSo.TabIndex = 0;
+            // 
+            // maTS_col
+            // 
+            this.maTS_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.maTS_col.DataPropertyName = "MaThamSo";
+            this.maTS_col.HeaderText = "Mã tham số";
+            this.maTS_col.MinimumWidth = 6;
+            this.maTS_col.Name = "maTS_col";
+            this.maTS_col.ReadOnly = true;
+            this.maTS_col.Width = 110;
+            // 
+            // tenTS_col
+            // 
+            this.tenTS_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.tenTS_col.DataPropertyName = "TenThamSo";
+            this.tenTS_col.HeaderText = "Tên tham số";
+            this.tenTS_col.MinimumWidth = 6;
+            this.tenTS_col.Name = "tenTS_col";
+            this.tenTS_col.ReadOnly = true;
+            // 
+            // giatri_col
+            // 
+            this.giatri_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.giatri_col.DataPropertyName = "GiaTri";
+            this.giatri_col.HeaderText = "Giá trị";
+            this.giatri_col.MinimumWidth = 6;
+            this.giatri_col.Name = "giatri_col";
+            this.giatri_col.Width = 75;
             // 
             // tableLayoutPanel1
             // 
@@ -125,34 +153,6 @@ namespace QuanLyDaQuy.Phieu
             this.label1.Text = "THAY ĐỔI THAM SỐ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // maTS_col
-            // 
-            this.maTS_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.maTS_col.DataPropertyName = "MaThamSo";
-            this.maTS_col.HeaderText = "Mã tham số";
-            this.maTS_col.MinimumWidth = 6;
-            this.maTS_col.Name = "maTS_col";
-            this.maTS_col.ReadOnly = true;
-            this.maTS_col.Width = 110;
-            // 
-            // tenTS_col
-            // 
-            this.tenTS_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.tenTS_col.DataPropertyName = "TenThamSo";
-            this.tenTS_col.HeaderText = "Tên tham số";
-            this.tenTS_col.MinimumWidth = 6;
-            this.tenTS_col.Name = "tenTS_col";
-            this.tenTS_col.ReadOnly = true;
-            // 
-            // giatri_col
-            // 
-            this.giatri_col.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.giatri_col.DataPropertyName = "GiaTri";
-            this.giatri_col.HeaderText = "Giá trị";
-            this.giatri_col.MinimumWidth = 6;
-            this.giatri_col.Name = "giatri_col";
-            this.giatri_col.Width = 75;
-            // 
             // ThayDoiThamSo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -160,6 +160,7 @@ namespace QuanLyDaQuy.Phieu
             this.ClientSize = new System.Drawing.Size(642, 263);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ThayDoiThamSo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThayDoiThamSo";
             this.Load += new System.EventHandler(this.ThayDoiThamSo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ds_thamSo)).EndInit();
