@@ -241,7 +241,9 @@ namespace QuanLyDaQuy.Phieu
                 currentRow.Cells["sl_col"].Value = 0;
                 currentRow.Cells["tt_col"].Value = 0;
 
-                currentRow.Cells["sl_col"].Selected = true;
+                SendKeys.Send("{ENTER}");
+
+                //currentRow.Cells["sl_col"].Selected = true;
             }
             catch
             {
