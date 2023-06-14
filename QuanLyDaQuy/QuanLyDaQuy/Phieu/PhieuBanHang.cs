@@ -154,12 +154,12 @@ namespace QuanLyDaQuy.Phieu
                     comboBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
                     comboBox.AutoCompleteSource = AutoCompleteSource.ListItems;
 
-                    comboBox.SelectedIndexChanged -= ComboBox_SelectedIndexChanged;
-                    comboBox.SelectedIndexChanged += ComboBox_SelectedIndexChanged;
+                    comboBox.SelectedIndexChanged -= new EventHandler(ComboBox_SelectedIndexChanged);
+                    comboBox.SelectedIndexChanged += new EventHandler(ComboBox_SelectedIndexChanged);
 
                     // Chặn phím Tab trong ComboBox
-                    comboBox.PreviewKeyDown -= ComboBox_PreviewKeyDown;
-                    comboBox.PreviewKeyDown += ComboBox_PreviewKeyDown;
+                    comboBox.PreviewKeyDown -= new PreviewKeyDownEventHandler(ComboBox_PreviewKeyDown);
+                    comboBox.PreviewKeyDown += new PreviewKeyDownEventHandler(ComboBox_PreviewKeyDown);
 
                 }
 
