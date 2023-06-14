@@ -1,6 +1,7 @@
 ﻿using Org.BouncyCastle.Crypto;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +28,13 @@ namespace QuanLyDaQuy.DAO
         {
             int maDV = Convert.ToInt32(DataProvider.Instance.ExecuteScalar("select max(MaDV) from DICHVU"));
             return maDV;
+        }
+
+        public DataTable loadDV()
+        {
+            string query = "Slelect MaDV as \"Mã dịch vụ\" , TenDV as \"Tên dịch vụ\" , FORMAT(DonGiaDV,'c', 'vi-VN') as \"Đơn giá dịch vụ\" ";
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            return dt;
         }
     }
 }

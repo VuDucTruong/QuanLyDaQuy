@@ -34,7 +34,6 @@
             this.maDVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenDVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.donGiaDVDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dICHVUBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qLDQDataSet = new QuanLyDaQuy.QLDQDataSet();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,13 +48,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.MaDV_tb = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dICHVUTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.DICHVUTableAdapter();
+            this.loadDichVuBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.loadDichVuTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadDichVuTableAdapter();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dICHVUBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.loadDichVuBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -85,7 +85,7 @@
             this.maDVDataGridViewTextBoxColumn,
             this.tenDVDataGridViewTextBoxColumn,
             this.donGiaDVDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.dICHVUBindingSource;
+            this.dataGridView1.DataSource = this.loadDichVuBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(3, 28);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -118,11 +118,6 @@
             this.donGiaDVDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.donGiaDVDataGridViewTextBoxColumn.Name = "donGiaDVDataGridViewTextBoxColumn";
             this.donGiaDVDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dICHVUBindingSource
-            // 
-            this.dICHVUBindingSource.DataMember = "DICHVU";
-            this.dICHVUBindingSource.DataSource = this.qLDQDataSet;
             // 
             // qLDQDataSet
             // 
@@ -170,7 +165,7 @@
             // 
             // DV_tb
             // 
-            this.DV_tb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dICHVUBindingSource, "TenDV", true));
+            this.DV_tb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadDichVuBindingSource, "TenDV", true));
             this.DV_tb.Location = new System.Drawing.Point(104, 61);
             this.DV_tb.Name = "DV_tb";
             this.DV_tb.ReadOnly = true;
@@ -179,7 +174,7 @@
             // 
             // DonGia_tb
             // 
-            this.DonGia_tb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dICHVUBindingSource, "DonGiaDV", true));
+            this.DonGia_tb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadDichVuBindingSource, "DonGiaDV", true));
             this.DonGia_tb.Location = new System.Drawing.Point(104, 89);
             this.DonGia_tb.Name = "DonGia_tb";
             this.DonGia_tb.ReadOnly = true;
@@ -249,7 +244,7 @@
             // 
             // MaDV_tb
             // 
-            this.MaDV_tb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dICHVUBindingSource, "MaDV", true));
+            this.MaDV_tb.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.loadDichVuBindingSource, "MaDV", true));
             this.MaDV_tb.Location = new System.Drawing.Point(104, 33);
             this.MaDV_tb.Name = "MaDV_tb";
             this.MaDV_tb.ReadOnly = true;
@@ -265,9 +260,14 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Mã dịch vụ : ";
             // 
-            // dICHVUTableAdapter
+            // loadDichVuBindingSource
             // 
-            this.dICHVUTableAdapter.ClearBeforeFill = true;
+            this.loadDichVuBindingSource.DataMember = "loadDichVu";
+            this.loadDichVuBindingSource.DataSource = this.qLDQDataSet;
+            // 
+            // loadDichVuTableAdapter
+            // 
+            this.loadDichVuTableAdapter.ClearBeforeFill = true;
             // 
             // ThongTinDichVu
             // 
@@ -282,12 +282,12 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dICHVUBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDQDataSet)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.loadDichVuBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -310,11 +310,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn maDVDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenDVDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn donGiaDVDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource dICHVUBindingSource;
         private QLDQDataSet qLDQDataSet;
-        private QLDQDataSetTableAdapters.DICHVUTableAdapter dICHVUTableAdapter;
         private System.Windows.Forms.TextBox MaDV_tb;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource loadDichVuBindingSource;
+        private QLDQDataSetTableAdapters.loadDichVuTableAdapter loadDichVuTableAdapter;
     }
 }
