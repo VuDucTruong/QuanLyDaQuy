@@ -22,8 +22,7 @@ namespace QuanLyDaQuy.Phieu
 
         private void BaoCaoTonKho_Load(object sender, EventArgs e)
         {
-            string query = string.Format("select distinct YEAR(Thang) from TONKHO");
-            DataTable dataTable = DataProvider.Instance.ExecuteQuery(query);
+            DataTable dataTable = TonKhoDAO.Instance.LoadTonKho_Thang();
             
             foreach(DataRow row in dataTable.Rows)
             {

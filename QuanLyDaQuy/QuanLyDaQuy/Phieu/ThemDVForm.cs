@@ -24,7 +24,7 @@ namespace QuanLyDaQuy.Phieu
             {
                 try
                 {
-                    int data = ThemDVFormDAO.Instance.insertDichVu(DV_tb.Text, DonGia_tb.Text);
+                    int data = DichVuDAO.Instance.insertDichVu(DV_tb.Text, DonGia_tb.Text);
                     if (data > 0)
                     {
                         MessageBox.Show("Đã thêm dịch vụ thành công!", "Thành công");
@@ -50,7 +50,7 @@ namespace QuanLyDaQuy.Phieu
             int id;
             try
             {
-                id = ThemDVFormDAO.Instance.getMaDVLonNhat() + 1;
+                id = DichVuDAO.Instance.getMaDVLonNhat() + 1;
             }
             catch { id = 1; }
             MaDV_tb.Text = id.ToString();

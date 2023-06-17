@@ -1,5 +1,4 @@
-﻿using Org.BouncyCastle.Crypto;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -8,16 +7,16 @@ using System.Threading.Tasks;
 
 namespace QuanLyDaQuy.DAO
 {
-    public class ThemDVFormDAO
+    public class DichVuDAO
     {
-        private static ThemDVFormDAO instance;
-        public static ThemDVFormDAO Instance
+        private static DichVuDAO instance { get; set; }
+        public static DichVuDAO Instance
         {
-            get { if (instance == null) instance = new ThemDVFormDAO(); return instance; }
-            private set { instance = value; }
+            get { if (instance == null) instance = new DichVuDAO(); return instance; }
+            set { instance = value; }
         }
-        private ThemDVFormDAO() { }
 
+        public DichVuDAO() { }
         public int insertDichVu(string dichVu, string donGia)
         {
             string query = string.Format("insert into DICHVU values ( N'{0}' , {1} )", dichVu, Convert.ToDouble(donGia));

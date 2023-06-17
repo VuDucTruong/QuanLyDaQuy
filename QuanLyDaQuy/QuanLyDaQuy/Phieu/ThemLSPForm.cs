@@ -25,7 +25,7 @@ namespace QuanLyDaQuy.Phieu
             int id;
             try
             {
-                id = ThemLSPFormDAO.Instance.getMaLSPLonNhat() + 1;
+                id = LoaiSanPhamDAO.Instance.getMaLSPLonNhat() + 1;
             }
             catch
             {
@@ -38,11 +38,11 @@ namespace QuanLyDaQuy.Phieu
         {
             if (!string.IsNullOrEmpty(LSP_tb.Text) && !string.IsNullOrEmpty(LoiNhuan_tb.Text) && !string.IsNullOrEmpty(DVT_cb.Text))
             {
-                int DVT_id = ThemLSPFormDAO.Instance.getMaDVT_byDVT(DVT_cb.Text);
+                int DVT_id = DonViTinhDAO.Instance.getMaDVT_byDVT(DVT_cb.Text);
 
                 try
                 {
-                    int data = ThemLSPFormDAO.Instance.insertLSP(LSP_tb.Text, LoiNhuan_tb.Text, DVT_id);
+                    int data = LoaiSanPhamDAO.Instance.insertLSP(LSP_tb.Text, LoiNhuan_tb.Text, DVT_id);
                     if (data > 0)
                     {
                         MessageBox.Show("Đã thêm loại sản phẩm thành công!", "Thành công");

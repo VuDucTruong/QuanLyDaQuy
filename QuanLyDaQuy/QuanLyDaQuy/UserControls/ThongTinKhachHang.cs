@@ -58,8 +58,7 @@ namespace QuanLyDaQuy.UserControls
             if (!string.IsNullOrEmpty(KH_tb.Text) && !string.IsNullOrEmpty(Phone_tb.Text) && ID > 0)
             {
 
-                string query = string.Format("update KHACHHANG set TenKH = N'{0}' , SDT = '{1}' where MaKH = {2}", KH_tb.Text, Phone_tb.Text, ID);
-                int data = DataProvider.Instance.ExecuteNonQuery(query);
+                int data = KhachHangDAO.Instance.updateKHACHHANG(KH_tb.Text, Phone_tb.Text, ID);
                 if (data > 0)
                 {
                     MessageBox.Show("Đã cập nhật thành công !", "Thành công");

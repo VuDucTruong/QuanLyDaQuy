@@ -36,7 +36,7 @@ namespace QuanLyDaQuy.Phieu
             textBox_SoPhieu.Text = MaPhieuDV.ToString();
 
             // Select PHIEUDICHVU dataTable
-            DataTable data_phieu = SuaPhieuDichVuDAO.Instance.getPhieuDV_byMaPhieu(MaPhieuDV);
+            DataTable data_phieu = PhieuDichVuDAO.Instance.getPhieuDV_byMaPhieu(MaPhieuDV);
             foreach (DataRow row in data_phieu.Rows)
             {
                 textBox_KhachHang.Text = row["TenKH"].ToString();
@@ -51,7 +51,7 @@ namespace QuanLyDaQuy.Phieu
             }
 
             // Select CT_PHIEUDICHVU
-            DataTable data_ct = SuaPhieuDichVuDAO.Instance.getCTPhieuDV_byMaPhieu(MaPhieuDV);
+            DataTable data_ct = PhieuDichVuDAO.Instance.getCTPhieuDV_byMaPhieu(MaPhieuDV);
             int stt = 1;
             foreach (DataRow row in data_ct.Rows)
             {
@@ -269,10 +269,10 @@ namespace QuanLyDaQuy.Phieu
             {
                 try
                 {
-                    SuaPhieuDichVuDAO.Instance.updatePhieuDV(textBox_TongTienTraTruoc.Text, textBox_TongTienConLai.Text, tinhTrangPhieu, MaPhieuDV);
+                    PhieuDichVuDAO.Instance.updatePhieuDV(textBox_TongTienTraTruoc.Text, textBox_TongTienConLai.Text, tinhTrangPhieu, MaPhieuDV);
                     foreach (DataGridViewRow row in dataGridView1.Rows)
                     {
-                        SuaPhieuDichVuDAO.Instance.updateCTPhieuDV(row, MaPhieuDV, MaDVs);
+                        PhieuDichVuDAO.Instance.updateCTPhieuDV(row, MaPhieuDV, MaDVs);
                     }    
 
                     MessageBox.Show("Cập nhật phiếu thành công!", "Thông báo");

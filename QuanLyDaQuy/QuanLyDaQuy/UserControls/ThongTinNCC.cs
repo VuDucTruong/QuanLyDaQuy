@@ -56,8 +56,7 @@ namespace QuanLyDaQuy.UserControls
             {
                 if(Phone_tb.Text.Length >= 10)
                 {
-                    string query = string.Format("update NHACUNGCAP set TenNCC = N'{0}' , DiaChi = N'{1}' , SDT = '{2}' where MaNCC = {3}", NCC_tb.Text, Address_tb.Text, Phone_tb.Text, ID);
-                    int data = DataProvider.Instance.ExecuteNonQuery(query);
+                    int data = NhaCungCapDAO.Instance.updateNCC(NCC_tb.Text, Address_tb.Text, Phone_tb.Text, ID);
                     if (data > 0)
                     {
                         MessageBox.Show("Đã cập nhật thành công !", "Thành công");

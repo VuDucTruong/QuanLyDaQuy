@@ -27,7 +27,7 @@ namespace QuanLyDaQuy.Phieu
                 { MessageBox.Show("Số điện thoại phải từ 10 chữ số trở lên !"); return; }
                 try
                 {
-                    int data = ThemKHFormDAO.Instance.insertKhachHang(name_tb.Text, phone_tb.Text);
+                    int data = KhachHangDAO.Instance.insertKhachHang(name_tb.Text, phone_tb.Text);
                     if (data > 0)
                     {
                         MessageBox.Show("Đã thêm khách hàng thành công!", "Thành công");
@@ -65,7 +65,7 @@ namespace QuanLyDaQuy.Phieu
             int id;
             try
             {
-                id = ThemKHFormDAO.Instance.getMaKHLonNhat() + 1;
+                id = KhachHangDAO.Instance.getMaKHLonNhat() + 1;
             }
             catch { id = 1; }
             

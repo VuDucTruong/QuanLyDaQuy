@@ -71,8 +71,8 @@ namespace QuanLyDaQuy.UserControls
 
             if (!string.IsNullOrEmpty(TenLSP_tb.Text) && !string.IsNullOrEmpty(LoiNhuan_tb.Text) && !string.IsNullOrEmpty(MaDVT_cb.Text) && ID > 0)
             {
-                string query = string.Format("update LOAISANPHAM set TenLSP = N'{0}' , LoiNhuan = {1} , MaDVT = {2} where MaLSP = {3}", TenLSP_tb.Text, Convert.ToDouble(LoiNhuan_tb.Text),Convert.ToInt32(MaDVT_cb.Text) , ID);
-                int data = DataProvider.Instance.ExecuteNonQuery(query);
+
+                int data = LoaiSanPhamDAO.Instance.updateLSP(TenLSP_tb.Text, Convert.ToDouble(LoiNhuan_tb.Text), Convert.ToInt32(MaDVT_cb.Text), ID);
                 if (data > 0)
                 {
                     MessageBox.Show("Đã cập nhật thành công !", "Thành công");
@@ -108,8 +108,7 @@ namespace QuanLyDaQuy.UserControls
 
             if (!string.IsNullOrEmpty(DVT_tb.Text) && ID > 0)
             {
-                string query = string.Format("update DONVITINH set DVT = N'{0}' where MaDVT = {1}", DVT_tb.Text, ID);
-                int data = DataProvider.Instance.ExecuteNonQuery(query);
+                int data = DonViTinhDAO.Instance.updateDVT(DVT_tb.Text, ID);
                 if (data > 0)
                 {
                     MessageBox.Show("Đã cập nhật thành công !", "Thành công");

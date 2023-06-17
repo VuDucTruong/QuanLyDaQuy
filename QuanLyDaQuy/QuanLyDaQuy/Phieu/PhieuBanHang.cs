@@ -41,7 +41,7 @@ namespace QuanLyDaQuy.Phieu
             dgv_phieubanhang.Rows[0].Cells[0].Value = 1;
 
             // Textbox số phiếu
-            if (!int.TryParse(DataProvider.Instance.ExecuteScalar("select max(MaPhieuBH) from PHIEUBANHANG").ToString(),
+            if (!int.TryParse(PhieuBanHangDAO.Instance.getMaxMaPhieuBH_toString(),
                 out int soPhieu))
             {
                 soPhieu = 0;
@@ -55,9 +55,9 @@ namespace QuanLyDaQuy.Phieu
 
         private void LoadRelatedTables()
         {
-            SANPHAM = DataProvider.Instance.ExecuteQuery("select * from SANPHAM");
-            KHACHHANG = DataProvider.Instance.ExecuteQuery("select *  from KHACHHANG");
-            LOAISANPHAM = DataProvider.Instance.ExecuteQuery("select *  from LOAISANPHAM");
+            SANPHAM = SanPhamDAO.Instance.getAllSP();
+            KHACHHANG = KhachHangDAO.Instance.getAllKhachHang();
+            LOAISANPHAM = LoaiSanPhamDAO.Instance.getAllLSP();
 
         }
 
@@ -208,16 +208,7 @@ namespace QuanLyDaQuy.Phieu
                     return;
                 }
 
-                string query = @"SELECT LSP.TenLSP, DVT.DVT,  SP.DonGiaBan
-                FROM SANPHAM SP
-                INNER JOIN LOAISANPHAM LSP ON SP.MaLSP = LSP.MaLSP
-                INNER JOIN DONVITINH DVT ON LSP.MaDVT = DVT.MaDVT
-                WHERE SP.MaSP = @MaSP";
-
-                object[] parameters = new object[] { maSP };
-
-                // Lấy cột loại sp, dvt & đơn giá để autofill sau khi chọn sản phẩm
-                DataTable dataTable = DataProvider.Instance.ExecuteQuery(query, parameters);
+                DataTable dataTable = PhieuBanHangDAO.Instance.getSP_FULL(maSP);
 
                 // Lấy hàng đang được chọn trong DataGridView
                 DataGridViewRow currentRow = dgv_phieubanhang.CurrentRow;
@@ -339,10 +330,7 @@ namespace QuanLyDaQuy.Phieu
         private int GetSoLuongTonFromDatabase(string tenSP)
         {
             int soLuongTon = 0;
-            string query = "SELECT SoLuongTon FROM SANPHAM WHERE TenSP = @tenSP";
-            object[] parameters = { tenSP };
-
-            var slt = DataProvider.Instance.ExecuteScalar(query, parameters);
+            var slt = SanPhamDAO.Instance.getSLTByTenSP(tenSP);
             if (slt == null || !int.TryParse(slt.ToString(), out soLuongTon))
                 MessageBox.Show("Lỗi lấy số lượng tồn");
 
@@ -516,7 +504,6 @@ namespace QuanLyDaQuy.Phieu
                     float thanhTien = Convert.ToSingle(row.Cells["tt_col"].Value);
 
                     // Cập nhật thuộc tính SoLuongTon trong bảng Sản phẩm
-                    
 
                     // Thêm chi tiết phiếu bán hàng vào bảng CT_PHIEUBANHANG
                     AddCTPhieuBanHang(maPhieuBH, maSP, soLuong, donGia, thanhTien);
@@ -549,10 +536,7 @@ namespace QuanLyDaQuy.Phieu
         {
             int maKH = -1;
 
-            string query = "SELECT MaKH FROM KHACHHANG WHERE TenKH = @tenKH AND SDT = @soDT";
-            object[] parameters = { tenKH, sdt };
-
-            var result = DataProvider.Instance.ExecuteScalar(query, parameters);
+            var result = KhachHangDAO.Instance.getKhachHangBySDT(tenKH, sdt);
             if (result != null && int.TryParse(result.ToString(), out maKH))
             {
                 return maKH;
@@ -566,11 +550,7 @@ namespace QuanLyDaQuy.Phieu
             try
             {
                 // Thêm chi tiết phiếu bán hàng vào cơ sở dữ liệu
-                string insertQuery = $"INSERT INTO CT_PHIEUBANHANG (MaPhieuBH, MaSP, SL, DonGia, ThanhTien) VALUES ( {maPhieuBH}, {maSP}, {soLuong}, {donGia}, {thanhTien} )";
-
-                object[] parameters = { maPhieuBH, maSP, soLuong, donGia, thanhTien };
-
-                int affectedRows = DataProvider.Instance.ExecuteNonQuery(insertQuery);
+                int affectedRows = PhieuBanHangDAO.Instance.insertCT_PhieuBH(maPhieuBH , maSP , soLuong , donGia , thanhTien);
 
                 if (affectedRows <= 0)
                     MessageBox.Show($"Lỗi thêm chi tiết phiếu bán hàng ở sản phẩm có mã {maSP}!");
@@ -591,11 +571,8 @@ namespace QuanLyDaQuy.Phieu
                 DateTime ngayLapDateTime = DateTime.ParseExact(ngayLap, "dd/MM/yyyy", CultureInfo.InvariantCulture);
                 string ngayLapFormatted = ngayLapDateTime.ToString("MM/dd/yyyy");
 
-                string query = "insert into PHIEUBANHANG " +
-                "( MaKH , NgayLap , TongTien ) values" +
-                $"({maKH},'{ngayLapFormatted}',{tongTien})";
 
-                int affectedRows = DataProvider.Instance.ExecuteNonQuery(query);
+                int affectedRows = PhieuBanHangDAO.Instance.insertPhieuBH(maKH, ngayLapFormatted, tongTien);
                 MessageBox.Show($"Thêm thành công phiếu bán hàng");
 
             }
@@ -605,25 +582,14 @@ namespace QuanLyDaQuy.Phieu
             }
         }
 
-        private void UpdateSLT(int maSP, int soLuong)
-        {
-            string updateQuery = $"UPDATE SANPHAM SET SoLuongTon = SoLuongTon - {soLuong} WHERE MaSP = {maSP}";
-
-            int affectedRows = DataProvider.Instance.ExecuteNonQuery(updateQuery);
-
-            if (affectedRows <= 0)
-                MessageBox.Show($"Lỗi cập nhật số lượng tồn sản phẩm có mã {maSP}");
-
-        }
 
         private int InsertKhachHang(string tenKH, string sdt)
         {
             try
             {
                 // Thêm thông tin khách hàng vào cơ sở dữ liệu
-                string insertQuery = $"INSERT INTO KHACHHANG (TenKH, SDT) VALUES ( '{tenKH}', '{sdt}' ); SELECT SCOPE_IDENTITY();";
 
-                object result = DataProvider.Instance.ExecuteScalar(insertQuery);
+                object result = KhachHangDAO.Instance.insertKHACHHANG(tenKH, sdt);
 
                 if (result != null)
                 {

@@ -65,17 +65,16 @@ namespace QuanLyDaQuy
                 !string.IsNullOrEmpty(SLT_tb.Text) && ID > 0)
             {
                
-                string sub_query = string.Format("select * from LOAISANPHAM where TenLSP = N'{0}'", LSP_cb.Text);
-                int MaLSP = (int)DataProvider.Instance.ExecuteScalar(sub_query);
+                //string sub_query = string.Format("select * from LOAISANPHAM where TenLSP = N'{0}'", LSP_cb.Text);
+                int MaLSP = LoaiSanPhamDAO.Instance.getMaLSPByTenLSP(LSP_cb.Text);
                 
 
-                string query = string.Format("update SANPHAM set TenSP = N'{0}' , DonGiaMua = {1} , MaLSP = {2} , SoLuongTon = {3} where MaSP = {4}",
-                    TenSP_tb.Text,
+                    
+                int data = SanPhamDAO.Instance.updateSANPHAM(TenSP_tb.Text,
                     Convert.ToDouble(Mua_tb.Text.Split(',')[0]),
                     MaLSP,
                     Convert.ToInt32(SLT_tb.Text),
                     ID);
-                int data = DataProvider.Instance.ExecuteNonQuery(query);
                 if (data > 0)
                 {
                     MessageBox.Show("Đã cập nhật thành công !", "Thành công");
@@ -100,7 +99,7 @@ namespace QuanLyDaQuy
                 TenSP_tb.ReadOnly = !TenSP_tb.ReadOnly;
                 Mua_tb.ReadOnly = !Mua_tb.ReadOnly;
                 //DVT_tb.ReadOnly= !DVT_tb.ReadOnly;
-                SLT_tb.ReadOnly = !SLT_tb.ReadOnly;
+                //SLT_tb.ReadOnly = !SLT_tb.ReadOnly;
 
                 dataGridView1.Enabled = !dataGridView1.Enabled;
 

@@ -197,7 +197,7 @@ namespace QuanLyDaQuy.Phieu
             {
                 MaPhieuMH = Convert.ToInt32(dtgView_DS_phieu_mua_hang.SelectedRows[0].Cells[0].Value);
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Bạn phải chọn một dòng để xem chi tiết phiếu!", "Cảnh báo");
                 return;

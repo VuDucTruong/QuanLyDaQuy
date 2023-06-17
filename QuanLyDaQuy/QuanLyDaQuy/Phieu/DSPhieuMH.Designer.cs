@@ -35,6 +35,10 @@
             this.comboBox_SearchMode = new System.Windows.Forms.ComboBox();
             this.lb_ds_phieu_mua_hang = new System.Windows.Forms.Label();
             this.dtgView_DS_phieu_mua_hang = new System.Windows.Forms.DataGridView();
+            this.maPhieuMHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenNCCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngayLapDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tongTienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.loadPhieuMHFullBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.qLDQDataSet = new QuanLyDaQuy.QLDQDataSet();
             this.lb_timKiem = new System.Windows.Forms.Label();
@@ -53,10 +57,6 @@
             this.loadPhieuMH_byTongTienTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadPhieuMH_byTongTienTableAdapter();
             this.loadPhieuMH_byTenNCCTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadPhieuMH_byTenNCCTableAdapter();
             this.loadPhieuMH_byMaPhieuMHTableAdapter = new QuanLyDaQuy.QLDQDataSetTableAdapters.loadPhieuMH_byMaPhieuMHTableAdapter();
-            this.maPhieuMHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenNCCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngayLapDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tongTienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgView_DS_phieu_mua_hang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loadPhieuMHFullBindingSource1)).BeginInit();
@@ -170,6 +170,42 @@
             this.dtgView_DS_phieu_mua_hang.Size = new System.Drawing.Size(794, 318);
             this.dtgView_DS_phieu_mua_hang.TabIndex = 0;
             this.dtgView_DS_phieu_mua_hang.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dtgView_DS_phieu_mua_hang_DataBindingComplete);
+            // 
+            // maPhieuMHDataGridViewTextBoxColumn
+            // 
+            this.maPhieuMHDataGridViewTextBoxColumn.DataPropertyName = "MaPhieuMH";
+            this.maPhieuMHDataGridViewTextBoxColumn.HeaderText = "Mã phiếu";
+            this.maPhieuMHDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.maPhieuMHDataGridViewTextBoxColumn.Name = "maPhieuMHDataGridViewTextBoxColumn";
+            this.maPhieuMHDataGridViewTextBoxColumn.ReadOnly = true;
+            this.maPhieuMHDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // tenNCCDataGridViewTextBoxColumn
+            // 
+            this.tenNCCDataGridViewTextBoxColumn.DataPropertyName = "TenNCC";
+            this.tenNCCDataGridViewTextBoxColumn.HeaderText = "Tên nhà cung cấp";
+            this.tenNCCDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tenNCCDataGridViewTextBoxColumn.Name = "tenNCCDataGridViewTextBoxColumn";
+            this.tenNCCDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tenNCCDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // ngayLapDataGridViewTextBoxColumn
+            // 
+            this.ngayLapDataGridViewTextBoxColumn.DataPropertyName = "NgayLap";
+            this.ngayLapDataGridViewTextBoxColumn.HeaderText = "Ngày lập";
+            this.ngayLapDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.ngayLapDataGridViewTextBoxColumn.Name = "ngayLapDataGridViewTextBoxColumn";
+            this.ngayLapDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ngayLapDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // tongTienDataGridViewTextBoxColumn
+            // 
+            this.tongTienDataGridViewTextBoxColumn.DataPropertyName = "TongTien";
+            this.tongTienDataGridViewTextBoxColumn.HeaderText = "Tổng tiền";
+            this.tongTienDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.tongTienDataGridViewTextBoxColumn.Name = "tongTienDataGridViewTextBoxColumn";
+            this.tongTienDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tongTienDataGridViewTextBoxColumn.Width = 125;
             // 
             // loadPhieuMHFullBindingSource1
             // 
@@ -342,42 +378,6 @@
             // loadPhieuMH_byMaPhieuMHTableAdapter
             // 
             this.loadPhieuMH_byMaPhieuMHTableAdapter.ClearBeforeFill = true;
-            // 
-            // maPhieuMHDataGridViewTextBoxColumn
-            // 
-            this.maPhieuMHDataGridViewTextBoxColumn.DataPropertyName = "MaPhieuMH";
-            this.maPhieuMHDataGridViewTextBoxColumn.HeaderText = "Mã phiếu";
-            this.maPhieuMHDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.maPhieuMHDataGridViewTextBoxColumn.Name = "maPhieuMHDataGridViewTextBoxColumn";
-            this.maPhieuMHDataGridViewTextBoxColumn.ReadOnly = true;
-            this.maPhieuMHDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // tenNCCDataGridViewTextBoxColumn
-            // 
-            this.tenNCCDataGridViewTextBoxColumn.DataPropertyName = "TenNCC";
-            this.tenNCCDataGridViewTextBoxColumn.HeaderText = "Tên nhà cung cấp";
-            this.tenNCCDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tenNCCDataGridViewTextBoxColumn.Name = "tenNCCDataGridViewTextBoxColumn";
-            this.tenNCCDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tenNCCDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // ngayLapDataGridViewTextBoxColumn
-            // 
-            this.ngayLapDataGridViewTextBoxColumn.DataPropertyName = "NgayLap";
-            this.ngayLapDataGridViewTextBoxColumn.HeaderText = "Ngày lập";
-            this.ngayLapDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.ngayLapDataGridViewTextBoxColumn.Name = "ngayLapDataGridViewTextBoxColumn";
-            this.ngayLapDataGridViewTextBoxColumn.ReadOnly = true;
-            this.ngayLapDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // tongTienDataGridViewTextBoxColumn
-            // 
-            this.tongTienDataGridViewTextBoxColumn.DataPropertyName = "TongTien";
-            this.tongTienDataGridViewTextBoxColumn.HeaderText = "Tổng tiền";
-            this.tongTienDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.tongTienDataGridViewTextBoxColumn.Name = "tongTienDataGridViewTextBoxColumn";
-            this.tongTienDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tongTienDataGridViewTextBoxColumn.Width = 125;
             // 
             // DSPhieuMH
             // 

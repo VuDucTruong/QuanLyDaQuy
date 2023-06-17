@@ -133,15 +133,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\DichVuDAO.cs" />
+    <Compile Include="DAO\DonViTinhDAO.cs" />
+    <Compile Include="DAO\KhachHangDAO.cs" />
+    <Compile Include="DAO\LoaiSanPhamDAO.cs" />
     <Compile Include="DAO\NhaCungCapDAO.cs" />
+    <Compile Include="DAO\PhieuBanHangDAO.cs" />
     <Compile Include="DAO\PhieuDichVuDAO.cs" />
     <Compile Include="DAO\PhieuMuaHangDAO.cs" />
     <Compile Include="DAO\SanPhamDAO.cs" />
-    <Compile Include="DAO\SuaPhieuDichVuDAO.cs" />
-    <Compile Include="DAO\ThemDVFormDAO.cs" />
-    <Compile Include="DAO\ThemDVTFormDAO.cs" />
-    <Compile Include="DAO\ThemKHFormDAO.cs" />
-    <Compile Include="DAO\ThemLSPFormDAO.cs" />
+    <Compile Include="DAO\TonKhoDAO.cs" />
     <Compile Include="DTO\CT_PhieuBanHang.cs" />
     <Compile Include="DTO\CT_PhieuDichVu.cs" />
     <Compile Include="DTO\CT_PhieuMuaHang.cs" />

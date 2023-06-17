@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static iText.StyledXmlParser.Jsoup.Select.Evaluator;
 
 namespace QuanLyDaQuy.DAO
 {
@@ -28,6 +29,12 @@ namespace QuanLyDaQuy.DAO
         {
             int id = Convert.ToInt32(DataProvider.Instance.ExecuteScalar("select max(MaNCC) from NHACUNGCAP")) + 1;
             return id;
+        }
+
+        public int updateNCC(string TenNCC , string DiaChi , string SDT , int ID)
+        {
+            string query = string.Format("update NHACUNGCAP set TenNCC = N'{0}' , DiaChi = N'{1}' , SDT = '{2}' where MaNCC = {3}", TenNCC, DiaChi, SDT, ID);
+            return DataProvider.Instance.ExecuteNonQuery(query);
         }
     }
 }

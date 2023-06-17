@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyDaQuy.DAO;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -29,11 +30,7 @@ namespace QuanLyDaQuy.DTO
         {
             try
             {
-                string query = "insert into CT_PHIEUBANHANG " +
-                "( MaPhieuBH , MaSP , SL , DonGia, ThanhTien) values" +
-                $"({MaPhieuBH},{MaSP},{SL},{DonGia},{ThanhTien})";
-
-                DAO.DataProvider.Instance.ExecuteQuery(query);
+                PhieuBanHangDAO.Instance.InsertCT_PhieuBanHang(this.MaPhieuBH , this.MaSP , this.SL , this.DonGia , this.ThanhTien);
 
             }
             catch
